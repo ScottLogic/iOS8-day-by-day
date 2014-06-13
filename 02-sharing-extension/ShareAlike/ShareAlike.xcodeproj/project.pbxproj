@@ -12,6 +12,9 @@
 		F402B6E8194B2B0B00E02488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F402B6E6194B2B0B00E02488 /* Main.storyboard */; };
 		F402B6EA194B2B0C00E02488 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F402B6E9194B2B0C00E02488 /* Images.xcassets */; };
 		F402B6F6194B2B0C00E02488 /* ShareAlikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F402B6F5194B2B0C00E02488 /* ShareAlikeTests.swift */; };
+		F402B708194B31DF00E02488 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F402B707194B31DF00E02488 /* ShareViewController.swift */; };
+		F402B70A194B31DF00E02488 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F402B709194B31DF00E02488 /* MainInterface.storyboard */; };
+		F402B70D194B31DF00E02488 /* com.shinobicontrols.ShareAlike.ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F402B703194B31DF00E02488 /* com.shinobicontrols.ShareAlike.ShareExtension.appex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,7 +25,35 @@
 			remoteGlobalIDString = F402B6DC194B2B0B00E02488;
 			remoteInfo = ShareAlike;
 		};
+		F402B70B194B31DF00E02488 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F402B6D5194B2B0B00E02488 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F402B702194B31DF00E02488;
+			remoteInfo = ShareExtension;
+		};
+		F402B70E194B31DF00E02488 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F402B6D5194B2B0B00E02488 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F402B702194B31DF00E02488;
+			remoteInfo = ShareExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F402B713194B31DF00E02488 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F402B70D194B31DF00E02488 /* com.shinobicontrols.ShareAlike.ShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F402B6DD194B2B0B00E02488 /* ShareAlike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareAlike.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +65,10 @@
 		F402B6EF194B2B0C00E02488 /* ShareAlikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareAlikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F402B6F4194B2B0C00E02488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F402B6F5194B2B0C00E02488 /* ShareAlikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAlikeTests.swift; sourceTree = "<group>"; };
+		F402B703194B31DF00E02488 /* com.shinobicontrols.ShareAlike.ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = com.shinobicontrols.ShareAlike.ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F402B706194B31DF00E02488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F402B707194B31DF00E02488 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		F402B709194B31DF00E02488 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +86,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F402B700194B31DF00E02488 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +101,7 @@
 			children = (
 				F402B6DF194B2B0B00E02488 /* ShareAlike */,
 				F402B6F2194B2B0C00E02488 /* ShareAlikeTests */,
+				F402B704194B31DF00E02488 /* ShareExtension */,
 				F402B6DE194B2B0B00E02488 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +111,7 @@
 			children = (
 				F402B6DD194B2B0B00E02488 /* ShareAlike.app */,
 				F402B6EF194B2B0C00E02488 /* ShareAlikeTests.xctest */,
+				F402B703194B31DF00E02488 /* com.shinobicontrols.ShareAlike.ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +153,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F402B704194B31DF00E02488 /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F402B707194B31DF00E02488 /* ShareViewController.swift */,
+				F402B709194B31DF00E02488 /* MainInterface.storyboard */,
+				F402B705194B31DF00E02488 /* Supporting Files */,
+			);
+			path = ShareExtension;
+			sourceTree = "<group>";
+		};
+		F402B705194B31DF00E02488 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F402B706194B31DF00E02488 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,10 +181,13 @@
 				F402B6D9194B2B0B00E02488 /* Sources */,
 				F402B6DA194B2B0B00E02488 /* Frameworks */,
 				F402B6DB194B2B0B00E02488 /* Resources */,
+				F402B713194B31DF00E02488 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F402B70C194B31DF00E02488 /* PBXTargetDependency */,
+				F402B70F194B31DF00E02488 /* PBXTargetDependency */,
 			);
 			name = ShareAlike;
 			productName = ShareAlike;
@@ -147,6 +212,23 @@
 			productReference = F402B6EF194B2B0C00E02488 /* ShareAlikeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F402B702194B31DF00E02488 /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F402B710194B31DF00E02488 /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				F402B6FF194B31DF00E02488 /* Sources */,
+				F402B700194B31DF00E02488 /* Frameworks */,
+				F402B701194B31DF00E02488 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			productName = ShareExtension;
+			productReference = F402B703194B31DF00E02488 /* com.shinobicontrols.ShareAlike.ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +244,9 @@
 					F402B6EE194B2B0C00E02488 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = F402B6DC194B2B0B00E02488;
+					};
+					F402B702194B31DF00E02488 = {
+						CreatedOnToolsVersion = 6.0;
 					};
 				};
 			};
@@ -180,6 +265,7 @@
 			targets = (
 				F402B6DC194B2B0B00E02488 /* ShareAlike */,
 				F402B6EE194B2B0C00E02488 /* ShareAlikeTests */,
+				F402B702194B31DF00E02488 /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +284,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F402B701194B31DF00E02488 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F402B70A194B31DF00E02488 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +315,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F402B6FF194B31DF00E02488 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F402B708194B31DF00E02488 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -228,6 +330,16 @@
 			isa = PBXTargetDependency;
 			target = F402B6DC194B2B0B00E02488 /* ShareAlike */;
 			targetProxy = F402B6F0194B2B0C00E02488 /* PBXContainerItemProxy */;
+		};
+		F402B70C194B31DF00E02488 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F402B702194B31DF00E02488 /* ShareExtension */;
+			targetProxy = F402B70B194B31DF00E02488 /* PBXContainerItemProxy */;
+		};
+		F402B70F194B31DF00E02488 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F402B702194B31DF00E02488 /* ShareExtension */;
+			targetProxy = F402B70E194B31DF00E02488 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -378,6 +490,32 @@
 			};
 			name = Release;
 		};
+		F402B711194B31DF00E02488 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "com.shinobicontrols.ShareAlike.$(TARGET_NAME:rfc1034identifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F402B712194B31DF00E02488 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "com.shinobicontrols.ShareAlike.$(TARGET_NAME:rfc1034identifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +541,14 @@
 			buildConfigurations = (
 				F402B6FD194B2B0C00E02488 /* Debug */,
 				F402B6FE194B2B0C00E02488 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F402B710194B31DF00E02488 /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F402B711194B31DF00E02488 /* Debug */,
+				F402B712194B31DF00E02488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
