@@ -27,6 +27,7 @@ class ViewController: UIViewController, TransformControlsDelegate {
     if segue.identifier? == "showTransformController" {
       if let transformController = segue.destinationViewController as? TransformControlsViewController {
         transformController.transformDelegate = self
+        transformController.currentTransform = imageView.transform
       }
     }
   }

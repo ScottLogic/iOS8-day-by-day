@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="wQU-bZ-VS7" secondAttribute="centerX" id="9sp-0Q-COb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AqO-RW-jqf" secondAttribute="bottom" constant="20" id="AqQ-VI-cMm"/>
@@ -62,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-3.1415000000000002" maxValue="3.1415000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Wyr-fc-Kte">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1.6000000000000001" maxValue="1.6000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Wyr-fc-Kte">
                                 <rect key="frame" x="91" y="241" width="371" height="31"/>
                                 <connections>
                                     <action selector="handleSliderValueChanged:" destination="8EZ-XH-1pI" eventType="valueChanged" id="vOc-P6-bQO"/>
