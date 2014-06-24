@@ -535,6 +535,7 @@
 				F402B6FB194B2B0C00E02488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F402B6FC194B2B0C00E02488 /* Build configuration list for PBXNativeTarget "ShareAlikeTests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +544,7 @@
 				F402B6FE194B2B0C00E02488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F402B710194B31DF00E02488 /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +553,7 @@
 				F402B712194B31DF00E02488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
