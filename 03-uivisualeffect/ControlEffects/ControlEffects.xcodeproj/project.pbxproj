@@ -12,6 +12,7 @@
 		F4D83B8619599435002CDF48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D83B8419599435002CDF48 /* Main.storyboard */; };
 		F4D83B8819599435002CDF48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D83B8719599435002CDF48 /* Images.xcassets */; };
 		F4D83B9419599435002CDF48 /* ControlEffectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D83B9319599435002CDF48 /* ControlEffectsTests.swift */; };
+		F4D83B9E195994AC002CDF48 /* TransformControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D83B9D195994AC002CDF48 /* TransformControlsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		F4D83B8D19599435002CDF48 /* ControlEffectsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControlEffectsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D83B9219599435002CDF48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4D83B9319599435002CDF48 /* ControlEffectsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlEffectsTests.swift; sourceTree = "<group>"; };
+		F4D83B9D195994AC002CDF48 /* TransformControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformControlsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				F4D83B8419599435002CDF48 /* Main.storyboard */,
 				F4D83B8719599435002CDF48 /* Images.xcassets */,
 				F4D83B7E19599434002CDF48 /* Supporting Files */,
+				F4D83B9D195994AC002CDF48 /* TransformControlsViewController.swift */,
 			);
 			path = ControlEffects;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4D83B8319599434002CDF48 /* ViewController.swift in Sources */,
+				F4D83B9E195994AC002CDF48 /* TransformControlsViewController.swift in Sources */,
 				F4D83B8119599434002CDF48 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
