@@ -403,6 +403,7 @@
 				F4D83B9919599435002CDF48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4D83B9A19599435002CDF48 /* Build configuration list for PBXNativeTarget "ControlEffectsTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +412,7 @@
 				F4D83B9C19599435002CDF48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

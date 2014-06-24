@@ -26,6 +26,7 @@ struct Vect2D {
 
 class TransformControlsViewController: UIViewController {
 
+  @IBOutlet var containerView: UIView
   @IBOutlet var rotationSlider: UISlider
   @IBOutlet var xScaleSlider: UISlider
   @IBOutlet var yScaleSlider: UISlider
@@ -35,11 +36,43 @@ class TransformControlsViewController: UIViewController {
   var transformDelegate: TransformControlsDelegate?
   var currentTransform: CGAffineTransform?
   
+  var backgroundView: UIVisualEffectView?
+  
   override func viewDidLoad() {
     if(currentTransform) {
       applyTransformToSliders(currentTransform!)
     }
+    
+    backgroundView = prepareVisualEffectView()
+    view.addSubview(backgroundView)
+    
+    applyEqualSizeConstraints(backgroundView!, v2: view)
+    
+    view.backgroundColor = UIColor(white: 1, alpha: 0.5)
+    
   }
+  
+  
+  func prepareVisualEffectView() -> UIVisualEffectView {
+    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+    let effectView = UIVisualEffectView(effect: blurEffect)
+    effectView.contentView.backgroundColor = UIColor(white: 0.7, alpha: 0.3)
+    effectView.contentView.addSubview(containerView)
+    containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    effectView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    applyEqualSizeConstraints(containerView, v2: effectView.contentView)
+    
+    return effectView
+  }
+  
+  func applyEqualSizeConstraints(v1: UIView, v2: UIView) {
+    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .CenterX, relatedBy: .Equal, toItem: v2, attribute: .CenterX, multiplier: 1, constant: 0))
+    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .CenterY, relatedBy: .Equal, toItem: v2, attribute: .CenterY, multiplier: 1, constant: 0))
+    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .Width, relatedBy: .Equal, toItem: v2, attribute: .Width, multiplier: 1, constant: 0))
+    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .Height, relatedBy: .Equal, toItem: v2, attribute: .Height, multiplier: 1, constant: 0))
+  }
+  
+
   
   @IBAction func handleSliderValueChanged(sender: UISlider) {
     let transform = transformFromSliders()
