@@ -15,6 +15,13 @@ protocol TransformControlsDelegate {
 struct Vect2D {
   var x: Float
   var y: Float
+  
+  var xCG: CGFloat {
+    return CGFloat(x)
+  }
+  var yCG: CGFloat {
+    return CGFloat(y)
+  }
 }
 
 class TransformControlsViewController: UIViewController {
@@ -46,8 +53,8 @@ class TransformControlsViewController: UIViewController {
   
   func constructTransform(rotation: Float, scale: Vect2D, translation: Vect2D) -> CGAffineTransform {
     let rotnTransform = CGAffineTransformMakeRotation(CGFloat(rotation))
-    let scaleTransform = CGAffineTransformScale(rotnTransform, CGFloat(scale.x), CGFloat(scale.y))
-    let translationTransform = CGAffineTransformTranslate(scaleTransform, CGFloat(translation.x), CGFloat(translation.y))
+    let scaleTransform = CGAffineTransformScale(rotnTransform, scale.xCG, scale.yCG)
+    let translationTransform = CGAffineTransformTranslate(scaleTransform, translation.xCG, translation.yCG)
     return translationTransform
   }
   
