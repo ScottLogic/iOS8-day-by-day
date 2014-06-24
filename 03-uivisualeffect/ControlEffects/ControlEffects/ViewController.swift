@@ -24,7 +24,7 @@ class ViewController: UIViewController, TransformControlsDelegate {
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-    if segue.identifier == "showTransformController" {
+    if segue.identifier? == "showTransformController" {
       if let transformController = segue.destinationViewController as? TransformControlsViewController {
         transformController.transformDelegate = self
       }

@@ -22,11 +22,15 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8EZ-XH-1pI" kind="presentation" id="lIn-19-AWt"/>
+                                    <segue destination="8EZ-XH-1pI" kind="presentation" identifier="showTransformController" id="lIn-19-AWt"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wQU-bZ-VS7">
-                                <rect key="frame" x="120" y="176" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="tortoise" translatesAutoresizingMaskIntoConstraints="NO" id="wQU-bZ-VS7">
+                                <rect key="frame" x="112" y="155" width="256" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ghm-9I-U3f"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="tgA-8P-DB8"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -58,8 +62,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wyr-fc-Kte">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-3.1415000000000002" maxValue="3.1415000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Wyr-fc-Kte">
                                 <rect key="frame" x="91" y="241" width="371" height="31"/>
+                                <connections>
+                                    <action selector="handleSliderValueChanged:" destination="8EZ-XH-1pI" eventType="valueChanged" id="vOc-P6-bQO"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEH-fD-xEJ">
                                 <rect key="frame" x="20" y="245" width="65" height="21"/>
@@ -67,8 +74,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WwW-Ig-4cn">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.02" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="WwW-Ig-4cn">
                                 <rect key="frame" x="83" y="278" width="379" height="31"/>
+                                <connections>
+                                    <action selector="handleSliderValueChanged:" destination="8EZ-XH-1pI" eventType="valueChanged" id="cYD-gH-fia"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x Scale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zm-n1-8X8">
                                 <rect key="frame" x="20" y="282" width="57" height="21"/>
@@ -76,8 +86,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xRB-hq-9vx">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.050000000000000003" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="xRB-hq-9vx">
                                 <rect key="frame" x="82" y="315" width="380" height="31"/>
+                                <connections>
+                                    <action selector="handleSliderValueChanged:" destination="8EZ-XH-1pI" eventType="valueChanged" id="bNr-Bg-X6N"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y Scale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBE-uG-bnM">
                                 <rect key="frame" x="20" y="319" width="56" height="21"/>
@@ -85,8 +98,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Osp-X3-zxt">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-300" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="Osp-X3-zxt">
                                 <rect key="frame" x="123" y="352" width="339" height="31"/>
+                                <connections>
+                                    <action selector="handleSliderValueChanged:" destination="8EZ-XH-1pI" eventType="valueChanged" id="6bI-OQ-H9P"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x Translation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd8-zd-7n8">
                                 <rect key="frame" x="20" y="356" width="97" height="21"/>
@@ -94,8 +110,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PTt-33-2vd">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-300" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="PTt-33-2vd">
                                 <rect key="frame" x="123" y="389" width="339" height="31"/>
+                                <connections>
+                                    <action selector="handleSliderValueChanged:" destination="8EZ-XH-1pI" eventType="valueChanged" id="vSS-a3-1HG"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y Translation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNl-nJ-fpc">
                                 <rect key="frame" x="20" y="393" width="97" height="21"/>
@@ -158,4 +177,7 @@
             <point key="canvasLocation" x="1051" y="449"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tortoise" width="256" height="170"/>
+    </resources>
 </document>
