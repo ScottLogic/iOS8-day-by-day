@@ -46,21 +46,22 @@ class TransformControlsViewController: UIViewController {
     backgroundView = prepareVisualEffectView()
     view.addSubview(backgroundView)
     
-    applyEqualSizeConstraints(backgroundView!, v2: view)
+    applyEqualSizeConstraints(view, v2: backgroundView!)
     
-    view.backgroundColor = UIColor(white: 1, alpha: 0.5)
+    view.backgroundColor = UIColor(white: 1, alpha: 0)
     
   }
   
   
   func prepareVisualEffectView() -> UIVisualEffectView {
-    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
     let effectView = UIVisualEffectView(effect: blurEffect)
-    effectView.contentView.backgroundColor = UIColor(white: 0.7, alpha: 0.3)
+    effectView.contentView.backgroundColor = UIColor(white: 0.7, alpha: 0)
+    containerView.removeFromSuperview()
     effectView.contentView.addSubview(containerView)
     containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
     effectView.setTranslatesAutoresizingMaskIntoConstraints(false)
-    applyEqualSizeConstraints(containerView, v2: effectView.contentView)
+    applyEqualSizeConstraints(effectView.contentView, v2: containerView)
     
     return effectView
   }
