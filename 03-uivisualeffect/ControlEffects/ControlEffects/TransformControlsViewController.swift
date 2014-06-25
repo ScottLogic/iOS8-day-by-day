@@ -117,12 +117,12 @@ class TransformControlsViewController: UIViewController {
     let translation = Vect2D(x: Float(transform.tx), y: Float(transform.ty))
     
     // Then scale
-    let scaleX = sqrt(transform.a * transform.a + transform.c * transform.c)
-    let scaleY = sqrt(transform.b * transform.b + transform.d * transform.d)
+    let scaleX = sqrt(Double(transform.a * transform.a + transform.c * transform.c))
+    let scaleY = sqrt(Double(transform.b * transform.b + transform.d * transform.d))
     let scale = Vect2D(x: Float(scaleX), y: Float(scaleY))
     
     // And rotation
-    let rotation = Float(atan2(transform.b, transform.a))
+    let rotation = Float(atan2(Double(transform.b), Double(transform.a)))
     
     return (rotation, scale, translation)
   }
