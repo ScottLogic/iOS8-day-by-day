@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22159245195B46840077C0F4 /* NaiveAverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22159244195B46840077C0F4 /* NaiveAverageTests.swift */; };
 		F45C69D3195B23D900615E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69D2195B23D900615E3A /* AppDelegate.swift */; };
 		F45C69D5195B23D900615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C69D4195B23D900615E3A /* Images.xcassets */; };
 		F45C69E1195B23D900615E3A /* SpeedyAverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69E0195B23D900615E3A /* SpeedyAverageTests.swift */; };
@@ -25,15 +26,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22159244195B46840077C0F4 /* NaiveAverageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveAverageTests.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F45C69CD195B23D900615E3A /* SpeedyAverage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedyAverage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C69D1195B23D900615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F45C69D2195B23D900615E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F45C69D2195B23D900615E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F45C69D4195B23D900615E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F45C69DA195B23D900615E3A /* SpeedyAverageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedyAverageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C69DF195B23D900615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F45C69E0195B23D900615E3A /* SpeedyAverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedyAverageTests.swift; sourceTree = "<group>"; };
-		F45C69EA195B244400615E3A /* MovingAverageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverageProtocol.swift; sourceTree = "<group>"; };
-		F45C69EC195B267F00615E3A /* NaiveMovingAverageCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveMovingAverageCalc.swift; sourceTree = "<group>"; };
+		F45C69E0195B23D900615E3A /* SpeedyAverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedyAverageTests.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F45C69EA195B244400615E3A /* MovingAverageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverageProtocol.swift; sourceTree = "<group>"; tabWidth = 2; };
+		F45C69EC195B267F00615E3A /* NaiveMovingAverageCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveMovingAverageCalc.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				F45C69E0195B23D900615E3A /* SpeedyAverageTests.swift */,
 				F45C69DE195B23D900615E3A /* Supporting Files */,
+				22159244195B46840077C0F4 /* NaiveAverageTests.swift */,
 			);
 			path = SpeedyAverageTests;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F45C69E1195B23D900615E3A /* SpeedyAverageTests.swift in Sources */,
+				22159245195B46840077C0F4 /* NaiveAverageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +391,7 @@
 				F45C69E6195B23D900615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F45C69E7195B23D900615E3A /* Build configuration list for PBXNativeTarget "SpeedyAverageTests" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +400,7 @@
 				F45C69E9195B23D900615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

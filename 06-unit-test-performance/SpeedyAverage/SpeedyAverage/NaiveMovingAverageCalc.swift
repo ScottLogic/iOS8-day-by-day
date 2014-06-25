@@ -20,8 +20,12 @@ class NaiveMovingAverageCalculator: MovingAverageCalculator {
     // Create an array to store the result
     var result = Double[]()
     
+    if(data.count < windowSize) {
+      return result
+    }
+    
     // Now perform the calculation
-    for i in 0..(data.count - windowSize) {
+    for i in 0...(data.count - windowSize) {
       let slice = data[i..(i+windowSize)]
       let partialSum = slice.reduce(0) { $0 + $1 }
       result.append(Double(partialSum) / Double(windowSize))
