@@ -81,13 +81,18 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CC2-9C-vCf" id="G9U-tk-1in">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe3-xB-KB3">
-                                            <rect key="frame" x="219" y="11" width="42" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe3-xB-KB3">
+                                            <rect key="frame" x="221" y="11" width="39" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="pe3-xB-KB3" secondAttribute="bottom" constant="11" id="7of-ro-8kj"/>
+                                        <constraint firstItem="pe3-xB-KB3" firstAttribute="top" secondItem="G9U-tk-1in" secondAttribute="top" constant="11" id="Exv-bp-SPt"/>
+                                        <constraint firstAttribute="centerX" secondItem="pe3-xB-KB3" secondAttribute="centerX" id="RaQ-bc-iyw"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="customFontLabel" destination="pe3-xB-KB3" id="Rrf-CV-jSJ"/>

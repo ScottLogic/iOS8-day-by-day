@@ -9,10 +9,6 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-  
-  override func viewDidLoad() {
-    tableView.rowHeight = 44
-  }
 
   // Datasource methods
   override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
