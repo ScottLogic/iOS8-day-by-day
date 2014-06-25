@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F45C69A4195B030E00615E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69A3195B030E00615E3A /* AppDelegate.swift */; };
-		F45C69A6195B030E00615E3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69A5195B030E00615E3A /* ViewController.swift */; };
 		F45C69A9195B030E00615E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45C69A7195B030E00615E3A /* Main.storyboard */; };
 		F45C69AB195B030E00615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C69AA195B030E00615E3A /* Images.xcassets */; };
 		F45C69B7195B030E00615E3A /* MagicTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69B6195B030E00615E3A /* MagicTableTests.swift */; };
+		F45C69C1195B108C00615E3A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69C0195B108C00615E3A /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +28,12 @@
 		F45C699E195B030E00615E3A /* MagicTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C69A2195B030E00615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C69A3195B030E00615E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F45C69A5195B030E00615E3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F45C69A8195B030E00615E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F45C69AA195B030E00615E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F45C69B0195B030E00615E3A /* MagicTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C69B5195B030E00615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C69B6195B030E00615E3A /* MagicTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicTableTests.swift; sourceTree = "<group>"; };
+		F45C69C0195B108C00615E3A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				F45C69A3195B030E00615E3A /* AppDelegate.swift */,
-				F45C69A5195B030E00615E3A /* ViewController.swift */,
 				F45C69A7195B030E00615E3A /* Main.storyboard */,
 				F45C69AA195B030E00615E3A /* Images.xcassets */,
 				F45C69A1195B030E00615E3A /* Supporting Files */,
+				F45C69C0195B108C00615E3A /* TableViewController.swift */,
 			);
 			path = MagicTable;
 			sourceTree = "<group>";
@@ -208,8 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F45C69A6195B030E00615E3A /* ViewController.swift in Sources */,
 				F45C69A4195B030E00615E3A /* AppDelegate.swift in Sources */,
+				F45C69C1195B108C00615E3A /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
