@@ -8,16 +8,18 @@
 
 import XCTest
 import SpeedyAverage
+import Foundation
 
-class NaiveAverageTests: XCTestCase {
+class MovingAverageTests: XCTestCase {
   
-  var calculator: MovingAverageCalculator = NaiveMovingAverageCalculator()
+  let calculatorCreator : () -> MovingAverageCalculator = { return BetterMovingAverageCalculator() }
+  var calculator: MovingAverageCalculator = BetterMovingAverageCalculator()
   
   override func setUp() {
     super.setUp()
     // Put setup code here. This method is called before the invocation of each test method in the class.
     // Reset the calculator
-    calculator = NaiveMovingAverageCalculator()
+    calculator = calculatorCreator()
   }
   
   override func tearDown() {
