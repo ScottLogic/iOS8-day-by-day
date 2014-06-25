@@ -10,6 +10,8 @@
 		F45C69D3195B23D900615E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69D2195B23D900615E3A /* AppDelegate.swift */; };
 		F45C69D5195B23D900615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C69D4195B23D900615E3A /* Images.xcassets */; };
 		F45C69E1195B23D900615E3A /* SpeedyAverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69E0195B23D900615E3A /* SpeedyAverageTests.swift */; };
+		F45C69EB195B244400615E3A /* MovingAverageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69EA195B244400615E3A /* MovingAverageProtocol.swift */; };
+		F45C69ED195B267F00615E3A /* NaiveMovingAverageCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69EC195B267F00615E3A /* NaiveMovingAverageCalc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,8 @@
 		F45C69DA195B23D900615E3A /* SpeedyAverageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedyAverageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C69DF195B23D900615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C69E0195B23D900615E3A /* SpeedyAverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedyAverageTests.swift; sourceTree = "<group>"; };
+		F45C69EA195B244400615E3A /* MovingAverageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverageProtocol.swift; sourceTree = "<group>"; };
+		F45C69EC195B267F00615E3A /* NaiveMovingAverageCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveMovingAverageCalc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				F45C69D2195B23D900615E3A /* AppDelegate.swift */,
 				F45C69D4195B23D900615E3A /* Images.xcassets */,
 				F45C69D0195B23D900615E3A /* Supporting Files */,
+				F45C69EA195B244400615E3A /* MovingAverageProtocol.swift */,
+				F45C69EC195B267F00615E3A /* NaiveMovingAverageCalc.swift */,
 			);
 			path = SpeedyAverage;
 			sourceTree = "<group>";
@@ -201,6 +207,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F45C69D3195B23D900615E3A /* AppDelegate.swift in Sources */,
+				F45C69ED195B267F00615E3A /* NaiveMovingAverageCalc.swift in Sources */,
+				F45C69EB195B244400615E3A /* MovingAverageProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
