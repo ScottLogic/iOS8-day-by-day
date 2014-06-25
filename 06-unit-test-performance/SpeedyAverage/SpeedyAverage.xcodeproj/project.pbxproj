@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22159245195B46840077C0F4 /* MovingAverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22159244195B46840077C0F4 /* MovingAverageTests.swift */; };
+		223A249C195B630E00B0DE94 /* MovingAverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22159244195B46840077C0F4 /* MovingAverageTests.swift */; };
 		22C98FBC195B5A3700842890 /* BetterMovingAverageCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C98FBB195B5A3700842890 /* BetterMovingAverageCalc.swift */; };
 		F45C69D3195B23D900615E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69D2195B23D900615E3A /* AppDelegate.swift */; };
 		F45C69D5195B23D900615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C69D4195B23D900615E3A /* Images.xcassets */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F45C69DB195B23D900615E3A /* PBXContainerItemProxy */ = {
+		223A2497195B62E400B0DE94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F45C69C5195B23D900615E3A /* Project object */;
 			proxyType = 1;
@@ -27,26 +27,26 @@
 
 /* Begin PBXFileReference section */
 		22159244195B46840077C0F4 /* MovingAverageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverageTests.swift; sourceTree = "<group>"; tabWidth = 2; };
+		223A2491195B62E400B0DE94 /* SpeedyAverage Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpeedyAverage Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		223A2494195B62E400B0DE94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C98FBB195B5A3700842890 /* BetterMovingAverageCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterMovingAverageCalc.swift; sourceTree = "<group>"; };
 		F45C69CD195B23D900615E3A /* SpeedyAverage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedyAverage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C69D1195B23D900615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C69D2195B23D900615E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F45C69D4195B23D900615E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F45C69DA195B23D900615E3A /* SpeedyAverageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedyAverageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F45C69DF195B23D900615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C69EA195B244400615E3A /* MovingAverageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverageProtocol.swift; sourceTree = "<group>"; tabWidth = 2; };
 		F45C69EC195B267F00615E3A /* NaiveMovingAverageCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveMovingAverageCalc.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F45C69CA195B23D900615E3A /* Frameworks */ = {
+		223A248E195B62E400B0DE94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F45C69D7195B23D900615E3A /* Frameworks */ = {
+		F45C69CA195B23D900615E3A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,11 +56,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223A2492195B62E400B0DE94 /* SpeedyAverageTests */ = {
+			isa = PBXGroup;
+			children = (
+				22159244195B46840077C0F4 /* MovingAverageTests.swift */,
+				223A2493195B62E400B0DE94 /* Supporting Files */,
+			);
+			path = SpeedyAverageTests;
+			sourceTree = "<group>";
+		};
+		223A2493195B62E400B0DE94 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				223A2494195B62E400B0DE94 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		F45C69C4195B23D900615E3A = {
 			isa = PBXGroup;
 			children = (
 				F45C69CF195B23D900615E3A /* SpeedyAverage */,
-				F45C69DD195B23D900615E3A /* SpeedyAverageTests */,
+				223A2492195B62E400B0DE94 /* SpeedyAverageTests */,
 				F45C69CE195B23D900615E3A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				F45C69CD195B23D900615E3A /* SpeedyAverage.app */,
-				F45C69DA195B23D900615E3A /* SpeedyAverageTests.xctest */,
+				223A2491195B62E400B0DE94 /* SpeedyAverage Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,26 +112,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F45C69DD195B23D900615E3A /* SpeedyAverageTests */ = {
-			isa = PBXGroup;
-			children = (
-				F45C69DE195B23D900615E3A /* Supporting Files */,
-				22159244195B46840077C0F4 /* MovingAverageTests.swift */,
-			);
-			path = SpeedyAverageTests;
-			sourceTree = "<group>";
-		};
-		F45C69DE195B23D900615E3A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F45C69DF195B23D900615E3A /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		223A2490195B62E400B0DE94 /* SpeedyAverageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 223A2499195B62E400B0DE94 /* Build configuration list for PBXNativeTarget "SpeedyAverageTests" */;
+			buildPhases = (
+				223A248D195B62E400B0DE94 /* Sources */,
+				223A248E195B62E400B0DE94 /* Frameworks */,
+				223A248F195B62E400B0DE94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				223A2498195B62E400B0DE94 /* PBXTargetDependency */,
+			);
+			name = SpeedyAverageTests;
+			productName = "SpeedyAverage Tests";
+			productReference = 223A2491195B62E400B0DE94 /* SpeedyAverage Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F45C69CC195B23D900615E3A /* SpeedyAverage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F45C69E4195B23D900615E3A /* Build configuration list for PBXNativeTarget "SpeedyAverage" */;
@@ -132,24 +150,6 @@
 			productReference = F45C69CD195B23D900615E3A /* SpeedyAverage.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F45C69D9195B23D900615E3A /* SpeedyAverageTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F45C69E7195B23D900615E3A /* Build configuration list for PBXNativeTarget "SpeedyAverageTests" */;
-			buildPhases = (
-				F45C69D6195B23D900615E3A /* Sources */,
-				F45C69D7195B23D900615E3A /* Frameworks */,
-				F45C69D8195B23D900615E3A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F45C69DC195B23D900615E3A /* PBXTargetDependency */,
-			);
-			name = SpeedyAverageTests;
-			productName = SpeedyAverageTests;
-			productReference = F45C69DA195B23D900615E3A /* SpeedyAverageTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -159,12 +159,12 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = ShinobiControls;
 				TargetAttributes = {
-					F45C69CC195B23D900615E3A = {
-						CreatedOnToolsVersion = 6.0;
-					};
-					F45C69D9195B23D900615E3A = {
+					223A2490195B62E400B0DE94 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = F45C69CC195B23D900615E3A;
+					};
+					F45C69CC195B23D900615E3A = {
+						CreatedOnToolsVersion = 6.0;
 					};
 				};
 			};
@@ -181,12 +181,19 @@
 			projectRoot = "";
 			targets = (
 				F45C69CC195B23D900615E3A /* SpeedyAverage */,
-				F45C69D9195B23D900615E3A /* SpeedyAverageTests */,
+				223A2490195B62E400B0DE94 /* SpeedyAverageTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		223A248F195B62E400B0DE94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F45C69CB195B23D900615E3A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,16 +202,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F45C69D8195B23D900615E3A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		223A248D195B62E400B0DE94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				223A249C195B630E00B0DE94 /* MovingAverageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F45C69C9195B23D900615E3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,25 +224,53 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F45C69D6195B23D900615E3A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22159245195B46840077C0F4 /* MovingAverageTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F45C69DC195B23D900615E3A /* PBXTargetDependency */ = {
+		223A2498195B62E400B0DE94 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F45C69CC195B23D900615E3A /* SpeedyAverage */;
-			targetProxy = F45C69DB195B23D900615E3A /* PBXContainerItemProxy */;
+			targetProxy = 223A2497195B62E400B0DE94 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		223A249A195B62E400B0DE94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpeedyAverage.app/SpeedyAverage";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SpeedyAverageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		223A249B195B62E400B0DE94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpeedyAverage.app/SpeedyAverage";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SpeedyAverageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
 		F45C69E2195B23D900615E3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -336,45 +372,18 @@
 			};
 			name = Release;
 		};
-		F45C69E8195B23D900615E3A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpeedyAverage.app/SpeedyAverage";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SpeedyAverageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		F45C69E9195B23D900615E3A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpeedyAverage.app/SpeedyAverage";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SpeedyAverageTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		223A2499195B62E400B0DE94 /* Build configuration list for PBXNativeTarget "SpeedyAverageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				223A249A195B62E400B0DE94 /* Debug */,
+				223A249B195B62E400B0DE94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F45C69C8195B23D900615E3A /* Build configuration list for PBXProject "SpeedyAverage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -389,15 +398,6 @@
 			buildConfigurations = (
 				F45C69E5195B23D900615E3A /* Debug */,
 				F45C69E6195B23D900615E3A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F45C69E7195B23D900615E3A /* Build configuration list for PBXNativeTarget "SpeedyAverageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F45C69E8195B23D900615E3A /* Debug */,
-				F45C69E9195B23D900615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

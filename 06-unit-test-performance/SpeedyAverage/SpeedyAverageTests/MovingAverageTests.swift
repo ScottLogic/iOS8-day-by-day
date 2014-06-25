@@ -53,7 +53,7 @@ class MovingAverageTests: XCTestCase {
   
   
   
-  func testPerformanceExample() {
+  func testMovingAveragePerformance() {
     // This is an example of a performance test case.
     calculator.windowSize = 1000
     self.measureBlock() {
