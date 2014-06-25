@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wlQ-fn-BM2">
-                                <rect key="frame" x="0.0" y="229" width="480" height="251"/>
+                                <rect key="frame" x="0.0" y="249" width="480" height="231"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWB-lM-hp7">
                                         <rect key="frame" x="20" y="16" width="65" height="21"/>
@@ -114,7 +114,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iet-Xh-yrf">
-                                        <rect key="frame" x="213" y="201" width="54" height="30"/>
+                                        <rect key="frame" x="213" y="193" width="54" height="30"/>
                                         <state key="normal" title="Dismiss">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -135,7 +135,7 @@
                                         </connections>
                                     </slider>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.74716016489552506" blue="0.32723817656292342" alpha="0.20999999999999999" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.74716016489552506" blue="0.32723817656292342" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4Ba-6e-6Pd" firstAttribute="top" secondItem="fPa-Wd-UBh" secondAttribute="bottom" constant="16" id="20k-Uk-BnU"/>
                                     <constraint firstAttribute="trailing" secondItem="Dnf-eV-jTZ" secondAttribute="trailing" constant="20" id="2Xo-XA-6bo"/>
@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="trailing" secondItem="ldK-kw-3VP" secondAttribute="trailing" constant="20" id="GT2-gl-uCr"/>
                                     <constraint firstAttribute="centerX" secondItem="Iet-Xh-yrf" secondAttribute="centerX" id="Ht6-Gd-fVQ"/>
                                     <constraint firstItem="Dnf-eV-jTZ" firstAttribute="leading" secondItem="nsr-W8-acL" secondAttribute="trailing" constant="8" id="IRB-dB-HYS"/>
-                                    <constraint firstItem="Iet-Xh-yrf" firstAttribute="top" secondItem="xDL-VS-Q5y" secondAttribute="bottom" constant="16" id="Ioy-uR-IDR"/>
+                                    <constraint firstItem="Iet-Xh-yrf" firstAttribute="top" secondItem="xDL-VS-Q5y" secondAttribute="bottom" constant="8" id="Ioy-uR-IDR"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ldK-kw-3VP" secondAttribute="trailing" constant="20" id="Isi-Ic-5lz"/>
                                     <constraint firstItem="yA2-kO-zf9" firstAttribute="centerY" secondItem="fPa-Wd-UBh" secondAttribute="centerY" id="KN1-na-Ln0"/>
                                     <constraint firstItem="ldK-kw-3VP" firstAttribute="leading" secondItem="xDL-VS-Q5y" secondAttribute="trailing" constant="8" id="Or8-ag-eiP"/>
@@ -158,7 +158,7 @@
                                     <constraint firstItem="xDL-VS-Q5y" firstAttribute="top" secondItem="nsr-W8-acL" secondAttribute="bottom" constant="16" id="YQh-Q1-bBV"/>
                                     <constraint firstAttribute="trailing" secondItem="zFF-d6-KEl" secondAttribute="trailing" constant="20" id="aEc-hY-lqK"/>
                                     <constraint firstItem="nsr-W8-acL" firstAttribute="top" secondItem="4Ba-6e-6Pd" secondAttribute="bottom" constant="16" id="dOD-vb-X0M"/>
-                                    <constraint firstAttribute="bottom" secondItem="Iet-Xh-yrf" secondAttribute="bottom" constant="20" id="ghZ-zc-A6f"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iet-Xh-yrf" secondAttribute="bottom" constant="8" id="ghZ-zc-A6f"/>
                                     <constraint firstItem="xDL-VS-Q5y" firstAttribute="centerY" secondItem="ldK-kw-3VP" secondAttribute="centerY" id="ioh-Th-WB2"/>
                                     <constraint firstItem="nsr-W8-acL" firstAttribute="centerY" secondItem="Dnf-eV-jTZ" secondAttribute="centerY" id="iqD-cz-jDM"/>
                                     <constraint firstItem="nsr-W8-acL" firstAttribute="leading" secondItem="wlQ-fn-BM2" secondAttribute="leading" constant="20" id="oyu-hj-z6f"/>
