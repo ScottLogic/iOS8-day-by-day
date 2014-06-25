@@ -51,16 +51,28 @@ class TransformControlsViewController: UIViewController {
   
   
   func prepareVisualEffectView() -> UIVisualEffectView {
-    let blurEffect = UIBlurEffect(style: .Dark)
-    let effectView = UIVisualEffectView(effect: blurEffect)
-    effectView.contentView.backgroundColor = UIColor.clearColor()
-    containerView.removeFromSuperview()
-    effectView.contentView.addSubview(containerView)
-    containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
-    effectView.setTranslatesAutoresizingMaskIntoConstraints(false)
-    applyEqualSizeConstraints(effectView.contentView, v2: containerView, includeTop: true)
+    // Create the blur effect
+    let blurEffect = UIBlurEffect(style: .Light)
+    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+    blurEffectView.contentView.backgroundColor = UIColor.clearColor()
     
-    return effectView
+    // Create the vibrancy effect - to be added to the blur
+    let vibrancyEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
+    let vibrancyEffectView = UIVisualEffectView(effect: vibrancyEffect)
+    
+    // Add the content to the views appropriately
+    vibrancyEffectView.contentView.addSubview(containerView)
+    blurEffectView.contentView.addSubview(vibrancyEffectView)
+    
+    // Prepare autolayout
+    containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    blurEffectView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    vibrancyEffectView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    
+    applyEqualSizeConstraints(vibrancyEffectView.contentView, v2: containerView, includeTop: true)
+    applyEqualSizeConstraints(blurEffectView.contentView, v2: vibrancyEffectView, includeTop: true)
+    
+    return blurEffectView
   }
   
   func applyEqualSizeConstraints(v1: UIView, v2: UIView, includeTop: Bool) {
