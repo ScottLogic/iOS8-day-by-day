@@ -16,6 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="tortoise" translatesAutoresizingMaskIntoConstraints="NO" id="wQU-bZ-VS7">
+                                <rect key="frame" x="112" y="155" width="256" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ghm-9I-U3f"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="tgA-8P-DB8"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqO-RW-jqf">
                                 <rect key="frame" x="190" y="430" width="100" height="30"/>
                                 <state key="normal" title="Edit Transform">
@@ -25,13 +32,6 @@
                                     <segue destination="8EZ-XH-1pI" kind="presentation" identifier="showTransformController" modalPresentationStyle="overFullScreen" id="lIn-19-AWt"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="tortoise" translatesAutoresizingMaskIntoConstraints="NO" id="wQU-bZ-VS7">
-                                <rect key="frame" x="112" y="155" width="256" height="170"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Ghm-9I-U3f"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="tgA-8P-DB8"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
