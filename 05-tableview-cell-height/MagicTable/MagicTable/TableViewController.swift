@@ -12,7 +12,7 @@ class TableViewController: UITableViewController {
 
   // Datasource methods
   override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-    return 1;
+    return 2;
   }
   
   override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
@@ -20,10 +20,21 @@ class TableViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-    if let cell = tableView.dequeueReusableCellWithIdentifier("RightDetailCell", forIndexPath: indexPath) as? UITableViewCell {
-      cell.detailTextLabel!.text = "\(indexPath.section),\(indexPath.row)"
-      cell.textLabel!.text = "Cell \(indexPath.row)"
-      return cell
+    switch indexPath.section {
+    case 0:
+      if let cell = tableView.dequeueReusableCellWithIdentifier("RightDetailCell", forIndexPath: indexPath) as? UITableViewCell {
+        cell.detailTextLabel!.text = "\(indexPath.section),\(indexPath.row)"
+        cell.textLabel!.text = "Cell \(indexPath.row)"
+        return cell
+      }
+    case 1:
+      if let cell = tableView.dequeueReusableCellWithIdentifier("CustomFontCell", forIndexPath: indexPath) as? CustomFontCell {
+        cell.customFontLabel.text = "Cell \(indexPath.row)"
+        cell.customFontLabel.font = cell.customFontLabel.font.fontWithSize(Float(indexPath.row) * 4.0)
+        return cell
+      }
+    default:
+      return nil
     }
     return nil
   }
@@ -32,6 +43,8 @@ class TableViewController: UITableViewController {
     switch section {
     case 0:
       return "Autosizing for Free!"
+    case 1:
+      return "Custom Font"
     default:
       return ""
     }

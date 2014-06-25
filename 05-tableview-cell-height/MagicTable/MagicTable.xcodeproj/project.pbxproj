@@ -12,6 +12,7 @@
 		F45C69AB195B030E00615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C69AA195B030E00615E3A /* Images.xcassets */; };
 		F45C69B7195B030E00615E3A /* MagicTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69B6195B030E00615E3A /* MagicTableTests.swift */; };
 		F45C69C1195B108C00615E3A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69C0195B108C00615E3A /* TableViewController.swift */; };
+		F45C69C3195B1C5A00615E3A /* CustomFontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69C2195B1C5A00615E3A /* CustomFontCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		F45C69B5195B030E00615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C69B6195B030E00615E3A /* MagicTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicTableTests.swift; sourceTree = "<group>"; };
 		F45C69C0195B108C00615E3A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		F45C69C2195B1C5A00615E3A /* CustomFontCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFontCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				F45C69AA195B030E00615E3A /* Images.xcassets */,
 				F45C69A1195B030E00615E3A /* Supporting Files */,
 				F45C69C0195B108C00615E3A /* TableViewController.swift */,
+				F45C69C2195B1C5A00615E3A /* CustomFontCell.swift */,
 			);
 			path = MagicTable;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F45C69C3195B1C5A00615E3A /* CustomFontCell.swift in Sources */,
 				F45C69A4195B030E00615E3A /* AppDelegate.swift in Sources */,
 				F45C69C1195B108C00615E3A /* TableViewController.swift in Sources */,
 			);
