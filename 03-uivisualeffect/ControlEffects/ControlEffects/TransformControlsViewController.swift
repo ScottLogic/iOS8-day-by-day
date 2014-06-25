@@ -46,9 +46,9 @@ class TransformControlsViewController: UIViewController {
     backgroundView = prepareVisualEffectView()
     view.addSubview(backgroundView)
     
-    applyEqualSizeConstraints(view, v2: backgroundView!)
+    applyEqualSizeConstraints(view, v2: backgroundView!, includeTop: false)
     
-    view.backgroundColor = UIColor(white: 1, alpha: 0)
+    view.backgroundColor = UIColor(white: 0, alpha: 0)
     
   }
   
@@ -56,21 +56,23 @@ class TransformControlsViewController: UIViewController {
   func prepareVisualEffectView() -> UIVisualEffectView {
     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
     let effectView = UIVisualEffectView(effect: blurEffect)
-    effectView.contentView.backgroundColor = UIColor(white: 0.7, alpha: 0)
+    effectView.contentView.backgroundColor = UIColor(white: 0, alpha: 0)
     containerView.removeFromSuperview()
     effectView.contentView.addSubview(containerView)
     containerView.setTranslatesAutoresizingMaskIntoConstraints(false)
     effectView.setTranslatesAutoresizingMaskIntoConstraints(false)
-    applyEqualSizeConstraints(effectView.contentView, v2: containerView)
+    applyEqualSizeConstraints(effectView.contentView, v2: containerView, includeTop: true)
     
     return effectView
   }
   
-  func applyEqualSizeConstraints(v1: UIView, v2: UIView) {
-    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .CenterX, relatedBy: .Equal, toItem: v2, attribute: .CenterX, multiplier: 1, constant: 0))
-    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .CenterY, relatedBy: .Equal, toItem: v2, attribute: .CenterY, multiplier: 1, constant: 0))
-    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .Width, relatedBy: .Equal, toItem: v2, attribute: .Width, multiplier: 1, constant: 0))
-    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .Height, relatedBy: .Equal, toItem: v2, attribute: .Height, multiplier: 1, constant: 0))
+  func applyEqualSizeConstraints(v1: UIView, v2: UIView, includeTop: Bool) {
+    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .Left, relatedBy: .Equal, toItem: v2, attribute: .Left, multiplier: 1, constant: 0))
+    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .Right, relatedBy: .Equal, toItem: v2, attribute: .Right, multiplier: 1, constant: 0))
+    v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .Bottom, relatedBy: .Equal, toItem: v2, attribute: .Bottom, multiplier: 1, constant: 0))
+    if(includeTop) {
+      v1.addConstraint(NSLayoutConstraint(item: v1, attribute: .Top, relatedBy: .Equal, toItem: v2, attribute: .Top, multiplier: 1, constant: 0))
+    }
   }
   
 
