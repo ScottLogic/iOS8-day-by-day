@@ -28,6 +28,7 @@ class TwoHorseRaceController {
   
   init(horses: Horse[]) {
     self.horses = horses
+    srand48(time(nil));
   }
   
   func reset() {
@@ -38,20 +39,21 @@ class TwoHorseRaceController {
   }
   
   func startRace(maxDuration: NSTimeInterval, horseCrossedLineCallback: ((Horse) -> Void)?) {
+
     for horse in horses {
       // Generate a random time
-      let duration = maxDuration
+      let duration = maxDuration / 2.0 * (1 + drand48())
       
       // Perform the animation
-      UIView.animateWithDuration(duration, animations: {
-        self.updateConstraintsToEndOfRace(horse)
-        horse.horseView.layoutIfNeeded()
-      }, completion: {
-        (success: Bool) in
-        if let callback = horseCrossedLineCallback? {
-          callback(horse)
-        }
-      })
+      UIView.animateWithDuration(duration, delay: 0, options: .CurveEaseIn,
+        animations: {
+          self.updateConstraintsToEndOfRace(horse)
+          horse.horseView.layoutIfNeeded()
+        }, completion: { _ in
+          if let callback = horseCrossedLineCallback? {
+            callback(horse)
+          }
+        })
     }
   }
   
