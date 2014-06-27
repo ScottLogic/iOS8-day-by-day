@@ -13,19 +13,21 @@ struct Horse {
   var horseView: UIView
   var startConstraint: NSLayoutConstraint
   var finishConstraint: NSLayoutConstraint?
+  
+  init(horseView: UIView, startConstraint: NSLayoutConstraint, finishLineOffset:CGFloat) {
+    self.horseView = horseView
+    self.startConstraint = startConstraint
+    self.finishConstraint = NSLayoutConstraint(item: horseView, attribute: .Right, relatedBy: .Equal, toItem: horseView.superview, attribute: .Right, multiplier: 1, constant: finishLineOffset)
+  }
 }
 
 
 class TwoHorseRaceController {
   
   var horses: Horse[]
-  var finishOffsetFromSuperview: CGFloat
-  var startOffsetFromSuperview: CGFloat
   
-  init(horses: Horse[], finishLine: UIView) {
+  init(horses: Horse[]) {
     self.horses = horses
-    self.finishOffsetFromSuperview = 0
-    self.startOffsetFromSuperview = 0
   }
   
   func reset() {
@@ -35,29 +37,31 @@ class TwoHorseRaceController {
     }
   }
   
-  func startRace(maxDuration: NSTimeInterval, horseCrossedLineCallback: (Horse) -> ()) {
+  func startRace(maxDuration: NSTimeInterval, horseCrossedLineCallback: ((Horse) -> Void)?) {
     for horse in horses {
       // Generate a random time
       let duration = maxDuration
+      
       // Perform the animation
-      UIView.animateWithDuration(duration,
-        animations: {
-          self.updateConstraintsToEndOfRace(horse)
-          horse.horseView.layoutIfNeeded()
-        },
-        completion: { _ -> () in
-          horseCrossedLineCallback(horse)
-        })
+      UIView.animateWithDuration(duration, animations: {
+        self.updateConstraintsToEndOfRace(horse)
+        horse.horseView.layoutIfNeeded()
+      }, completion: {
+        (success: Bool) in
+        if let callback = horseCrossedLineCallback? {
+          callback(horse)
+        }
+      })
     }
   }
   
   func updateConstraintsToEndOfRace(horse: Horse) {
-    horse.horseView.removeConstraint(horse.startConstraint)
-    // Create the end constraint
+    horse.horseView.superview.removeConstraint(horse.startConstraint)
+    horse.horseView.superview.addConstraint(horse.finishConstraint)
   }
   
   func updateContraintsToStartOfRace(horse: Horse) {
-    horse.horseView.removeConstraint(horse.finishConstraint)
-    horse.horseView.addConstraint(horse.startConstraint)
+    horse.horseView.superview.removeConstraint(horse.finishConstraint)
+    horse.horseView.superview.addConstraint(horse.startConstraint)
   }
 }
