@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F45C69FD195D964F00615E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69FC195D964F00615E3A /* AppDelegate.swift */; };
+		F45C69FF195D964F00615E3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69FE195D964F00615E3A /* ViewController.swift */; };
+		F45C6A02195D965000615E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A00195D965000615E3A /* Main.storyboard */; };
+		F45C6A04195D965000615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A03195D965000615E3A /* Images.xcassets */; };
+		F45C6A10195D965000615E3A /* FontasticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C6A0F195D965000615E3A /* FontasticTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F45C6A0A195D965000615E3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F45C69EF195D964F00615E3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F45C69F6195D964F00615E3A;
+			remoteInfo = Fontastic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F45C69F7195D964F00615E3A /* Fontastic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fontastic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45C69FB195D964F00615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F45C69FC195D964F00615E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F45C69FE195D964F00615E3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F45C6A01195D965000615E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F45C6A03195D965000615E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F45C6A09195D965000615E3A /* FontasticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontasticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45C6A0E195D965000615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F45C6A0F195D965000615E3A /* FontasticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontasticTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F45C69F4195D964F00615E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45C6A06195D965000615E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F45C69EE195D964F00615E3A = {
+			isa = PBXGroup;
+			children = (
+				F45C69F9195D964F00615E3A /* Fontastic */,
+				F45C6A0C195D965000615E3A /* FontasticTests */,
+				F45C69F8195D964F00615E3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F45C69F8195D964F00615E3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F45C69F7195D964F00615E3A /* Fontastic.app */,
+				F45C6A09195D965000615E3A /* FontasticTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F45C69F9195D964F00615E3A /* Fontastic */ = {
+			isa = PBXGroup;
+			children = (
+				F45C69FC195D964F00615E3A /* AppDelegate.swift */,
+				F45C69FE195D964F00615E3A /* ViewController.swift */,
+				F45C6A00195D965000615E3A /* Main.storyboard */,
+				F45C6A03195D965000615E3A /* Images.xcassets */,
+				F45C69FA195D964F00615E3A /* Supporting Files */,
+			);
+			path = Fontastic;
+			sourceTree = "<group>";
+		};
+		F45C69FA195D964F00615E3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F45C69FB195D964F00615E3A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F45C6A0C195D965000615E3A /* FontasticTests */ = {
+			isa = PBXGroup;
+			children = (
+				F45C6A0F195D965000615E3A /* FontasticTests.swift */,
+				F45C6A0D195D965000615E3A /* Supporting Files */,
+			);
+			path = FontasticTests;
+			sourceTree = "<group>";
+		};
+		F45C6A0D195D965000615E3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F45C6A0E195D965000615E3A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F45C69F6195D964F00615E3A /* Fontastic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45C6A13195D965000615E3A /* Build configuration list for PBXNativeTarget "Fontastic" */;
+			buildPhases = (
+				F45C69F3195D964F00615E3A /* Sources */,
+				F45C69F4195D964F00615E3A /* Frameworks */,
+				F45C69F5195D964F00615E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fontastic;
+			productName = Fontastic;
+			productReference = F45C69F7195D964F00615E3A /* Fontastic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F45C6A08195D965000615E3A /* FontasticTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45C6A16195D965000615E3A /* Build configuration list for PBXNativeTarget "FontasticTests" */;
+			buildPhases = (
+				F45C6A05195D965000615E3A /* Sources */,
+				F45C6A06195D965000615E3A /* Frameworks */,
+				F45C6A07195D965000615E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F45C6A0B195D965000615E3A /* PBXTargetDependency */,
+			);
+			name = FontasticTests;
+			productName = FontasticTests;
+			productReference = F45C6A09195D965000615E3A /* FontasticTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F45C69EF195D964F00615E3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ShinobiControls;
+				TargetAttributes = {
+					F45C69F6195D964F00615E3A = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					F45C6A08195D965000615E3A = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = F45C69F6195D964F00615E3A;
+					};
+				};
+			};
+			buildConfigurationList = F45C69F2195D964F00615E3A /* Build configuration list for PBXProject "Fontastic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F45C69EE195D964F00615E3A;
+			productRefGroup = F45C69F8195D964F00615E3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F45C69F6195D964F00615E3A /* Fontastic */,
+				F45C6A08195D965000615E3A /* FontasticTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F45C69F5195D964F00615E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45C6A02195D965000615E3A /* Main.storyboard in Resources */,
+				F45C6A04195D965000615E3A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45C6A07195D965000615E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F45C69F3195D964F00615E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45C69FF195D964F00615E3A /* ViewController.swift in Sources */,
+				F45C69FD195D964F00615E3A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45C6A05195D965000615E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45C6A10195D965000615E3A /* FontasticTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F45C6A0B195D965000615E3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F45C69F6195D964F00615E3A /* Fontastic */;
+			targetProxy = F45C6A0A195D965000615E3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F45C6A00195D965000615E3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45C6A01195D965000615E3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F45C6A11195D965000615E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F45C6A12195D965000615E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F45C6A14195D965000615E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Fontastic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F45C6A15195D965000615E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Fontastic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F45C6A17195D965000615E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fontastic.app/Fontastic";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FontasticTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		F45C6A18195D965000615E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fontastic.app/Fontastic";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FontasticTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F45C69F2195D964F00615E3A /* Build configuration list for PBXProject "Fontastic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45C6A11195D965000615E3A /* Debug */,
+				F45C6A12195D965000615E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F45C6A13195D965000615E3A /* Build configuration list for PBXNativeTarget "Fontastic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45C6A14195D965000615E3A /* Debug */,
+				F45C6A15195D965000615E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F45C6A16195D965000615E3A /* Build configuration list for PBXNativeTarget "FontasticTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45C6A17195D965000615E3A /* Debug */,
+				F45C6A18195D965000615E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F45C69EF195D964F00615E3A /* Project object */;
+}
