@@ -13,6 +13,7 @@ import UIKit
 class HorseRaceTests: XCTestCase {
   
   var viewController: ViewController!
+  var raceController: TwoHorseRaceController!
   
   override func setUp() {
     super.setUp()
@@ -21,20 +22,30 @@ class HorseRaceTests: XCTestCase {
     // Get hold of the view controller
     let window = UIApplication.sharedApplication().delegate.window!
     viewController = window.rootViewController as? ViewController
-    
+    raceController = viewController.raceController
   }
   
   override func tearDown() {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    viewController.raceController.reset()
     super.tearDown()
+  }
+  
+  func testBasicAsyncMethod() {
+    // Check that we get called back as expected
+    let expectation = expectationWithDescription("Async Method")
+    
+    raceController.someKindOfAsyncMethod({
+      expectation.fulfill()
+      })
+    
+    waitForExpectationsWithTimeout(5, handler: nil)
   }
   
   
   func testRaceCallbacks() {
     // The horse race controller should callback each time a horse completes
     // the race.
-    let raceController = viewController.createRaceController()
-    
     let h1Expectation = expectationWithDescription("Horse 1 should complete")
     let h2Expectation = expectationWithDescription("Horse 2 should complete")
     
