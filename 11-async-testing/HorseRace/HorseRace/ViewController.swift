@@ -9,7 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-                            
+  
+  
+  @IBOutlet var horse1: UIImageView
+  @IBOutlet var horse2: UIImageView
+  @IBOutlet var horse1StartConstraint: NSLayoutConstraint
+  @IBOutlet var horse2StartConstraint: NSLayoutConstraint
+  
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
