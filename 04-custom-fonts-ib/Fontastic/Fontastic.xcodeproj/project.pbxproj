@@ -12,6 +12,8 @@
 		F45C6A02195D965000615E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A00195D965000615E3A /* Main.storyboard */; };
 		F45C6A04195D965000615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A03195D965000615E3A /* Images.xcassets */; };
 		F45C6A10195D965000615E3A /* FontasticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C6A0F195D965000615E3A /* FontasticTests.swift */; };
+		F45C6A1C195D9BD400615E3A /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A1A195D9BD400615E3A /* LICENSE.txt */; };
+		F45C6A1D195D9BD400615E3A /* PermanentMarker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A1B195D9BD400615E3A /* PermanentMarker.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		F45C6A09195D965000615E3A /* FontasticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontasticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C6A0E195D965000615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C6A0F195D965000615E3A /* FontasticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontasticTests.swift; sourceTree = "<group>"; };
+		F45C6A1A195D9BD400615E3A /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = ../../../../../../../../Downloads/Permanent_Marker/LICENSE.txt; sourceTree = "<group>"; };
+		F45C6A1B195D9BD400615E3A /* PermanentMarker.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PermanentMarker.ttf; path = ../../../../../../../../Downloads/Permanent_Marker/PermanentMarker.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		F45C69F9195D964F00615E3A /* Fontastic */ = {
 			isa = PBXGroup;
 			children = (
+				F45C6A19195D9AB400615E3A /* 3rdParty */,
 				F45C69FC195D964F00615E3A /* AppDelegate.swift */,
 				F45C69FE195D964F00615E3A /* ViewController.swift */,
 				F45C6A00195D965000615E3A /* Main.storyboard */,
@@ -107,6 +112,15 @@
 				F45C6A0E195D965000615E3A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F45C6A19195D9AB400615E3A /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				F45C6A1A195D9BD400615E3A /* LICENSE.txt */,
+				F45C6A1B195D9BD400615E3A /* PermanentMarker.ttf */,
+			);
+			path = 3rdParty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,8 +203,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F45C6A1C195D9BD400615E3A /* LICENSE.txt in Resources */,
 				F45C6A02195D965000615E3A /* Main.storyboard in Resources */,
 				F45C6A04195D965000615E3A /* Images.xcassets in Resources */,
+				F45C6A1D195D9BD400615E3A /* PermanentMarker.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
