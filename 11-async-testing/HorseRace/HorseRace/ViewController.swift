@@ -16,20 +16,32 @@ class ViewController: UIViewController {
   @IBOutlet var horse1StartConstraint: NSLayoutConstraint
   @IBOutlet var horse2StartConstraint: NSLayoutConstraint
   
+  @IBOutlet var startRaceButton: UIButton
+  @IBOutlet var resetButton: UIButton
   
   var raceController: TwoHorseRaceController!
+  var numberOfHorsesCurrentlyRunning = 0
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     raceController = createRaceController()
+    resetButton.enabled = false
     
   }
   
   @IBAction func handleStartRaceButton(sender: UIButton) {
+    numberOfHorsesCurrentlyRunning = 2
+    startRaceButton.enabled = false
     raceController.startRace(5, horseCrossedLineCallback:{
       (horse:Horse) in
+      // Deal with the number of horses
+      self.numberOfHorsesCurrentlyRunning -= 1
+      if self.numberOfHorsesCurrentlyRunning == 0 {
+        self.resetButton.enabled = true
+      }
+      
       switch horse.horseView {
       case self.horse1:
         println("Horse 1 has completed the race!")
@@ -43,6 +55,8 @@ class ViewController: UIViewController {
   
   @IBAction func handleResetRaceButton(sender: UIButton) {
     raceController.reset()
+    startRaceButton.enabled = true
+    resetButton.enabled = false
   }
   
   

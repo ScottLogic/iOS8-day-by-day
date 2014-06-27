@@ -64,5 +64,15 @@ class HorseRaceTests: XCTestCase {
     waitForExpectationsWithTimeout(5, handler: nil)
   }
   
+  func testResetButtonEnabledOnceRaceComplete() {
+    let expectation = keyValueObservingExpectationForObject(viewController.resetButton, keyPath: "enabled", expectedValue: true)
+    
+    // Simulate tapping the start race button
+    viewController.handleStartRaceButton(viewController.startRaceButton)
+    
+    // Wait for the test to run
+    waitForExpectationsWithTimeout(5, handler: nil)
+  }
+  
   
 }

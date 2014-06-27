@@ -106,6 +106,8 @@
                         <outlet property="horse1StartConstraint" destination="haA-WL-cUJ" id="Eea-Ev-yB7"/>
                         <outlet property="horse2" destination="bmq-kx-sBA" id="lph-XQ-2kN"/>
                         <outlet property="horse2StartConstraint" destination="4DU-aa-4eD" id="qnB-AV-diP"/>
+                        <outlet property="resetButton" destination="a8i-MU-Tm2" id="KuY-5t-wpk"/>
+                        <outlet property="startRaceButton" destination="Vo1-OC-vX3" id="vni-Qo-2Wa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
