@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AdaptiveArmoury" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="katana" translatesAutoresizingMaskIntoConstraints="NO" id="LVW-6J-fGI">
+                                <rect key="frame" x="0.0" y="253" width="480" height="227"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xIC-rT-Jas">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="253"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="katana (刀)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="blI-8j-m2b">
+                                        <rect key="frame" x="20" y="20" width="226" height="59"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="NOUN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-Dn-r74">
+                                        <rect key="frame" x="20" y="87" width="65" height="26"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="katana (plural katana or katanas)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Zrx-HO-lah">
+                                        <rect key="frame" x="20" y="121" width="293" height="26"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" misplaced="YES" text="1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" preferredMaxLayoutWidth="440" translatesAutoresizingMaskIntoConstraints="NO" id="UAI-HQ-zWb">
+                                        <rect key="frame" x="20" y="155" width="440" height="78"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UAI-HQ-zWb" firstAttribute="top" secondItem="Zrx-HO-lah" secondAttribute="bottom" constant="8" id="1QO-He-Ngf"/>
+                                    <constraint firstItem="UAI-HQ-zWb" firstAttribute="leading" secondItem="Zrx-HO-lah" secondAttribute="leading" id="9AU-fc-q6S"/>
+                                    <constraint firstAttribute="bottom" secondItem="UAI-HQ-zWb" secondAttribute="bottom" constant="20" id="9oJ-aj-6ND"/>
+                                    <constraint firstItem="8h4-Dn-r74" firstAttribute="leading" secondItem="Zrx-HO-lah" secondAttribute="leading" id="PPf-eG-DjD"/>
+                                    <constraint firstItem="blI-8j-m2b" firstAttribute="leading" secondItem="xIC-rT-Jas" secondAttribute="leading" constant="20" id="QgW-4S-AIZ"/>
+                                    <constraint firstItem="8h4-Dn-r74" firstAttribute="top" secondItem="blI-8j-m2b" secondAttribute="bottom" constant="8" id="S4u-14-u7P"/>
+                                    <constraint firstItem="Zrx-HO-lah" firstAttribute="top" secondItem="8h4-Dn-r74" secondAttribute="bottom" constant="8" id="V1t-gk-OMl"/>
+                                    <constraint firstItem="8h4-Dn-r74" firstAttribute="leading" secondItem="blI-8j-m2b" secondAttribute="leading" id="Z0X-av-fvN"/>
+                                    <constraint firstItem="blI-8j-m2b" firstAttribute="top" secondItem="xIC-rT-Jas" secondAttribute="top" constant="20" id="fs5-ge-oYh"/>
+                                    <constraint firstAttribute="trailing" secondItem="UAI-HQ-zWb" secondAttribute="trailing" constant="20" id="hTP-lC-Kmf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LVW-6J-fGI" firstAttribute="top" secondItem="xIC-rT-Jas" secondAttribute="bottom" id="6y4-d1-ic4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LVW-6J-fGI" secondAttribute="bottom" id="HgT-eY-3Ob"/>
+                            <constraint firstAttribute="trailing" secondItem="xIC-rT-Jas" secondAttribute="trailing" id="U6O-DN-83L"/>
+                            <constraint firstItem="LVW-6J-fGI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WyR-CX-pq0"/>
+                            <constraint firstItem="xIC-rT-Jas" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YOW-Iv-bLT"/>
+                            <constraint firstItem="xIC-rT-Jas" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z2e-Q8-vhF"/>
+                            <constraint firstItem="xIC-rT-Jas" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="eQu-hU-qW6"/>
+                            <constraint firstAttribute="trailing" secondItem="LVW-6J-fGI" secondAttribute="trailing" id="oTp-yX-BAL"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="katana" width="1024" height="619"/>
+    </resources>
 </document>
