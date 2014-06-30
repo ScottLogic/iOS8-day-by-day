@@ -17,31 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="katana" translatesAutoresizingMaskIntoConstraints="NO" id="LVW-6J-fGI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" image="katana" translatesAutoresizingMaskIntoConstraints="NO" id="LVW-6J-fGI">
                                 <rect key="frame" x="0.0" y="240" width="480" height="240"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIC-rT-Jas">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="katana (刀)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="blI-8j-m2b">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="katana (刀)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="blI-8j-m2b">
                                         <rect key="frame" x="20" y="20" width="226" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="NOUN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-Dn-r74">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOUN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-Dn-r74">
                                         <rect key="frame" x="20" y="87" width="65" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="katana (plural katana or katanas)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Zrx-HO-lah">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="katana (plural katana or katanas)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" preferredMaxLayoutWidth="293" translatesAutoresizingMaskIntoConstraints="NO" id="Zrx-HO-lah">
                                         <rect key="frame" x="20" y="121" width="293" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" preferredMaxLayoutWidth="440" translatesAutoresizingMaskIntoConstraints="NO" id="UAI-HQ-zWb">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" preferredMaxLayoutWidth="440" translatesAutoresizingMaskIntoConstraints="NO" id="UAI-HQ-zWb">
                                         <rect key="frame" x="20" y="155" width="440" height="65"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,25 +60,64 @@
                                     <constraint firstItem="8h4-Dn-r74" firstAttribute="leading" secondItem="blI-8j-m2b" secondAttribute="leading" id="Z0X-av-fvN"/>
                                     <constraint firstItem="blI-8j-m2b" firstAttribute="top" secondItem="xIC-rT-Jas" secondAttribute="top" constant="20" id="fs5-ge-oYh"/>
                                     <constraint firstAttribute="trailing" secondItem="UAI-HQ-zWb" secondAttribute="trailing" constant="20" id="hTP-lC-Kmf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zrx-HO-lah" secondAttribute="trailing" constant="20" id="lG5-oO-CeI"/>
+                                    <constraint firstAttribute="trailing" secondItem="blI-8j-m2b" secondAttribute="trailing" constant="20" id="w8n-9l-6TN"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="w8n-9l-6TN"/>
+                                        <exclude reference="lG5-oO-CeI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="w8n-9l-6TN"/>
+                                        <include reference="lG5-oO-CeI"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LVW-6J-fGI" firstAttribute="top" secondItem="xIC-rT-Jas" secondAttribute="bottom" id="6y4-d1-ic4"/>
+                            <constraint firstItem="xIC-rT-Jas" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="HQB-1G-2CG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LVW-6J-fGI" secondAttribute="bottom" id="HgT-eY-3Ob"/>
+                            <constraint firstItem="xIC-rT-Jas" firstAttribute="leading" secondItem="LVW-6J-fGI" secondAttribute="trailing" id="KG5-lF-Gwz"/>
+                            <constraint firstItem="LVW-6J-fGI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NbB-ve-JRK"/>
                             <constraint firstAttribute="trailing" secondItem="xIC-rT-Jas" secondAttribute="trailing" id="U6O-DN-83L"/>
                             <constraint firstItem="LVW-6J-fGI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WyR-CX-pq0"/>
                             <constraint firstItem="xIC-rT-Jas" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YOW-Iv-bLT"/>
                             <constraint firstItem="xIC-rT-Jas" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z2e-Q8-vhF"/>
                             <constraint firstItem="xIC-rT-Jas" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="eQu-hU-qW6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xIC-rT-Jas" secondAttribute="bottom" id="iPZ-tn-etS"/>
                             <constraint firstAttribute="trailing" secondItem="LVW-6J-fGI" secondAttribute="trailing" id="oTp-yX-BAL"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NbB-ve-JRK"/>
+                                <exclude reference="HQB-1G-2CG"/>
+                                <exclude reference="KG5-lF-Gwz"/>
+                                <exclude reference="iPZ-tn-etS"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="6y4-d1-ic4"/>
+                                <include reference="NbB-ve-JRK"/>
+                                <exclude reference="oTp-yX-BAL"/>
+                                <include reference="HQB-1G-2CG"/>
+                                <include reference="KG5-lF-Gwz"/>
+                                <exclude reference="Z2e-Q8-vhF"/>
+                                <exclude reference="eQu-hU-qW6"/>
+                                <include reference="iPZ-tn-etS"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="118" y="45"/>
         </scene>
     </scenes>
     <resources>
