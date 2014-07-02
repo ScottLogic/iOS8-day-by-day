@@ -13,7 +13,7 @@ iOS8 is jam-packed with fantastic new APIs, technologies and frameworks, offerin
 untold possibilities to developers. With this in mind it gives me great pleasure
 to announce that over the coming weeks and months we'll have a new blog series -
 the somewhat originally titled "iOS8 Day-by-Day". We'll kick off properly next
-week, but check back later this week for an intro to swift post.
+week, but check back later this week for an intro to Swift post.
 
 ## What is it?
 
@@ -64,15 +64,15 @@ We'll also mention it on twitter: [@shinobicontrols](https://twitter.com/Shinobi
 and on [Google+](https://plus.google.com/+ShinobiControls) - you should follow us
 to stay informed.
 
-## Will it be written in swift?
+## Will it be written in Swift?
 
-Yes. Although Apple didn't suggest that objC will be going anywhere, swift is
+Yes. Although Apple didn't suggest that objC will be going anywhere, Swift is
 very much the way forward. Don't let this put you off though. The code I'll be
 writing will all be easy to follow - and fairly trivial to translate back in to
 objective C, should you wish to. Swift has a lot of incredibly powerful features,
 but they won't be the topic of this blog series.
 
-To help you get up to speed, I'll write a short "intro to swift" blog post as the
+To help you get up to speed, I'll write a short "intro to Swift" blog post as the
 first article. This will aim to give you just enough info to follow any sample
 code in the following blog posts.
 
