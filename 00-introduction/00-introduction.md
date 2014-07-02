@@ -58,9 +58,7 @@ We've set up an email list that you can subscribe to. Every time a new article i
 the series is posted we'll send out a short email. Hit the following button to
 subscribe:
 
-<div class="subscribe-button-inner" style="height: 27px; width: 109px; overflow: visible; text-align: left; margin: 0px; padding: 0px; border: 0px; display: inline-block;">
-    <iframe frameborder="0" allowtransparency="true" src="http://btn.createsend1.com/subscribebutton/subscribe#listid=t%2F25%2F0F7%2F696%2FE9048CBD08567D6D" class="subscribe-button-frame" style="border: 0px none transparent; overflow: hidden; display: inline-block; position: absolute; visibility: visible; margin: 0px !important; padding: 0px !important; height: 27px; width: 109px; background: transparent;"></iframe>
-</div>
+<div class="createsend-button" style="height:27px;display:inline-block;margin:auto;" data-listid="t/25/0F7/696/E9048CBD08567D6D"></div>
 
 We'll also mention it on twitter: [@shinobicontrols](https://twitter.com/ShinobiControls),
 and on [Google+](https://plus.google.com/+ShinobiControls) - you should follow us
