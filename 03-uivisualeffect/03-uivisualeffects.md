@@ -23,6 +23,16 @@ available in the form of `UIVisualEffects`. Apple has made their underlying
 implementation publicly accessible, so now you too can get cool blurring-style
 effects in your apps.
 
+The app which accompanies this project displays an image, and has an overlay view
+with controls to vary the transform applied to the image. Before using the
+UI visual effects it looks like this:
+
+![No Effect](assets/no_effect.png)
+
+The source code for the app is available on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Feel free to send any pull requests or issues you find :)
+
 
 ## Blurring with UIVisualEffectView
 
@@ -99,7 +109,7 @@ In the accompanying demo app, adding this functionality allows the layout of the
 controls to be in a storyboard. It results in an overlaid image controls view
 that looks like this:
 
-PICTURE
+![Blur Effect](assets/blur_effect.png)
 
 
 ## Improving legibility with vibrancy
@@ -147,7 +157,7 @@ are all correct:
 
 This will result in this really rather cool effect:
 
-PICTURE
+![Blur and Vibrancy](assets/blur_vibrancy_effect.png)
 
 
 ## Performance Concerns
@@ -177,3 +187,12 @@ so it's good to have it ready to go in iOS8.
 
 Go and give it a try, but remember not to go wild with it - keep concerns of
 performance and energy usage at the forefront of your mind.
+
+Don't forget that the code which accompanies this blog series is all available
+on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Feel free to send any pull requests or issues you find, or gimme a
+shout on twitter -
+[@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+sam
