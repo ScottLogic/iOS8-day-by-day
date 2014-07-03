@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		22159244195B46840077C0F4 /* MovingAverageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverageTests.swift; sourceTree = "<group>"; tabWidth = 2; };
-		223A2491195B62E400B0DE94 /* SpeedyAverage Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpeedyAverage Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		223A2491195B62E400B0DE94 /* SpeedyAverageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedyAverageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		223A2494195B62E400B0DE94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C98FBB195B5A3700842890 /* BetterMovingAverageCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterMovingAverageCalc.swift; sourceTree = "<group>"; };
 		F45C69CD195B23D900615E3A /* SpeedyAverage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedyAverage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				F45C69CD195B23D900615E3A /* SpeedyAverage.app */,
-				223A2491195B62E400B0DE94 /* SpeedyAverage Tests.xctest */,
+				223A2491195B62E400B0DE94 /* SpeedyAverageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,7 +130,7 @@
 			);
 			name = SpeedyAverageTests;
 			productName = "SpeedyAverage Tests";
-			productReference = 223A2491195B62E400B0DE94 /* SpeedyAverage Tests.xctest */;
+			productReference = 223A2491195B62E400B0DE94 /* SpeedyAverageTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F45C69CC195B23D900615E3A /* SpeedyAverage */ = {
