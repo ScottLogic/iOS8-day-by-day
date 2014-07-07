@@ -85,11 +85,90 @@ same class.
 
 ### Subclassing
 
+When you create a subclass then in addition to the aforementioned rules associated
+with designated initialisers, you are also required to call a designated
+initialiser of the superclass.
 
+Look at the following example - a ninja is clearly a person, but they have a
+collection of weapons, defined by the accompanying enum:
 
+    class Ninja: Person {
+      var weapons: Weapon[]?
+    }
 
-## Usage in Swift
+    enum Weapon {
+      case Katana, Tsuba, Shuriken, Kusarigama, Fukiya
+    }
+
+The `Ninja` class definition doesn't currently have an initialiser, and since
+the only additional property is an optional (and thus defaults to nil) it isn't
+a requirement to have one. However, it'd be nice to add one which allows setting
+the weapons array at initialisation time:
+
+    init(name: String, age: Int?, weapons: Weapon[]?) {
+      self.weapons = weapons
+
+      super.init(name: name, age: age)
+
+      self.consideredDangerous = true
+    }
+
+This demonstrates the rules of how a designated initialiser must be formed in
+Swift:
+
+1. Any properties on the subclass must be initialised correctly. Here it's not
+strictly necessary since `weapons` is an optional type.
+2. Once the current object's properties are all initialised, there __must__ be
+a call to a designated initialiser on the superclass.
+3. You can then update any properties inherited from the superclass.
+
+This order is very important, and changing it will result in compiler errors. Note
+that the order is different to the ordering used in subclass initialisers in
+objective-C, where the call to the superclass is the first instruction.
+
+You can add convenience initialisers to subclasses as well, but they must call
+a designated initialiser of the same class. They __cannnot__ call an initialiser
+of a superclass:
+
+    convenience init(name: String) {
+      self.init(name: name, age: nil, weapons: nil)
+    }
+
+This results in you being able to create ninjas in 2 ways:
+
+    let tina = Ninja(name: "tina", age: 23, weapons: [.Fukiya, .Tsuba])
+    let trevor = Ninja(name: "trevor")
+
 
 ## Usage in objective-C
 
+Objective-C has the notion of designated initialisers - but in an informal context.
+In order to enable full interoperability between objective-C and Swift, there is
+a macro with which you can annotate your objective-C initialisers:
+`NS_DESIGNATED_INITIALIZER`:
+
+    - (instancetype)init NS_DESIGNATED_INITIALIZER;
+
+By using this, then all other initialisers in your class will be interpreted as
+being convenience initialisers. The same rules apply with objective-C initialisers
+as their Swift counterparts.
+
 ## Conclusion
+
+The designated initialiser pattern has existed in the Cocoa world for a long time,
+but Swift formalises it somewhat. You'll need to fully understand it and what
+is required of you as a developer in order to create your own classes and subclasses
+in Swift.
+
+It's also definitely worth adopting the new macro in any new objective-C that you
+write, particularly if you want it to be interoperable with Swift code.
+
+The code which accompanies this post is in the form of an Xcode 6 playground -
+and demonstrates how the different patterns work. It is part of the day-by-day
+repo on the ShinobiControls github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+If you have any questions about this topic, then Apple's Swift book is very
+thorough, or feel free to grab me on twitter - [@iwanymyrealname](https://twitter.com/iwanymyrealname)
+
+
+sam
