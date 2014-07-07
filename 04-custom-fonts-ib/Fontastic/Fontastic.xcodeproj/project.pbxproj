@@ -12,8 +12,8 @@
 		F45C6A02195D965000615E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A00195D965000615E3A /* Main.storyboard */; };
 		F45C6A04195D965000615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A03195D965000615E3A /* Images.xcassets */; };
 		F45C6A10195D965000615E3A /* FontasticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C6A0F195D965000615E3A /* FontasticTests.swift */; };
-		F45C6A1C195D9BD400615E3A /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A1A195D9BD400615E3A /* LICENSE.txt */; };
-		F45C6A1D195D9BD400615E3A /* PermanentMarker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A1B195D9BD400615E3A /* PermanentMarker.ttf */; };
+		F4C41C44196ADC9900D6BD66 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F4C41C42196ADC9900D6BD66 /* LICENSE.txt */; };
+		F4C41C45196ADC9900D6BD66 /* PermanentMarker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4C41C43196ADC9900D6BD66 /* PermanentMarker.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 		F45C6A09195D965000615E3A /* FontasticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontasticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C6A0E195D965000615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C6A0F195D965000615E3A /* FontasticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontasticTests.swift; sourceTree = "<group>"; };
-		F45C6A1A195D9BD400615E3A /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = ../../../../../../../../Downloads/Permanent_Marker/LICENSE.txt; sourceTree = "<group>"; };
-		F45C6A1B195D9BD400615E3A /* PermanentMarker.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PermanentMarker.ttf; path = ../../../../../../../../Downloads/Permanent_Marker/PermanentMarker.ttf; sourceTree = "<group>"; };
+		F4C41C42196ADC9900D6BD66 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		F4C41C43196ADC9900D6BD66 /* PermanentMarker.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PermanentMarker.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,8 @@
 		F45C6A19195D9AB400615E3A /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
-				F45C6A1A195D9BD400615E3A /* LICENSE.txt */,
-				F45C6A1B195D9BD400615E3A /* PermanentMarker.ttf */,
+				F4C41C42196ADC9900D6BD66 /* LICENSE.txt */,
+				F4C41C43196ADC9900D6BD66 /* PermanentMarker.ttf */,
 			);
 			path = 3rdParty;
 			sourceTree = "<group>";
@@ -203,10 +203,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F45C6A1C195D9BD400615E3A /* LICENSE.txt in Resources */,
+				F4C41C44196ADC9900D6BD66 /* LICENSE.txt in Resources */,
 				F45C6A02195D965000615E3A /* Main.storyboard in Resources */,
 				F45C6A04195D965000615E3A /* Images.xcassets in Resources */,
-				F45C6A1D195D9BD400615E3A /* PermanentMarker.ttf in Resources */,
+				F4C41C45196ADC9900D6BD66 /* PermanentMarker.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +415,7 @@
 				F45C6A15195D965000615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F45C6A16195D965000615E3A /* Build configuration list for PBXNativeTarget "FontasticTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +424,7 @@
 				F45C6A18195D965000615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
