@@ -26,8 +26,42 @@ at [github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiContro
 
 ## Font availability within Interface Builder
 
+Interface Builder is able to pick up any fonts that are part of your app's bundle,
+and the easiest way to ensure this is to drag your __ttf__ or __otf__ file from
+the finder into the app:
+
+![Font Installation](assets/font-installation-in-ib.png)
+
+Then, you'll be able to select this font using the attributes inspector in Xcode,
+when editing a __xib__ or __storyboard__ file:
+
+![Font Selection](assets/font-selection-in-ib.png)
+
+This will then update the appearance of the view appropriately in Interface
+Builder:
+
+![Font Appearing in IB](assets/forn-appearing-in-ib.png)
+
+This is great, but if you run your app up now, then you'll very quickly realise
+that it's not a completely happy story:
+
+![Font not working](assets/font-not-working-portrait.png)
+
 ## Declaring fonts for use within your app
 
+The reason that your font isn't being picked up at runtime, is because although
+Interface Builder is able to pick up any fonts in the bundle, you still have to
+declare them in the plist (as before) in order to use them.
+
+This is as simple as opening up the app's __Info.plist__ file, either directly
+from the project navigator, or using the __Info__ tab of the target's settings
+page, and adding the font:
+
+![Adding font to PList](assets/font-added-to-plist.png)
+
+You can run your app up again now, and this time you'll see it working!
+
+![Font working](assets/font-working-portrait.png) 
 
 ## Conclusion
 
