@@ -40,7 +40,7 @@ when editing a __xib__ or __storyboard__ file:
 This will then update the appearance of the view appropriately in Interface
 Builder:
 
-![Font Appearing in IB](assets/forn-appearing-in-ib.png)
+![Font Appearing in IB](assets/font-appearing-in-ib.png)
 
 This is great, but if you run your app up now, then you'll very quickly realise
 that it's not a completely happy story:
@@ -61,7 +61,7 @@ page, and adding the font:
 
 You can run your app up again now, and this time you'll see it working!
 
-![Font working](assets/font-working-portrait.png) 
+![Font working](assets/font-working-portrait.png)
 
 ## Conclusion
 
