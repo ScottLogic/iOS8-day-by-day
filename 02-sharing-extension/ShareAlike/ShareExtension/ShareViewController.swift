@@ -26,40 +26,50 @@ class ShareViewController: SLComposeServiceViewController {
     sessionConfig.sharedContainerIdentifier = "group.ShareAlike"
     let session = NSURLSession(configuration: sessionConfig)
     
-    
-    println(extensionContext.inputItems)
-    println("HELLLLOOOOOO")
-    
     // Only interested in the first item
     let extensionItem = extensionContext.inputItems[0] as NSExtensionItem
     
-    let picDeets = pictureDetailsFromExtensionItem(extensionItem)
+    let pictureDetails = pictureDetailsFromExtensionItem(extensionItem)
+    println(pictureDetails)
     
     // Prepare the URL Request
     let request = urlRequestWithExtensionItem(extensionItem, text: "hello")
+    
+    // Create the task, and kick it off
+    let task = session.dataTaskWithRequest(request)
+    task.resume()
     
     // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
     extensionContext.completeRequestReturningItems(nil, completionHandler: nil)
   }
   
-  override func configurationItems() -> AnyObject[]! {
+  override func configurationItems() -> [AnyObject]! {
     // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
     return NSArray()
   }
   
   
   func urlRequestWithExtensionItem(extensionItem: NSExtensionItem, text: String) -> NSURLRequest? {
-    let url = NSURL.URLWithString("http://requestb.in/15tnugc1")
+    let url = NSURL.URLWithString("http://requestb.in/oha28noh")
     let request = NSMutableURLRequest(URL: url)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     request.HTTPMethod = "POST"
-    return nil
+    
+    var jsonObject = NSMutableDictionary()
+    jsonObject["text"] = text
+    jsonObject["image"] = pictureDetailsFromExtensionItem(extensionItem)
+    
+    
+    let jsonData = NSJSONSerialization.dataWithJSONObject(jsonObject, options: nil, error: nil)
+    request.HTTPBody = jsonData
+    
+    return request
   }
   
-  func pictureDetailsFromExtensionItem(extensionItem: NSExtensionItem) -> Dictionary<String, String> {
+  func pictureDetailsFromExtensionItem(extensionItem: NSExtensionItem) -> [String:String] {
     
-    for attachment in extensionItem.attachments as NSItemProvider[] {
+    for attachment in extensionItem.attachments as [NSItemProvider] {
       if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage)) {
         attachment.loadItemForTypeIdentifier(kUTTypeImage, options: nil,
           completionHandler: {
