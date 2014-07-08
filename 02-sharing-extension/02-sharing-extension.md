@@ -74,7 +74,7 @@ negative its appearance becomes red
 Simply adding an extension to your app's project will allow it to be selected when
 a user requests to share something. We'll take a look at implementing some useful
 functionality soon, but first, let's learn a little about how to build, run
-and debug
+and debug.
 
 ### Building, running and debugging
 
@@ -91,28 +91,25 @@ However, the following approach seems to be reliable:
 which has easily available content for sharing. In the sample project, the
 __ShareAlike__ host app has an image and a share button which will trigger a
 standard UI share sheet:
+        @IBAction func handleShareSampleTapped(sender: AnyObject) {
+          shareContent(sharingText: "Highland Cow", sharingImage: sharingContentImageView.image)
+        }
 
-    @IBAction func handleShareSampleTapped(sender: AnyObject) {
-      shareContent(sharingText: "Highland Cow", sharingImage: sharingContentImageView.image)
-    }
+        // Utility methods
+        func shareContent(#sharingText: String?, sharingImage: UIImage?) {
+          var itemsToShare = [AnyObject]()
 
-    // Utility methods
-    func shareContent(#sharingText: String?, sharingImage: UIImage?) {
-      var itemsToShare = [AnyObject]()
+          if let text = sharingText {
+            itemsToShare.append(text)
+          }
+          if let image = sharingImage {
+            itemsToShare.append(image)
+          }
 
-      if let text = sharingText {
-        itemsToShare.append(text)
-      }
-      if let image = sharingImage {
-        itemsToShare.append(image)
-      }
-
-      let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
-      presentViewController(activityViewController, animated: true, completion: nil)
-    }
-
-PICTURE OF APP
-
+          let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+          presentViewController(activityViewController, animated: true, completion: nil)
+        }
+![ShareAlike](assets/sharealike.png)
 2. Develop your extension
 3. To debug and or test, run the scheme associated with your app. Then when you
 hit share then the debugger will automatically attach to the process associated
@@ -131,7 +128,7 @@ under the icon in the share sheet.
 
 The name is defined by the __Bundle display name__ (`CFBundleDisplayName`):
 
-PICTURE
+![Bundle Display Name](assets/bundle_display_name.png)
 
 You can also use the __Info.plist__ file to define under which circumstances
 your share extension is applicable - e.g. can it handle videos? There is a very
@@ -143,14 +140,14 @@ one of the values of which is `NSExtenionActivationRule`. This can be a boolean,
 a string or a dictionary. The following shows a dictionary with settings which
 will enable a single image to be shared, disables videos, files and URLs
 
-IMAGE HERE
+![Activation Rules](assets/activation_rules.png)
 
 The different dictionary keys are pretty self-explanatory, and the result can be
 seen here; selecting one image to share shows __ShareAlike__ as an option, whereas
 two images does not:
 
-TWO IMAGES
-
+![Share Single Image](assets/sharing_1_photo.png)
+![Share Two Images](assets/sharing_2_photos.png)
 
 ## Validating user input
 
@@ -188,9 +185,8 @@ that you can't ask a `String` for its length. This approach is always `O(N)`).
 You then determine whether you have reached the limit or not, and enable/disable
 the __Post__ button appropriately.
 
-
-TWO PICTURES
-
+![Acceptable number of characters](assets/validation_accept.png)
+![Too many characters](assets/validation_reject.png)
 
 
 ## Uploading from within an extension
@@ -370,11 +366,13 @@ through Xcode:
 In the demo the group is called `group.ShareAlike`
 4. Let Xcode go through the process of creating this group for you.
 
-PICTURE HERE
+![App group for host app](assets/app_groups_host_app.png)
 
 Then you need to go to the extension's target, and follow the same process. Note
 that you won't need to create a new app group, but instead select the one that
 you created for your host application.
+
+![App group for extension](assets/app_groups_extension.png)
 
 These app groups are registered against your developer ID, and the signing process
 ensures that only your apps are able to access these shared containers.
@@ -443,7 +441,7 @@ built, and then call `resume()` on it to kick it off in the background:
 If you run through this process now, with your own requestb.in URL in place, then
 you can expect to see results like this:
 
-PICTURE
+![Request Bin Success](assets/request_bin_example.png)
 
 
 ## Conclusion
