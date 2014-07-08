@@ -35,7 +35,9 @@ class ShareViewController: SLComposeServiceViewController {
     imageFromExtensionItem(extensionItem) {
       image in
       if image {
-        self.attachedImage = image
+        dispatch_async(dispatch_get_main_queue()) {
+          self.attachedImage = image
+        }
       }
     }
   }
@@ -106,20 +108,23 @@ class ShareViewController: SLComposeServiceViewController {
     
     for attachment in extensionItem.attachments as [NSItemProvider] {
       if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage)) {
-        attachment.loadItemForTypeIdentifier(kUTTypeImage, options: nil) {
-            (imageProvider, error) -> Void in
-            dispatch_async(dispatch_get_main_queue()) {
-              if let e = error {
-                println("Item loading error: \(e.localizedDescription)")
-              }
-              
-              if let imageData = imageProvider as? NSData {
-                let image = UIImage(data: imageData)
-                callback(image: image)
-              }
+        // Marshal on to a background thread
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+          attachment.loadItemForTypeIdentifier(kUTTypeImage, options: nil) {
+              (imageProvider, error) -> Void in
+              dispatch_async(dispatch_get_main_queue()) {
+                if let e = error {
+                  println("Item loading error: \(e.localizedDescription)")
+                }
+                
+                if let imageData = imageProvider as? NSData {
+                  let image = UIImage(data: imageData)
+                  callback(image: image)
+                }
 
-              callback(image: nil)
-            }
+                callback(image: nil)
+              }
+          }
         }
       }
     }
