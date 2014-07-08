@@ -18,11 +18,22 @@ class ShareViewController: SLComposeServiceViewController {
   // NOTE: This almost certainly _won't_ work for you. Create your own request bin
   //       at http://requestb.in/ and substitute that URL here.
   let sc_uploadURL = "http://requestb.in/oha28noh"
+  let sc_maxCharactersAllowed = 25
+  
   var attachedImage: UIImage?
   
   
   override func isContentValid() -> Bool {
     // Do validation of contentText and/or NSExtensionContext attachments here
+    if let currentMessage = contentText {
+      let currentMessageLength = countElements(currentMessage)
+      charactersRemaining = sc_maxCharactersAllowed - currentMessageLength
+      
+      if Int(charactersRemaining) < 0 {
+        return false
+      }
+    }
+    
     return true
   }
   
