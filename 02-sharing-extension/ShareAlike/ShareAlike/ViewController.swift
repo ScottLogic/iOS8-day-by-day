@@ -9,17 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  @IBOutlet var sharingContentImageView: UIImageView
+  
+  @IBAction func handleShareSampleTapped(sender: AnyObject) {
+    shareContent(sharingText: "Highland Cow", sharingImage: sharingContentImageView.image)
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  // Utility methods
+  func shareContent(#sharingText: String?, sharingImage: UIImage?) {
+    var itemsToShare = [AnyObject]()
+    
+    if let text = sharingText {
+      itemsToShare.append(text)
+    }
+    if let image = sharingImage {
+      itemsToShare.append(image)
+    }
+    
+    let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+    presentViewController(activityViewController, animated: true, completion: nil)
   }
-  
   
 }
 
