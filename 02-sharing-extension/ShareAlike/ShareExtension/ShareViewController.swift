@@ -22,8 +22,10 @@ class ShareViewController: SLComposeServiceViewController {
   override func didSelectPost() {
     // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
     let configName = "com.shinobicontrols.ShareAlike.BackgroundSessionConfig"
-    let sessionConfig = NSURLSessionConfiguration.backgroundSessionConfiguration(configName)
+    let sessionConfig = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(configName)
+    sessionConfig.sharedContainerIdentifier = "group.ShareAlike"
     let session = NSURLSession(configuration: sessionConfig)
+    
     
     println(extensionContext.inputItems)
     println("HELLLLOOOOOO")
