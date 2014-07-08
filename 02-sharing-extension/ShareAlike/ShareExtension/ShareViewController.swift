@@ -26,9 +26,7 @@ class ShareViewController: SLComposeServiceViewController {
     return true
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
+  override func presentationAnimationDidFinish() {
     // Only interested in the first item
     let extensionItem = extensionContext.inputItems[0] as NSExtensionItem
     // Extract an image (if one exists)
