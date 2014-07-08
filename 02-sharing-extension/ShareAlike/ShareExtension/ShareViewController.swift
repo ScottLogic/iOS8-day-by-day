@@ -14,26 +14,42 @@ import CoreGraphics
 
 class ShareViewController: SLComposeServiceViewController {
   
+  // The URL we're uploading to.
+  // NOTE: This almost certainly _won't_ work for you. Create your own request bin
+  //       at http://requestb.in/ and substitute that URL here.
+  let sc_uploadURL = "http://requestb.in/oha28noh"
+  var attachedImage: UIImage?
+  
+  
   override func isContentValid() -> Bool {
     // Do validation of contentText and/or NSExtensionContext attachments here
     return true
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    // Only interested in the first item
+    let extensionItem = extensionContext.inputItems[0] as NSExtensionItem
+    // Extract an image (if one exists)
+    imageFromExtensionItem(extensionItem) {
+      image in
+      if image {
+        self.attachedImage = image
+      }
+    }
   }
   
   override func didSelectPost() {
     // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
     let configName = "com.shinobicontrols.ShareAlike.BackgroundSessionConfig"
     let sessionConfig = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(configName)
+    // Extensions aren't allowed their own cache disk space. Need to share with application
     sessionConfig.sharedContainerIdentifier = "group.ShareAlike"
     let session = NSURLSession(configuration: sessionConfig)
     
-    // Only interested in the first item
-    let extensionItem = extensionContext.inputItems[0] as NSExtensionItem
-    
-    let pictureDetails = pictureDetailsFromExtensionItem(extensionItem)
-    println(pictureDetails)
-    
     // Prepare the URL Request
-    let request = urlRequestWithExtensionItem(extensionItem, text: "hello")
+    let request = urlRequestWithImage(attachedImage, text: "hello")
     
     // Create the task, and kick it off
     let task = session.dataTaskWithRequest(request)
@@ -49,8 +65,8 @@ class ShareViewController: SLComposeServiceViewController {
   }
   
   
-  func urlRequestWithExtensionItem(extensionItem: NSExtensionItem, text: String) -> NSURLRequest? {
-    let url = NSURL.URLWithString("http://requestb.in/oha28noh")
+  func urlRequestWithImage(image: UIImage?, text: String) -> NSURLRequest? {
+    let url = NSURL.URLWithString(sc_uploadURL)
     let request = NSMutableURLRequest(URL: url)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -58,28 +74,55 @@ class ShareViewController: SLComposeServiceViewController {
     
     var jsonObject = NSMutableDictionary()
     jsonObject["text"] = text
-    jsonObject["image"] = pictureDetailsFromExtensionItem(extensionItem)
+    if let image = image {
+      jsonObject["image_details"] = extractDetailsFromImage(image)
+    }
     
-    
-    let jsonData = NSJSONSerialization.dataWithJSONObject(jsonObject, options: nil, error: nil)
-    request.HTTPBody = jsonData
+    // Create the JSON payload
+    var jsonError: NSError?
+    let jsonData = NSJSONSerialization.dataWithJSONObject(jsonObject, options: nil, error: &jsonError)
+    if jsonData {
+      request.HTTPBody = jsonData
+    } else {
+      if let error = jsonError {
+        println("JSON Error: \(error.localizedDescription)")
+      }
+    }
     
     return request
   }
   
-  func pictureDetailsFromExtensionItem(extensionItem: NSExtensionItem) -> [String:String] {
+  func extractDetailsFromImage(image: UIImage) -> NSDictionary {
+    var resultDict = NSMutableDictionary()
+    resultDict["height"] = image.size.height
+    resultDict["width"] = image.size.width
+    resultDict["orientation"] = image.imageOrientation.toRaw()
+    resultDict["scale"] = image.scale
+    resultDict["description"] = image.description
+    return resultDict.copy() as NSDictionary
+  }
+  
+  func imageFromExtensionItem(extensionItem: NSExtensionItem, callback: (image: UIImage?)->Void) {
     
     for attachment in extensionItem.attachments as [NSItemProvider] {
       if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage)) {
-        attachment.loadItemForTypeIdentifier(kUTTypeImage, options: nil,
-          completionHandler: {
-            (image: NSSecureCoding!, error: NSError!) in
-            let castedImage = image as UIImage
-            println(castedImage)
-          })
+        attachment.loadItemForTypeIdentifier(kUTTypeImage, options: nil) {
+            (imageProvider, error) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+              if let e = error {
+                println("Item loading error: \(e.localizedDescription)")
+              }
+              
+              if let imageData = imageProvider as? NSData {
+                let image = UIImage(data: imageData)
+                callback(image: image)
+              }
+
+              callback(image: nil)
+            }
+        }
       }
     }
-    return ["picture": "hi"]
   }
   
 }
