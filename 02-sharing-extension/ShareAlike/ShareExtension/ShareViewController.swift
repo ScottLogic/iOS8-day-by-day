@@ -60,7 +60,7 @@ class ShareViewController: SLComposeServiceViewController {
     let session = NSURLSession(configuration: sessionConfig)
     
     // Prepare the URL Request
-    let request = urlRequestWithImage(attachedImage, text: "hello")
+    let request = urlRequestWithImage(attachedImage, text: contentText)
     
     // Create the task, and kick it off
     let task = session.dataTaskWithRequest(request)
@@ -120,19 +120,17 @@ class ShareViewController: SLComposeServiceViewController {
         // Marshal on to a background thread
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
           attachment.loadItemForTypeIdentifier(kUTTypeImage, options: nil) {
-              (imageProvider, error) -> Void in
-              dispatch_async(dispatch_get_main_queue()) {
-                if let e = error {
-                  println("Item loading error: \(e.localizedDescription)")
-                }
-                
-                if let imageData = imageProvider as? NSData {
-                  let image = UIImage(data: imageData)
-                  callback(image: image)
-                }
-
-                callback(image: nil)
-              }
+            (imageProvider, error) -> Void in
+            var image: UIImage? = nil
+            if let e = error {
+              println("Item loading error: \(e.localizedDescription)")
+            }
+            if let imageData = imageProvider as? NSData {
+              image = UIImage(data: imageData)
+            }
+            dispatch_async(dispatch_get_main_queue()) {
+              callback(image: image)
+            }
           }
         }
       }
