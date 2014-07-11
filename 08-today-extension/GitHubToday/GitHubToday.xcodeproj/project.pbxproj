@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22D579891970668900EEF326 /* GitHubDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D579811970638200EEF326 /* GitHubDataProvider.swift */; };
+		22D5798A1970668E00EEF326 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D579821970638200EEF326 /* SwiftyJSON.swift */; };
 		F4281075196EC15B00E029E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4281074196EC15B00E029E6 /* AppDelegate.swift */; };
 		F428107A196EC15B00E029E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4281078196EC15B00E029E6 /* Main.storyboard */; };
 		F428107C196EC15B00E029E6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F428107B196EC15B00E029E6 /* Images.xcassets */; };
@@ -24,11 +26,7 @@
 		F463239319701F8A0007EFA2 /* GitHubTodayCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F463237D19701F8A0007EFA2 /* GitHubTodayCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F463239D19701FBC0007EFA2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463235C1970111D0007EFA2 /* EventTableViewCell.swift */; };
 		F463239E19701FBD0007EFA2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463235C1970111D0007EFA2 /* EventTableViewCell.swift */; };
-		F463239F19701FCD0007EFA2 /* GitHubDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3E132196ECD6F0024C5E7 /* GitHubDataProvider.swift */; };
-		F46323A019701FD20007EFA2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3E134196ECEBB0024C5E7 /* SwiftyJSON.swift */; };
 		F46323A1197029AC0007EFA2 /* octicons-local.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F463235E197011FD0007EFA2 /* octicons-local.ttf */; };
-		F4F3E133196ECD6F0024C5E7 /* GitHubDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3E132196ECD6F0024C5E7 /* GitHubDataProvider.swift */; };
-		F4F3E135196ECEBB0024C5E7 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3E134196ECEBB0024C5E7 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +107,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22D579811970638200EEF326 /* GitHubDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubDataProvider.swift; sourceTree = "<group>"; };
+		22D579821970638200EEF326 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F428106F196EC15B00E029E6 /* GitHubToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4281073196EC15B00E029E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4281074196EC15B00E029E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,8 +131,6 @@
 		F463238719701F8A0007EFA2 /* GitHubTodayCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubTodayCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F463238D19701F8A0007EFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F463238E19701F8A0007EFA2 /* GitHubTodayCommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTodayCommonTests.swift; sourceTree = "<group>"; };
-		F4F3E132196ECD6F0024C5E7 /* GitHubDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubDataProvider.swift; sourceTree = "<group>"; };
-		F4F3E134196ECEBB0024C5E7 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,8 +209,6 @@
 				F4281078196EC15B00E029E6 /* Main.storyboard */,
 				F428107B196EC15B00E029E6 /* Images.xcassets */,
 				F4281072196EC15B00E029E6 /* Supporting Files */,
-				F4F3E132196ECD6F0024C5E7 /* GitHubDataProvider.swift */,
-				F4F3E134196ECEBB0024C5E7 /* SwiftyJSON.swift */,
 				F463235A19700AB20007EFA2 /* TableViewController.swift */,
 			);
 			path = GitHubToday;
@@ -272,6 +268,8 @@
 		F463237E19701F8A0007EFA2 /* GitHubTodayCommon */ = {
 			isa = PBXGroup;
 			children = (
+				22D579811970638200EEF326 /* GitHubDataProvider.swift */,
+				22D579821970638200EEF326 /* SwiftyJSON.swift */,
 				F463238119701F8A0007EFA2 /* GitHubTodayCommon.h */,
 				F463237F19701F8A0007EFA2 /* Supporting Files */,
 			);
@@ -511,10 +509,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4281075196EC15B00E029E6 /* AppDelegate.swift in Sources */,
-				F4F3E133196ECD6F0024C5E7 /* GitHubDataProvider.swift in Sources */,
 				F463235B19700AB20007EFA2 /* TableViewController.swift in Sources */,
 				F463239E19701FBD0007EFA2 /* EventTableViewCell.swift in Sources */,
-				F4F3E135196ECEBB0024C5E7 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,8 +528,6 @@
 			files = (
 				F463239D19701FBC0007EFA2 /* EventTableViewCell.swift in Sources */,
 				F463236C19701EA90007EFA2 /* TodayViewController.swift in Sources */,
-				F463239F19701FCD0007EFA2 /* GitHubDataProvider.swift in Sources */,
-				F46323A019701FD20007EFA2 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +535,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D579891970668900EEF326 /* GitHubDataProvider.swift in Sources */,
+				22D5798A1970668E00EEF326 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,6 +866,7 @@
 				F463237619701EA90007EFA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F463239619701F8A0007EFA2 /* Build configuration list for PBXNativeTarget "GitHubTodayCommon" */ = {
 			isa = XCConfigurationList;
@@ -878,6 +875,7 @@
 				F463239819701F8A0007EFA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F463239A19701F8A0007EFA2 /* Build configuration list for PBXNativeTarget "GitHubTodayCommonTests" */ = {
 			isa = XCConfigurationList;
@@ -886,6 +884,7 @@
 				F463239C19701F8A0007EFA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,7 +14,10 @@ class TableViewController: UITableViewController {
   var dataProvider = GitHubDataProvider()
   var events: [GitHubEvent] = [GitHubEvent]() {
   didSet {
-    tableView.reloadData()
+    // Must call reload on the main thread
+    dispatch_async(dispatch_get_main_queue()) {
+      self.tableView.reloadData()
+    }
   }
   }
   
@@ -33,7 +36,8 @@ class TableViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-    return events.count
+    let count = events.count
+    return count
   }
   
   override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {

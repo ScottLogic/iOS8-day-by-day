@@ -18,12 +18,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   let dataProvider = GitHubDataProvider()
   var currentEvent: GitHubEvent? {
   didSet {
-    if let event = currentEvent {
-      typeLabel.text = event.eventType.icon
-      repoNameLabel.text = event.repoName
-    } else {
-      typeLabel.text = ""
-      repoNameLabel.text = ""
+    dispatch_async(dispatch_get_main_queue()) {
+      if let event = self.currentEvent {
+        self.typeLabel.text = event.eventType.icon
+        self.repoNameLabel.text = event.repoName
+      } else {
+        self.typeLabel.text = ""
+        self.repoNameLabel.text = ""
+      }
     }
   }
   }
