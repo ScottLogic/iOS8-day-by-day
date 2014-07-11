@@ -109,6 +109,8 @@
 /* Begin PBXFileReference section */
 		22D579811970638200EEF326 /* GitHubDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubDataProvider.swift; sourceTree = "<group>"; };
 		22D579821970638200EEF326 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		22D5798B19706B0400EEF326 /* GitHubToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GitHubToday.entitlements; sourceTree = "<group>"; };
+		22D5798C19706B6200EEF326 /* GitHubTodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GitHubTodayWidget.entitlements; sourceTree = "<group>"; };
 		F428106F196EC15B00E029E6 /* GitHubToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4281073196EC15B00E029E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4281074196EC15B00E029E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		F4281071196EC15B00E029E6 /* GitHubToday */ = {
 			isa = PBXGroup;
 			children = (
+				22D5798B19706B0400EEF326 /* GitHubToday.entitlements */,
 				F463235C1970111D0007EFA2 /* EventTableViewCell.swift */,
 				F463235E197011FD0007EFA2 /* octicons-local.ttf */,
 				F4281074196EC15B00E029E6 /* AppDelegate.swift */,
@@ -250,6 +253,7 @@
 		F463236819701EA90007EFA2 /* GitHubTodayWidget */ = {
 			isa = PBXGroup;
 			children = (
+				22D5798C19706B6200EEF326 /* GitHubTodayWidget.entitlements */,
 				F463236B19701EA90007EFA2 /* TodayViewController.swift */,
 				F463236D19701EA90007EFA2 /* MainInterface.storyboard */,
 				F463236919701EA90007EFA2 /* Supporting Files */,
@@ -421,6 +425,12 @@
 				TargetAttributes = {
 					F428106E196EC15B00E029E6 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = D23W9URMHY;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F4281080196EC15B00E029E6 = {
 						CreatedOnToolsVersion = 6.0;
@@ -428,6 +438,12 @@
 					};
 					F463236319701EA80007EFA2 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = D23W9URMHY;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F463237C19701F8A0007EFA2 = {
 						CreatedOnToolsVersion = 6.0;
@@ -684,9 +700,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = GitHubToday/GitHubToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GitHubToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -695,9 +715,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = GitHubToday/GitHubToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GitHubToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -738,6 +762,9 @@
 		F463237519701EA90007EFA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GitHubTodayWidget/GitHubTodayWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -745,6 +772,7 @@
 				INFOPLIST_FILE = GitHubTodayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -752,9 +780,13 @@
 		F463237619701EA90007EFA2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = GitHubTodayWidget/GitHubTodayWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GitHubTodayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
