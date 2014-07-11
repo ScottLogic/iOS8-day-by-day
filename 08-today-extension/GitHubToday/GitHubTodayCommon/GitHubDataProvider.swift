@@ -9,7 +9,7 @@
 import Foundation
 
 
-class GitHubEvent: Printable, Equatable {
+class GitHubEvent: Printable, Equatable, NSCoding {
   var id: Int
   var eventType: GitHubEventType
   var repoName: String?
@@ -26,6 +26,21 @@ class GitHubEvent: Printable, Equatable {
     self.eventType = eventType
     self.repoName = repoName
     self.time = time
+  }
+  
+  // NSCoding
+  init(coder aDecoder: NSCoder!) {
+    self.id = aDecoder.decodeIntegerForKey("id")
+    self.eventType = GitHubEventType.fromRaw(aDecoder.decodeObjectForKey("eventType") as String)!
+    self.repoName = aDecoder.decodeObjectForKey("repoName") as? String
+    self.time = aDecoder.decodeObjectForKey("time") as? NSDate
+  }
+  
+  func encodeWithCoder(aCoder: NSCoder!) {
+    aCoder.encodeInteger(id, forKey: "id")
+    aCoder.encodeObject(eventType.toRaw(), forKey: "eventType")
+    aCoder.encodeObject(repoName, forKey: "repoName")
+    aCoder.encodeObject(time, forKey: "time")
   }
   
   convenience init(json: JSONValue) {
