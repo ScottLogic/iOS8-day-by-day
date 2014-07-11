@@ -9,7 +9,7 @@
 import Foundation
 
 
-class GitHubEvent: Printable {
+class GitHubEvent: Printable, Equatable {
   var id: Int
   var eventType: GitHubEventType
   var repoName: String?
@@ -77,6 +77,11 @@ class GitHubEvent: Printable {
   var description: String {
     return "[\(id)] \(time) : \(eventType.toRaw()) \(repoName)"
   }
+}
+
+// Equatable
+func ==(lhs: GitHubEvent, rhs: GitHubEvent) -> Bool {
+  return lhs.id == rhs.id
 }
 
 enum GitHubEventType: String {
