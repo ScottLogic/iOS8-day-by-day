@@ -21,20 +21,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="loading..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="239" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="34" y="8" width="239" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="loading..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                                <rect key="frame" x="34" y="8" width="238" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="c" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4R-qi-kmh">
-                                <rect key="frame" x="0.0" y="7" width="23" height="23"/>
-                                <fontDescription key="fontDescription" name="github-octicons" family="github-octicons" pointSize="23"/>
+                                <rect key="frame" x="0.0" y="6" width="25" height="25"/>
+                                <fontDescription key="fontDescription" name="github-octicons" family="github-octicons" pointSize="25"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUo-Nx-QL5">
-                                <rect key="frame" x="277" y="4" width="35" height="30"/>
+                                <rect key="frame" x="276" y="3" width="36" height="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="more">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -46,6 +47,7 @@
                             <constraint firstItem="hUo-Nx-QL5" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="4" id="Pum-fc-Mza"/>
                             <constraint firstItem="h4R-qi-kmh" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="Qil-t1-ggZ"/>
                             <constraint firstAttribute="centerY" secondItem="hUo-Nx-QL5" secondAttribute="centerY" id="RBO-7o-B7F"/>
+                            <constraint firstAttribute="centerY" secondItem="GcN-lo-r42" secondAttribute="centerY" id="Vvb-sb-Hqq"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="20" symbolic="YES" id="mYS-Cv-VNx"/>
                             <constraint firstAttribute="centerY" secondItem="h4R-qi-kmh" secondAttribute="centerY" id="mxc-Rx-2aj"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="34" id="tbb-N0-KpC"/>
