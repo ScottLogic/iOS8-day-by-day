@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F4281075196EC15B00E029E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4281074196EC15B00E029E6 /* AppDelegate.swift */; };
-		F4281077196EC15B00E029E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4281076196EC15B00E029E6 /* ViewController.swift */; };
 		F428107A196EC15B00E029E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4281078196EC15B00E029E6 /* Main.storyboard */; };
 		F428107C196EC15B00E029E6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F428107B196EC15B00E029E6 /* Images.xcassets */; };
 		F4281088196EC15B00E029E6 /* GitHubTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4281087196EC15B00E029E6 /* GitHubTodayTests.swift */; };
+		F463235B19700AB20007EFA2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463235A19700AB20007EFA2 /* TableViewController.swift */; };
+		F463235D1970111D0007EFA2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463235C1970111D0007EFA2 /* EventTableViewCell.swift */; };
+		F463235F197011FD0007EFA2 /* octicons-local.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F463235E197011FD0007EFA2 /* octicons-local.ttf */; };
+		F4F3E133196ECD6F0024C5E7 /* GitHubDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3E132196ECD6F0024C5E7 /* GitHubDataProvider.swift */; };
+		F4F3E135196ECEBB0024C5E7 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3E134196ECEBB0024C5E7 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +32,16 @@
 		F428106F196EC15B00E029E6 /* GitHubToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4281073196EC15B00E029E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4281074196EC15B00E029E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4281076196EC15B00E029E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4281079196EC15B00E029E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F428107B196EC15B00E029E6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4281081196EC15B00E029E6 /* GitHubTodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubTodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4281086196EC15B00E029E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4281087196EC15B00E029E6 /* GitHubTodayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTodayTests.swift; sourceTree = "<group>"; };
+		F463235A19700AB20007EFA2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		F463235C1970111D0007EFA2 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		F463235E197011FD0007EFA2 /* octicons-local.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "octicons-local.ttf"; sourceTree = "<group>"; };
+		F4F3E132196ECD6F0024C5E7 /* GitHubDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubDataProvider.swift; sourceTree = "<group>"; };
+		F4F3E134196ECEBB0024C5E7 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +83,15 @@
 		F4281071196EC15B00E029E6 /* GitHubToday */ = {
 			isa = PBXGroup;
 			children = (
+				F463235E197011FD0007EFA2 /* octicons-local.ttf */,
 				F4281074196EC15B00E029E6 /* AppDelegate.swift */,
-				F4281076196EC15B00E029E6 /* ViewController.swift */,
 				F4281078196EC15B00E029E6 /* Main.storyboard */,
 				F428107B196EC15B00E029E6 /* Images.xcassets */,
 				F4281072196EC15B00E029E6 /* Supporting Files */,
+				F4F3E132196ECD6F0024C5E7 /* GitHubDataProvider.swift */,
+				F4F3E134196ECEBB0024C5E7 /* SwiftyJSON.swift */,
+				F463235A19700AB20007EFA2 /* TableViewController.swift */,
+				F463235C1970111D0007EFA2 /* EventTableViewCell.swift */,
 			);
 			path = GitHubToday;
 			sourceTree = "<group>";
@@ -190,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F428107A196EC15B00E029E6 /* Main.storyboard in Resources */,
+				F463235F197011FD0007EFA2 /* octicons-local.ttf in Resources */,
 				F428107C196EC15B00E029E6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4281077196EC15B00E029E6 /* ViewController.swift in Sources */,
 				F4281075196EC15B00E029E6 /* AppDelegate.swift in Sources */,
+				F4F3E133196ECD6F0024C5E7 /* GitHubDataProvider.swift in Sources */,
+				F463235B19700AB20007EFA2 /* TableViewController.swift in Sources */,
+				F463235D1970111D0007EFA2 /* EventTableViewCell.swift in Sources */,
+				F4F3E135196ECEBB0024C5E7 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +413,7 @@
 				F428108D196EC15B00E029E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F428108E196EC15B00E029E6 /* Build configuration list for PBXNativeTarget "GitHubTodayTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +422,7 @@
 				F4281090196EC15B00E029E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
