@@ -9,7 +9,7 @@
 import Foundation
 
 
-class GitHubEvent: Printable, Equatable, NSCoding {
+@objc class GitHubEvent: NSObject, Printable, Equatable, NSCoding {
   var id: Int
   var eventType: GitHubEventType
   var repoName: String?
@@ -89,7 +89,7 @@ class GitHubEvent: Printable, Equatable, NSCoding {
   }
   
   // Printable
-  var description: String {
+  override var description: String {
     return "[\(id)] \(time) : \(eventType.toRaw()) \(repoName)"
   }
 }
@@ -164,6 +164,36 @@ class GitHubDataProvider {
       }
     }
     return ghEvents
+  }
+  
+}
+
+let mostRecentEventCacheKey = "GitHubToday.mostRecentEvent"
+
+class GitHubEventCache {
+  var userDefaults: NSUserDefaults
+  
+  init(userDefaults: NSUserDefaults) {
+    self.userDefaults = userDefaults
+  }
+  
+  var mostRecentEvent: GitHubEvent? {
+  get {
+    if let data = userDefaults.objectForKey(mostRecentEventCacheKey) as? NSData {
+      if let event = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? GitHubEvent {
+        return event
+      }
+    }
+    return nil
+  }
+  set(newEvent) {
+    if let event = newEvent {
+      let data = NSKeyedArchiver.archivedDataWithRootObject(event)
+      userDefaults.setObject(data, forKey: mostRecentEventCacheKey)
+    } else {
+      userDefaults.removeObjectForKey(mostRecentEventCacheKey)
+    }
+  }
   }
   
 }

@@ -16,6 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   @IBOutlet var repoNameLabel: UILabel
   
   let dataProvider = GitHubDataProvider()
+  let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday"))
   var currentEvent: GitHubEvent? {
   didSet {
     dispatch_async(dispatch_get_main_queue()) {
@@ -33,6 +34,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view from its nib.
+    currentEvent = mostRecentEventCache.mostRecentEvent
   }
   
   override func didReceiveMemoryWarning() {
@@ -53,6 +55,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
       let newestEvent = events[0]
       if newestEvent != self.currentEvent {
         self.currentEvent = newestEvent
+        self.mostRecentEventCache.mostRecentEvent = newestEvent
         completionHandler(.NewData)
       } else {
         completionHandler(.NoData)

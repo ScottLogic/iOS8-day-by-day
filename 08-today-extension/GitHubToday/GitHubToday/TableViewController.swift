@@ -11,7 +11,8 @@ import GitHubTodayCommon
 
 class TableViewController: UITableViewController {
 
-  var dataProvider = GitHubDataProvider()
+  let dataProvider = GitHubDataProvider()
+  let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday"))
   var events: [GitHubEvent] = [GitHubEvent]() {
   didSet {
     // Must call reload on the main thread
@@ -26,6 +27,7 @@ class TableViewController: UITableViewController {
     dataProvider.getEvents("sammyd", callback: {
       githubEvents in
       self.events = githubEvents
+      self.mostRecentEventCache.mostRecentEvent = githubEvents[0]
       })
   }
   
