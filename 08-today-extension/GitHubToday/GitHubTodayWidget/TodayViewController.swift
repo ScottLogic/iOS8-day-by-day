@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GitHubTodayCommon
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
@@ -18,7 +19,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   var currentEvent: GitHubEvent? {
   didSet {
     if let event = currentEvent {
-      typeLabel.text = iconForEventType(event.eventType)
+      typeLabel.text = event.eventType.icon
       repoNameLabel.text = event.repoName
     } else {
       typeLabel.text = ""
@@ -63,30 +64,4 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                                  bottom: defaultMarginInsets.bottom, right: defaultMarginInsets.right)
     return newInsets
   }
-  
-  func iconForEventType(eventType: GitHubEventType) -> String {
-    switch eventType {
-    case .Create:
-      return ""
-    case .Delete:
-      return ""
-    case .Follow:
-      return ""
-    case .Fork:
-      return ""
-    case .IssueComment:
-      return ""
-    case .Issues:
-      return ""
-    case .Other:
-      return ""
-    case .Push:
-      return ""
-    case .Watch:
-      return ""
-    default:
-      return ""
-    }
-  }
-  
 }

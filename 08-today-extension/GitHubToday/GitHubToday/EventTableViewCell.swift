@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GitHubTodayCommon
 
 class EventTableViewCell: UITableViewCell {
   
@@ -17,36 +18,11 @@ class EventTableViewCell: UITableViewCell {
   var event: GitHubEvent? {
   didSet {
     if let event = event {
-      iconLabel.text = iconForEventType(event.eventType)
+      iconLabel.text = event.eventType.icon
       repoLabel.text = event.repoName
       dateLabel.text = "\(event.time)"
     }
   }
-  }
-  
-  func iconForEventType(eventType: GitHubEventType) -> String {
-    switch eventType {
-    case .Create:
-      return ""
-    case .Delete:
-      return ""
-    case .Follow:
-      return ""
-    case .Fork:
-      return ""
-    case .IssueComment:
-      return ""
-    case .Issues:
-      return ""
-    case .Other:
-      return ""
-    case .Push:
-      return ""
-    case .Watch:
-      return ""
-    default:
-      return ""
-    }
   }
   
 }

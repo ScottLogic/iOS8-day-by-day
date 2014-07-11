@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GitHubTodayCommon
 
 class TableViewController: UITableViewController {
 

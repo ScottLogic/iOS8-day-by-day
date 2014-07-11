@@ -94,6 +94,31 @@ enum GitHubEventType: String {
   case Issues = "issues"
   case IssueComment = "comment"
   case Other = "other"
+  
+  var icon: String {
+    switch self {
+    case .Create:
+      return ""
+    case .Delete:
+      return ""
+    case .Follow:
+      return ""
+    case .Fork:
+      return ""
+    case .IssueComment:
+      return ""
+    case .Issues:
+      return ""
+    case .Other:
+      return ""
+    case .Push:
+      return ""
+    case .Watch:
+      return ""
+    default:
+      return ""
+      }
+  }
 }
 
 
