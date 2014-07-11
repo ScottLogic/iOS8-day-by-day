@@ -51,7 +51,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     dataProvider.getEvents("sammyd", callback: {
       events in
-      println("Back from network")
       let newestEvent = events[0]
       if newestEvent != self.currentEvent {
         self.currentEvent = newestEvent
@@ -69,4 +68,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                                  bottom: defaultMarginInsets.bottom, right: defaultMarginInsets.right)
     return newInsets
   }
+  
+  
+  @IBAction func handleMoreButtonTapped(sender: AnyObject) {
+    let url = NSURL(scheme: "githubtoday", host: nil, path: "/\(currentEvent?.id)")
+    extensionContext.openURL(url, completionHandler: nil)
+  }
+  
 }

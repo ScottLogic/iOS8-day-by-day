@@ -25,4 +25,14 @@ class EventTableViewCell: UITableViewCell {
   }
   }
   
+  override func setSelected(selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    
+    if selected {
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(NSEC_PER_SEC)), dispatch_get_main_queue()) {
+        self.setSelected(false, animated: true)
+      }
+    }
+  }
+  
 }

@@ -39,6 +39,9 @@
                                 <state key="normal" title="more">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleMoreButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="qzz-9g-v11"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

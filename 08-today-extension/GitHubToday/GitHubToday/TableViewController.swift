@@ -31,6 +31,20 @@ class TableViewController: UITableViewController {
       })
   }
   
+  func scrollToAndHighlightEvent(eventId: Int) {
+    var eventIndex: Int? = nil
+    for (index, event) in enumerate(events) {
+      if event.id == eventId {
+        eventIndex = index
+        break
+      }
+    }
+    if let eventIndex = eventIndex {
+      let indexPath = NSIndexPath(forRow: eventIndex, inSection: 0)
+      tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .Top)
+    }
+  }
+  
   
   // DataSource
   override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
