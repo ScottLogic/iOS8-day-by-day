@@ -85,12 +85,156 @@ share code between the parent app and the widget.
 
 ## Sharing code with the parent app
 
+__GitHubToday__ makes a network request to the Github API, and then parses the
+resulting JSON to extract the content it needs to display. This process would
+effectively be repeated by the widget as well as the app itself - but copying
+the same code between two projects is incredibly inefficient. One option would
+be to add the source files to both targets:
 
+![Code in two targets](assets/code_in_two_targets.png)
+
+This approach will definitely work, but will result in the same functionality
+being created in two binaries. Luckily, there's a better way. iOS8 introduces
+the concept of a dynamically library, and a widget can use the same library
+as the host app. Therefore the best approach is to create a dynamic framework,
+and put all the common code in there.
+
+This article is not primarily about dynamic frameworks, so won't go in to detail
+about how to create or use them, but once you've created them, you can move
+any shared code into it. For example, in __GitHubToday__, the entire model
+layer and networking implementation is all packaged into a dynamic framework.
+This includes the `GitHubEvent` class, along with `GitHubDataProvider`, which
+is used to make the network request itself.
+
+Being able to share code between the app and the widget is really helpful, but
+widgets need to be super responsive - setting off a network operation each time
+the today screen comes in to view is not going to give the fast, snappy user
+experience you desire. In the next section you'll learn how you can improve
+upon this by creating a cache which can be shared between the app and the
+widget.
 
 
 ## Sharing a cache with the parent app
 
+Since a widget is an extension it's not allowed access to its own disc space,
+but it can use a shared container. If you remember back to day 2 of this
+series, you learnt how to create a shared container which both an extension and
+its host app can write to. There it was only used as a cache for a
+`NSURLSession` background task, but you can also use it as a shared cache,
+between the app and the widget.
 
+You can obviously store files in this container, so you could create an
+SQLite database, or use CoreData, but the simplest approach here is to use
+`NSUserDefaults` as a key-value store.
+
+Since the only data that the GitHubToday widget ever needs is the latest event,
+then you can store a `GitHubEvent` object in an `NSUserDefaults` file, which
+can live in the shared container. When the widget first opens then it can
+populate itself from this cached event, and then update the cache (and the
+view) when the network operation completes.
+
+The following class (which exists in the common dynamic framework) demonstrates
+the behaviour of a simple cache:
+
+    let mostRecentEventCacheKey = "GitHubToday.mostRecentEvent"
+    class GitHubEventCache {
+      var userDefaults: NSUserDefaults
+
+      init(userDefaults: NSUserDefaults) {
+        self.userDefaults = userDefaults
+      }
+
+      var mostRecentEvent: GitHubEvent? {
+      get {
+        if let data = userDefaults.objectForKey(mostRecentEventCacheKey) as? NSData {
+          if let event = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? GitHubEvent {
+            return event
+          }
+        }
+        return nil
+      }
+      set(newEvent) {
+        if let event = newEvent {
+          let data = NSKeyedArchiver.archivedDataWithRootObject(event)
+          userDefaults.setObject(data, forKey: mostRecentEventCacheKey)
+        } else {
+          userDefaults.removeObjectForKey(mostRecentEventCacheKey)
+        }
+      }
+      }
+
+    }
+
+If defines a property `mostRecentEvent`, which is pulled from the `userDefaults`
+if it exists. It also ensures that the event is pushed back there when it is
+updated. It's important that `GitHubEvent` implements the `NSCoding` protocol,
+so that the keyed archiver knows how to archive and unarchive it.
+
+The `GitHubEventCache` requires an `NSUserDefaults` object to read and write to.
+In order that this can be shared between the app and the extension, this must
+be created in the shared container using the `NSUserDefaults(suiteName:)`
+initializer:
+
+    let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday"))
+
+Once you have created a cache in the widget's view controller then you can
+use it to populate the view in `viewDidLoad()`:
+
+    let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday"))
+    var currentEvent: GitHubEvent? {
+    didSet {
+      dispatch_async(dispatch_get_main_queue()) {
+        if let event = self.currentEvent {
+          self.typeLabel.text = event.eventType.icon
+          self.repoNameLabel.text = event.repoName
+        } else {
+          self.typeLabel.text = ""
+          self.repoNameLabel.text = ""
+        }
+      }
+    }
+    }
+
+    override func viewDidLoad() {
+      super.viewDidLoad()
+      currentEvent = mostRecentEventCache.mostRecentEvent
+    }
+
+
+The system will call the `widgetPerformUpdateWithCompletionHandler()` method
+once the widget had been displayed, and at this point you can kick off a network
+request to ensure that the latest data is displayed:
+
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+      dataProvider.getEvents("sammyd", callback: {
+        events in
+        let newestEvent = events[0]
+        if newestEvent != self.currentEvent {
+          self.currentEvent = newestEvent
+          self.mostRecentEventCache.mostRecentEvent = newestEvent
+          completionHandler(.NewData)
+        } else {
+          completionHandler(.NoData)
+        }
+
+        })
+    }
+
+Not that here if the latest event you receive from the web service is different
+to the one you are currently displaying then you can update the view and then
+tell the system that you have new data, by calling
+`completionHandler(.NewData)`. If you don't receive new data then you can
+instead call `completionHandler(.NoData)`.
+
+Using this caching approach means that you can display the latest data when
+appropriate, but also maintain the responsiveness and user experience required
+of a today widget.
+
+Obviously this implementation of a cache is incredibly simple - you can build
+as much complexity as you want in to the cache. Note that in the main app, when
+a network request is completed, the latest result is pushed into the cache,
+ensuring that the widget will always start by displaying the most recently
+downloaded data, whether it be from the app or the widget itself.
 
 ## Navigating back to the parent app
 
