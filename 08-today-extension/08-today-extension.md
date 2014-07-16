@@ -25,6 +25,8 @@ shows just the latest event. Throughout this post you'll learn how to create a
 today extension, how to share code with the app, how to share cached data with
 the app and how to communicate from the widget to the app.
 
+![](images/app_no_selection.png)
+
 The code for this project is available on Github at
 [github.com/ShinobiControls/iO8-day-by-day](https://github.com/ShinobiControls/iOS80-day-by-day).
 
@@ -238,5 +240,59 @@ downloaded data, whether it be from the app or the widget itself.
 
 ## Navigating back to the parent app
 
+The standard user story for a widget is that a user would look at the summary
+and if they want more info, then they can tap the appropriate part of the
+widget. In order to achieve this, then you can utilise the existing iOS
+URL functionality.
+
+You can define a URL scheme in the __Info__ section of the app's target:
+
+![Defining URL Scheme](assets/defining_url_scheme.png)
+
+As is standard when defining a URL scheme for an app, you also need to implement
+the appropriate method in you app delegate:
+
+    func application(application: UIApplication!, openURL url: NSURL!, sourceApplication: String!, annotation: AnyObject!) -> Bool {
+      if let navCtlr = window?.rootViewController as? UINavigationController {
+        if let tableCtlr = navCtlr.topViewController as? TableViewController {
+          if let eventId = url.lastPathComponent.toInt() {
+            tableCtlr.scrollToAndHighlightEvent(eventId)
+          }
+        }
+      }
+      return true
+    }
+
+This here will attempt to scroll to and highlight the cell in the table view
+which represents the event with the given ID.
+
+Now that you've got a URL scheme set up, you can use the `openURL()` method on
+the `extensionContext` to link from the widget to the relevant row in the app:
+
+    @IBAction func handleMoreButtonTapped(sender: AnyObject) {
+      let url = NSURL(scheme: "githubtoday", host: nil, path: "/\(currentEvent?.id)")
+      extensionContext.openURL(url, completionHandler: nil)
+    }
+
+![](assets/today_extension.png)
+![](assets/app_row_selected.png)
+
 
 ## Conclusion
+
+All the extensions are a really cool new feature of iOS8 - they represent the
+beginning of Apple opening up the operating system for devs. The today extension
+could be hugely powerful - offering the chance to really improve the user
+experience. However, it's important to use it wisely. If there's a massive
+influx of mediocre widgets, then users might get annoyed enough not to trust
+any. Since they affect a core area of their device usage, widgets need to be
+good citizens.
+
+The code for this app and widget is available on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Feel free to grab it, try it and break it. Do let me know how you get on - I'm
+really interested to see what widgets I'm going to be adding to my today
+screen in the coming months - I'm [@iwantmyrealname](https://twitter.com/iwantmyrealname)
+
+
+sam
