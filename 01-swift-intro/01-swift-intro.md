@@ -211,6 +211,48 @@ a deep, or a shallow copy. Be aware of this whilst writing your code!
 
 ## Strong Typing and `AnyObject`
 
+Strong typing is seen as a great feature of Swift - it can allow for safer code,
+since what in objective-C would have been runtime exceptions can now be caught
+at compile time.
+
+This is great, but as you're working with the objective-C system frameworks
+you'll notice a lot of this `AnyObject` type. This is the Swift equivalent of
+objective-C's `id`. In many respects, `AnyObject` feels rather un-Swift-like. It
+allows you to call __any__ methods it can find on it, but these will result in
+a run-time exception. In fact, it behaves _almost_ exactly the same as `id` in
+objective-C. The difference is that properties and methods which take no
+arguments will return `nil` if that method/property doesn't exist on the
+`AnyObject`:
+
+    let myString: AnyObject = "hello"
+    myString.cornerRadius // Returns nil
+
+In order to work in a more Swift-like way with the Cocoa APIs, you'll see the
+following pattern a lot:
+
+    func someFunc(parameter: AnyObject!) -> AnyObject! {
+      if let castedParameter = parameter as? NSString {
+        // Now I know I have a string :)
+        ...
+      }
+    }
+
+If you know that you've definitely been passed a string, you don't necessarily
+need to guard around the cast:
+
+    let castedParameter = parameter as NSString
+
+A top-tip is to realise that casting arrays is really easy too. All arrays that
+you'll receive from a Cocoa framework will be of the type `[AnyObject]`, since
+`NSArray` doesn't support generics. However, in nearly every case not only are
+all the elements of the same type, but they are of a known type. You can cast
+an entire array in both the conditional and unconditional ways expressed above,
+with the following syntax:
+
+    func someArrayFunc(parameter: [AnyObject]!) {
+      let newArray = parameter as [String]
+      // Do something with your strings :)
+    }
 
 ## Protocol Conformance
 

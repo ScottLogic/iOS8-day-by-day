@@ -2,6 +2,9 @@
 
 import Cocoa
 
+/*******************
+  MUTABILITY
+******************/
 struct MyStruct {
   let t = 12
   var u: String
@@ -44,6 +47,30 @@ array1 = [3,2]
 let array2 = [4,3,2,1]
 //array2.append(0) // Error: array2 is immutable
 //array2 = [5,6] // Error: cannot reassign an immutable reference
+
+
+/*******************
+  AnyObject
+******************/
+
+let myString: AnyObject = "hello"
+myString.cornerRadius // Returns nil
+
+func someFunc(parameter: AnyObject!) {
+  if let castedParameter = parameter as? NSString {
+    // Do something
+  }
+}
+
+func someOtherFunc(parameter: AnyObject!) {
+  let castedParameter = parameter as NSString
+  // Do something
+}
+
+func someArrayFunc(parameter: [AnyObject]!) {
+  let newArray = parameter as [NSString]
+  // Do something
+}
 
 
 
