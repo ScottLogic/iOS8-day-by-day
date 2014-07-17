@@ -94,3 +94,35 @@ if let class1AsMyNewProtocol = class1 as? MyNewProtocol {
 }
 
 
+
+/*******************
+  Enums
+******************/
+
+enum MyEnum {
+  case FirstType
+  case IntType (Int)
+  case StringType (String)
+  case TupleType (Int, String)
+  
+  func prettyFormat() -> String {
+    switch self {
+    case .FirstType:
+      return "No params"
+    case .IntType(let value), .StringType(let value):
+      return "One param: \(value)"
+    case .TupleType(let v1, let v2):
+      return "Some params: \(v1), \(v2)"
+    default:
+      return "Nothing to see here"
+    }
+  }
+}
+
+
+var enum1 = MyEnum.FirstType
+enum1.prettyFormat()
+enum1 = .TupleType(12, "Hello")
+enum1.prettyFormat()
+
+

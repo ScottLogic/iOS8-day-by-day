@@ -288,8 +288,39 @@ loads of classes you thought you only cared about in Swift with `@objc`.
 
 ## Enums
 
+Enums in Swift have become super-charged. Not only can an enum now have associated
+values (which needn't be of the same type), but also contain functions too.
 
+    enum MyEnum {
+      case FirstType
+      case IntType (Int)
+      case StringType (String)
+      case TupleType (Int, String)
 
+      func prettyFormat() -> String {
+        switch self {
+        case .FirstType:
+          return "No params"
+        case .IntType(let value), .StringType(let value):
+          return "One param: \(value)"
+        case .TupleType(let v1, let v2):
+          return "Some params: \(v1), \(v2)"
+        default:
+          return "Nothing to see here"
+        }
+      }
+    }
+
+This is really powerful - use it as follows:
+
+    var enum1 = MyEnum.FirstType
+    enum1.prettyFormat() // "No params"
+    enum1 = .TupleType(12, "Hello")
+    enum1.prettyFormat() // "Some params: 12, Hello"
+
+It'll take a little practice to see where you can get some benefit out of the
+power of these, but just as an indication of what you can achieve - the optionals
+system within Swift is built out of enumerations.
 
 
 ## Conclusion
