@@ -31,10 +31,61 @@ Apple.
 
 Since there is so much good info out there about how to use Swift, this post is
 not going to attempt to cover any of that. Instead, it's going to run through
-some of the important 
+some of the important gotchas and potential pain points when using Swift for
+the first time - especially when relating to the system frameworks.
+
+If you have any questions or suggestions of other things to add to this post
+then do let me know - I'll try to keep it up to date throughout the blog series.
+Drop a comment below, or gimme a shout on twitter -
+[@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
 
 ## Initialisation
 
+Swift formalises the concepts surround initialisation of objects somewhat -
+including designated -vs- convenience initialisers, and sets a very specific
+order of the operations to be called within the initialisation phases of an
+object. In the coming weeks, there will be an article as part of this series
+which will go into detail about how initialisation works in Swift, and how this
+affects any objective-C that you write - so look out for this.
+
+There is one other fairly major difference in initialisation between Swift and
+objective-C, and that is return values and initialisation failure. In objective-C
+an initialiser looks a lot like this:
+
+    - (instancetype)init {
+      self = [super init];
+      if (self) {
+        // Do some stuff
+      }
+      return self;
+    }
+
+Whereas in Swift:
+
+    init {
+      variableA = 10
+      ...
+      super.init()
+    }
+
+Notice that in objective-C the initialiser is responsible for 'creating' and then
+returning `self`, but there is no `return` statement in the Swift equivalent.
+This means that there is actually no way in which you can return a `nil` object,
+which is a pattern commonly used to indicate an initialisation failure in objC.
+
+This is apparently likely to change in an upcoming release of the language, but
+for now the only workaround is to use class methods which return optional types:
+
+    class MyClass {
+      class func myFactoryMethod() -> MyClass? {
+        ...
+      }
+    }
+
+Interestingly, factory methods on objective-C APIs are converted into initialisers
+in Swift, so this approach is not preferred. However, until language support
+arrives, it's the only option for initialisers which have the potential to fail.
 
 ## Mutability
 
