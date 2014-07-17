@@ -256,6 +256,35 @@ with the following syntax:
 
 ## Protocol Conformance
 
+Protocols are well-understood in Swift - defined as follows:
+
+    protocol MyProtocol {
+      func myProtocolMethod() -> Bool
+    }
+
+One of the things you often want to do is test whether an object conforms to a
+specified protocol, which you could do as follows:
+
+    if let class1AsMyProtocol = class1 as? MyProtocol {
+      // We're in
+    }
+
+However, this will have an error, because in order to check conformance of a
+protocol that protocol must be an objective-C protocol - and annotated with
+`@objc`:
+
+    @objc protocol MyNewProtocol {
+      func myProtocolMethod() -> Bool
+    }
+
+    if let class1AsMyNewProtocol = class1 as? MyNewProtocol {
+      // We're in
+    }
+
+This can actually be more effort than you'd expect, since in order that a protocol
+be labelled as `@objc`, all of its properties and method return types must also
+be understood in the objective-C world. This means that you might end up annotating
+loads of classes you thought you only cared about in Swift with `@objc`.
 
 ## Enums
 

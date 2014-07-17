@@ -73,5 +73,24 @@ func someArrayFunc(parameter: [AnyObject]!) {
 }
 
 
+/*******************
+  Protocols
+******************/
+
+protocol MyProtocol {
+  func myProtocolMethod() -> Bool
+}
+
+//if let class1AsMyProtocol = class1 as? MyProtocol {
+  // We're in
+//} // Error: need MyProtocol to be @objc
+
+@objc protocol MyNewProtocol {
+  func myProtocolMethod() -> Bool
+}
+
+if let class1AsMyNewProtocol = class1 as? MyNewProtocol {
+  // We're in
+}
 
 
