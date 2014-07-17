@@ -10,6 +10,8 @@ but have a read through the rest of this post first!
 
 ## Introduction
 
+![Swift Logo](assets/swift_logo.png)
+
 It won't have gone unnoticed that at WWDC this year, in addition to announcing
 iOS8, they also introduced a new programming language in the form of Swift. This
 is quite a different language from objective-C in that it is strongly-typed and
