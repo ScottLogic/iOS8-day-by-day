@@ -123,7 +123,7 @@ If you define a variable `struct1` with the `var` keyword then you get the
 following behaviour:
 
     var struct1 = MyStruct(t: 15, u: "Hello")
-    //struct1.t = 13 // Error: t is an immutable property
+    struct1.t = 13 // Error: t is an immutable property
     struct1.u = "GoodBye"
     struct1 = MyStruct(t: 10, u: "You")
 
@@ -133,8 +133,8 @@ You can't mutate the `t` property, since this is defined with `let`. Now take
 a look what happens when you define an instance of a `struct` using `let`:
 
     let struct2 = MyStruct(t: 12, u: "World")
-    //struct2.u = "Planet" // Error: struct2 is immutable
-    //struct2 = MyStruct(t: 10, u: "Defeat") // Error: struct2 is an immutable ref
+    struct2.u = "Planet" // Error: struct2 is immutable
+    struct2 = MyStruct(t: 10, u: "Defeat") // Error: struct2 is an immutable ref
 
 Here, not only are you unable to mutate the `struct2` reference itself, but you
 are also unable to mutate the struct itself (i.e. the `u` property). This is
@@ -156,7 +156,7 @@ Defining a variable using `var` gives behaviour you might be used to from
 objective-C:
 
     var class1 = MyClass(t: 15, u: "Hello")
-    //class1.t = 13 // Error: t is an immutable property
+    class1.t = 13 // Error: t is an immutable property
     class1.u = "GoodBye"
     class1 = MyClass(t: 10, u: "You")
 
@@ -166,7 +166,7 @@ this to the behaviour when the instance is defined with `let`:
 
     let class2 = MyClass(t: 12, u: "World")
     class2.u = "Planet" // No error
-    //class2 = MyClass(t: 11, u: "Geoid") Error: class2 is an immutable reference
+    class2 = MyClass(t: 11, u: "Geoid") Error: class2 is an immutable reference
 
 Here you are unable to mutate the reference itself, but you __can__ still mutate
 any properties defined with `var` within the class. This is because a class is
@@ -192,15 +192,16 @@ but also whether or not the created array is mutable.
 An array defined with `var` can both be reassigned, and mutated:
 
     var array1 = [1,2,3,4]
-    array1.append(5)
-    array1
-    array1 = [3,2]
+    array1.append(5)        // [1,2,3,4,5]
+    array1[0] = 27          // [27,2,3,4,5]
+    array1 = [3,2]          // [3,2]
 
 But an array defined with `let` can be neither:
 
     let array2 = [4,3,2,1]
-    //array2.append(0) // Error: array2 is immutable
-    //array2 = [5,6] // Error: cannot reassign an immutable reference
+    array2.append(0) // Error: array2 is immutable
+    array2[2] = 36   // Error: array2 is immutable
+    array2 = [5,6]   // Error: cannot reassign an immutable reference
 
 This is an area with a huge potential for confusion. Not only does it completely
 change the way we think about mutability for collections, but it also mixes up

@@ -41,12 +41,14 @@ class2.u = "Planet" // No error
 
 var array1 = [1,2,3,4]
 array1.append(5)
+array1[0] = 27
 array1
 array1 = [3,2]
 
 let array2 = [4,3,2,1]
 //array2.append(0) // Error: array2 is immutable
-//array2 = [5,6] // Error: cannot reassign an immutable reference
+//array2[2] = 36   // Error: array2 is immutable
+//array2 = [5,6]   // Error: cannot reassign an immutable reference
 
 
 /*******************
@@ -109,7 +111,9 @@ enum MyEnum {
     switch self {
     case .FirstType:
       return "No params"
-    case .IntType(let value), .StringType(let value):
+    case .IntType(let value):
+      return "One param: \(value)"
+    case .StringType(let value):
       return "One param: \(value)"
     case .TupleType(let v1, let v2):
       return "Some params: \(v1), \(v2)"
