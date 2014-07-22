@@ -16,17 +16,17 @@
 
 import Foundation
 
-class NaiveMovingAverageCalculator: MovingAverageCalculator {
+public class NaiveMovingAverageCalculator: MovingAverageCalculator {
   
-  var windowSize: Int
+  public var windowSize: Int
   
   init() {
     windowSize = 1
   }
   
-  func calculateMovingAverage(data: Double[]) -> Double[] {
+  public func calculateMovingAverage(data: [Double]) -> [Double] {
     // Create an array to store the result
-    var result = Double[]()
+    var result = [Double]()
     
     if(data.count < windowSize) {
       return result
@@ -34,7 +34,7 @@ class NaiveMovingAverageCalculator: MovingAverageCalculator {
     
     // Now perform the calculation
     for i in 0...(data.count - windowSize) {
-      let slice = data[i..(i+windowSize)]
+      let slice = data[i..<(i+windowSize)]
       let partialSum = slice.reduce(0) { $0 + $1 }
       result.append(Double(partialSum) / Double(windowSize))
     }

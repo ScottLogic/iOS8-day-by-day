@@ -16,10 +16,10 @@
 
 import Foundation
 
-protocol MovingAverageCalculator {
+public protocol MovingAverageCalculator {
   // The length of the window
-  var windowSize: Int { get set }
+   var windowSize: Int { get set }
   
   // Calculate the moving average on for the given data set
-  func calculateMovingAverage(data: Double[]) -> Double[]
+  func calculateMovingAverage(data: [Double]) -> [Double]
 }

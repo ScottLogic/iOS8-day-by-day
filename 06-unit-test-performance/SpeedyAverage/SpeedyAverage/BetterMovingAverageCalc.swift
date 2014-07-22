@@ -16,25 +16,25 @@
 
 import Foundation
 
-class BetterMovingAverageCalculator: MovingAverageCalculator {
+public class BetterMovingAverageCalculator: MovingAverageCalculator {
   
-  var windowSize: Int
+  public var windowSize: Int
   
-  init() {
+  public init() {
     windowSize = 1
   }
   
-  func calculateMovingAverage(data: Double[]) -> Double[] {
-    var result = Double[]()
+  public func calculateMovingAverage(data: [Double]) -> [Double] {
+    var result = [Double]()
     
     // Bail out if we don't have enough data
     if(data.count < windowSize) {
       return result
     }
     
-    var currentSum = data[0..windowSize].reduce(0) { $0 + $1 }
+    var currentSum = data[0..<windowSize].reduce(0) { $0 + $1 }
     result.append(Double(currentSum) / Double(windowSize))
-    for i in 0..(data.count - windowSize) {
+    for i in 0..<(data.count - windowSize) {
       // Remove the first entry
       currentSum -= data[i]
       // And add the new one

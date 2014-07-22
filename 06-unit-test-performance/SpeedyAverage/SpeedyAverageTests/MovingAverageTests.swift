@@ -36,7 +36,7 @@ class MovingAverageTests: XCTestCase {
   }
   
   func testCopesWithEmptyArray() {
-    let result: Double[] = calculator.calculateMovingAverage(Double[]())
+    let result: [Double] = calculator.calculateMovingAverage([Double]())
     XCTAssertEqual(result.count, 0)
   }
   
@@ -53,7 +53,7 @@ class MovingAverageTests: XCTestCase {
     let result = calculator.calculateMovingAverage(input)
     XCTAssertEqual(result.count, expected.count)
     if(result.count == expected.count) {
-      for i in 0..expected.count {
+      for i in 0..<expected.count {
         XCTAssertEqual(result[i], expected[i])
       }
     }
@@ -76,8 +76,8 @@ class MovingAverageTests: XCTestCase {
   func RandomDouble(length: Int) -> Array<Double> {
     srand48(time(nil))
     
-    var result = Double[]()
-    for i in 1..length {
+    var result = [Double]()
+    for i in 1..<length {
       result.append(drand48())
     }
     return result
