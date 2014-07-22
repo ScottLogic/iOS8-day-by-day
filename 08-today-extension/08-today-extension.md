@@ -25,7 +25,7 @@ shows just the latest event. Throughout this post you'll learn how to create a
 today extension, how to share code with the app, how to share cached data with
 the app and how to communicate from the widget to the app.
 
-![](images/app_no_selection.png)
+![](assets/app_no_selection.png)
 
 The code for this project is available on Github at
 [github.com/ShinobiControls/iO8-day-by-day](https://github.com/ShinobiControls/iOS80-day-by-day).
@@ -139,14 +139,14 @@ The following class (which exists in the common dynamic framework) demonstrates
 the behaviour of a simple cache:
 
     let mostRecentEventCacheKey = "GitHubToday.mostRecentEvent"
-    class GitHubEventCache {
-      var userDefaults: NSUserDefaults
+    public class GitHubEventCache {
+      private var userDefaults: NSUserDefaults
 
-      init(userDefaults: NSUserDefaults) {
+      public init(userDefaults: NSUserDefaults) {
         self.userDefaults = userDefaults
       }
 
-      var mostRecentEvent: GitHubEvent? {
+      public var mostRecentEvent: GitHubEvent? {
       get {
         if let data = userDefaults.objectForKey(mostRecentEventCacheKey) as? NSData {
           if let event = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? GitHubEvent {
