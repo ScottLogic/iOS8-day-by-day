@@ -59,6 +59,52 @@ more about how the auto sizing actually works - let's take a look at that next.
 
 ## Creating custom table view cells
 
+Traditionally setting the row height for a table view cell would be done on the
+table - using the `rowHeight` property. In order to vary the row size on a per-row
+basis, you would use the table view delegate method `estimatedHeightForRowAtIndexPath:`
+to return a different height for each row.
+
+The problem for this approach is that you either need to know the row height at
+compile time, or calculate the row height for each row at run-time. The delegate
+method is called when the tableview first appears, which means that you need to
+calculate the cell height _before_ the cells are created. In order to do this you
+can end up writing layout code twice - once for size calculations and once for
+display. This process can take a long time to perform - and involves entirely
+up-front calculations.
+
+iOS7 introduced `estimatedRowHeight`, which transformed the row-height requests
+into lazy calculations - only requesting the height for a row once it is about to
+be displayed on the screen. However, it still required you to calculate the row
+height yourself.
+
+In iOS8, you can still use these approaches, however, cells can now be responsible
+for their own sizing - via autolayout. This is both great from an ease-of-use
+perspective and also from a software design angle. A cell is responsible for its
+own layout, so it makes sense that it should also be responsible for determining
+its own height.
+
+It's actually pretty easy to get auto-cell height working for a custom cell. The
+most important part is that your constraints properly define the height of the
+cell.
+
+You must provide an estimated height for the rows, and if you provide an actual
+height (either via the property on the table, or via the delegate) then this will
+override any calculated cell size. In order to specify that you haven't set a cell
+height, use the `UITableViewAutomaticDimension` constant:
+
+    tableView.rowHeight = UITableViewAutomaticDimension
+
+The constraints need to relate to the `contentView` within a `UITableViewCell`,
+and can be set up in code or in IB. The accompanying project sets up contraints
+in IB:
+
+![Creating Constraints](assets/creating_constraints.png)
+
+In order to demo the different heights, the datasource for the table in
+__MagicTable__, changes the font height of the custom label depending on the
+label:
+
+![Custom Cells](assets/custom_cells.png)
 
 
 ## Conclusion
