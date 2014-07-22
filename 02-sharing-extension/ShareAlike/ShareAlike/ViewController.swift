@@ -19,7 +19,7 @@ import UIKit
 class ViewController: UIViewController {
 
   
-  @IBOutlet var sharingContentImageView: UIImageView
+  @IBOutlet weak var sharingContentImageView: UIImageView!
   
   @IBAction func handleShareSampleTapped(sender: AnyObject) {
     shareContent(sharingText: "Highland Cow", sharingImage: sharingContentImageView.image)

@@ -124,10 +124,10 @@ class ShareViewController: SLComposeServiceViewController {
   func imageFromExtensionItem(extensionItem: NSExtensionItem, callback: (image: UIImage?)->Void) {
     
     for attachment in extensionItem.attachments as [NSItemProvider] {
-      if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage)) {
+      if(attachment.hasItemConformingToTypeIdentifier(String(kUTTypeImage))) {
         // Marshal on to a background thread
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-          attachment.loadItemForTypeIdentifier(kUTTypeImage, options: nil) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, UInt(0))) {
+          attachment.loadItemForTypeIdentifier(String(kUTTypeImage), options: nil) {
             (imageProvider, error) -> Void in
             var image: UIImage? = nil
             if let e = error {
