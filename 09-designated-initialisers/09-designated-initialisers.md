@@ -93,7 +93,7 @@ Look at the following example - a ninja is clearly a person, but they have a
 collection of weapons, defined by the accompanying enum:
 
     class Ninja: Person {
-      var weapons: Weapon[]?
+      var weapons: [Weapon]?
     }
 
     enum Weapon {
@@ -105,7 +105,7 @@ the only additional property is an optional (and thus defaults to nil) it isn't
 a requirement to have one. However, it'd be nice to add one which allows setting
 the weapons array at initialisation time:
 
-    init(name: String, age: Int?, weapons: Weapon[]?) {
+    init(name: String, age: Int?, weapons: [Weapon]?) {
       self.weapons = weapons
 
       super.init(name: name, age: age)
