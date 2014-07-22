@@ -29,6 +29,33 @@ As with all articles in this series, the sample project is available on github a
 
 ## Using the 'stock' table view cells
 
+When you first create a table view, chances are you've just used the stock
+table view cells - of which there are 4 styles (basic, left detail, right detail,
+and subtitle). In iOS8, the labels in the base `UITableViewCell` are pre-configured
+for dynamic type. This means that they adapt to the text size specified in the
+device settings panel.
+
+Since these cells are also laid out using autolayout, they will autosize to fit
+the differing sizes of text.
+
+This actually means that you get auto-sizing table view cells __for free__ if you
+just use the stock cells. To see this in action run up the accompanying
+__MagicTable__ app:
+
+![Stock Cells Small](assets/stock_small.png)
+
+If you then use the settings to change the text size (in the same way as iOS7):
+
+![Set Small Text Size](assets/set_small_text.png)
+![Set Large Text Size](assets/set_large_text.png)
+
+And then return to the __MagicTable__ app then you'll be able to see the effect:
+
+![Stock Cells Large](assets/stock_large.png)
+
+This is all well, and good, but more often than not you'll want to create your
+own custom table cells. In order to do this, you need to understand a little bit
+more about how the auto sizing actually works - let's take a look at that next.
 
 ## Creating custom table view cells
 
