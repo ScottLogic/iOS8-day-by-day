@@ -275,7 +275,7 @@ the `extensionContext` to link from the widget to the relevant row in the app:
     }
 
 ![](assets/today_extension.png)
-![](assets/app_row_selected.png)
+![](assets/app_selected_row.png)
 
 
 ## Conclusion
