@@ -1,0 +1,28 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "filename" : "13909412954_092521bb2c_b--256.jpeg"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "filename" : "13909412954_092521bb2c_b--512-1.jpeg"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "1x",
+      "filename" : "13909412954_092521bb2c_b--512.jpeg"
+    },
+    {
+      "idiom" : "ipad",
+      "scale" : "2x",
+      "filename" : "13909412954_092521bb2c_b.jpg"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
