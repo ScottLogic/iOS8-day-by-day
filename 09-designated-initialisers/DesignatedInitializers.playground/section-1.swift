@@ -23,9 +23,9 @@ enum Weapon {
 }
 
 class Ninja: Person {
-  var weapons: Weapon[]?
+  var weapons: [Weapon]?
   
-  init(name: String, age: Int?, weapons: Weapon[]?) {
+  init(name: String, age: Int?, weapons: [Weapon]?) {
     self.weapons = weapons
     
     super.init(name: name, age: age)
