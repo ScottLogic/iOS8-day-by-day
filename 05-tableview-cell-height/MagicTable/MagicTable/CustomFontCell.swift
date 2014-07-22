@@ -18,7 +18,7 @@ import UIKit
 
 class CustomFontCell: UITableViewCell {
 
-  @IBOutlet var customFontLabel: UILabel
+  @IBOutlet var customFontLabel: UILabel?
 
 
 }

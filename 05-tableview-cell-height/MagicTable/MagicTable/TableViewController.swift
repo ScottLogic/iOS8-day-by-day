@@ -37,8 +37,8 @@ class TableViewController: UITableViewController {
       }
     case 1:
       if let cell = tableView.dequeueReusableCellWithIdentifier("CustomFontCell", forIndexPath: indexPath) as? CustomFontCell {
-        cell.customFontLabel.text = "Cell \(indexPath.row)"
-        cell.customFontLabel.font = cell.customFontLabel.font.fontWithSize(Float(indexPath.row) * 4.0)
+        cell.customFontLabel!.text = "Cell \(indexPath.row)"
+        cell.customFontLabel!.font = cell.customFontLabel!.font.fontWithSize(CGFloat(indexPath.row) * 4.0)
         return cell
       }
     default:
