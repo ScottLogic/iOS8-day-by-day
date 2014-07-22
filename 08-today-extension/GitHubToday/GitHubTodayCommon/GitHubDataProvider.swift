@@ -17,19 +17,19 @@
 import Foundation
 
 
-@objc class GitHubEvent: NSObject, Printable, Equatable, NSCoding {
-  var id: Int
-  var eventType: GitHubEventType
-  var repoName: String?
-  var time: NSDate?
-  class var dateFormatter : NSDateFormatter {
+@objc public class GitHubEvent: NSObject, Printable, Equatable, NSCoding {
+  public var id: Int
+  public var eventType: GitHubEventType
+  public var repoName: String?
+  public var time: NSDate?
+  private class var dateFormatter : NSDateFormatter {
   struct Static {
     static let instance : NSDateFormatter = NSDateFormatter()
     }
     return Static.instance
   }
   
-  init(id: Int, eventType: GitHubEventType, repoName: String?, time: NSDate?) {
+  public init(id: Int, eventType: GitHubEventType, repoName: String?, time: NSDate?) {
     self.id = id
     self.eventType = eventType
     self.repoName = repoName
@@ -37,27 +37,27 @@ import Foundation
   }
   
   // NSCoding
-  init(coder aDecoder: NSCoder!) {
+  public init(coder aDecoder: NSCoder!) {
     self.id = aDecoder.decodeIntegerForKey("id")
     self.eventType = GitHubEventType.fromRaw(aDecoder.decodeObjectForKey("eventType") as String)!
     self.repoName = aDecoder.decodeObjectForKey("repoName") as? String
     self.time = aDecoder.decodeObjectForKey("time") as? NSDate
   }
   
-  func encodeWithCoder(aCoder: NSCoder!) {
+  public func encodeWithCoder(aCoder: NSCoder!) {
     aCoder.encodeInteger(id, forKey: "id")
     aCoder.encodeObject(eventType.toRaw(), forKey: "eventType")
     aCoder.encodeObject(repoName, forKey: "repoName")
     aCoder.encodeObject(time, forKey: "time")
   }
   
-  convenience init(json: JSONValue) {
+  public convenience init(json: JSONValue) {
     let data = GitHubEvent.extractDataFromJson(json)
     self.init(id: data.id, eventType: data.eventType, repoName: data.repoName, time: data.time)
   }
   
   
-  class func extractDataFromJson(jsonEvent: JSONValue) -> (id: Int, eventType: GitHubEventType, repoName: String?, time: NSDate?) {
+  public class func extractDataFromJson(jsonEvent: JSONValue) -> (id: Int, eventType: GitHubEventType, repoName: String?, time: NSDate?) {
     let id = jsonEvent["id"].integer!
     var repoName: String? = nil
     if let repo = jsonEvent["repo"].object {
@@ -97,17 +97,17 @@ import Foundation
   }
   
   // Printable
-  override var description: String {
+  override public var description: String {
     return "[\(id)] \(time) : \(eventType.toRaw()) \(repoName)"
   }
 }
 
 // Equatable
-func ==(lhs: GitHubEvent, rhs: GitHubEvent) -> Bool {
+public func ==(lhs: GitHubEvent, rhs: GitHubEvent) -> Bool {
   return lhs.id == rhs.id
 }
 
-enum GitHubEventType: String {
+public enum GitHubEventType: String {
   case Create = "create"
   case Delete = "delete"
   case Fork = "fork"
@@ -118,7 +118,7 @@ enum GitHubEventType: String {
   case IssueComment = "comment"
   case Other = "other"
   
-  var icon: String {
+  public var icon: String {
     switch self {
     case .Create:
       return ""
@@ -145,9 +145,11 @@ enum GitHubEventType: String {
 }
 
 
-class GitHubDataProvider {
+public class GitHubDataProvider {
   
-  func getEvents(user: String, callback: ([GitHubEvent])->()) {
+  public init() { }
+  
+  public func getEvents(user: String, callback: ([GitHubEvent])->()) {
     let url = NSURL(string: "https://api.github.com/users/\(user)/events")
     let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {
       (data, response, error) in
@@ -162,7 +164,7 @@ class GitHubDataProvider {
     task.resume()
   }
   
-  func convertJSONToEvents(data: JSONValue) -> [GitHubEvent] {
+  private func convertJSONToEvents(data: JSONValue) -> [GitHubEvent] {
     let json = data.array
     var ghEvents = [GitHubEvent]()
     if let events = json {
@@ -178,14 +180,14 @@ class GitHubDataProvider {
 
 let mostRecentEventCacheKey = "GitHubToday.mostRecentEvent"
 
-class GitHubEventCache {
-  var userDefaults: NSUserDefaults
+public class GitHubEventCache {
+  private var userDefaults: NSUserDefaults
   
-  init(userDefaults: NSUserDefaults) {
+  public init(userDefaults: NSUserDefaults) {
     self.userDefaults = userDefaults
   }
   
-  var mostRecentEvent: GitHubEvent? {
+  public var mostRecentEvent: GitHubEvent? {
   get {
     if let data = userDefaults.objectForKey(mostRecentEventCacheKey) as? NSData {
       if let event = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? GitHubEvent {

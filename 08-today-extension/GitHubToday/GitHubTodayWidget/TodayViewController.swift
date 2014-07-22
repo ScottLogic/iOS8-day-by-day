@@ -20,8 +20,8 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
   
-  @IBOutlet var typeLabel: UILabel
-  @IBOutlet var repoNameLabel: UILabel
+  @IBOutlet weak var typeLabel: UILabel!
+  @IBOutlet weak var repoNameLabel: UILabel!
   
   let dataProvider = GitHubDataProvider()
   let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday"))

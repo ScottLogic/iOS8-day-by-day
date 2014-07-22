@@ -19,9 +19,9 @@ import GitHubTodayCommon
 
 class EventTableViewCell: UITableViewCell {
   
-  @IBOutlet var iconLabel: UILabel
-  @IBOutlet var repoLabel: UILabel
-  @IBOutlet var dateLabel: UILabel
+  @IBOutlet weak var iconLabel: UILabel!
+  @IBOutlet weak var repoLabel: UILabel!
+  @IBOutlet weak var dateLabel: UILabel!
   
   var event: GitHubEvent? {
   didSet {
