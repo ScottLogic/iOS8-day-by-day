@@ -33,13 +33,13 @@ struct Vect2D {
 }
 
 class TransformControlsViewController: UIViewController {
-
-  @IBOutlet var containerView: UIView
-  @IBOutlet var rotationSlider: UISlider
-  @IBOutlet var xScaleSlider: UISlider
-  @IBOutlet var yScaleSlider: UISlider
-  @IBOutlet var xTranslationSlider: UISlider
-  @IBOutlet var yTranslationSlider: UISlider
+  
+  @IBOutlet weak var containerView: UIView!
+  @IBOutlet weak var rotationSlider: UISlider!
+  @IBOutlet weak var xScaleSlider: UISlider!
+  @IBOutlet weak var yScaleSlider: UISlider!
+  @IBOutlet weak var xTranslationSlider: UISlider!
+  @IBOutlet weak var yTranslationSlider: UISlider!
   
   var transformDelegate: TransformControlsDelegate?
   var currentTransform: CGAffineTransform?
@@ -102,7 +102,7 @@ class TransformControlsViewController: UIViewController {
   
   
   @IBAction func handleDismissButtonPressed(sender: UIButton) {
-    dismissModalViewControllerAnimated(true)
+    dismissViewControllerAnimated(true, completion: nil)
   }
   
   func transformFromSliders() -> CGAffineTransform

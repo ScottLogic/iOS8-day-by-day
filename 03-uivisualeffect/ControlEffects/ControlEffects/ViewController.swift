@@ -18,7 +18,7 @@ import UIKit
 
 class ViewController: UIViewController, TransformControlsDelegate {
     
-  @IBOutlet var imageView: UIImageView
+  @IBOutlet weak var imageView: UIImageView!
                             
   override func viewDidLoad() {
     super.viewDidLoad()
