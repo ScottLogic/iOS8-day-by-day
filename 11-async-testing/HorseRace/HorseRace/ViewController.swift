@@ -16,22 +16,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+public class ViewController: UIViewController {
   
   
-  @IBOutlet var horse1: UIImageView
-  @IBOutlet var horse2: UIImageView
-  @IBOutlet var horse1StartConstraint: NSLayoutConstraint
-  @IBOutlet var horse2StartConstraint: NSLayoutConstraint
+  @IBOutlet public weak var horse1: UIImageView!
+  @IBOutlet public weak var horse2: UIImageView!
+  @IBOutlet weak var horse1StartConstraint: NSLayoutConstraint!
+  @IBOutlet weak var horse2StartConstraint: NSLayoutConstraint!
   
-  @IBOutlet var startRaceButton: UIButton
-  @IBOutlet var resetButton: UIButton
+  @IBOutlet public weak var startRaceButton: UIButton!
+  @IBOutlet public weak var resetButton: UIButton!
   
-  var raceController: TwoHorseRaceController!
-  var numberOfHorsesCurrentlyRunning = 0
+  public var raceController: TwoHorseRaceController!
+  private var numberOfHorsesCurrentlyRunning = 0
   
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     raceController = createRaceController()
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
   }
   
-  @IBAction func handleStartRaceButton(sender: UIButton) {
+  @IBAction public func handleStartRaceButton(sender: UIButton) {
     numberOfHorsesCurrentlyRunning = 2
     startRaceButton.enabled = false
     raceController.startRace(5, horseCrossedLineCallback:{

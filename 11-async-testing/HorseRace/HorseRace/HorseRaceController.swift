@@ -17,8 +17,8 @@
 import Foundation
 import UIKit
 
-struct Horse {
-  var horseView: UIView
+public struct Horse {
+  public var horseView: UIView
   var startConstraint: NSLayoutConstraint
   var finishConstraint: NSLayoutConstraint?
   
@@ -30,23 +30,23 @@ struct Horse {
 }
 
 
-class TwoHorseRaceController {
+public class TwoHorseRaceController {
   
-  var horses: Horse[]
+  var horses: [Horse]
   
-  init(horses: Horse[]) {
+  init(horses: [Horse]) {
     self.horses = horses
     srand48(time(nil));
   }
   
-  func reset() {
+  public func reset() {
     for horse in horses {
       updateContraintsToStartOfRace(horse)
       horse.horseView.layoutIfNeeded()
     }
   }
   
-  func startRace(maxDuration: NSTimeInterval, horseCrossedLineCallback: ((Horse) -> Void)?) {
+  public func startRace(maxDuration: NSTimeInterval, horseCrossedLineCallback: ((Horse) -> Void)?) {
 
     for horse in horses {
       // Generate a random time
@@ -76,7 +76,7 @@ class TwoHorseRaceController {
   }
   
   
-  func someKindOfAsyncMethod(completionHandler: () -> ()) {
+  public func someKindOfAsyncMethod(completionHandler: () -> ()) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
       sleep(3)
       dispatch_async(dispatch_get_main_queue(), {
