@@ -147,7 +147,24 @@ but with both horizontal and vertical size classes set to 'compact'.
 
 ## Conclusion
 
-The technologies behind adaptive layout aren't actually that complicate. It
+The technologies behind adaptive layout aren't actually that complicated. It
 involves you rethinking how your design works. If you haven't already embraced
-the world of autolayout, then 
+the world of autolayout, then now is the time to get onboard. The introduction of
+adaptive layout should be a strong indication that in the future we'll be designing
+for more device configurations than the three we're currently used to. Attempting
+to scale up the existing device specific approach will not be achievable - therefore
+implying that autolayout is going to become a requirement.
+
+You should definitely spend some time becoming acquainted with IB in Xcode 6 - it
+offers a lot of improvements over previous versions.
+
+The project which accompanies today's post demonstrates setting up a simple
+adaptive layout project using storyboards - and you can grab it from the
+ShinobiControls github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+
+Keep the tweets and comments coming!
+
+
+sam
 
