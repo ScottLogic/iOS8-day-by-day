@@ -33,6 +33,7 @@ is pretty much irrelevant - but its API has asynchronous components that can be
 tested. The code for this project is available on the ShinobiControls github at
 [github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
 
+![Horse Race](assets/horse_race.png)
 
 ## Testing an Asynchronous Method
 
@@ -91,15 +92,15 @@ the test to pass.
 - `raceController` is a property on the test class which is populated in the
 `setUp()` method:
 
-    override func setUp() {
-      super.setUp()
-      // Put setup code here. This method is called before the invocation of each test method in the class.
+      override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
 
-      // Get hold of the view controller
-      let window = UIApplication.sharedApplication().delegate.window!
-      viewController = window.rootViewController as? ViewController
-      raceController = viewController.raceController
-    }
+        // Get hold of the view controller
+        let window = UIApplication.sharedApplication().delegate.window!
+        viewController = window.rootViewController as? ViewController
+        raceController = viewController.raceController
+      }
 
 - The test method is invoked, with a closure that simply fulfills the expectation.
 - `waitForExpectationsWithTimeout()` is used to tell the test runner how long it
@@ -113,6 +114,8 @@ to below three seconds then the test will fail - since the expectation wasn't
 fulfilled before the timeout occurred. Note that if all the expectations are
 fulfilled before the timeout then the test runner will continue on to the next
 test - it doesn't wait until the timeout for every test.
+
+![Basic Test](assets/basic_test_green.png)
 
 
 ## Multiple Expectations
@@ -196,6 +199,9 @@ You can run all three of these tests by running the horse race app and seeing
 them in action. Importantly, these tests demonstrate how you can test parts of
 the user interaction which would be asynchronous - i.e. async testing doesn't just
 work for long running background processing and network operations.
+
+![All Tests Green](assets/all_tests_green.png)
+![All Tests Passed](assets/all_tests_passed.png)
 
 If you're not already starting to use asynchronous APIs in your apps then it
 might be time to start considering them - certainly they have suddenly become
