@@ -30,6 +30,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
   var avSession: AVCaptureSession!
   var sessionQueue: dispatch_queue_t!
   
+  var detector: CIDetector?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -77,6 +79,36 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     avSession.startRunning()
   }
   
+  func performDetection(image: CIImage) -> CIImage? {
+    var resultImage: CIImage?
+    if !detector {
+      detector = prepareDetector()
+    }
+    if let detector = detector {
+      // Get the detections
+      let features = detector.featuresInImage(image)
+      for feature in features as [CIRectangleFeature] {
+        var overlay = CIImage(color: CIColor(red: 1.0, green: 0, blue: 0, alpha: 0.5))
+        overlay = overlay.imageByCroppingToRect(image.extent())
+        overlay = overlay.imageByApplyingFilter("CIPerspectiveTransformWithExtent",
+          withInputParameters: [
+            "inputExtent": CIVector(CGRect: image.extent()),
+            "inputTopLeft": CIVector(CGPoint: feature.topLeft),
+            "inputTopRight": CIVector(CGPoint: feature.topRight),
+            "inputBottomLeft": CIVector(CGPoint: feature.bottomLeft),
+            "inputBottomRight": CIVector(CGPoint: feature.bottomRight)
+          ])
+        resultImage = overlay.imageByCompositingOverImage(image)
+      }
+    }
+    return resultImage
+  }
+  
+  func prepareDetector() -> CIDetector {
+    let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh, CIDetectorAspectRatio: 1.0]
+    return CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: options)
+  }
+  
   //MARK: <AVCaptureVideoDataOutputSampleBufferDelegate
   func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
     
@@ -85,8 +117,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let imageBuffer = Unmanaged<CVPixelBuffer>.fromOpaque(opaqueBuffer).takeUnretainedValue()
     let sourceImage = CIImage(CVPixelBuffer: imageBuffer, options: nil)
     
+    // Do some detection on the image
+    let detectionResult = performDetection(sourceImage)
+    var outputImage = sourceImage
+    if detectionResult {
+      outputImage = detectionResult!
+    }
+    
     // Do some clipping
-    var drawFrame = sourceImage.extent()
+    var drawFrame = outputImage.extent()
     let imageAR = drawFrame.width / drawFrame.height
     let viewAR = videoDisplayViewBounds.width / videoDisplayViewBounds.height
     if imageAR > viewAR {
@@ -110,7 +149,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     glEnable(0x0BE2);
     glBlendFunc(1, 0x0303);
     
-    renderContext.drawImage(sourceImage, inRect: videoDisplayViewBounds, fromRect: drawFrame)
+    renderContext.drawImage(outputImage, inRect: videoDisplayViewBounds, fromRect: drawFrame)
     
     videoDisplayView.display()
     
