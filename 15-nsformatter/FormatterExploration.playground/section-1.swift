@@ -12,6 +12,13 @@ for style in dcfStyles {
   dateComponentsFormatter.unitsStyle = style
   dateComponentsFormatter.stringFromDateComponents(components)
 }
+
+let calendar = NSCalendar.currentCalendar()
+calendar.locale = NSLocale(localeIdentifier: "th-TH")
+dateComponentsFormatter.calendar = calendar
+dateComponentsFormatter.stringFromDateComponents(components)
+
+dateComponentsFormatter.calendar = NSCalendar.currentCalendar()
 let now = NSDate()
 let longTimeAgo = NSDate(timeIntervalSince1970: 0.0)
 dateComponentsFormatter.unitsStyle = .Short
@@ -24,7 +31,8 @@ dateComponentsFormatter.includesTimeRemainingPhrase = true
 dateComponentsFormatter.stringFromDateComponents(components)
 
 
-//MARK: NSDateIntervalFormatter
+
+//MARK: NSDateIntervalFormatter 
 let dateIntervalFormatter = NSDateIntervalFormatter()
 let difStyles: [NSDateIntervalFormatterStyle] =
   [.NoStyle, .ShortStyle, .MediumStyle, .LongStyle, .FullStyle]
