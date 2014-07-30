@@ -30,8 +30,7 @@ take a quick tour of the new formatters, and how to use them.
 The sample code which accompanies this post is in the form of a Xcode 6
 playground, and is available in the iOS8 Day-by-Day git repo on the
 ShinobiControls github at
-[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/
-iOS8-day-by-day).
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
 
 
 ## Temporal Formatters
