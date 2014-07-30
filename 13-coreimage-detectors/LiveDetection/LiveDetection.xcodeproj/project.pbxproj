@@ -12,6 +12,7 @@
 		F4ACDD02198904F5005DF147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4ACDD00198904F5005DF147 /* Main.storyboard */; };
 		F4ACDD04198904F5005DF147 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4ACDD03198904F5005DF147 /* Images.xcassets */; };
 		F4ACDD10198904F6005DF147 /* LiveDetectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACDD0F198904F6005DF147 /* LiveDetectionTests.swift */; };
+		F4ACDD1A1989472A005DF147 /* CoreImageVideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACDD191989472A005DF147 /* CoreImageVideoFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		F4ACDD09198904F6005DF147 /* LiveDetectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveDetectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4ACDD0E198904F6005DF147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4ACDD0F198904F6005DF147 /* LiveDetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDetectionTests.swift; sourceTree = "<group>"; };
+		F4ACDD191989472A005DF147 /* CoreImageVideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreImageVideoFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				F4ACDD00198904F5005DF147 /* Main.storyboard */,
 				F4ACDD03198904F5005DF147 /* Images.xcassets */,
 				F4ACDCFA198904F5005DF147 /* Supporting Files */,
+				F4ACDD191989472A005DF147 /* CoreImageVideoFilter.swift */,
 			);
 			path = LiveDetection;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4ACDCFF198904F5005DF147 /* ViewController.swift in Sources */,
+				F4ACDD1A1989472A005DF147 /* CoreImageVideoFilter.swift in Sources */,
 				F4ACDCFD198904F5005DF147 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
