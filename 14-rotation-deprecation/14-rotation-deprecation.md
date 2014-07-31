@@ -53,7 +53,7 @@ These constraints will be re-evaluated on rotation (or indeed on any superview
 bounds change) to ensure that they are always valid. This means that the label
 will be centered irrespective of orientation:
 
-![iPhone Preview](assets/iphone_preview.png)
+![iPhone Preview](assets/iphone_rotation_preview.png)
 
 This is great news - and in most cases this is probably all you need to do. No
 longer do you manually have to relayout your content in one of the rotation
