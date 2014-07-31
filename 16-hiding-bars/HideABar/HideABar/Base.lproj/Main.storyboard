@@ -7,11 +7,16 @@
         <!--Navigation Controller-->
         <scene sceneID="OTQ-pk-iNw">
             <objects>
-                <navigationController id="wnp-WW-5Xn" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="wnp-WW-5Xn" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ecv-dd-Hm6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Qao-Pd-9nt">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="yC2-5V-n0l" kind="relationship" relationship="rootViewController" id="LWR-TD-KnP"/>
                     </connections>
@@ -20,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="122" y="445"/>
         </scene>
-        <!--View Controller-->
+        <!--HideABar-->
         <scene sceneID="NW5-pG-1iE">
             <objects>
-                <viewController id="yC2-5V-n0l" customClass="ViewController" customModule="HideABar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HideABar" id="yC2-5V-n0l" customClass="ViewController" customModule="HideABar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LqQ-wY-gVr"/>
                         <viewControllerLayoutGuide type="bottom" id="mqk-2W-539"/>
@@ -35,30 +40,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colours" translatesAutoresizingMaskIntoConstraints="NO" id="WW1-Fs-4xO">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eE4-i6-2JG">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="lSF-8e-4Ue"/>
-                                    <barButtonItem title="Hide Bars" id="S0J-ix-Mzf">
-                                        <connections>
-                                            <action selector="handleHideBarsTapped:" destination="yC2-5V-n0l" id="al5-x8-JSM"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mqk-2W-539" firstAttribute="top" secondItem="WW1-Fs-4xO" secondAttribute="bottom" id="88g-zu-FVH"/>
-                            <constraint firstAttribute="trailing" secondItem="eE4-i6-2JG" secondAttribute="trailing" id="Jqs-NN-Ff3"/>
+                            <constraint firstItem="WW1-Fs-4xO" firstAttribute="height" secondItem="FV7-Fs-hDH" secondAttribute="height" id="K8D-Se-hGn"/>
                             <constraint firstItem="WW1-Fs-4xO" firstAttribute="top" secondItem="FV7-Fs-hDH" secondAttribute="top" id="Rdr-Lz-C3k"/>
                             <constraint firstAttribute="trailing" secondItem="WW1-Fs-4xO" secondAttribute="trailing" id="Rrc-Na-89N"/>
-                            <constraint firstItem="mqk-2W-539" firstAttribute="top" secondItem="eE4-i6-2JG" secondAttribute="bottom" id="Us7-n6-0C4"/>
-                            <constraint firstItem="eE4-i6-2JG" firstAttribute="leading" secondItem="FV7-Fs-hDH" secondAttribute="leading" id="hYG-Nl-AgX"/>
                             <constraint firstItem="WW1-Fs-4xO" firstAttribute="leading" secondItem="FV7-Fs-hDH" secondAttribute="leading" id="jO1-eQ-pa4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iHp-uh-HJm"/>
+                    <toolbarItems>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Gsm-AY-lQR"/>
+                        <barButtonItem title="Item" id="egK-9G-cRD"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="HideABar" id="iHp-uh-HJm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJ1-kw-jal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
