@@ -15,10 +15,30 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
 
   @IBOutlet var bgImageView: UIImageView!
   
+  override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+    let transitionToWide = size.width > size.height
+    let image = UIImage(named: transitionToWide ? "bg_wide" : "bg_tall")
+    
+    coordinator.animateAlongsideTransition({
+      context in
+      // Create a transition and match the context's duration
+      let transition = CATransition()
+      transition.duration = context.transitionDuration()
+      
+      // Make it fade
+      transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      transition.type = kCATransitionFade
+      self.bgImageView.layer.addAnimation(transition, forKey: "Fade")
+      
+      // Set the new image
+      self.bgImageView.image = image
+      }, completion: nil)
+  }
 }
 
