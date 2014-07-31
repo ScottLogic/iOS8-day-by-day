@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F401AB9D198A917300E18F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401AB9C198A917300E18F23 /* AppDelegate.swift */; };
+		F401AB9F198A917300E18F23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401AB9E198A917300E18F23 /* ViewController.swift */; };
+		F401ABA2198A917300E18F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F401ABA0198A917300E18F23 /* Main.storyboard */; };
+		F401ABA4198A917300E18F23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F401ABA3198A917300E18F23 /* Images.xcassets */; };
+		F401ABB0198A917300E18F23 /* HideABarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401ABAF198A917300E18F23 /* HideABarTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F401ABAA198A917300E18F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F401AB8F198A917200E18F23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F401AB96198A917200E18F23;
+			remoteInfo = HideABar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F401AB97198A917300E18F23 /* HideABar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideABar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F401AB9B198A917300E18F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F401AB9C198A917300E18F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F401AB9E198A917300E18F23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F401ABA1198A917300E18F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F401ABA3198A917300E18F23 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F401ABA9198A917300E18F23 /* HideABarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HideABarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F401ABAE198A917300E18F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F401ABAF198A917300E18F23 /* HideABarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideABarTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F401AB94198A917200E18F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F401ABA6198A917300E18F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F401AB8E198A917200E18F23 = {
+			isa = PBXGroup;
+			children = (
+				F401AB99198A917300E18F23 /* HideABar */,
+				F401ABAC198A917300E18F23 /* HideABarTests */,
+				F401AB98198A917300E18F23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F401AB98198A917300E18F23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F401AB97198A917300E18F23 /* HideABar.app */,
+				F401ABA9198A917300E18F23 /* HideABarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F401AB99198A917300E18F23 /* HideABar */ = {
+			isa = PBXGroup;
+			children = (
+				F401AB9C198A917300E18F23 /* AppDelegate.swift */,
+				F401AB9E198A917300E18F23 /* ViewController.swift */,
+				F401ABA0198A917300E18F23 /* Main.storyboard */,
+				F401ABA3198A917300E18F23 /* Images.xcassets */,
+				F401AB9A198A917300E18F23 /* Supporting Files */,
+			);
+			path = HideABar;
+			sourceTree = "<group>";
+		};
+		F401AB9A198A917300E18F23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F401AB9B198A917300E18F23 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F401ABAC198A917300E18F23 /* HideABarTests */ = {
+			isa = PBXGroup;
+			children = (
+				F401ABAF198A917300E18F23 /* HideABarTests.swift */,
+				F401ABAD198A917300E18F23 /* Supporting Files */,
+			);
+			path = HideABarTests;
+			sourceTree = "<group>";
+		};
+		F401ABAD198A917300E18F23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F401ABAE198A917300E18F23 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F401AB96198A917200E18F23 /* HideABar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F401ABB3198A917300E18F23 /* Build configuration list for PBXNativeTarget "HideABar" */;
+			buildPhases = (
+				F401AB93198A917200E18F23 /* Sources */,
+				F401AB94198A917200E18F23 /* Frameworks */,
+				F401AB95198A917200E18F23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HideABar;
+			productName = HideABar;
+			productReference = F401AB97198A917300E18F23 /* HideABar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F401ABA8198A917300E18F23 /* HideABarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F401ABB6198A917300E18F23 /* Build configuration list for PBXNativeTarget "HideABarTests" */;
+			buildPhases = (
+				F401ABA5198A917300E18F23 /* Sources */,
+				F401ABA6198A917300E18F23 /* Frameworks */,
+				F401ABA7198A917300E18F23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F401ABAB198A917300E18F23 /* PBXTargetDependency */,
+			);
+			name = HideABarTests;
+			productName = HideABarTests;
+			productReference = F401ABA9198A917300E18F23 /* HideABarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F401AB8F198A917200E18F23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ShinobiControls;
+				TargetAttributes = {
+					F401AB96198A917200E18F23 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					F401ABA8198A917300E18F23 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = F401AB96198A917200E18F23;
+					};
+				};
+			};
+			buildConfigurationList = F401AB92198A917200E18F23 /* Build configuration list for PBXProject "HideABar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F401AB8E198A917200E18F23;
+			productRefGroup = F401AB98198A917300E18F23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F401AB96198A917200E18F23 /* HideABar */,
+				F401ABA8198A917300E18F23 /* HideABarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F401AB95198A917200E18F23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F401ABA2198A917300E18F23 /* Main.storyboard in Resources */,
+				F401ABA4198A917300E18F23 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F401ABA7198A917300E18F23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F401AB93198A917200E18F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F401AB9F198A917300E18F23 /* ViewController.swift in Sources */,
+				F401AB9D198A917300E18F23 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F401ABA5198A917300E18F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F401ABB0198A917300E18F23 /* HideABarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F401ABAB198A917300E18F23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F401AB96198A917200E18F23 /* HideABar */;
+			targetProxy = F401ABAA198A917300E18F23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F401ABA0198A917300E18F23 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F401ABA1198A917300E18F23 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F401ABB1198A917300E18F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F401ABB2198A917300E18F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F401ABB4198A917300E18F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = HideABar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F401ABB5198A917300E18F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = HideABar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F401ABB7198A917300E18F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HideABar.app/HideABar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HideABarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		F401ABB8198A917300E18F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HideABar.app/HideABar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HideABarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F401AB92198A917200E18F23 /* Build configuration list for PBXProject "HideABar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F401ABB1198A917300E18F23 /* Debug */,
+				F401ABB2198A917300E18F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F401ABB3198A917300E18F23 /* Build configuration list for PBXNativeTarget "HideABar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F401ABB4198A917300E18F23 /* Debug */,
+				F401ABB5198A917300E18F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F401ABB6198A917300E18F23 /* Build configuration list for PBXNativeTarget "HideABarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F401ABB7198A917300E18F23 /* Debug */,
+				F401ABB8198A917300E18F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F401AB8F198A917200E18F23 /* Project object */;
+}
