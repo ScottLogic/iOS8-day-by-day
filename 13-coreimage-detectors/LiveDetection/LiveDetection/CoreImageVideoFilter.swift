@@ -28,7 +28,7 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
   var videoDisplayViewBounds: CGRect!
   var renderContext: CIContext!
   
-  var avSession: AVCaptureSession!
+  var avSession: AVCaptureSession?
   var sessionQueue: dispatch_queue_t!
   
   var detector: CIDetector?
@@ -39,6 +39,7 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     videoDisplayView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
     videoDisplayView.frame = superview.bounds
     superview.addSubview(videoDisplayView)
+    superview.sendSubviewToBack(videoDisplayView)
     
     renderContext = CIContext(EAGLContext: videoDisplayView.context)
     sessionQueue = dispatch_queue_create("AVSessionQueue", DISPATCH_QUEUE_SERIAL)
@@ -48,19 +49,34 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
   }
   
   deinit {
-    avSession.stopRunning()
+    stopFiltering()
     dispatch_release(sessionQueue)
   }
   
   func startFiltering() {
+    // Create a session if we don't already have one
+    if !avSession {
+      avSession = createAVSession()
+    }
+    
+    // And kick it off
+    avSession?.startRunning()
+  }
+  
+  func stopFiltering() {
+    // Stop the av session
+    avSession?.stopRunning()
+  }
+  
+  func createAVSession() -> AVCaptureSession {
     // Input from video camera
     let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
     var error: NSError?
     let input = AVCaptureDeviceInput(device: device, error: &error)
     
     // Start out with low quality
-    avSession = AVCaptureSession()
-    avSession.sessionPreset = AVCaptureSessionPresetMedium
+    let session = AVCaptureSession()
+    session.sessionPreset = AVCaptureSessionPresetMedium
     
     // Output
     let videoOutput = AVCaptureVideoDataOutput()
@@ -70,11 +86,10 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     videoOutput.setSampleBufferDelegate(self, queue: sessionQueue)
     
     // Join it all together
-    avSession.addInput(input)
-    avSession.addOutput(videoOutput)
-    
-    // And kick it off
-    avSession.startRunning()
+    session.addInput(input)
+    session.addOutput(videoOutput)
+
+    return session
   }
   
 

@@ -17,6 +17,9 @@ import UIKit
 
 class ViewController: UIViewController {
   
+  @IBOutlet var qrDecodeLabel: UILabel!
+  @IBOutlet var detectorModeSelector: UISegmentedControl!
+  
   var videoFilter: CoreImageVideoFilter?
   var detector: CIDetector?
   
@@ -25,44 +28,98 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
     
     // Create the video filter
-    videoFilter = CoreImageVideoFilter(superview: view, applyFilterCallback: {
-      image in
-        return self.performDetection(image)
-      })
+    videoFilter = CoreImageVideoFilter(superview: view, applyFilterCallback: nil)
     
-    // Start the video capture process
-    videoFilter?.startFiltering()
+    // Simulate a tap on the mode selector to start the process
+    detectorModeSelector.selectedSegmentIndex = 0
+    handleDetectorSelectionChange(detectorModeSelector)
+  }
+  
+  @IBAction func handleDetectorSelectionChange(sender: UISegmentedControl) {
+    if let videoFilter = videoFilter {
+      videoFilter.stopFiltering()
+      self.qrDecodeLabel.hidden = true
+      
+      switch sender.selectedSegmentIndex {
+      case 0:
+        detector = prepareRectangleDetector()
+        videoFilter.applyFilter = {
+          image in
+          return self.performRectangleDetection(image)
+        }
+      case 1:
+        self.qrDecodeLabel.hidden = false
+        detector = prepareQRCodeDetector()
+        videoFilter.applyFilter = {
+          image in
+          let found = self.performQRCodeDetection(image)
+          dispatch_async(dispatch_get_main_queue()) {
+            if found.decode != "" {
+              self.qrDecodeLabel.text = found.decode
+            }
+          }
+          return found.outImage
+        }
+      default:
+        videoFilter.applyFilter = nil
+      }
+      
+      videoFilter.startFiltering()
+    }
   }
   
   
-  func performDetection(image: CIImage) -> CIImage? {
+  //MARK: Utility methods
+  func performRectangleDetection(image: CIImage) -> CIImage? {
     var resultImage: CIImage?
-    if !detector {
-      detector = prepareDetector()
-    }
     if let detector = detector {
       // Get the detections
       let features = detector.featuresInImage(image)
       for feature in features as [CIRectangleFeature] {
-        var overlay = CIImage(color: CIColor(red: 1.0, green: 0, blue: 0, alpha: 0.5))
-        overlay = overlay.imageByCroppingToRect(image.extent())
-        overlay = overlay.imageByApplyingFilter("CIPerspectiveTransformWithExtent",
-          withInputParameters: [
-            "inputExtent": CIVector(CGRect: image.extent()),
-            "inputTopLeft": CIVector(CGPoint: feature.topLeft),
-            "inputTopRight": CIVector(CGPoint: feature.topRight),
-            "inputBottomLeft": CIVector(CGPoint: feature.bottomLeft),
-            "inputBottomRight": CIVector(CGPoint: feature.bottomRight)
-          ])
-        resultImage = overlay.imageByCompositingOverImage(image)
+        resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
+                                                    bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
       }
     }
     return resultImage
   }
   
-  func prepareDetector() -> CIDetector {
+  func performQRCodeDetection(image: CIImage) -> (outImage: CIImage?, decode: String) {
+    var resultImage: CIImage?
+    var decode = ""
+    if let detector = detector {
+      let features = detector.featuresInImage(image)
+      for feature in features as [CIBarcodeFeature] {
+        resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
+          bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
+        decode = feature.codeString
+      }
+    }
+    return (resultImage, decode)
+  }
+  
+  func prepareRectangleDetector() -> CIDetector {
     let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh, CIDetectorAspectRatio: 1.0]
     return CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: options)
+  }
+  
+  func prepareQRCodeDetector() -> CIDetector {
+    let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+    return CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: options)
+  }
+  
+  func drawHighlightOverlayForPoints(image: CIImage, topLeft: CGPoint, topRight: CGPoint,
+                                     bottomLeft: CGPoint, bottomRight: CGPoint) -> CIImage {
+    var overlay = CIImage(color: CIColor(red: 1.0, green: 0, blue: 0, alpha: 0.5))
+    overlay = overlay.imageByCroppingToRect(image.extent())
+    overlay = overlay.imageByApplyingFilter("CIPerspectiveTransformWithExtent",
+      withInputParameters: [
+        "inputExtent": CIVector(CGRect: image.extent()),
+        "inputTopLeft": CIVector(CGPoint: topLeft),
+        "inputTopRight": CIVector(CGPoint: topRight),
+        "inputBottomLeft": CIVector(CGPoint: bottomLeft),
+        "inputBottomRight": CIVector(CGPoint: bottomRight)
+      ])
+    return overlay.imageByCompositingOverImage(image)
   }
 }
 

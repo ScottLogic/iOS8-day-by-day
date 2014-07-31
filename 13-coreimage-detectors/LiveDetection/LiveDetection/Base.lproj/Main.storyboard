@@ -15,8 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sqn-cQ-OYS">
+                                <rect key="frame" x="225" y="552" width="151" height="29"/>
+                                <segments>
+                                    <segment title="Rectangle"/>
+                                    <segment title="QR Code"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleDetectorSelectionChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="41u-8s-61n"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Decode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwI-U6-1dk">
+                                <rect key="frame" x="0.0" y="496" width="600" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sqn-cQ-OYS" secondAttribute="bottom" constant="20" id="Fm2-Oa-8CY"/>
+                            <constraint firstAttribute="centerX" secondItem="AwI-U6-1dk" secondAttribute="centerX" id="SwI-Q6-mGe"/>
+                            <constraint firstItem="AwI-U6-1dk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="iNA-Jw-qgb"/>
+                            <constraint firstItem="Sqn-cQ-OYS" firstAttribute="top" secondItem="AwI-U6-1dk" secondAttribute="bottom" constant="8" id="qGF-Or-n3b"/>
+                            <constraint firstAttribute="centerX" secondItem="Sqn-cQ-OYS" secondAttribute="centerX" constant="-0.5" id="rD6-Sd-DMU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detectorModeSelector" destination="Sqn-cQ-OYS" id="HVh-4P-gRa"/>
+                        <outlet property="qrDecodeLabel" destination="AwI-U6-1dk" id="00H-Ra-Xvr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
