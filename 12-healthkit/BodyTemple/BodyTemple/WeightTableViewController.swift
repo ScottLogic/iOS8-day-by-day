@@ -20,34 +20,35 @@ import HealthKit
 class WeightTableViewController: UITableViewController, WeightEntryDelegate, HealthStoreUser {
   
   var healthStore: HKHealthStore?
+  var weightSamples = [HKQuantitySample]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Weight History"
+    perfromQueryForWeightSamples()
   }
   
   // MARK: - Table view data source
-  
   override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-    // #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0
+    return 1
   }
   
   override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0
+    return weightSamples.count
   }
-  /*
+  
   override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-  let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("WeightCell", forIndexPath: indexPath) as UITableViewCell
+    // Configure the cell...
+    let sample = weightSamples[indexPath.row]
+    let weight = sample.quantity.doubleValueForUnit(HKUnit(fromString: "kg"))
+    cell.textLabel.text = "\(weight)"
+    cell.detailTextLabel.text = "\(sample.startDate)"
   
-  // Configure the cell...
-  
-  return cell
+    return cell
   }
-*/
   
   // MARK: - Navigation
   
@@ -64,8 +65,38 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
   
   // MARK: - WeightEntryDelegate
   func weightEntryDidComplete(weight: HKQuantitySample) {
+    saveSampleToHealthStore(weight)
+    self.weightSamples.insert(weight, atIndex: 0)
+    self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .Automatic)
+  }
+  
+  // MARK: - HealthStore utility methods
+  func perfromQueryForWeightSamples() {
+    let endDate = NSDate()
+    let startDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitMonth, value: -2, toDate: endDate, options: nil)
+    
+    let weightSampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
+    let predicate = HKQuery.predicateForSamplesWithStartDate(startDate, endDate: endDate, options: .None)
+    
+    let query = HKSampleQuery(sampleType: weightSampleType, predicate: predicate, limit: 0, sortDescriptors: nil, resultsHandler: {
+      (query, results, error) in
+      if !results {
+        println("There was an error running the query: \(error)")
+      }
+      
+      dispatch_async(dispatch_get_main_queue()) {
+        self.weightSamples = results as [HKQuantitySample]
+        self.tableView.reloadData()
+      }
+      
+      })
+    
+    self.healthStore?.executeQuery(query)
+  }
+  
+  func saveSampleToHealthStore(sample: HKQuantitySample) {
     println("Saving weight")
-    self.healthStore?.saveObject(weight, withCompletion: {
+    self.healthStore?.saveObject(sample, withCompletion: {
       (success, error) in
       if success {
         println("Weight saved successfully 😃")
