@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40A1D5A198BB6F00026F68F /* HealthStoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A1D59198BB6F00026F68F /* HealthStoreUser.swift */; };
+		F40A1D5C198BB76D0026F68F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A1D5B198BB76D0026F68F /* TabBarViewController.swift */; };
+		F40A1D5E198BB7F90026F68F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A1D5D198BB7F90026F68F /* NavigationViewController.swift */; };
+		F40A1D61198BBAE80026F68F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40A1D60198BBAE80026F68F /* HealthKit.framework */; };
 		F410E7A9198B84B900843496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410E7A8198B84B900843496 /* AppDelegate.swift */; };
 		F410E7B0198B84B900843496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F410E7AE198B84B900843496 /* Main.storyboard */; };
 		F410E7B2198B84B900843496 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F410E7B1198B84B900843496 /* Images.xcassets */; };
@@ -26,6 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F40A1D59198BB6F00026F68F /* HealthStoreUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStoreUser.swift; sourceTree = "<group>"; };
+		F40A1D5B198BB76D0026F68F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F40A1D5D198BB7F90026F68F /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		F40A1D5F198BBAE80026F68F /* BodyTemple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BodyTemple.entitlements; sourceTree = "<group>"; };
+		F40A1D60198BBAE80026F68F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F410E7A3198B84B900843496 /* BodyTemple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyTemple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F410E7A7198B84B900843496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F410E7A8198B84B900843496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40A1D61198BBAE80026F68F /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +69,7 @@
 		F410E79A198B84B900843496 = {
 			isa = PBXGroup;
 			children = (
+				F40A1D60198BBAE80026F68F /* HealthKit.framework */,
 				F410E7A5198B84B900843496 /* BodyTemple */,
 				F410E7BA198B84B900843496 /* BodyTempleTests */,
 				F410E7A4198B84B900843496 /* Products */,
@@ -77,12 +88,16 @@
 		F410E7A5198B84B900843496 /* BodyTemple */ = {
 			isa = PBXGroup;
 			children = (
+				F40A1D5F198BBAE80026F68F /* BodyTemple.entitlements */,
 				F410E7A8198B84B900843496 /* AppDelegate.swift */,
 				F410E7AE198B84B900843496 /* Main.storyboard */,
 				F410E7B1198B84B900843496 /* Images.xcassets */,
 				F410E7A6198B84B900843496 /* Supporting Files */,
 				F410E7C7198B8C2800843496 /* WeightTableViewController.swift */,
 				F410E7C9198B922100843496 /* WeightEntryViewController.swift */,
+				F40A1D59198BB6F00026F68F /* HealthStoreUser.swift */,
+				F40A1D5B198BB76D0026F68F /* TabBarViewController.swift */,
+				F40A1D5D198BB7F90026F68F /* NavigationViewController.swift */,
 			);
 			path = BodyTemple;
 			sourceTree = "<group>";
@@ -161,6 +176,12 @@
 				TargetAttributes = {
 					F410E7A2198B84B900843496 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = XJ74287KY8;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					F410E7B6198B84B900843496 = {
 						CreatedOnToolsVersion = 6.0;
@@ -211,8 +232,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40A1D5E198BB7F90026F68F /* NavigationViewController.swift in Sources */,
 				F410E7C8198B8C2800843496 /* WeightTableViewController.swift in Sources */,
 				F410E7A9198B84B900843496 /* AppDelegate.swift in Sources */,
+				F40A1D5A198BB6F00026F68F /* HealthStoreUser.swift in Sources */,
+				F40A1D5C198BB76D0026F68F /* TabBarViewController.swift in Sources */,
 				F410E7CA198B922100843496 /* WeightEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,9 +355,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = BodyTemple/BodyTemple.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BodyTemple/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -343,9 +371,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = BodyTemple/BodyTemple.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BodyTemple/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -403,6 +435,7 @@
 				F410E7C3198B84B900843496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F410E7C4198B84B900843496 /* Build configuration list for PBXNativeTarget "BodyTempleTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +444,7 @@
 				F410E7C6198B84B900843496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
