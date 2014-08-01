@@ -56,7 +56,8 @@ class TabBarViewController: UITabBarController {
     let dataTypesToRead = [
       HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass),
       HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeight),
-      HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMassIndex)
+      HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMassIndex),
+      HKCharacteristicType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierDateOfBirth)
     ]
     
     self.healthStore?.requestAuthorizationToShareTypes(NSSet(array: dataTypesToWrite),

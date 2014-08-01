@@ -22,10 +22,18 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
   var healthStore: HKHealthStore?
   var weightSamples = [HKQuantitySample]()
   
+  let massFormatter = NSMassFormatter()
+  let dateFormatter = NSDateFormatter()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Weight History"
     perfromQueryForWeightSamples()
+    
+    // Prepare the formatters
+    massFormatter.forPersonMassUse = true
+    dateFormatter.dateStyle = .MediumStyle
+    dateFormatter.timeStyle = .NoStyle
   }
   
   // MARK: - Table view data source
@@ -44,8 +52,10 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
     // Configure the cell...
     let sample = weightSamples[indexPath.row]
     let weight = sample.quantity.doubleValueForUnit(HKUnit(fromString: "kg"))
-    cell.textLabel.text = "\(weight)"
-    cell.detailTextLabel.text = "\(sample.startDate)"
+    
+    
+    cell.detailTextLabel.text = "\(massFormatter.stringFromValue(weight, unit:.Kilogram))"
+    cell.textLabel.text = "\(dateFormatter.stringFromDate(sample.startDate))"
   
     return cell
   }

@@ -11,6 +11,7 @@
 		F40A1D5C198BB76D0026F68F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A1D5B198BB76D0026F68F /* TabBarViewController.swift */; };
 		F40A1D5E198BB7F90026F68F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A1D5D198BB7F90026F68F /* NavigationViewController.swift */; };
 		F40A1D61198BBAE80026F68F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40A1D60198BBAE80026F68F /* HealthKit.framework */; };
+		F40A1D63198BDFDE0026F68F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A1D62198BDFDE0026F68F /* ProfileViewController.swift */; };
 		F410E7A9198B84B900843496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F410E7A8198B84B900843496 /* AppDelegate.swift */; };
 		F410E7B0198B84B900843496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F410E7AE198B84B900843496 /* Main.storyboard */; };
 		F410E7B2198B84B900843496 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F410E7B1198B84B900843496 /* Images.xcassets */; };
@@ -35,6 +36,7 @@
 		F40A1D5D198BB7F90026F68F /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		F40A1D5F198BBAE80026F68F /* BodyTemple.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BodyTemple.entitlements; sourceTree = "<group>"; };
 		F40A1D60198BBAE80026F68F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		F40A1D62198BDFDE0026F68F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F410E7A3198B84B900843496 /* BodyTemple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyTemple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F410E7A7198B84B900843496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F410E7A8198B84B900843496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				F40A1D59198BB6F00026F68F /* HealthStoreUser.swift */,
 				F40A1D5B198BB76D0026F68F /* TabBarViewController.swift */,
 				F40A1D5D198BB7F90026F68F /* NavigationViewController.swift */,
+				F40A1D62198BDFDE0026F68F /* ProfileViewController.swift */,
 			);
 			path = BodyTemple;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				F410E7C8198B8C2800843496 /* WeightTableViewController.swift in Sources */,
 				F410E7A9198B84B900843496 /* AppDelegate.swift in Sources */,
 				F40A1D5A198BB6F00026F68F /* HealthStoreUser.swift in Sources */,
+				F40A1D63198BDFDE0026F68F /* ProfileViewController.swift in Sources */,
 				F40A1D5C198BB76D0026F68F /* TabBarViewController.swift in Sources */,
 				F410E7CA198B922100843496 /* WeightEntryViewController.swift in Sources */,
 			);

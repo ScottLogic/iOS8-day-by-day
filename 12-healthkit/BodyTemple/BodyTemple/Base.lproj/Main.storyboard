@@ -54,6 +54,69 @@
             </objects>
             <point key="canvasLocation" x="1803" y="-729"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="oFk-hi-q3x">
+            <objects>
+                <navigationController id="nXm-3F-q52" customClass="NavigationViewController" customModule="BodyTemple" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="ZST-RQ-n9Q"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2BP-Gh-TE7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jl0-9G-lsc" kind="relationship" relationship="rootViewController" id="1XB-gN-9d0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Amx-m5-x04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989" y="375"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="wgc-cQ-BEB">
+            <objects>
+                <viewController id="jl0-9G-lsc" customClass="ProfileViewController" customModule="BodyTemple" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1t3-3g-EAR"/>
+                        <viewControllerLayoutGuide type="bottom" id="PzN-Tx-J7a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2fx-Id-u4v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-Dr-Z5P">
+                                <rect key="frame" x="0.0" y="216" width="600" height="295"/>
+                                <color key="backgroundColor" red="0.29282554120152859" green="0.56070631377551017" blue="0.15949389240788348" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="250"/>
+                                <color key="textColor" red="1" green="0.7423607257" blue="0.0" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BodyTemple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rgL-sB-K90">
+                                <rect key="frame" x="0.0" y="109" width="600" height="77"/>
+                                <color key="backgroundColor" red="1" green="0.7423607256999929" blue="0.0" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="65"/>
+                                <color key="textColor" red="0.13805000802616596" green="0.35722257653061229" blue="0.085895046217246904" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.42265198004496601" green="0.73935746173469385" blue="0.099302321193482798" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MBw-Dr-Z5P" firstAttribute="top" secondItem="rgL-sB-K90" secondAttribute="bottom" constant="30" id="EG0-oH-cac"/>
+                            <constraint firstItem="rgL-sB-K90" firstAttribute="width" secondItem="2fx-Id-u4v" secondAttribute="width" id="LAq-Vs-L7n"/>
+                            <constraint firstAttribute="centerX" secondItem="MBw-Dr-Z5P" secondAttribute="centerX" id="LqS-sm-KPI"/>
+                            <constraint firstItem="rgL-sB-K90" firstAttribute="top" secondItem="1t3-3g-EAR" secondAttribute="bottom" constant="45" id="SfI-93-qqU"/>
+                            <constraint firstItem="MBw-Dr-Z5P" firstAttribute="width" secondItem="2fx-Id-u4v" secondAttribute="width" id="YYF-Zu-Q8k"/>
+                            <constraint firstAttribute="centerX" secondItem="rgL-sB-K90" secondAttribute="centerX" id="ral-CS-cG4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ks6-Aa-qb7"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="MBw-Dr-Z5P" id="v4a-Bk-Zrv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTf-C7-1cm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="375"/>
+        </scene>
         <!--Weight Entry View Controller-->
         <scene sceneID="tEO-5o-vMm">
             <objects>
@@ -78,7 +141,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KlY-Yr-At4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KlY-Yr-At4">
                                 <rect key="frame" x="60" y="294" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -115,11 +178,11 @@
             </objects>
             <point key="canvasLocation" x="2555" y="-729"/>
         </scene>
-        <!--Item-->
+        <!--Weight-->
         <scene sceneID="NJQ-hi-cak">
             <objects>
                 <navigationController id="XwD-Ur-OYg" customClass="NavigationViewController" customModule="BodyTemple" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="JbP-kY-Bwa"/>
+                    <tabBarItem key="tabBarItem" title="Weight" image="first" id="JbP-kY-Bwa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qrP-UY-4Qi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -143,12 +206,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="nXm-3F-q52" kind="relationship" relationship="viewControllers" id="sxY-I1-vIT"/>
                         <segue destination="XwD-Ur-OYg" kind="relationship" relationship="viewControllers" id="qXh-bi-1kV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-48" y="20"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
 </document>
