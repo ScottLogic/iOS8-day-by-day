@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HorseRace" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5U-rx-3zo">
+                                <rect key="frame" x="448" y="20" width="2" height="460"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.12941943364042174" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="AGz-P1-gS5"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="grass" translatesAutoresizingMaskIntoConstraints="NO" id="FVR-Bo-lHg">
+                                <rect key="frame" x="8" y="330" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="grass" translatesAutoresizingMaskIntoConstraints="NO" id="fMY-RS-D8g">
+                                <rect key="frame" x="90" y="330" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="grass" translatesAutoresizingMaskIntoConstraints="NO" id="Pqt-iv-Qev">
+                                <rect key="frame" x="179" y="330" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="grass" translatesAutoresizingMaskIntoConstraints="NO" id="fsT-BI-s6i">
+                                <rect key="frame" x="257" y="330" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" image="grass" translatesAutoresizingMaskIntoConstraints="NO" id="phs-cH-Ucq">
+                                <rect key="frame" x="330" y="330" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horse" translatesAutoresizingMaskIntoConstraints="NO" id="R0T-19-L1y">
+                                <rect key="frame" x="35" y="72" width="96" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R0T-19-L1y" secondAttribute="height" multiplier="5:4" id="dfq-uE-dMQ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horse" translatesAutoresizingMaskIntoConstraints="NO" id="bmq-kx-sBA">
+                                <rect key="frame" x="35" y="207" width="96" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bmq-kx-sBA" secondAttribute="height" multiplier="5:4" id="7mJ-yX-B4r"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo1-OC-vX3">
+                                <rect key="frame" x="20" y="20" width="73" height="30"/>
+                                <state key="normal" title="Start Race">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleStartRaceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="56O-8j-l8H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8i-MU-Tm2">
+                                <rect key="frame" x="113" y="20" width="40" height="30"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleResetRaceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EMy-ba-PZG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23063469467527198" green="0.49657206632653061" blue="0.35655568713968161" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bmq-kx-sBA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="4DU-aa-4eD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z5U-rx-3zo" secondAttribute="bottom" id="5E4-xP-w35"/>
+                            <constraint firstItem="phs-cH-Ucq" firstAttribute="leading" secondItem="Pqt-iv-Qev" secondAttribute="trailing" constant="1" id="6ad-i0-lMJ"/>
+                            <constraint firstItem="R0T-19-L1y" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" priority="750" id="6ce-c1-QeQ"/>
+                            <constraint firstItem="bmq-kx-sBA" firstAttribute="top" secondItem="R0T-19-L1y" secondAttribute="bottom" constant="58" id="Bcj-as-ggI"/>
+                            <constraint firstItem="FVR-Bo-lHg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="Cg8-Jg-YfA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="phs-cH-Ucq" secondAttribute="bottom" id="Gel-5n-D9X"/>
+                            <constraint firstAttribute="trailing" secondItem="Z5U-rx-3zo" secondAttribute="trailing" constant="30" id="MLG-nD-lGb"/>
+                            <constraint firstItem="bmq-kx-sBA" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="SZd-gL-XvJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fsT-BI-s6i" secondAttribute="bottom" id="Sdo-la-6TN"/>
+                            <constraint firstAttribute="trailing" secondItem="fsT-BI-s6i" secondAttribute="trailing" constant="73" id="TlO-XX-997"/>
+                            <constraint firstItem="bmq-kx-sBA" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="YPf-7X-qaI"/>
+                            <constraint firstItem="Z5U-rx-3zo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Yok-3o-fR4"/>
+                            <constraint firstItem="R0T-19-L1y" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="aCy-eO-b3f"/>
+                            <constraint firstItem="R0T-19-L1y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="aea-sm-4KB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pqt-iv-Qev" secondAttribute="bottom" id="dI4-ok-zy8"/>
+                            <constraint firstItem="R0T-19-L1y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="haA-WL-cUJ"/>
+                            <constraint firstItem="a8i-MU-Tm2" firstAttribute="leading" secondItem="Vo1-OC-vX3" secondAttribute="trailing" constant="20" id="iNk-tf-aBp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fMY-RS-D8g" secondAttribute="bottom" id="jD8-bA-TFh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FVR-Bo-lHg" secondAttribute="bottom" id="nq0-5D-aGX"/>
+                            <constraint firstItem="Vo1-OC-vX3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="p7o-hH-XhF"/>
+                            <constraint firstItem="a8i-MU-Tm2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="v2F-hY-JiJ"/>
+                            <constraint firstItem="fsT-BI-s6i" firstAttribute="leading" secondItem="fMY-RS-D8g" secondAttribute="trailing" constant="17" id="vSg-wE-Zlf"/>
+                            <constraint firstAttribute="trailing" secondItem="phs-cH-Ucq" secondAttribute="trailing" id="wsS-BF-4j6"/>
+                            <constraint firstItem="Vo1-OC-vX3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xF6-Y5-oDz"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="horse1" destination="R0T-19-L1y" id="jVm-LY-8ar"/>
+                        <outlet property="horse1StartConstraint" destination="haA-WL-cUJ" id="Eea-Ev-yB7"/>
+                        <outlet property="horse2" destination="bmq-kx-sBA" id="lph-XQ-2kN"/>
+                        <outlet property="horse2StartConstraint" destination="4DU-aa-4eD" id="qnB-AV-diP"/>
+                        <outlet property="resetButton" destination="a8i-MU-Tm2" id="KuY-5t-wpk"/>
+                        <outlet property="startRaceButton" destination="Vo1-OC-vX3" id="vni-Qo-2Wa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="grass" width="150" height="150"/>
+        <image name="horse" width="400" height="282"/>
+    </resources>
+    <color key="tintColor" red="0.3000398417666239" green="1" blue="0.72029456154127502" alpha="1" colorSpace="calibratedRGB"/>
+</document>
