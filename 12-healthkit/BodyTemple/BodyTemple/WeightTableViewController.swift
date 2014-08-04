@@ -104,7 +104,7 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
     self.healthStore?.executeQuery(query)
   }
   
-  func saveSampleToHealthStore(sample: HKQuantitySample) {
+  func saveSampleToHealthStore(sample: HKObject) {
     println("Saving weight")
     self.healthStore?.saveObject(sample, withCompletion: {
       (success, error) in
