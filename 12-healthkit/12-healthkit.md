@@ -10,8 +10,10 @@ but have a read through the rest of this post first!
 ## Introduction
 
 One of the more consumer-oriented features introduced in iOS8 is that of the
-Health app. It was featured in the keynote at WWDC and was... THIS ISN'T
-FINISHED.
+Health app. It was featured in the keynote at WWDC and has received a fair
+amount of hype since that point. In fact some of the world's biggest names in
+healthcare have already put their names behind it as being a huge step forward
+in modern healthcare.
 
 The underlying technology behind the health app is HealthKit, which is
 essentially a structured datastore designed specifically for health data. Not
@@ -128,6 +130,13 @@ for privacy. It can also be a lot more subtle than that - there is huge
 correlation between users recording blood sugar levels, and being diabetic - so
 even knowing that the data _exist_ is a leak of personal data.
 
+Before your app can use HealthKit, you need to enable it in the __Capabilities__
+pane of the project settings. This requires that you sign in to your Apple
+developer account, and then acquires the appropriate entitlements for your app.
+
+![HealthKit Capabilities](assets/healthkit-capabilities.png)
+![HealthKit Capabilities Enabled](assets/healthkit-capabilities-enabled.png)
+
 In order to protect users' privacy, HealthKit includes a very granular
 permissions system, including a super-simple UI. In order for an app to read
 from or write to HealthKit it has to ask the user for specific permissions. The
@@ -186,8 +195,164 @@ controllers, and requests the permissions required for use of the app.
 
 ## Writing Data
 
+You've already seen the `HKHealthStore` object in the context of requesting
+appropriate permissions, and this same object is used to both read and write to
+the data store. Saving data is actually really simple - and this is primarily
+because of the apparent complexity in the data model. Since every single thing
+that can be stored in HealthKit is a descendant of `HKObject` then saving is as
+simple as:
+
+    func saveSampleToHealthStore(sample: HKObject) {
+      println("Saving weight")
+      self.healthStore?.saveObject(sample, withCompletion: {
+        (success, error) in
+        if success {
+          println("Weight saved successfully 😃")
+        } else {
+          println("Error: \(error)")
+        }
+        })
+    }
+
+The `saveObject(_:, withCompletion:)` will attempt to save any `HKObject` to the
+datastore, and since it is an asynchronous method it has a callback for when it
+is complete. It is at this point that you would discover that your app doesn't
+have permission to write (as in the screenshot in the previous section).
+
+In __BodyTemple__ hitting save on the following screen will create a
+`HKQuantitySample` object which is then saved on the screen dismissal:
+
+![Gaining Weight](assets/adding-weight.png)
+
+Once this has completed you can see that it has worked in the Health app:
+
+![Health App Chart](assets/health-app-chart.png)
+![Health App DataPoint](assets/health-app-datapoint.png)
+
 
 ## Reading Data
 
+There are several different approaches for requesting data from HealthKit,
+depending primarily on the type of data you want to retrieve, and whether you
+want HealthKit to perform any kind of processing on the data.
+
+In the simplest case you might want to retrieve some characteristic data - such
+as the date of birth of the user:
+
+    func requestAgeAndUpdate() {
+      var error: NSError?
+      let dob = self.healthStore?.dateOfBirthWithError(&error)
+      
+      if error {
+        println("There was an error requesting the date of birth: \(error)")
+        return
+      }
+      
+      // Calculate the age
+      let now = NSDate()
+      let age = NSCalendar.currentCalendar().components(.YearCalendarUnit, fromDate: dob,
+                                                        toDate: now, options: .WrapComponents)
+      
+      self.ageLabel.text = "\(age.year)"
+    }
+
+
+There are methods directly on the `HKHealthStore` to get hold of these. The
+above `requestAgeAndUpdate()` method populates a label with the user's age:
+
+![User's Age](assets/app-age.png)
+
+To request sampled data you need to create an `HKQuery`, which itself requires
+a sample type and predicate, upon which to filter. The following method
+demonstrates how to get a list of body mass samples for the last 2 months:
+
+    func perfromQueryForWeightSamples() {
+      let endDate = NSDate()
+      let startDate = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitMonth,
+        value: -2, toDate: endDate, options: nil)
+      
+      let weightSampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
+      let predicate = HKQuery.predicateForSamplesWithStartDate(startDate,
+        endDate: endDate, options: .None)
+      
+      let query = HKSampleQuery(sampleType: weightSampleType, predicate: predicate,
+        limit: 0, sortDescriptors: nil, resultsHandler: {
+        (query, results, error) in
+          if !results {
+            println("There was an error running the query: \(error)")
+          }
+          dispatch_async(dispatch_get_main_queue()) {
+            self.weightSamples = results as [HKQuantitySample]
+            self.tableView.reloadData()
+          }
+        })
+      self.healthStore?.executeQuery(query)
+    }
+
+Notice that the query is again asynchronous, and so you must provide a closure
+to handle the delivery of the results. Note that this will occur on a background
+queue and therefore you need to make sure that you marshal any UI updates back
+to the main queue.
+
+![Weight history](assets/app-weight-history.png)
+
+This represents a one-off query, but you might also want to perform a long-
+running query, which will notify you each time new samples appear in the
+database, by repeatedly calling the result handler closure. This can be useful
+if you are working with values which have a high sample rate, and are being
+created by a different app. This is exactly the functionality provided by
+`HKObserverQuery`, which looks very similar to the `HKSampleQuery` your saw
+above. Since it is a long-running query it must be canceled by calling the
+`stopQuery(_:)` method on `HKHealthStore`.
+
+Another query type worth mentioning is the anchored query, represented by the
+`HKAnchoredObjectQuery`, which will provide you a pointer to the most recent
+result returned. You can then re-run the query at a later stage and only get
+newer results returned. This means that you don't have to repeatedly process the
+result set to determine whether you have already seen each sample.
+
+The final class worth mentioning with respect to HealthKit is `HKStatistics`,
+which, as the name suggests, allows you to perform basic statistical treatments
+of the dataset - i.e. finding the sum/mean. It's important here to be aware of
+the fact that some measurements are cumulative (that is to say the a sum makes
+sense, e.g. energy intake), whereas some are discrete - where min and max might
+apply. These concepts are well-defined in HealthKit determined by the 
+`HKQuantityAggregationStyle` enumeration.
+
+You can also generate a collection of statistics (such as total energy consumed
+per day for the last week) using the `HKStatisticsCollectionQuery`. This is an
+expansion on a statistics query, but with the concept of time intervals and an
+anchor date.
+
 
 ## Conclusion
+
+On the surface of it the health app seems like a pretty cool idea for iOS8, but
+once you get down into HealthKit then you realise that this could be really
+quite powerful. In creating HealthKit Apple hasn't attempted to create one
+healthcare app to rule them all, but instead has created a framework through
+which the important aspects of healthcare monitoring can interoperate. There is
+only one canonical set of body mass readings for a person, so why do they
+currently have to be entered for each app? It's also a lot clearer to the end
+user exactly what healthcare data the app has access to - which is another easy
+win.
+
+From the point of view of developers, having an easy-to-use pre-existing
+datastore is huge news in itself. It might not offer the perfect schema for your
+purposes, but the power of being able to share data entered from other apps is
+huge.
+
+Admittedly HealthKit is only going affect developers of apps in this space, but
+it is certainly worth taking a look at it. It gives you an idea of how Apple's
+APIs are modernizing as the ecosystem moves forward.
+
+The code for the accompanying app is available on github at the usual place:
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Go grab it, play with it and then complain about it to me on twitter - I'm 
+[@iwantmyrealname](https://twitter.com/iwantmyrealname)
+
+
+sam
+
+
+
