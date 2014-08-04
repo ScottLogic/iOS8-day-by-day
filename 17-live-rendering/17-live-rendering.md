@@ -9,4 +9,106 @@ but have a read through the rest of this post first!
 
 ## Introduction
 
+Custom views are a great way of both splitting up your code as a nod towards
+software design best practices, but also allowing the creation of resusable
+components. I've talked about this concept a lot in terms of building custom
+UI Controls - in fact I've given a fair few
+[talks](http://iwantmyreal.name/blog/2013/09/18/the-art-of-custom-ui-controls/)
+on the subject.
+
+One of the limitations in the iOS world with this technique is that you
+instantly lose the ability to work with Interface Builder (IB) in Xcode. Well,
+you can continue to use it, but you have to work with a large set of blank
+rectangles:
+
+![Storyboard before](assets/storyboard-before.png)
+
+However, this has all changed with Xcode 6, which introduces the concept of
+__Live Views__, which are views which appear in IB as they will in the running
+app. The exciting news is that they are super easy to use - and you can find out
+how today.
+
+The sample project which accompanies this project contains the code from for the
+__RWKnobControl__ I created for a tutorial on building custom controls over
+on [RayWenderlich.com](http://www.raywenderlich.com/56885/custom-control-for-ios-tutorial-a-reusable-knob).
+The code has been translated into Swift, but other than that remains the same.
+You can get hold of this project in the iOS8 day-by-day repo on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+
+
+## `@IBDesignable`
+
+The simplicity associated with this new functionality is truly beautiful. Given
+that you have a `UIView` subclass, then enabling the live-rendering in IB is as
+simple as annotating the class with the `@IBDesignable` annotation:
+
+    @IBDesignable
+    class KnobControl : UIControl {
+      ...
+    }
+
+Now, the view in the storyboard will automatically update to render the live
+view:
+
+![Default Storyboard](assets/storyboard-default.png)
+
+And that's it! The objective-C equivalent is `IB_DESIGNABLE`.
+
+If you need to provide any custom setup for the IB view then you can override
+the `prepareForInterfaceBuilder()` method, which will get called only when
+rendering inside interface builder.
+
+
+## `@IBInspectable`
+
+It's all very well and good being able to see the view in interface builder, but
+in the knob control example you've just seen it doesn't look too good. The knob
+control has a whole set of properties that are used to configure its appearance.
+If you annotate these properties with `@IBInspectable` (`IB_INSPECTABLE` in
+objective-C) then IB will provide you with config fields in the attributes
+inspector to configure them:
+
+
+    @IBInspectable
+    var value:CGFloat {
+    get { return self._primitiveValue }
+    set { self.setValue(newValue, animated: false) }
+    }
+    @IBInspectable
+    var startAngle:CGFloat {
+    get { return self.knobRenderer.startAngle }
+    set { self.knobRenderer.startAngle = newValue }
+    }
+    ...
+
+![Attributes Inspector](assets/storyboard-settings2.png)
+
+As you change these values then the view in the storyboard itself will update to
+reflect the new settings:
+
+![Updated Visualization](assets/storyboard-after2.png)
+
+You can edit any types that you are used to using within IB:
+
+    @IBInspectable
+    var color: UIColor = UIColor.whiteColor()
+    
+    @IBInspectable
+    var text: String = ""
+    
+    @IBInspectable
+    var rect: CGRect = CGRect.zeroRect
+    
+    @IBInspectable
+    var point: CGPoint = CGPoint.zeroPoint
+    
+    @IBInspectable
+    var int: Int = 0
+    
+    @IBInspectable
+    var float: CGFloat = 0.0
+
+![Inspectable Types](assets/inspectable-types.png)
+
+
 ## Conclusion
