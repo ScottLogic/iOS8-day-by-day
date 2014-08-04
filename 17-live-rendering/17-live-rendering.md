@@ -112,3 +112,19 @@ You can edit any types that you are used to using within IB:
 
 
 ## Conclusion
+
+This new functionality is really great for anybody who uses custom views and
+quite likes using IB for laying out their view controllers. It's so simple to
+integrate into your views that there isn't really any excuse not to do it for
+views which are fairly simple. Obviously there are many custom views which are
+far more complex (and require table views and the suchlike), however the hooks
+in to the IB render process might still allow big gains over the iterative
+render process that you're used to.
+
+The code for this project is again available in the github repo at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Go fork it and then gimme a shout to say hi - I'm 
+[@iwantmyrealname](https://twitter.com/iwantmyrealname) on Twitter.
+
+
+sam
