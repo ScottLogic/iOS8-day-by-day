@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40E0023198FD3AA00725513 /* KnobControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E0020198FD3AA00725513 /* KnobControl.swift */; };
+		F40E0024198FD3AA00725513 /* RotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E0021198FD3AA00725513 /* RotationGestureRecognizer.swift */; };
+		F40E0025198FD3AA00725513 /* KnobRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E0022198FD3AA00725513 /* KnobRenderer.swift */; };
 		F4FDC03F198FBC3D00D3BA81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDC03E198FBC3D00D3BA81 /* AppDelegate.swift */; };
 		F4FDC041198FBC3D00D3BA81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDC040198FBC3D00D3BA81 /* ViewController.swift */; };
 		F4FDC044198FBC3D00D3BA81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FDC042198FBC3D00D3BA81 /* Main.storyboard */; };
@@ -25,6 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F40E0020198FD3AA00725513 /* KnobControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnobControl.swift; sourceTree = "<group>"; };
+		F40E0021198FD3AA00725513 /* RotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationGestureRecognizer.swift; sourceTree = "<group>"; };
+		F40E0022198FD3AA00725513 /* KnobRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnobRenderer.swift; sourceTree = "<group>"; };
+		F40E0026198FD49C00725513 /* LiveKnobControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveKnobControl-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FDC039198FBC3C00D3BA81 /* LiveKnobControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveKnobControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FDC03D198FBC3D00D3BA81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4FDC03E198FBC3D00D3BA81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,11 +82,13 @@
 		F4FDC03B198FBC3C00D3BA81 /* LiveKnobControl */ = {
 			isa = PBXGroup;
 			children = (
+				F4FDC05B198FC9A500D3BA81 /* KnobControl */,
 				F4FDC03E198FBC3D00D3BA81 /* AppDelegate.swift */,
 				F4FDC040198FBC3D00D3BA81 /* ViewController.swift */,
 				F4FDC042198FBC3D00D3BA81 /* Main.storyboard */,
 				F4FDC045198FBC3D00D3BA81 /* Images.xcassets */,
 				F4FDC03C198FBC3D00D3BA81 /* Supporting Files */,
+				F40E0026198FD49C00725513 /* LiveKnobControl-Bridging-Header.h */,
 			);
 			path = LiveKnobControl;
 			sourceTree = "<group>";
@@ -107,6 +116,16 @@
 				F4FDC050198FBC3D00D3BA81 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4FDC05B198FC9A500D3BA81 /* KnobControl */ = {
+			isa = PBXGroup;
+			children = (
+				F40E0020198FD3AA00725513 /* KnobControl.swift */,
+				F40E0021198FD3AA00725513 /* RotationGestureRecognizer.swift */,
+				F40E0022198FD3AA00725513 /* KnobRenderer.swift */,
+			);
+			name = KnobControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +177,7 @@
 				TargetAttributes = {
 					F4FDC038198FBC3C00D3BA81 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = XJ74287KY8;
 					};
 					F4FDC04A198FBC3D00D3BA81 = {
 						CreatedOnToolsVersion = 6.0;
@@ -208,6 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40E0023198FD3AA00725513 /* KnobControl.swift in Sources */,
+				F40E0025198FD3AA00725513 /* KnobRenderer.swift in Sources */,
+				F40E0024198FD3AA00725513 /* RotationGestureRecognizer.swift in Sources */,
 				F4FDC041198FBC3D00D3BA81 /* ViewController.swift in Sources */,
 				F4FDC03F198FBC3D00D3BA81 /* AppDelegate.swift in Sources */,
 			);
@@ -260,6 +283,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -303,6 +327,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -327,9 +352,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LiveKnobControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveKnobControl/LiveKnobControl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -338,9 +367,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LiveKnobControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveKnobControl/LiveKnobControl-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -397,6 +429,7 @@
 				F4FDC057198FBC3D00D3BA81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4FDC058198FBC3D00D3BA81 /* Build configuration list for PBXNativeTarget "LiveKnobControlTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +438,7 @@
 				F4FDC05A198FBC3D00D3BA81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
