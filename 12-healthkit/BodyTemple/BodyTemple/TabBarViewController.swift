@@ -23,12 +23,12 @@ class TabBarViewController: UITabBarController {
   
   init(coder aDecoder: NSCoder!) {
     super.init(coder: aDecoder)
-    createAndPropogateHealthStore()
+    createAndPropagateHealthStore()
   }
   
   init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    createAndPropogateHealthStore()
+    createAndPropagateHealthStore()
   }
   
   override func viewDidLoad() {
@@ -37,7 +37,7 @@ class TabBarViewController: UITabBarController {
     requestAuthorisationForHealthStore()
   }
   
-  private func createAndPropogateHealthStore() {
+  private func createAndPropagateHealthStore() {
     if !self.healthStore {
       self.healthStore = HKHealthStore()
     }
@@ -64,9 +64,9 @@ class TabBarViewController: UITabBarController {
       readTypes: NSSet(array: dataTypesToRead), completion: {
       (success, error) in
         if success {
-          println("Permissions granted")
+          println("User completed authorisation request.")
         } else {
-          println("There was a problem with permissions. The app will not work as expected. \(error)")
+          println("The user cancelled the authorisation request. \(error)")
         }
       })
   }
