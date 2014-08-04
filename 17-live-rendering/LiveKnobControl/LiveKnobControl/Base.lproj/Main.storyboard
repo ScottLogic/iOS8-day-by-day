@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,12 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEp-dY-MCG" customClass="KnobControl" customModule="LiveKnobControl" customModuleProvider="target">
-                                <rect key="frame" x="201" y="221" width="200" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Z8x-cM-GK3"/>
-                                    <constraint firstAttribute="height" constant="200" id="ehU-4w-P3Q"/>
-                                </constraints>
+                                <rect key="frame" x="100" y="150" width="400" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="0.050000000000000003" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.7423607257" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                        <real key="value" value="-4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="endAngle">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="pointerLength">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.90000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RWKnobControl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Rn-J6-r2J">
                                 <rect key="frame" x="1" y="40" width="600" height="83"/>
@@ -35,10 +50,12 @@
                         <color key="backgroundColor" red="0.32065013239420942" green="0.42859088171221776" blue="0.56070631380000002" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0Rn-J6-r2J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="KPx-YE-paD"/>
-                            <constraint firstAttribute="centerY" secondItem="XEp-dY-MCG" secondAttribute="centerY" constant="-21" id="QVd-X8-kbO"/>
+                            <constraint firstAttribute="centerY" secondItem="XEp-dY-MCG" secondAttribute="centerY" constant="-50" id="QVd-X8-kbO"/>
                             <constraint firstAttribute="centerX" secondItem="0Rn-J6-r2J" secondAttribute="centerX" constant="-1" id="YPv-Wk-yA9"/>
+                            <constraint firstAttribute="width" secondItem="XEp-dY-MCG" secondAttribute="width" multiplier="1.5" id="c7N-0H-sCR"/>
                             <constraint firstItem="0Rn-J6-r2J" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="f7C-Ty-V6A"/>
-                            <constraint firstAttribute="centerX" secondItem="XEp-dY-MCG" secondAttribute="centerX" constant="-0.5" id="nPl-IN-cID"/>
+                            <constraint firstAttribute="centerX" secondItem="XEp-dY-MCG" secondAttribute="centerX" id="nPl-IN-cID"/>
+                            <constraint firstAttribute="height" secondItem="XEp-dY-MCG" secondAttribute="height" multiplier="1.5" id="ocQ-Xw-2Ey"/>
                         </constraints>
                     </view>
                 </viewController>

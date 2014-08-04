@@ -16,21 +16,25 @@
 
 import UIKit
 
+@IBDesignable
 class KnobControl : UIControl {
   var minimumValue:CGFloat = 0.0
   var maximumValue:CGFloat = 1.0
 
   var _primitiveValue:CGFloat = 0.0
+  @IBInspectable
   var value:CGFloat {
   get { return self._primitiveValue }
   set { self.setValue(newValue, animated: false) }
   }
 
+  @IBInspectable
   var startAngle:CGFloat {
   get { return self.knobRenderer.startAngle }
   set { self.knobRenderer.startAngle = newValue }
   }
 
+  @IBInspectable
   var endAngle:CGFloat {
   get { return self.knobRenderer.endAngle }
   set { self.knobRenderer.endAngle = newValue }
@@ -44,11 +48,13 @@ class KnobControl : UIControl {
 
   let knobRenderer = KnobRenderer()
 
+  @IBInspectable
   var lineWidth : CGFloat {
   get { return self.knobRenderer.lineWidth }
   set { self.knobRenderer.lineWidth = newValue }
   }
 
+  @IBInspectable
   var pointerLength : CGFloat {
   get { return self.knobRenderer.pointerLength }
   set { self.knobRenderer.pointerLength = newValue }
@@ -68,9 +74,14 @@ class KnobControl : UIControl {
     super.init(frame: frame)
     self.setup()
   }
+  
+  override var frame: CGRect {
+  didSet {
+    self.knobRenderer.updateWithBounds(bounds)
+  }
+  }
 
   func createKnobUI() {
-    self.knobRenderer.updateWithBounds(bounds)
     self.knobRenderer.color = tintColor
     self.knobRenderer.startAngle = CGFloat(-M_PI * 11.0 / 8.0)
     self.knobRenderer.endAngle = CGFloat(M_PI * 3.0 / 8.0)
@@ -82,6 +93,7 @@ class KnobControl : UIControl {
   }
 
   func setValue(newValue: CGFloat, animated:Bool) {
+    self.knobRenderer.updateWithBounds(bounds)
     if newValue != self._primitiveValue {
       self.willChangeValueForKey("value")
 
