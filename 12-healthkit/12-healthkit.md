@@ -120,6 +120,69 @@ important issue to take a look at - that of permissions.
  
 ## Permissions
 
+By its nature, any data associated with health is extremely personal, and
+therefore incredibly sensitive. Whilst having this central store for all health
+data on a device is great - the security risk could be huge. For example, an ad
+network knowing the user's body mass, and when they last ate is a huge concern
+for privacy. It can also be a lot more subtle than that - there is huge
+correlation between users recording blood sugar levels, and being diabetic - so
+even knowing that the data _exist_ is a leak of personal data.
+
+In order to protect users' privacy, HealthKit includes a very granular
+permissions system, including a super-simple UI. In order for an app to read
+from or write to HealthKit it has to ask the user for specific permissions. The
+permissions are based on the types introduced in the last section - e.g.
+`HKQuantityType` or `HKCharacteristicType`. All access to the data is performed
+through a `HKHealthStore` object, and it is this that you request permissions
+from. The following method demonstrates requesting access to the data store:
+
+    private func requestAuthorisationForHealthStore() {
+      let dataTypesToWrite = [
+        HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)
+      ]
+      let dataTypesToRead = [
+        HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass),
+        HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeight),
+        HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMassIndex),
+        HKCharacteristicType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierDateOfBirth)
+      ]
+      
+      self.healthStore?.requestAuthorizationToShareTypes(NSSet(array: dataTypesToWrite),
+        readTypes: NSSet(array: dataTypesToRead), completion: {
+        (success, error) in
+          if success {
+            println("User completed authorisation request.")
+          } else {
+            println("The user cancelled the authorisation request. \(error)")
+          }
+        })
+    }
+
+The method `requestAuthorizationToShareTypes(_:, readTypes:, completion:)`
+accepts `NSSet` objects containing the quantities that you require to share (
+write) and read. The completion closure is called once the procedure is complete.
+
+When this method is run, then the store checks to see whether it has already
+asked the user for this configuration of permissions. If it has then it will
+call the completion block immediately - irrespective of whether permission was
+granted or not. If it hasn't yet asked the user about this set of permissions
+then it'll display a modal request page like this:
+
+![](assets/health-access.png)
+![](assets/health-access-enabled.png)
+
+Note that you cannot discover whether you have permissions to read a given type,
+and that if you attempt to write a type for which you do not have authorization
+then you'll get an error back describing the problem.
+
+![](assets/without-permission.png)
+
+You should only use one `HKHealthStore` throughout your app - this way meaning
+that you can consolidate you permission requests to one point. In __BodyTemple__
+this happens in the __TabBarViewController__, which since it is the top-level
+view controller owns and propagates the health store to its child view
+controllers, and requests the permissions required for use of the app.
+
 
 ## Writing Data
 
