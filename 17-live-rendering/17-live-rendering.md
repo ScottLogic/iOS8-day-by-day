@@ -108,8 +108,30 @@ You can edit any types that you are used to using within IB:
     @IBInspectable
     var float: CGFloat = 0.0
 
+    @IBInspectable
+    var image: UIImage = UIImage()
+
 ![Inspectable Types](assets/inspectable-types.png)
 
+
+## Debugging Views
+
+So you've managed to get a view which appears inside IB, but maybe it's not
+behaving in quite the way you want it. In days gone by you would have thrown in
+some breakpoints to your view code, and then run it up in the simulator to debug
+it. Obviously you can continue to use this methodology, but the new live views
+functionality also offers the ability to debug views right in Interface Builder.
+
+Set up you break points in the usual way, and then select the view in the
+storyboard. Use the __Editor > Debug Selected Views__ menu option to kick off
+the debug process.
+
+![Debug selected view](assets/debug-selected-view.png)
+
+The debug process works in exactly the same way as it does on a device or in the
+simulator - so once you've started debugging then changing a value in the
+attributes inspector will run exactly the same code you'd expect - and hence hit
+any appropriately placed breakpoints.
 
 ## Conclusion
 
