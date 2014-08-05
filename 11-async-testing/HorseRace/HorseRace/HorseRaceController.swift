@@ -66,13 +66,13 @@ public class TwoHorseRaceController {
   }
   
   func updateConstraintsToEndOfRace(horse: Horse) {
-    horse.horseView.superview.removeConstraint(horse.startConstraint)
-    horse.horseView.superview.addConstraint(horse.finishConstraint)
+    horse.startConstraint.active = false
+    horse.finishConstraint?.active = true
   }
   
   func updateContraintsToStartOfRace(horse: Horse) {
-    horse.horseView.superview.removeConstraint(horse.finishConstraint)
-    horse.horseView.superview.addConstraint(horse.startConstraint)
+    horse.finishConstraint?.active = false
+    horse.startConstraint.active = true
   }
   
   

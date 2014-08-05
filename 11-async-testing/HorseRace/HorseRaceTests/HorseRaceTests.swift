@@ -29,7 +29,7 @@ class HorseRaceTests: XCTestCase {
     
     // Get hold of the view controller
     let window = UIApplication.sharedApplication().delegate.window!
-    viewController = window.rootViewController as? ViewController
+    viewController = window?.rootViewController as? ViewController
     raceController = viewController.raceController
   }
   
