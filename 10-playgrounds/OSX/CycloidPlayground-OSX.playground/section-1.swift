@@ -81,16 +81,13 @@ let c = Cycloid(radius: 50, numberOfRotations: 3)
 
 class AnimatingCycloidView: NSView {
   var cycloid: Cycloid
-  var wheelLayer: CAShapeLayer
-  var cycloidLayer: CAShapeLayer
+  var wheelLayer = CAShapeLayer()
+  var cycloidLayer = CAShapeLayer()
   
-  init(frame: CGRect) {
+  override init(frame: CGRect) {
     let radius: Double = Double(frame.height) / 2.0
     let numberOfRotations: Double = Double(frame.width) / (2.0 * M_PI * radius)
     cycloid = Cycloid(radius: radius, numberOfRotations: numberOfRotations)
-    
-    wheelLayer = CAShapeLayer()
-    cycloidLayer = CAShapeLayer()
     
     super.init(frame: frame)
     
@@ -98,6 +95,12 @@ class AnimatingCycloidView: NSView {
     
     prepareView()
   }
+
+  required init(coder: NSCoder) {
+    cycloid = Cycloid(radius: 10, numberOfRotations: 10)
+    super.init(coder: coder)
+  }
+  
   
   func beginAnimation() {
     self.wheelLayer.setValue(-2 * M_PI * self.cycloid.numberOfRotations, forKeyPath: "transform.rotation.z")
@@ -128,9 +131,9 @@ class AnimatingCycloidView: NSView {
   
   func prepareView() {
     wheelLayer = createWheel()
-    self.layer.addSublayer(wheelLayer)
+    self.layer?.addSublayer(wheelLayer)
     cycloidLayer = createCycloidLayer()
-    self.layer.addSublayer(cycloidLayer)
+    self.layer?.addSublayer(cycloidLayer)
   }
   
   
