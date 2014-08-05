@@ -47,12 +47,12 @@ class TransformControlsViewController: UIViewController {
   var backgroundView: UIVisualEffectView?
   
   override func viewDidLoad() {
-    if(currentTransform) {
+    if currentTransform != nil {
       applyTransformToSliders(currentTransform!)
     }
     
     backgroundView = prepareVisualEffectView()
-    view.addSubview(backgroundView)
+    view.addSubview(backgroundView!)
     applyEqualSizeConstraints(view, v2: backgroundView!, includeTop: false)
     view.backgroundColor = UIColor.clearColor()
   }
