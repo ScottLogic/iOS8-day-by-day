@@ -20,7 +20,7 @@ class RotationGestureRecognizer : UIPanGestureRecognizer {
 
   var touchAngle: CGFloat
 
-  init(target: AnyObject?, action: Selector) {
+  override init(target: AnyObject?, action: Selector) {
     self.touchAngle = 0
     super.init(target: target, action: action)
     self.maximumNumberOfTouches = 1;

@@ -65,12 +65,12 @@ class KnobControl : UIControl {
     self.createKnobUI()
   }
 
-  init(coder aDecoder: NSCoder!) {
+  required init(coder aDecoder: NSCoder!) {
     super.init(coder: aDecoder)
     self.setup()
   }
 
-  init(frame: CGRect)  {
+  override init(frame: CGRect)  {
     super.init(frame: frame)
     self.setup()
   }
