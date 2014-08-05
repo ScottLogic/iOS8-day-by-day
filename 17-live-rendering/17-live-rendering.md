@@ -126,7 +126,7 @@ Set up you break points in the usual way, and then select the view in the
 storyboard. Use the __Editor > Debug Selected Views__ menu option to kick off
 the debug process.
 
-![Debug selected view](assets/debug-selected-view.png)
+![Debug selected view](assets/debug_selected_views.png)
 
 The debug process works in exactly the same way as it does on a device or in the
 simulator - so once you've started debugging then changing a value in the
