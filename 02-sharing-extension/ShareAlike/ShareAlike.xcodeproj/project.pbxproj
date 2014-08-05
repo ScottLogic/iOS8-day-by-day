@@ -244,7 +244,7 @@
 				TargetAttributes = {
 					F402B6DC194B2B0B00E02488 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = D23W9URMHY;
+						DevelopmentTeam = XJ74287KY8;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -257,7 +257,7 @@
 					};
 					F402B702194B31DF00E02488 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = D23W9URMHY;
+						DevelopmentTeam = XJ74287KY8;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -521,6 +521,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/com.shinobicontrols.ShareAlike.ShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -538,6 +540,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/com.shinobicontrols.ShareAlike.ShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;

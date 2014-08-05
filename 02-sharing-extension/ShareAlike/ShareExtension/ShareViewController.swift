@@ -25,7 +25,7 @@ class ShareViewController: SLComposeServiceViewController {
   // The URL we're uploading to.
   // NOTE: This almost certainly _won't_ work for you. Create your own request bin
   //       at http://requestb.in/ and substitute that URL here.
-  let sc_uploadURL = "http://requestb.in/oha28noh"
+  let sc_uploadURL = "http://requestb.in/ykc1ipyk"
   let sc_maxCharactersAllowed = 25
   
   var attachedImage: UIImage?
@@ -51,7 +51,7 @@ class ShareViewController: SLComposeServiceViewController {
     // Extract an image (if one exists)
     imageFromExtensionItem(extensionItem) {
       image in
-      if image {
+      if image != nil {
         dispatch_async(dispatch_get_main_queue()) {
           self.attachedImage = image
         }
@@ -72,7 +72,12 @@ class ShareViewController: SLComposeServiceViewController {
     
     // Create the task, and kick it off
     let task = session.dataTaskWithRequest(request)
-    task.resume()
+    
+    if task != nil {
+      task.resume()
+    } else {
+      println("The task is nil - you probably need to configure your share group")
+    }
     
     // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
     extensionContext.completeRequestReturningItems(nil, completionHandler: nil)
@@ -124,18 +129,16 @@ class ShareViewController: SLComposeServiceViewController {
   func imageFromExtensionItem(extensionItem: NSExtensionItem, callback: (image: UIImage?)->Void) {
     
     for attachment in extensionItem.attachments as [NSItemProvider] {
-      if(attachment.hasItemConformingToTypeIdentifier(String(kUTTypeImage))) {
+      if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage as NSString)) {
         // Marshal on to a background thread
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, UInt(0))) {
-          attachment.loadItemForTypeIdentifier(String(kUTTypeImage), options: nil) {
+          attachment.loadItemForTypeIdentifier(kUTTypeImage as NSString, options: nil) {
             (imageProvider, error) -> Void in
             var image: UIImage? = nil
             if let e = error {
               println("Item loading error: \(e.localizedDescription)")
             }
-            if let imageData = imageProvider as? NSData {
-              image = UIImage(data: imageData)
-            }
+            image = imageProvider as? UIImage
             dispatch_async(dispatch_get_main_queue()) {
               callback(image: image)
             }
