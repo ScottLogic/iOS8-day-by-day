@@ -37,7 +37,7 @@ import Foundation
   }
   
   // NSCoding
-  public init(coder aDecoder: NSCoder!) {
+  public required init(coder aDecoder: NSCoder!) {
     self.id = aDecoder.decodeIntegerForKey("id")
     self.eventType = GitHubEventType.fromRaw(aDecoder.decodeObjectForKey("eventType") as String)!
     self.repoName = aDecoder.decodeObjectForKey("repoName") as? String

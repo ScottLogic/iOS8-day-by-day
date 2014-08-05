@@ -28,7 +28,7 @@ class EventTableViewCell: UITableViewCell {
     if let event = event {
       iconLabel.text = event.eventType.icon
       repoLabel.text = event.repoName
-      dateLabel.text = "\(event.time)"
+      dateLabel.text = "\(event.time!)"
     }
   }
   }
