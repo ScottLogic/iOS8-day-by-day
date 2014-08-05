@@ -237,7 +237,7 @@ result via a callback closure.
 In order to determine whether an attachment contains a media of a particular
 type, you need to use the `hasItemConformingToTypeIdentifier()` method.
 
-    if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage)) {
+    if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage as NSString)) {
       ...
     }
 
@@ -264,7 +264,7 @@ a closure to which the result will be delivered:
 
     // Marshal on to a background thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-      attachment.loadItemForTypeIdentifier(kUTTypeImage, options: nil) {
+      attachment.loadItemForTypeIdentifier(kUTTypeImage as NSString, options: nil) {
           (imageProvider, error) -> Void in
           ...
       }
@@ -280,9 +280,7 @@ from this:
     if let e = error {
       println("Item loading error: \(e.localizedDescription)")
     }
-    if let imageData = imageProvider as? NSData {
-      image = UIImage(data: imageData)
-    }
+    image = imageProvider as? UIImage
     dispatch_async(dispatch_get_main_queue()) {
       callback(image: image)
     }
