@@ -55,7 +55,7 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
   
   func startFiltering() {
     // Create a session if we don't already have one
-    if !avSession {
+    if avSession == nil {
       avSession = createAVSession()
     }
     
@@ -98,14 +98,17 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
   func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
     
     // Need to shimmy this through type-hell
-    let opaqueBuffer = CMSampleBufferGetImageBuffer(sampleBuffer).toOpaque()
-    let imageBuffer = Unmanaged<CVPixelBuffer>.fromOpaque(opaqueBuffer).takeUnretainedValue()
-    let sourceImage = CIImage(CVPixelBuffer: imageBuffer, options: nil)
+    let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+    // Force the type change - pass through opaque buffer
+    let opaqueBuffer = Unmanaged<CVImageBuffer>.passUnretained(imageBuffer).toOpaque()
+    let pixelBuffer = Unmanaged<CVPixelBuffer>.fromOpaque(opaqueBuffer).takeUnretainedValue()
+    
+    let sourceImage = CIImage(CVPixelBuffer: pixelBuffer, options: nil)
     
     // Do some detection on the image
     let detectionResult = applyFilter?(sourceImage)
     var outputImage = sourceImage
-    if detectionResult {
+    if detectionResult != nil {
       outputImage = detectionResult!
     }
     
