@@ -21,12 +21,12 @@ class TabBarViewController: UITabBarController {
 
   var healthStore: HKHealthStore?
   
-  init(coder aDecoder: NSCoder!) {
+  required init(coder aDecoder: NSCoder!) {
     super.init(coder: aDecoder)
     createAndPropagateHealthStore()
   }
   
-  init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+  override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     createAndPropagateHealthStore()
   }
@@ -38,7 +38,7 @@ class TabBarViewController: UITabBarController {
   }
   
   private func createAndPropagateHealthStore() {
-    if !self.healthStore {
+    if self.healthStore == nil {
       self.healthStore = HKHealthStore()
     }
     

@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController, HealthStoreUser {
     var error: NSError?
     let dob = self.healthStore?.dateOfBirthWithError(&error)
     
-    if error {
+    if error != nil {
       println("There was an error requesting the date of birth: \(error)")
       return
     }
