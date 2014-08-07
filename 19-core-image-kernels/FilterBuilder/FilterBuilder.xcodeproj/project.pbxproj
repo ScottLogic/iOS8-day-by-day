@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		22029C561993CC7200EDCAC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C551993CC7200EDCAC3 /* AppDelegate.swift */; };
-		22029C581993CC7200EDCAC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C571993CC7200EDCAC3 /* ViewController.swift */; };
+		22029C581993CC7200EDCAC3 /* ChromaKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C571993CC7200EDCAC3 /* ChromaKeyViewController.swift */; };
 		22029C5B1993CC7200EDCAC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22029C591993CC7200EDCAC3 /* Main.storyboard */; };
 		22029C5D1993CC7200EDCAC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22029C5C1993CC7200EDCAC3 /* Images.xcassets */; };
 		22029C691993CC7200EDCAC3 /* FilterBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C681993CC7200EDCAC3 /* FilterBuilderTests.swift */; };
+		22029C741993CD8500EDCAC3 /* ChromaKeyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C731993CD8500EDCAC3 /* ChromaKeyFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +29,13 @@
 		22029C501993CC7200EDCAC3 /* FilterBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilterBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22029C541993CC7200EDCAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22029C551993CC7200EDCAC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22029C571993CC7200EDCAC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22029C571993CC7200EDCAC3 /* ChromaKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaKeyViewController.swift; sourceTree = "<group>"; };
 		22029C5A1993CC7200EDCAC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22029C5C1993CC7200EDCAC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22029C621993CC7200EDCAC3 /* FilterBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilterBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22029C671993CC7200EDCAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22029C681993CC7200EDCAC3 /* FilterBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBuilderTests.swift; sourceTree = "<group>"; };
+		22029C731993CD8500EDCAC3 /* ChromaKeyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaKeyFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +77,9 @@
 		22029C521993CC7200EDCAC3 /* FilterBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				22029C721993CD5A00EDCAC3 /* ChromaKey */,
 				22029C551993CC7200EDCAC3 /* AppDelegate.swift */,
-				22029C571993CC7200EDCAC3 /* ViewController.swift */,
+				22029C571993CC7200EDCAC3 /* ChromaKeyViewController.swift */,
 				22029C591993CC7200EDCAC3 /* Main.storyboard */,
 				22029C5C1993CC7200EDCAC3 /* Images.xcassets */,
 				22029C531993CC7200EDCAC3 /* Supporting Files */,
@@ -107,6 +110,14 @@
 				22029C671993CC7200EDCAC3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22029C721993CD5A00EDCAC3 /* ChromaKey */ = {
+			isa = PBXGroup;
+			children = (
+				22029C731993CD8500EDCAC3 /* ChromaKeyFilter.swift */,
+			);
+			name = ChromaKey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22029C581993CC7200EDCAC3 /* ViewController.swift in Sources */,
+				22029C741993CD8500EDCAC3 /* ChromaKeyFilter.swift in Sources */,
+				22029C581993CC7200EDCAC3 /* ChromaKeyViewController.swift in Sources */,
 				22029C561993CC7200EDCAC3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,25 +1,88 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0IV-ip-6zc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Item 2-->
+        <scene sceneID="AvO-lY-898">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qBD-j9-2bd" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Z35-sw-BVl"/>
+                        <viewControllerLayoutGuide type="bottom" id="6AP-A1-sOI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <view key="view" contentMode="scaleToFill" id="AS3-2d-xag">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="POy-3C-ssj"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGT-if-MdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="462" y="892"/>
+        </scene>
+        <!--ChromaKey-->
+        <scene sceneID="ZBh-yU-gov">
+            <objects>
+                <viewController title="ChromaKey" id="B9S-xd-ejV" customClass="ChromaKeyViewController" customModule="FilterBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eiE-5C-VBY"/>
+                        <viewControllerLayoutGuide type="bottom" id="eaD-DF-jdD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nrn-r0-vhh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kangaroos" translatesAutoresizingMaskIntoConstraints="NO" id="pL7-op-Pqg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kangaroos" translatesAutoresizingMaskIntoConstraints="NO" id="MjQ-pX-xd0" userLabel="Output Image View">
+                                <rect key="frame" x="44" y="116" width="512" height="339"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pL7-op-Pqg" firstAttribute="bottom" secondItem="nrn-r0-vhh" secondAttribute="bottomMargin" id="5Yw-Wn-BGq"/>
+                            <constraint firstItem="pL7-op-Pqg" firstAttribute="leading" secondItem="nrn-r0-vhh" secondAttribute="leading" id="CeS-7F-prN"/>
+                            <constraint firstAttribute="centerX" secondItem="MjQ-pX-xd0" secondAttribute="centerX" id="O8V-xK-06h"/>
+                            <constraint firstItem="pL7-op-Pqg" firstAttribute="top" secondItem="nrn-r0-vhh" secondAttribute="topMargin" id="nmU-LE-FtJ"/>
+                            <constraint firstAttribute="trailing" secondItem="pL7-op-Pqg" secondAttribute="trailing" id="tkD-mX-vR3"/>
+                            <constraint firstAttribute="centerY" secondItem="MjQ-pX-xd0" secondAttribute="centerY" constant="14.5" id="xnc-Rf-0L5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="tlH-JV-FKd"/>
+                    <connections>
+                        <outlet property="outputImageView" destination="MjQ-pX-xd0" id="kGa-KK-jok"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYv-YK-16b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="451" y="174"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="eKP-2s-dcV">
+            <objects>
+                <tabBarController id="0IV-ip-6zc" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="HOw-K1-Mdr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="B9S-xd-ejV" kind="relationship" relationship="viewControllers" id="stn-VQ-4bi"/>
+                        <segue destination="qBD-j9-2bd" kind="relationship" relationship="viewControllers" id="1C7-eG-1sQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LgR-1C-c4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-380" y="174"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kangaroos" width="512" height="339"/>
+    </resources>
 </document>
