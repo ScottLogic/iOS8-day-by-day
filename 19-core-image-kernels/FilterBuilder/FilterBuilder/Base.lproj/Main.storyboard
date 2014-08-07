@@ -46,21 +46,31 @@
                                     <constraint firstAttribute="width" secondItem="MjQ-pX-xd0" secondAttribute="height" multiplier="1.5" id="e0U-s2-IRd"/>
                                 </constraints>
                             </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.69999999999999996" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-Vu-6hg">
+                                <rect key="frame" x="14" y="513" width="572" height="31"/>
+                                <connections>
+                                    <action selector="handleThresholdSliderChanged:" destination="B9S-xd-ejV" eventType="valueChanged" id="imO-uh-sbs"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pL7-op-Pqg" firstAttribute="bottom" secondItem="nrn-r0-vhh" secondAttribute="bottomMargin" id="5Yw-Wn-BGq"/>
                             <constraint firstItem="pL7-op-Pqg" firstAttribute="leading" secondItem="nrn-r0-vhh" secondAttribute="leading" id="CeS-7F-prN"/>
+                            <constraint firstItem="eaD-DF-jdD" firstAttribute="top" secondItem="i4k-Vu-6hg" secondAttribute="bottom" constant="8" id="Ejb-04-cWF"/>
+                            <constraint firstItem="i4k-Vu-6hg" firstAttribute="leading" secondItem="nrn-r0-vhh" secondAttribute="leadingMargin" id="eXN-KS-Lkx"/>
                             <constraint firstAttribute="centerY" secondItem="MjQ-pX-xd0" secondAttribute="centerY" constant="14.5" id="f29-cH-apf"/>
                             <constraint firstAttribute="centerX" secondItem="MjQ-pX-xd0" secondAttribute="centerX" id="fYR-D4-kDo"/>
                             <constraint firstItem="MjQ-pX-xd0" firstAttribute="height" secondItem="nrn-r0-vhh" secondAttribute="height" id="gfe-95-2Ga"/>
                             <constraint firstItem="pL7-op-Pqg" firstAttribute="top" secondItem="nrn-r0-vhh" secondAttribute="topMargin" id="nmU-LE-FtJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i4k-Vu-6hg" secondAttribute="trailing" id="qva-8i-oYD"/>
                             <constraint firstAttribute="trailing" secondItem="pL7-op-Pqg" secondAttribute="trailing" id="tkD-mX-vR3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="tlH-JV-FKd"/>
+                    <tabBarItem key="tabBarItem" title="ChromaKey" id="tlH-JV-FKd"/>
                     <connections>
                         <outlet property="outputImageView" destination="MjQ-pX-xd0" id="kGa-KK-jok"/>
+                        <outlet property="thresholdSlider" destination="i4k-Vu-6hg" id="vMy-q6-nBJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYv-YK-16b" userLabel="First Responder" sceneMemberID="firstResponder"/>
