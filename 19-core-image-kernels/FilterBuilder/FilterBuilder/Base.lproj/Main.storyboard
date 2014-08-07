@@ -6,10 +6,10 @@
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Median Filter-->
         <scene sceneID="AvO-lY-898">
             <objects>
-                <viewController id="qBD-j9-2bd" sceneMemberID="viewController">
+                <viewController title="Median Filter" id="qBD-j9-2bd" customClass="MedianViewController" customModule="FilterBuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z35-sw-BVl"/>
                         <viewControllerLayoutGuide type="bottom" id="6AP-A1-sOI"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="POy-3C-ssj"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="POy-3C-ssj" customClass="Median"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGT-if-MdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
