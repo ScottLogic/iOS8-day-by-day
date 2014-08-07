@@ -24,13 +24,17 @@ class ChromaKeyViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     outputImageView.image = self.filteredImage()
-    outputImageView.contentMode = .ScaleAspectFit
   }
   
   private func filteredImage() -> UIImage {
     let filter = ChromaKeyFilter()
+    
+    // Image (C) Cristian Borquez
+    // https://flic.kr/p/7hhXk1
     let inputImage = UIImage(named: "chroma_key")
+    
     filter.inputImage = CIImage(image: inputImage)
+    filter.activeColor = CIColor(red: 0, green: 1, blue: 0)
     let outputImage = filter.outputImage
     return UIImage(CIImage: outputImage, scale: inputImage.scale, orientation: inputImage.imageOrientation)
   }

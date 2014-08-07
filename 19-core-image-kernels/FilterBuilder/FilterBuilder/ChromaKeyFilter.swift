@@ -38,7 +38,7 @@ class ChromaKeyFilter: CIFilter {
     if let inputImage = inputImage {
       let dod = inputImage.extent()
       if let kernel = kernel {
-        var args = [inputImage as AnyObject]
+        var args = [inputImage as AnyObject, activeColor! as AnyObject]
         return kernel.applyWithExtent(dod, arguments: args)
       }
     }
@@ -48,8 +48,11 @@ class ChromaKeyFilter: CIFilter {
   // MARK: - Utility methods
   private func createKernel() -> CIColorKernel {
     let kernelString =
-    "kernel vec4 passThrough( __sample s) { " +
-      "  return s.rgba; " +
+    "kernel vec4 chromaKey( __sample s, __color c ) { \n" +
+    "  vec4 diff = s.rgba - c;\n" +
+    "  float distance = length( diff );\n" +
+    "  float alpha = compare( distance - 0.7, 0.0, 1.0 );\n" +
+    "  return vec4( s.rgb, alpha ); \n" +
     "}"
     return CIColorKernel(string: kernelString)
   }

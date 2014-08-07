@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0IV-ip-6zc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -39,18 +40,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kangaroos" translatesAutoresizingMaskIntoConstraints="NO" id="pL7-op-Pqg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kangaroos" translatesAutoresizingMaskIntoConstraints="NO" id="MjQ-pX-xd0" userLabel="Output Image View">
-                                <rect key="frame" x="44" y="116" width="512" height="339"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chroma_key" translatesAutoresizingMaskIntoConstraints="NO" id="MjQ-pX-xd0" userLabel="Output Image View">
+                                <rect key="frame" x="-150" y="-14.5" width="900" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MjQ-pX-xd0" secondAttribute="height" multiplier="1.5" id="e0U-s2-IRd"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pL7-op-Pqg" firstAttribute="bottom" secondItem="nrn-r0-vhh" secondAttribute="bottomMargin" id="5Yw-Wn-BGq"/>
                             <constraint firstItem="pL7-op-Pqg" firstAttribute="leading" secondItem="nrn-r0-vhh" secondAttribute="leading" id="CeS-7F-prN"/>
-                            <constraint firstAttribute="centerX" secondItem="MjQ-pX-xd0" secondAttribute="centerX" id="O8V-xK-06h"/>
+                            <constraint firstAttribute="centerY" secondItem="MjQ-pX-xd0" secondAttribute="centerY" constant="14.5" id="f29-cH-apf"/>
+                            <constraint firstAttribute="centerX" secondItem="MjQ-pX-xd0" secondAttribute="centerX" id="fYR-D4-kDo"/>
+                            <constraint firstItem="MjQ-pX-xd0" firstAttribute="height" secondItem="nrn-r0-vhh" secondAttribute="height" id="gfe-95-2Ga"/>
                             <constraint firstItem="pL7-op-Pqg" firstAttribute="top" secondItem="nrn-r0-vhh" secondAttribute="topMargin" id="nmU-LE-FtJ"/>
                             <constraint firstAttribute="trailing" secondItem="pL7-op-Pqg" secondAttribute="trailing" id="tkD-mX-vR3"/>
-                            <constraint firstAttribute="centerY" secondItem="MjQ-pX-xd0" secondAttribute="centerY" constant="14.5" id="xnc-Rf-0L5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="tlH-JV-FKd"/>
@@ -83,6 +88,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chroma_key" width="320" height="214"/>
         <image name="kangaroos" width="512" height="339"/>
     </resources>
 </document>
