@@ -19,5 +19,5 @@ sam
 
 [iwantmyreal.name](http://iwantmyreal.name/)
 
-[@iwantmyrealname](https://twitter.com/iwanymyrealname)
+[@iwantmyrealname](https://twitter.com/iwantmyrealname)
 [@shinobicontrols](https://twitter.com/ShinobiControls)
