@@ -38,6 +38,13 @@ class MedianFilter: CIFilter {
       let dod = inputImage.extent()
       if let kernel = kernel {
         // Something here
+        let velocity = CIVector(x: 15, y: 6)
+        let args = [inputImage as AnyObject, velocity as AnyObject]
+        let dod = inputImage.extent().rectByInsetting(dx: -abs(velocity.X()), dy: -abs(velocity.Y()))
+        return kernel.applyWithExtent(dod, roiCallback: {
+          (index, rect) in
+          return rect.rectByInsetting(dx: -abs(velocity.X()), dy: -abs(velocity.Y()))
+          }, arguments: args)
       }
     }
     return nil
@@ -46,7 +53,19 @@ class MedianFilter: CIFilter {
   // MARK: - Utility methods
   private func createKernel() -> CIKernel {
     let kernelString =
-    ""
+    "kernel vec4 motionBlur (sampler image, vec2 velocity) {\n" +
+    "  const int NUM_SAMPLES = 10;\n" +
+    "  vec4 s = vec4(0.0);\n" +
+    "  vec2 dc = destCoord();\n" +
+    "  vec2 offset = -velocity;\n" +
+    "  for (int i=0; i < (NUM_SAMPLES * 2 + 1); i++) {\n" +
+    "    s += sample (image, samplerTransform( image, dc + offset ));\n" +
+    "    offset += velocity / float(NUM_SAMPLES);\n" +
+    "  }\n" +
+    "  return s / float((NUM_SAMPLES * 2 + 1));\n" +
+    "}"
     return CIColorKernel(string: kernelString)
   }
+  
+  
 }

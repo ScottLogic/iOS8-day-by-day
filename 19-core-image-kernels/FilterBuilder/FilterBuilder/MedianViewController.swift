@@ -44,7 +44,7 @@ class MedianViewController: UIViewController {
   
   private func setupFilter() {
     // Need an input image
-    let inputImage = UIImage(named: "")
+    let inputImage = UIImage(named: "flowers")
     filter.inputImage = CIImage(image: inputImage)
   }
   

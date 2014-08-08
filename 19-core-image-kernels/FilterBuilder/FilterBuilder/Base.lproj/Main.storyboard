@@ -17,9 +17,23 @@
                     <view key="view" contentMode="scaleToFill" id="AS3-2d-xag">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hwj-fH-rDe">
+                                <rect key="frame" x="-150" y="0.0" width="900" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="hwj-fH-rDe" secondAttribute="centerY" id="Af9-yA-yeq"/>
+                            <constraint firstItem="hwj-fH-rDe" firstAttribute="height" secondItem="AS3-2d-xag" secondAttribute="height" id="CbA-UP-0WF"/>
+                            <constraint firstItem="hwj-fH-rDe" firstAttribute="width" secondItem="AS3-2d-xag" secondAttribute="height" multiplier="3:2" id="Wp6-j9-jvU"/>
+                            <constraint firstAttribute="centerX" secondItem="hwj-fH-rDe" secondAttribute="centerX" id="l9D-It-IcN"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="POy-3C-ssj" customClass="Median"/>
+                    <tabBarItem key="tabBarItem" title="Median" id="POy-3C-ssj"/>
+                    <connections>
+                        <outlet property="outputImageView" destination="hwj-fH-rDe" id="r4r-Wt-chU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGT-if-MdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
