@@ -155,8 +155,8 @@ the behaviour of a simple cache:
         }
         return nil
       }
-      set(newEvent) {
-        if let event = newEvent {
+      set {
+        if let event = newValue {
           let data = NSKeyedArchiver.archivedDataWithRootObject(event)
           userDefaults.setObject(data, forKey: mostRecentEventCacheKey)
         } else {
@@ -222,7 +222,7 @@ request to ensure that the latest data is displayed:
         })
     }
 
-Not that here if the latest event you receive from the web service is different
+Note that here if the latest event you receive from the web service is different
 to the one you are currently displaying then you can update the view and then
 tell the system that you have new data, by calling
 `completionHandler(.NewData)`. If you don't receive new data then you can
