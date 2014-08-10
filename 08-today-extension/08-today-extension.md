@@ -28,7 +28,7 @@ the app and how to communicate from the widget to the app.
 ![](assets/app_no_selection.png)
 
 The code for this project is available on Github at
-[github.com/ShinobiControls/iO8-day-by-day](https://github.com/ShinobiControls/iOS80-day-by-day).
+[github.com/ShinobiControls/iO8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
 
 
 ## Creating a widget
