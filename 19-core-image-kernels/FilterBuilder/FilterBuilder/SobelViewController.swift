@@ -16,10 +16,10 @@
 
 import UIKit
 
-class MedianViewController: UIViewController {
+class SobelViewController: UIViewController {
   
   // MARK: - Properties
-  let filter = MedianFilter()
+  let filter = SobelFilter()
   
   // MARK: - IBOutlets
   @IBOutlet weak var outputImageView: UIImageView!

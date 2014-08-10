@@ -9,7 +9,7 @@
         <!--Median Filter-->
         <scene sceneID="AvO-lY-898">
             <objects>
-                <viewController title="Median Filter" id="qBD-j9-2bd" customClass="MedianViewController" customModule="FilterBuilder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Median Filter" id="qBD-j9-2bd" customClass="SobelViewController" customModule="FilterBuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z35-sw-BVl"/>
                         <viewControllerLayoutGuide type="bottom" id="6AP-A1-sOI"/>

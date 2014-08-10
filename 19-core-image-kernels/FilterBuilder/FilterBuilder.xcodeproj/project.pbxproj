@@ -13,8 +13,8 @@
 		22029C5D1993CC7200EDCAC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22029C5C1993CC7200EDCAC3 /* Images.xcassets */; };
 		22029C691993CC7200EDCAC3 /* FilterBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C681993CC7200EDCAC3 /* FilterBuilderTests.swift */; };
 		22029C741993CD8500EDCAC3 /* ChromaKeyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C731993CD8500EDCAC3 /* ChromaKeyFilter.swift */; };
-		22029C771993ED4E00EDCAC3 /* MedianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C761993ED4E00EDCAC3 /* MedianFilter.swift */; };
-		22029C791993EDD100EDCAC3 /* MedianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C781993EDD100EDCAC3 /* MedianViewController.swift */; };
+		22029C771993ED4E00EDCAC3 /* SobelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C761993ED4E00EDCAC3 /* SobelFilter.swift */; };
+		22029C791993EDD100EDCAC3 /* SobelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C781993EDD100EDCAC3 /* SobelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 		22029C671993CC7200EDCAC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22029C681993CC7200EDCAC3 /* FilterBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBuilderTests.swift; sourceTree = "<group>"; };
 		22029C731993CD8500EDCAC3 /* ChromaKeyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaKeyFilter.swift; sourceTree = "<group>"; };
-		22029C761993ED4E00EDCAC3 /* MedianFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedianFilter.swift; sourceTree = "<group>"; };
-		22029C781993EDD100EDCAC3 /* MedianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedianViewController.swift; sourceTree = "<group>"; };
+		22029C761993ED4E00EDCAC3 /* SobelFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobelFilter.swift; sourceTree = "<group>"; };
+		22029C781993EDD100EDCAC3 /* SobelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +128,8 @@
 		22029C751993ED3E00EDCAC3 /* Median */ = {
 			isa = PBXGroup;
 			children = (
-				22029C761993ED4E00EDCAC3 /* MedianFilter.swift */,
-				22029C781993EDD100EDCAC3 /* MedianViewController.swift */,
+				22029C761993ED4E00EDCAC3 /* SobelFilter.swift */,
+				22029C781993EDD100EDCAC3 /* SobelViewController.swift */,
 			);
 			name = Median;
 			sourceTree = "<group>";
@@ -233,9 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22029C791993EDD100EDCAC3 /* MedianViewController.swift in Sources */,
+				22029C791993EDD100EDCAC3 /* SobelViewController.swift in Sources */,
 				22029C741993CD8500EDCAC3 /* ChromaKeyFilter.swift in Sources */,
-				22029C771993ED4E00EDCAC3 /* MedianFilter.swift in Sources */,
+				22029C771993ED4E00EDCAC3 /* SobelFilter.swift in Sources */,
 				22029C581993CC7200EDCAC3 /* ChromaKeyViewController.swift in Sources */,
 				22029C561993CC7200EDCAC3 /* AppDelegate.swift in Sources */,
 			);
@@ -425,6 +425,7 @@
 				22029C6E1993CC7200EDCAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22029C6F1993CC7200EDCAC3 /* Build configuration list for PBXNativeTarget "FilterBuilderTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				22029C711993CC7200EDCAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

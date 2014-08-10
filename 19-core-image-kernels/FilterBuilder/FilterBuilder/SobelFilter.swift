@@ -16,7 +16,7 @@
 
 import CoreImage
 
-class MedianFilter: CIFilter {
+class SobelFilter: CIFilter {
   // MARK: - Properties
   var kernel: CIKernel?
   var inputImage: CIImage?
@@ -68,6 +68,5 @@ class MedianFilter: CIFilter {
     "}"
     return CIKernel(string: kernelString)
   }
-  
   
 }
