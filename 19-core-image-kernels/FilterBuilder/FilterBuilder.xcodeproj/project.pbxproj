@@ -15,6 +15,7 @@
 		22029C741993CD8500EDCAC3 /* ChromaKeyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C731993CD8500EDCAC3 /* ChromaKeyFilter.swift */; };
 		22029C771993ED4E00EDCAC3 /* SobelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C761993ED4E00EDCAC3 /* SobelFilter.swift */; };
 		22029C791993EDD100EDCAC3 /* SobelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22029C781993EDD100EDCAC3 /* SobelViewController.swift */; };
+		2231F778199823DE00AF6277 /* icon_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2231F777199823DE00AF6277 /* icon_license.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		22029C731993CD8500EDCAC3 /* ChromaKeyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaKeyFilter.swift; sourceTree = "<group>"; };
 		22029C761993ED4E00EDCAC3 /* SobelFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobelFilter.swift; sourceTree = "<group>"; };
 		22029C781993EDD100EDCAC3 /* SobelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobelViewController.swift; sourceTree = "<group>"; };
+		2231F777199823DE00AF6277 /* icon_license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icon_license.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		22029C521993CC7200EDCAC3 /* FilterBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				2231F777199823DE00AF6277 /* icon_license.txt */,
 				22029C751993ED3E00EDCAC3 /* Median */,
 				22029C721993CD5A00EDCAC3 /* ChromaKey */,
 				22029C551993CC7200EDCAC3 /* AppDelegate.swift */,
@@ -216,6 +219,7 @@
 			files = (
 				22029C5B1993CC7200EDCAC3 /* Main.storyboard in Resources */,
 				22029C5D1993CC7200EDCAC3 /* Images.xcassets in Resources */,
+				2231F778199823DE00AF6277 /* icon_license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

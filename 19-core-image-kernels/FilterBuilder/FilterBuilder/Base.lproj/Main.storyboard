@@ -30,7 +30,7 @@
                             <constraint firstAttribute="centerX" secondItem="hwj-fH-rDe" secondAttribute="centerX" id="l9D-It-IcN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Median" id="POy-3C-ssj"/>
+                    <tabBarItem key="tabBarItem" title="Sobel" image="mathematical-instrument" id="POy-3C-ssj"/>
                     <connections>
                         <outlet property="outputImageView" destination="hwj-fH-rDe" id="r4r-Wt-chU"/>
                     </connections>
@@ -81,7 +81,7 @@
                             <constraint firstAttribute="trailing" secondItem="pL7-op-Pqg" secondAttribute="trailing" id="tkD-mX-vR3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ChromaKey" id="tlH-JV-FKd"/>
+                    <tabBarItem key="tabBarItem" title="ChromaKey" image="eraser" id="tlH-JV-FKd"/>
                     <connections>
                         <outlet property="outputImageView" destination="MjQ-pX-xd0" id="kGa-KK-jok"/>
                         <outlet property="thresholdSlider" destination="i4k-Vu-6hg" id="vMy-q6-nBJ"/>
@@ -113,6 +113,8 @@
     </scenes>
     <resources>
         <image name="chroma_key" width="320" height="214"/>
+        <image name="eraser" width="30" height="30"/>
         <image name="kangaroos" width="512" height="339"/>
+        <image name="mathematical-instrument" width="30" height="30"/>
     </resources>
 </document>
