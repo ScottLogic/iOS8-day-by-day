@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				2231F777199823DE00AF6277 /* icon_license.txt */,
-				22029C751993ED3E00EDCAC3 /* Median */,
+				22029C751993ED3E00EDCAC3 /* Sobel */,
 				22029C721993CD5A00EDCAC3 /* ChromaKey */,
 				22029C551993CC7200EDCAC3 /* AppDelegate.swift */,
 				22029C591993CC7200EDCAC3 /* Main.storyboard */,
@@ -128,13 +128,13 @@
 			name = ChromaKey;
 			sourceTree = "<group>";
 		};
-		22029C751993ED3E00EDCAC3 /* Median */ = {
+		22029C751993ED3E00EDCAC3 /* Sobel */ = {
 			isa = PBXGroup;
 			children = (
 				22029C761993ED4E00EDCAC3 /* SobelFilter.swift */,
 				22029C781993EDD100EDCAC3 /* SobelViewController.swift */,
 			);
-			name = Median;
+			name = Sobel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
