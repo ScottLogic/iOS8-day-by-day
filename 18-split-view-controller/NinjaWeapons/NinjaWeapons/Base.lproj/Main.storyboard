@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - Master-->
+        <!--Master-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
@@ -18,44 +19,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
-        </scene>
-        <!--Detail View Controller - Detail-->
-        <scene sceneID="yUG-lL-AsK">
-            <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="232" width="440" height="17"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
-                        </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
-                    <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="604" y="30"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -71,15 +34,14 @@
             </objects>
             <point key="canvasLocation" x="-687" y="-322"/>
         </scene>
-        <!--Master View Controller - Master-->
+        <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="NinjaWeapons" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -123,14 +85,131 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
+                        <segue destination="bzX-Ci-Vth" kind="relationship" relationship="rootViewController" id="oHc-6N-NWJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-38" y="30"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="rqp-5v-Ior">
+            <objects>
+                <viewController id="bzX-Ci-Vth" customClass="DetailViewController" customModule="NinjaWeapons" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C3p-pd-4M9"/>
+                        <viewControllerLayoutGuide type="bottom" id="aJf-zf-5ov"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FEy-Nt-DSv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" image="katana" translatesAutoresizingMaskIntoConstraints="NO" id="Uis-lb-tTX">
+                                <rect key="frame" x="0.0" y="261" width="600" height="339"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-he-Lqe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="261"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="katana (刀)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-MR-jbo">
+                                        <rect key="frame" x="20" y="54" width="226" height="59"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOUN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="19e-eo-82f">
+                                        <rect key="frame" x="20" y="121" width="65" height="26"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="katana (plural katana or katanas)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" preferredMaxLayoutWidth="293" translatesAutoresizingMaskIntoConstraints="NO" id="gN8-fY-tXC">
+                                        <rect key="frame" x="20" y="155" width="293" height="26"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="Tqx-eJ-KEF">
+                                        <rect key="frame" x="20" y="189" width="560" height="52"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Tqx-eJ-KEF" firstAttribute="leading" secondItem="gN8-fY-tXC" secondAttribute="leading" id="6wa-A8-OIA"/>
+                                    <constraint firstItem="19e-eo-82f" firstAttribute="top" secondItem="oJy-MR-jbo" secondAttribute="bottom" constant="8" id="ANZ-y9-n9R"/>
+                                    <constraint firstItem="Tqx-eJ-KEF" firstAttribute="top" secondItem="gN8-fY-tXC" secondAttribute="bottom" constant="8" id="Glw-O6-QyE"/>
+                                    <constraint firstAttribute="trailing" secondItem="gN8-fY-tXC" secondAttribute="trailing" constant="20" id="MMB-Du-GyY"/>
+                                    <constraint firstItem="19e-eo-82f" firstAttribute="leading" secondItem="oJy-MR-jbo" secondAttribute="leading" id="T6X-RX-FMy"/>
+                                    <constraint firstItem="19e-eo-82f" firstAttribute="leading" secondItem="gN8-fY-tXC" secondAttribute="leading" id="XMb-Ik-39L"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tqx-eJ-KEF" secondAttribute="bottom" constant="20" id="XON-FN-nyc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tqx-eJ-KEF" secondAttribute="trailing" constant="20" id="bin-SN-wj5"/>
+                                    <constraint firstItem="oJy-MR-jbo" firstAttribute="leading" secondItem="n3H-he-Lqe" secondAttribute="leading" constant="20" id="iOx-QZ-LyN"/>
+                                    <constraint firstAttribute="trailing" secondItem="oJy-MR-jbo" secondAttribute="trailing" constant="20" id="k0h-Lx-7Sp"/>
+                                    <constraint firstItem="gN8-fY-tXC" firstAttribute="top" secondItem="19e-eo-82f" secondAttribute="bottom" constant="8" id="oxN-PV-2Pf"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="k0h-Lx-7Sp"/>
+                                        <exclude reference="MMB-Du-GyY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="k0h-Lx-7Sp"/>
+                                        <include reference="MMB-Du-GyY"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Uis-lb-tTX" secondAttribute="trailing" id="18G-h7-oIh"/>
+                            <constraint firstItem="Uis-lb-tTX" firstAttribute="top" secondItem="FEy-Nt-DSv" secondAttribute="top" id="DAx-cX-EEG"/>
+                            <constraint firstItem="n3H-he-Lqe" firstAttribute="width" relation="lessThanOrEqual" secondItem="FEy-Nt-DSv" secondAttribute="width" multiplier="0.5" id="ExK-bH-5QK"/>
+                            <constraint firstItem="C3p-pd-4M9" firstAttribute="top" secondItem="oJy-MR-jbo" secondAttribute="top" constant="10" id="Ht4-9V-Lke"/>
+                            <constraint firstItem="Uis-lb-tTX" firstAttribute="leading" secondItem="FEy-Nt-DSv" secondAttribute="leading" id="Kwm-hM-bot"/>
+                            <constraint firstItem="n3H-he-Lqe" firstAttribute="top" secondItem="FEy-Nt-DSv" secondAttribute="top" id="Ob0-dU-vfp"/>
+                            <constraint firstItem="n3H-he-Lqe" firstAttribute="leading" secondItem="Uis-lb-tTX" secondAttribute="trailing" id="T28-lL-tSY"/>
+                            <constraint firstItem="aJf-zf-5ov" firstAttribute="top" secondItem="Uis-lb-tTX" secondAttribute="bottom" id="VdE-Tj-LCj"/>
+                            <constraint firstItem="aJf-zf-5ov" firstAttribute="top" secondItem="n3H-he-Lqe" secondAttribute="bottom" id="gUb-Vg-8Yq"/>
+                            <constraint firstItem="Uis-lb-tTX" firstAttribute="top" secondItem="n3H-he-Lqe" secondAttribute="bottom" id="pum-3C-ZRO"/>
+                            <constraint firstItem="n3H-he-Lqe" firstAttribute="height" relation="lessThanOrEqual" secondItem="FEy-Nt-DSv" secondAttribute="height" multiplier="0.5" id="toG-eC-nzm"/>
+                            <constraint firstItem="n3H-he-Lqe" firstAttribute="leading" secondItem="FEy-Nt-DSv" secondAttribute="leading" id="wbC-vR-8lS"/>
+                            <constraint firstAttribute="trailing" secondItem="n3H-he-Lqe" secondAttribute="trailing" id="yHC-CU-Veh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ExK-bH-5QK"/>
+                                <exclude reference="T28-lL-tSY"/>
+                                <exclude reference="DAx-cX-EEG"/>
+                                <exclude reference="gUb-Vg-8Yq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="ExK-bH-5QK"/>
+                                <include reference="T28-lL-tSY"/>
+                                <exclude reference="toG-eC-nzm"/>
+                                <exclude reference="wbC-vR-8lS"/>
+                                <exclude reference="18G-h7-oIh"/>
+                                <include reference="DAx-cX-EEG"/>
+                                <exclude reference="pum-3C-ZRO"/>
+                                <include reference="gUb-Vg-8Yq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="iHi-vP-64g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IzS-cx-9zv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="30"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="katana" width="1024" height="619"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
