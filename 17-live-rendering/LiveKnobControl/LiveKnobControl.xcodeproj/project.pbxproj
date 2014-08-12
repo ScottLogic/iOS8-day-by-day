@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F40E0023198FD3AA00725513 /* KnobControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E0020198FD3AA00725513 /* KnobControl.swift */; };
+		F40E0024198FD3AA00725513 /* RotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E0021198FD3AA00725513 /* RotationGestureRecognizer.swift */; };
+		F40E0025198FD3AA00725513 /* KnobRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E0022198FD3AA00725513 /* KnobRenderer.swift */; };
+		F4FDC03F198FBC3D00D3BA81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDC03E198FBC3D00D3BA81 /* AppDelegate.swift */; };
+		F4FDC041198FBC3D00D3BA81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDC040198FBC3D00D3BA81 /* ViewController.swift */; };
+		F4FDC044198FBC3D00D3BA81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FDC042198FBC3D00D3BA81 /* Main.storyboard */; };
+		F4FDC046198FBC3D00D3BA81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FDC045198FBC3D00D3BA81 /* Images.xcassets */; };
+		F4FDC052198FBC3D00D3BA81 /* LiveKnobControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FDC051198FBC3D00D3BA81 /* LiveKnobControlTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4FDC04C198FBC3D00D3BA81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4FDC031198FBC3C00D3BA81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4FDC038198FBC3C00D3BA81;
+			remoteInfo = LiveKnobControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F40E0020198FD3AA00725513 /* KnobControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnobControl.swift; sourceTree = "<group>"; };
+		F40E0021198FD3AA00725513 /* RotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationGestureRecognizer.swift; sourceTree = "<group>"; };
+		F40E0022198FD3AA00725513 /* KnobRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnobRenderer.swift; sourceTree = "<group>"; };
+		F40E0026198FD49C00725513 /* LiveKnobControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveKnobControl-Bridging-Header.h"; sourceTree = "<group>"; };
+		F4FDC039198FBC3C00D3BA81 /* LiveKnobControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveKnobControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FDC03D198FBC3D00D3BA81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4FDC03E198FBC3D00D3BA81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4FDC040198FBC3D00D3BA81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4FDC043198FBC3D00D3BA81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4FDC045198FBC3D00D3BA81 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F4FDC04B198FBC3D00D3BA81 /* LiveKnobControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveKnobControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4FDC050198FBC3D00D3BA81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4FDC051198FBC3D00D3BA81 /* LiveKnobControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveKnobControlTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4FDC036198FBC3C00D3BA81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FDC048198FBC3D00D3BA81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4FDC030198FBC3C00D3BA81 = {
+			isa = PBXGroup;
+			children = (
+				F4FDC03B198FBC3C00D3BA81 /* LiveKnobControl */,
+				F4FDC04E198FBC3D00D3BA81 /* LiveKnobControlTests */,
+				F4FDC03A198FBC3C00D3BA81 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4FDC03A198FBC3C00D3BA81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4FDC039198FBC3C00D3BA81 /* LiveKnobControl.app */,
+				F4FDC04B198FBC3D00D3BA81 /* LiveKnobControlTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4FDC03B198FBC3C00D3BA81 /* LiveKnobControl */ = {
+			isa = PBXGroup;
+			children = (
+				F4FDC05B198FC9A500D3BA81 /* KnobControl */,
+				F4FDC03E198FBC3D00D3BA81 /* AppDelegate.swift */,
+				F4FDC040198FBC3D00D3BA81 /* ViewController.swift */,
+				F4FDC042198FBC3D00D3BA81 /* Main.storyboard */,
+				F4FDC045198FBC3D00D3BA81 /* Images.xcassets */,
+				F4FDC03C198FBC3D00D3BA81 /* Supporting Files */,
+				F40E0026198FD49C00725513 /* LiveKnobControl-Bridging-Header.h */,
+			);
+			path = LiveKnobControl;
+			sourceTree = "<group>";
+		};
+		F4FDC03C198FBC3D00D3BA81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4FDC03D198FBC3D00D3BA81 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4FDC04E198FBC3D00D3BA81 /* LiveKnobControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4FDC051198FBC3D00D3BA81 /* LiveKnobControlTests.swift */,
+				F4FDC04F198FBC3D00D3BA81 /* Supporting Files */,
+			);
+			path = LiveKnobControlTests;
+			sourceTree = "<group>";
+		};
+		F4FDC04F198FBC3D00D3BA81 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4FDC050198FBC3D00D3BA81 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4FDC05B198FC9A500D3BA81 /* KnobControl */ = {
+			isa = PBXGroup;
+			children = (
+				F40E0020198FD3AA00725513 /* KnobControl.swift */,
+				F40E0021198FD3AA00725513 /* RotationGestureRecognizer.swift */,
+				F40E0022198FD3AA00725513 /* KnobRenderer.swift */,
+			);
+			name = KnobControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4FDC038198FBC3C00D3BA81 /* LiveKnobControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4FDC055198FBC3D00D3BA81 /* Build configuration list for PBXNativeTarget "LiveKnobControl" */;
+			buildPhases = (
+				F4FDC035198FBC3C00D3BA81 /* Sources */,
+				F4FDC036198FBC3C00D3BA81 /* Frameworks */,
+				F4FDC037198FBC3C00D3BA81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiveKnobControl;
+			productName = LiveKnobControl;
+			productReference = F4FDC039198FBC3C00D3BA81 /* LiveKnobControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4FDC04A198FBC3D00D3BA81 /* LiveKnobControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4FDC058198FBC3D00D3BA81 /* Build configuration list for PBXNativeTarget "LiveKnobControlTests" */;
+			buildPhases = (
+				F4FDC047198FBC3D00D3BA81 /* Sources */,
+				F4FDC048198FBC3D00D3BA81 /* Frameworks */,
+				F4FDC049198FBC3D00D3BA81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4FDC04D198FBC3D00D3BA81 /* PBXTargetDependency */,
+			);
+			name = LiveKnobControlTests;
+			productName = LiveKnobControlTests;
+			productReference = F4FDC04B198FBC3D00D3BA81 /* LiveKnobControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4FDC031198FBC3C00D3BA81 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ShinobiControls;
+				TargetAttributes = {
+					F4FDC038198FBC3C00D3BA81 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = XJ74287KY8;
+					};
+					F4FDC04A198FBC3D00D3BA81 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = F4FDC038198FBC3C00D3BA81;
+					};
+				};
+			};
+			buildConfigurationList = F4FDC034198FBC3C00D3BA81 /* Build configuration list for PBXProject "LiveKnobControl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4FDC030198FBC3C00D3BA81;
+			productRefGroup = F4FDC03A198FBC3C00D3BA81 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4FDC038198FBC3C00D3BA81 /* LiveKnobControl */,
+				F4FDC04A198FBC3D00D3BA81 /* LiveKnobControlTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4FDC037198FBC3C00D3BA81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FDC044198FBC3D00D3BA81 /* Main.storyboard in Resources */,
+				F4FDC046198FBC3D00D3BA81 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FDC049198FBC3D00D3BA81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4FDC035198FBC3C00D3BA81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F40E0023198FD3AA00725513 /* KnobControl.swift in Sources */,
+				F40E0025198FD3AA00725513 /* KnobRenderer.swift in Sources */,
+				F40E0024198FD3AA00725513 /* RotationGestureRecognizer.swift in Sources */,
+				F4FDC041198FBC3D00D3BA81 /* ViewController.swift in Sources */,
+				F4FDC03F198FBC3D00D3BA81 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4FDC047198FBC3D00D3BA81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FDC052198FBC3D00D3BA81 /* LiveKnobControlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4FDC04D198FBC3D00D3BA81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4FDC038198FBC3C00D3BA81 /* LiveKnobControl */;
+			targetProxy = F4FDC04C198FBC3D00D3BA81 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4FDC042198FBC3D00D3BA81 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4FDC043198FBC3D00D3BA81 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4FDC053198FBC3D00D3BA81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4FDC054198FBC3D00D3BA81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4FDC056198FBC3D00D3BA81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = LiveKnobControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveKnobControl/LiveKnobControl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4FDC057198FBC3D00D3BA81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = LiveKnobControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "LiveKnobControl/LiveKnobControl-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		F4FDC059198FBC3D00D3BA81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LiveKnobControl.app/LiveKnobControl";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LiveKnobControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		F4FDC05A198FBC3D00D3BA81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LiveKnobControl.app/LiveKnobControl";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LiveKnobControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4FDC034198FBC3C00D3BA81 /* Build configuration list for PBXProject "LiveKnobControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FDC053198FBC3D00D3BA81 /* Debug */,
+				F4FDC054198FBC3D00D3BA81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4FDC055198FBC3D00D3BA81 /* Build configuration list for PBXNativeTarget "LiveKnobControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FDC056198FBC3D00D3BA81 /* Debug */,
+				F4FDC057198FBC3D00D3BA81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4FDC058198FBC3D00D3BA81 /* Build configuration list for PBXNativeTarget "LiveKnobControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4FDC059198FBC3D00D3BA81 /* Debug */,
+				F4FDC05A198FBC3D00D3BA81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4FDC031198FBC3C00D3BA81 /* Project object */;
+}
