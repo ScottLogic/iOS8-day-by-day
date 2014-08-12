@@ -14,4 +14,49 @@
 // limitations under the License.
 //
 
-import Foundation
+import UIKit
+
+struct Weapon {
+  let name: String
+  let partOfSpeech: String
+  let alternative: String
+  let detail: String
+  let imageName: String
+  
+  var image: UIImage {
+    return UIImage(named: imageName)
+  }
+  
+  init(dictionary: [String:String]) {
+    name = dictionary["name"]!
+    partOfSpeech = dictionary["partOfSpeech"]!
+    alternative = dictionary["alternative"]!
+    detail = dictionary["detail"]!
+    imageName = dictionary["image"]!
+  }
+}
+
+class WeaponProvider {
+  private(set) var weapons = [Weapon]()
+  
+  convenience init() {
+    // Default name
+    self.init(plistNamed: "WeaponCollection")
+  }
+  
+  init(plistNamed: String) {
+    self.weapons = self.loadWeaponsFromPListNamed(plistNamed)
+  }
+  
+  private func loadWeaponsFromPListNamed(plistName: String) -> [Weapon] {
+    let path = NSBundle.mainBundle().pathForResource(plistName, ofType: "plist")
+    let rawArray = NSArray(contentsOfFile: path)
+    var weaponCollection = [Weapon]()
+    for rawWeapon in rawArray as [[String:String]] {
+      weaponCollection.append(Weapon(dictionary: rawWeapon))
+    }
+    return weaponCollection
+  }
+}
+
+

@@ -14,6 +14,7 @@
 		22D50D14199A6350006754E6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D50D13199A6350006754E6 /* Images.xcassets */; };
 		22D50D20199A6350006754E6 /* NinjaWeaponsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D50D1F199A6350006754E6 /* NinjaWeaponsTests.swift */; };
 		22D50D2B199A6432006754E6 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D50D2A199A6432006754E6 /* Weapon.swift */; };
+		22D50D2D199A6A17006754E6 /* WeaponCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D50D2C199A6A17006754E6 /* WeaponCollection.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		22D50D1E199A6350006754E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D50D1F199A6350006754E6 /* NinjaWeaponsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinjaWeaponsTests.swift; sourceTree = "<group>"; };
 		22D50D2A199A6432006754E6 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		22D50D2C199A6A17006754E6 /* WeaponCollection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeaponCollection.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				22D50D2A199A6432006754E6 /* Weapon.swift */,
+				22D50D2C199A6A17006754E6 /* WeaponCollection.plist */,
 			);
 			name = "Data Layer";
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				22D50D12199A6350006754E6 /* Main.storyboard in Resources */,
 				22D50D14199A6350006754E6 /* Images.xcassets in Resources */,
+				22D50D2D199A6A17006754E6 /* WeaponCollection.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

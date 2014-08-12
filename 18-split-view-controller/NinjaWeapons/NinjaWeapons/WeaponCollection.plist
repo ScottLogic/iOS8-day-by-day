@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>katana (刀)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>katana (plural katana or katanas)</string>
+		<key>detail</key>
+		<string>1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature.</string>
+		<key>image</key>
+		<string>katana</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>katana (刀)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>katana (plural katana or katanas)</string>
+		<key>detail</key>
+		<string>1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature.</string>
+		<key>image</key>
+		<string>katana</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>katana (刀)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>katana (plural katana or katanas)</string>
+		<key>detail</key>
+		<string>1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature.</string>
+		<key>image</key>
+		<string>katana</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>katana (刀)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>katana (plural katana or katanas)</string>
+		<key>detail</key>
+		<string>1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature.</string>
+		<key>image</key>
+		<string>katana</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>katana (刀)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>katana (plural katana or katanas)</string>
+		<key>detail</key>
+		<string>1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature.</string>
+		<key>image</key>
+		<string>katana</string>
+	</dict>
+</array>
+</plist>
