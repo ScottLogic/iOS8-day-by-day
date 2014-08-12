@@ -135,7 +135,7 @@ then create a view which uses this:
 You add your content as a subview to the vibrancy effect view, and that in turn
 to the blur effect view:
 
-    vibrancyEffectView.contentView.addSubview(containerView)
+    vibrancyEffectView.contentView.addSubview(contentView)
     blurEffectView.contentView.addSubview(vibrancyEffectView)
 
 Then add the `blurEffectView` to your view hierarchy to display it:
