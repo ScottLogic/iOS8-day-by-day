@@ -13,6 +13,7 @@
 		22D50D12199A6350006754E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D50D10199A6350006754E6 /* Main.storyboard */; };
 		22D50D14199A6350006754E6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D50D13199A6350006754E6 /* Images.xcassets */; };
 		22D50D20199A6350006754E6 /* NinjaWeaponsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D50D1F199A6350006754E6 /* NinjaWeaponsTests.swift */; };
+		22D50D2B199A6432006754E6 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D50D2A199A6432006754E6 /* Weapon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		22D50D19199A6350006754E6 /* NinjaWeaponsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinjaWeaponsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D50D1E199A6350006754E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D50D1F199A6350006754E6 /* NinjaWeaponsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinjaWeaponsTests.swift; sourceTree = "<group>"; };
+		22D50D2A199A6432006754E6 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		22D50D07199A6350006754E6 /* NinjaWeapons */ = {
 			isa = PBXGroup;
 			children = (
+				22D50D29199A6419006754E6 /* Data Layer */,
 				22D50D0A199A6350006754E6 /* AppDelegate.swift */,
 				22D50D0C199A6350006754E6 /* MasterViewController.swift */,
 				22D50D0E199A6350006754E6 /* DetailViewController.swift */,
@@ -110,6 +113,14 @@
 				22D50D1E199A6350006754E6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22D50D29199A6419006754E6 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				22D50D2A199A6432006754E6 /* Weapon.swift */,
+			);
+			name = "Data Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22D50D0F199A6350006754E6 /* DetailViewController.swift in Sources */,
+				22D50D2B199A6432006754E6 /* Weapon.swift in Sources */,
 				22D50D0D199A6350006754E6 /* MasterViewController.swift in Sources */,
 				22D50D0B199A6350006754E6 /* AppDelegate.swift in Sources */,
 			);
