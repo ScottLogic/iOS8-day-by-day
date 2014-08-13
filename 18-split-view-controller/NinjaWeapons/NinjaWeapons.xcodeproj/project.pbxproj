@@ -15,6 +15,7 @@
 		22D50D20199A6350006754E6 /* NinjaWeaponsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D50D1F199A6350006754E6 /* NinjaWeaponsTests.swift */; };
 		22D50D2B199A6432006754E6 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D50D2A199A6432006754E6 /* Weapon.swift */; };
 		22D50D2D199A6A17006754E6 /* WeaponCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D50D2C199A6A17006754E6 /* WeaponCollection.plist */; };
+		22D50D2F199B61A2006754E6 /* ImageAttributions in Resources */ = {isa = PBXBuildFile; fileRef = 22D50D2E199B61A2006754E6 /* ImageAttributions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		22D50D1F199A6350006754E6 /* NinjaWeaponsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinjaWeaponsTests.swift; sourceTree = "<group>"; };
 		22D50D2A199A6432006754E6 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		22D50D2C199A6A17006754E6 /* WeaponCollection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeaponCollection.plist; sourceTree = "<group>"; };
+		22D50D2E199B61A2006754E6 /* ImageAttributions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ImageAttributions; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				22D50D10199A6350006754E6 /* Main.storyboard */,
 				22D50D13199A6350006754E6 /* Images.xcassets */,
 				22D50D08199A6350006754E6 /* Supporting Files */,
+				22D50D2E199B61A2006754E6 /* ImageAttributions */,
 			);
 			path = NinjaWeapons;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D50D2F199B61A2006754E6 /* ImageAttributions in Resources */,
 				22D50D12199A6350006754E6 /* Main.storyboard in Resources */,
 				22D50D14199A6350006754E6 /* Images.xcassets in Resources */,
 				22D50D2D199A6A17006754E6 /* WeaponCollection.plist in Resources */,
@@ -417,6 +421,7 @@
 				22D50D25199A6350006754E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22D50D26199A6350006754E6 /* Build configuration list for PBXNativeTarget "NinjaWeaponsTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				22D50D28199A6350006754E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
