@@ -21,11 +21,7 @@ class TraitOverrideViewController: UIViewController, UISplitViewControllerDelega
   override func viewDidLoad() {
     super.viewDidLoad()
     performTraitCollectionOverrideForSize(view.bounds.size)
-    // Set up split view delegate
-    let splitVC = self.childViewControllers[0] as UISplitViewController
-    splitVC.delegate = self
-    let navVC = splitVC.childViewControllers.last as UINavigationController
-    navVC.topViewController.navigationItem.leftBarButtonItem = splitVC.displayModeButtonItem()
+    configureSplitVC()
   }
   
   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
@@ -40,6 +36,15 @@ class TraitOverrideViewController: UIViewController, UISplitViewControllerDelega
     for vc in self.childViewControllers as [UIViewController] {
       setOverrideTraitCollection(overrideTraitCollection, forChildViewController: vc)
     }
+  }
+  
+  private func configureSplitVC() {
+    // Set up split view delegate
+    let splitVC = self.childViewControllers[0] as UISplitViewController
+    splitVC.delegate = self
+    splitVC.preferredPrimaryColumnWidthFraction = 0.3
+    let navVC = splitVC.childViewControllers.last as UINavigationController
+    navVC.topViewController.navigationItem.leftBarButtonItem = splitVC.displayModeButtonItem()
   }
   
   
