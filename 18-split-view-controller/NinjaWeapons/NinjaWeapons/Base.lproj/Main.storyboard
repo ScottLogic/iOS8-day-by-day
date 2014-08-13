@@ -104,13 +104,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" image="katana" translatesAutoresizingMaskIntoConstraints="NO" id="Uis-lb-tTX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="747" image="katana" translatesAutoresizingMaskIntoConstraints="NO" id="Uis-lb-tTX">
                                 <rect key="frame" x="0.0" y="217" width="600" height="319"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-he-Lqe">
+                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="n3H-he-Lqe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="katana (刀)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-MR-jbo">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="katana (刀)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="oJy-MR-jbo">
                                         <rect key="frame" x="20" y="10" width="226" height="59"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,7 +128,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="Tqx-eJ-KEF">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="748" text="1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="Tqx-eJ-KEF">
                                         <rect key="frame" x="20" y="145" width="560" height="52"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,6 +144,7 @@
                                     <constraint firstItem="19e-eo-82f" firstAttribute="leading" secondItem="oJy-MR-jbo" secondAttribute="leading" id="T6X-RX-FMy"/>
                                     <constraint firstItem="19e-eo-82f" firstAttribute="leading" secondItem="gN8-fY-tXC" secondAttribute="leading" id="XMb-Ik-39L"/>
                                     <constraint firstAttribute="bottom" secondItem="Tqx-eJ-KEF" secondAttribute="bottom" constant="20" id="XON-FN-nyc"/>
+                                    <constraint firstItem="oJy-MR-jbo" firstAttribute="top" secondItem="n3H-he-Lqe" secondAttribute="top" constant="10" id="YRp-zR-yI7"/>
                                     <constraint firstAttribute="trailing" secondItem="Tqx-eJ-KEF" secondAttribute="trailing" constant="20" id="bin-SN-wj5"/>
                                     <constraint firstItem="oJy-MR-jbo" firstAttribute="leading" secondItem="n3H-he-Lqe" secondAttribute="leading" constant="20" id="iOx-QZ-LyN"/>
                                     <constraint firstAttribute="trailing" secondItem="oJy-MR-jbo" secondAttribute="trailing" constant="20" id="k0h-Lx-7Sp"/>
@@ -168,12 +169,11 @@
                             <constraint firstAttribute="trailing" secondItem="Uis-lb-tTX" secondAttribute="trailing" id="18G-h7-oIh"/>
                             <constraint firstItem="Uis-lb-tTX" firstAttribute="top" secondItem="FEy-Nt-DSv" secondAttribute="top" id="DAx-cX-EEG"/>
                             <constraint firstItem="n3H-he-Lqe" firstAttribute="width" relation="lessThanOrEqual" secondItem="FEy-Nt-DSv" secondAttribute="width" multiplier="0.5" id="ExK-bH-5QK"/>
-                            <constraint firstItem="oJy-MR-jbo" firstAttribute="top" secondItem="C3p-pd-4M9" secondAttribute="bottom" constant="10" id="Ht4-9V-Lke"/>
                             <constraint firstItem="Uis-lb-tTX" firstAttribute="leading" secondItem="FEy-Nt-DSv" secondAttribute="leading" id="Kwm-hM-bot"/>
                             <constraint firstItem="n3H-he-Lqe" firstAttribute="top" secondItem="FEy-Nt-DSv" secondAttribute="top" id="Ob0-dU-vfp"/>
+                            <constraint firstAttribute="bottom" secondItem="n3H-he-Lqe" secondAttribute="bottom" id="Pi5-f4-iES"/>
+                            <constraint firstAttribute="bottom" secondItem="Uis-lb-tTX" secondAttribute="bottom" id="RaD-MT-DqW"/>
                             <constraint firstItem="n3H-he-Lqe" firstAttribute="leading" secondItem="Uis-lb-tTX" secondAttribute="trailing" id="T28-lL-tSY"/>
-                            <constraint firstItem="aJf-zf-5ov" firstAttribute="top" secondItem="Uis-lb-tTX" secondAttribute="bottom" id="VdE-Tj-LCj"/>
-                            <constraint firstItem="aJf-zf-5ov" firstAttribute="top" secondItem="n3H-he-Lqe" secondAttribute="bottom" id="gUb-Vg-8Yq"/>
                             <constraint firstItem="Uis-lb-tTX" firstAttribute="top" secondItem="n3H-he-Lqe" secondAttribute="bottom" id="pum-3C-ZRO"/>
                             <constraint firstItem="n3H-he-Lqe" firstAttribute="height" relation="lessThanOrEqual" secondItem="FEy-Nt-DSv" secondAttribute="height" multiplier="0.5" id="toG-eC-nzm"/>
                             <constraint firstItem="n3H-he-Lqe" firstAttribute="leading" secondItem="FEy-Nt-DSv" secondAttribute="leading" id="wbC-vR-8lS"/>
@@ -181,22 +181,22 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="ExK-bH-5QK"/>
-                                <exclude reference="T28-lL-tSY"/>
                                 <exclude reference="DAx-cX-EEG"/>
-                                <exclude reference="gUb-Vg-8Yq"/>
+                                <exclude reference="ExK-bH-5QK"/>
+                                <exclude reference="Pi5-f4-iES"/>
+                                <exclude reference="T28-lL-tSY"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <include reference="ExK-bH-5QK"/>
-                                <include reference="T28-lL-tSY"/>
-                                <exclude reference="toG-eC-nzm"/>
-                                <exclude reference="wbC-vR-8lS"/>
                                 <exclude reference="18G-h7-oIh"/>
                                 <include reference="DAx-cX-EEG"/>
                                 <exclude reference="pum-3C-ZRO"/>
-                                <include reference="gUb-Vg-8Yq"/>
+                                <include reference="ExK-bH-5QK"/>
+                                <include reference="Pi5-f4-iES"/>
+                                <include reference="T28-lL-tSY"/>
+                                <exclude reference="toG-eC-nzm"/>
+                                <exclude reference="wbC-vR-8lS"/>
                             </mask>
                         </variation>
                     </view>
