@@ -32,4 +32,119 @@ view controller. You can download the code from the ShinobiControls github at
 [github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
 
 
+## Adaptive View Controller Hierarchy
+
+In the newly adaptive `UISplitViewController`, the view controller hierarchy is
+determined by its horizontal size class. When `Compact` then the split view will
+appear __Collapsed__ - in a navigation controller. The master view controller
+will be displayed first, and selecting one of the rows in the table will push
+the detail view controller onto the navigation stack.
+
+This is in contrast to the `Regular` horizontal class, which expands to display
+the master and detail view controllers simultaneously. This can be in a
+selection of configurations - known as display modes.
+
+Importantly, this behavior is completely automatic, and doesn't require any
+differences in the code. This means that the code in the master view controller
+which provides the content to the detail view controller is simply 
+
+
+YOU ARE HERE
+
+## Overriding Default Behavior
+
+Since the appearance is determined by size class you can easily show an expanded
+split view on an iPhone by overriding the trait collection. This is done by
+creating a container view controller and providing a trait collection override.
+
+The sample application overrides the horizontal size class based on the width of
+the current view:
+
+    class TraitOverrideViewController: UIViewController, UISplitViewControllerDelegate {
+      
+      override func viewDidLoad() {
+        super.viewDidLoad()
+        performTraitCollectionOverrideForSize(view.bounds.size)
+      }
+      
+      override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+        performTraitCollectionOverrideForSize(size)
+      }
+      
+      private func performTraitCollectionOverrideForSize(size: CGSize) {
+        var overrideTraitCollection: UITraitCollection? = nil
+        if size.width > 320 {
+          overrideTraitCollection = UITraitCollection(horizontalSizeClass: .Regular)
+        }
+        for vc in self.childViewControllers as [UIViewController] {
+          setOverrideTraitCollection(overrideTraitCollection, forChildViewController: vc)
+        }
+      }
+    }
+
+`performTraitCollectionOverrideForSize()` takes a `CGSize`, and if the width is
+larger than 320pts forces all the child view controllers to have a horizontally
+regular size class. This method needs to be called in two places - once when the
+view first loads, and then whenever the view controller changes size, the latter
+using the new `viewWillTransitionToSize(_:, withTransitionCoordinator:)` method.
+
+![UISplitViewController on an iPhone](assets/iphone_landscape_expanded.png)
+
+
+## Advanced Features
+
+The split view delegate has new methods as well - which you can use to control
+the behavior associated with expanding and collapsing split views. This occurs
+when the split view transitions from being expanded to being collapsed - e.g. on
+the newly updated iPhone version of __NinjaWeapons__.
+
+You can specify whether a the detail view controller should be popped onto the
+master's navigation stack when the split view is collapsing, and conversely
+whether the top view controller should be used as the detail view when expanding
+. The default behavior is great for most use cases, but if you have a more
+complex hierarchical data structure, then these methods are invaluable.
+
+The delegate methods even allow you to specify completely new view controllers
+in these cases - so you can build a completely custom split view.
+
+`UISplitViewController` also provides a toolbar button which allows cycling
+between the different display modes when the split view is expanded. This button
+adapts to the current circumstance - so it will show/hide an overlaid master VC,
+or toggle between always visible and hidden otherwise. This button is accessible
+via the `displayModeButtonItem()` method.
+
+The width of the split is also configurable via the
+`preferredPrimaryColumnWidthFraction`, `minimumPrimaryColumnWidth` and
+`maximumPrimaryColumnWidth` properties on `UISplitViewController`.
+
+The following code is used in __NinjaWeapons__ to configure both the split width
+and set up the display mode button:
+
+    private func configureSplitVC() {
+      // Set up split view delegate
+      let splitVC = self.childViewControllers[0] as UISplitViewController
+      splitVC.delegate = self
+      splitVC.preferredPrimaryColumnWidthFraction = 0.3
+      let navVC = splitVC.childViewControllers.last as UINavigationController
+      navVC.topViewController.navigationItem.leftBarButtonItem = splitVC.displayModeButtonItem()
+    }
+
+![UISplitViewController on an iPhone](assets/iphone_landscape_expanded.png)
+
 ## Conclusion
+
+The new and improved `UISplitViewController` is great - removing both idiom
+checks and repeated code. It's out-the-box functionality is suitable for many
+use cases, but is easily extendable to cover more esoteric requirements.
+
+If you want to dive head-first into teh new `UISplitViewController` in loads
+more detail then I've written an entire chapter on the topic in the Ray
+Wenderlich iOS8 By Tutorials book. It comes highly recommended (by me, as one of
+the authors) and you can grab your copy from here.
+
+The __NinjaWeapons__ project is available on github, as usual. It's at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Find me on twitter and tell me your favorite color - I'm
+[@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+sam
