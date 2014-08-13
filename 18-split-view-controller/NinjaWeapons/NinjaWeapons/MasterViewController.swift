@@ -27,6 +27,7 @@ class MasterViewController: UITableViewController {
       self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
     }
     weaponProvider = WeaponProvider()
+    self.title = "Weapons"
   }
   
   override func viewDidLoad() {
@@ -40,7 +41,7 @@ class MasterViewController: UITableViewController {
       let indexPath = self.tableView.indexPathForSelectedRow()
       if let weapon = weaponProvider?.weapons[indexPath.row] {
         let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
-        //controller.detailItem = weapon
+        controller.weapon = weapon
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem()
         controller.navigationItem.leftItemsSupplementBackButton = true
       }

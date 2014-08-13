@@ -202,6 +202,13 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="iHi-vP-64g"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Tqx-eJ-KEF" id="Chj-mN-q8P"/>
+                        <outlet property="furtherDetailLabel" destination="gN8-fY-tXC" id="mql-rW-7ou"/>
+                        <outlet property="nameLabel" destination="oJy-MR-jbo" id="mMF-ei-yK8"/>
+                        <outlet property="partOfSpeechLabel" destination="19e-eo-82f" id="agJ-W0-XHk"/>
+                        <outlet property="weaponImageView" destination="Uis-lb-tTX" id="2o6-pI-Fqz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IzS-cx-9zv" sceneMemberID="firstResponder"/>
             </objects>

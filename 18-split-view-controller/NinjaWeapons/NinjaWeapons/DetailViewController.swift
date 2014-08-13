@@ -17,23 +17,31 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var partOfSpeechLabel: UILabel!
+  @IBOutlet weak var furtherDetailLabel: UILabel!
+  @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak var weaponImageView: UIImageView!
   
-  @IBOutlet weak var detailDescriptionLabel: UILabel!
-  
-  
-  var detailItem: AnyObject? {
+  var weapon: Weapon? {
     didSet {
       // Update the view.
-      self.configureView()
+      if view != nil {
+        self.configureView()
+      }
     }
   }
   
   func configureView() {
     // Update the user interface for the detail item.
-    if let detail: AnyObject = self.detailItem {
-      if let label = self.detailDescriptionLabel {
-        label.text = detail.description
-      }
+    if let weapon = self.weapon {
+      self.nameLabel.text = weapon.name
+      self.partOfSpeechLabel.text = weapon.partOfSpeech
+      self.furtherDetailLabel.text = weapon.alternative
+      self.descriptionLabel.text = weapon.detail
+      self.weaponImageView.image = weapon.image
+      self.title = weapon.name
     }
   }
   
@@ -42,12 +50,6 @@ class DetailViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
     self.configureView()
   }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   
 }
 
