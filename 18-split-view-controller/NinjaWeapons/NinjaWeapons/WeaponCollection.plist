@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>katana (刀)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>katana (plural katana or katanas)</string>
+		<key>detail</key>
+		<string>1. A type of Japanese longsword, 日本刀 (にほんとう, nihontō) having a single edge and slight curvature.</string>
+		<key>image</key>
+		<string>katana</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>wakizashi (脇差)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>wakizashi (plural wakizashi)</string>
+		<key>detail</key>
+		<string>1. A Japanese short sword, often used as a secondary weapon to a katana.</string>
+		<key>image</key>
+		<string>wakizashi</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>fukiya (吹き矢)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>吹き矢 (hiragana ふきや, romaji fukiya)</string>
+		<key>detail</key>
+		<string>1. a hollow tube through which a dart or similar missile may be blown</string>
+		<key>image</key>
+		<string>fukiya</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>yumi (ゆみ)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>yumi m (plural yumis)</string>
+		<key>detail</key>
+		<string>1. A type of bow from Japan.</string>
+		<key>image</key>
+		<string>yumi</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>kusarigama (鎖鎌)</string>
+		<key>partOfSpeech</key>
+		<string>Noun</string>
+		<key>alternative</key>
+		<string>kusarigama (plural kusarigama)</string>
+		<key>detail</key>
+		<string>1. A Japanese martial arts chain weapon that consists of a kama (the Japanese equivalent of a sickle), on a length of kusari (metal chain) with a heavy fundo (iron weight) at the end; a chain sickle.</string>
+		<key>image</key>
+		<string>kusarigama</string>
+	</dict>
+</array>
+</plist>
