@@ -21,7 +21,7 @@ hierarchy on all devices. However, there is no reason that this shouldn't be
 abstracted away from the developer into the framework itself. This is exactly
 what iOS8 does - with the introduction of adaptive view controller hierarchies.
 
-In the master-detail scenario this means that a UISplitViewController can now be
+In the master-detail scenario this means that a `UISplitViewController` can now be
 used on all devices. It retains the same appearance on an iPad as in iOS7, but
 on an iPhone it appears as a navigation controller.
 
@@ -40,16 +40,63 @@ appear __Collapsed__ - in a navigation controller. The master view controller
 will be displayed first, and selecting one of the rows in the table will push
 the detail view controller onto the navigation stack.
 
+![](assets/iphone_portrait_master.png)
+![](assets/iphone_portrait.png)
+
 This is in contrast to the `Regular` horizontal class, which expands to display
 the master and detail view controllers simultaneously. This can be in a
-selection of configurations - known as display modes.
+selection of configurations - known as display modes. This defaults in the
+landscape having a permanently visible primary column:
 
-Importantly, this behavior is completely automatic, and doesn't require any
-differences in the code. This means that the code in the master view controller
-which provides the content to the detail view controller is simply 
+![](assets/ipad_landscape.png)
 
+And in portrait an overlaid view controller which can be toggled using the left
+button item in the navigation bar:
 
-YOU ARE HERE
+![](assets/ipad_portrait.png)
+![](assets/ipad_portrait_overlaid.png)
+
+Importantly, the new split view controller requires no differences in code to
+represent the two different view controller hierarchies. Providing the detail
+view controller with the appropriate model object is now performed in the 
+`prepareForSegure(segue:, sender:)` method:
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+      if segue.identifier == "showDetail" {
+        let indexPath = self.tableView.indexPathForSelectedRow()
+        if let weapon = weaponProvider?.weapons[indexPath.row] {
+          let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
+          controller.weapon = weapon
+          controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem()
+          controller.navigationItem.leftItemsSupplementBackButton = true
+        }
+      }
+    }
+
+This raises an interesting problem - if you want to present a new view
+controller in the secondary pane in code then you need to know whether the split
+view is currently appearing as a navigation controller, or an expanded split
+view. To address this, two new methods have been added to `UIViewController` in
+the form of `showViewController()` and `showDetailViewController()`. These
+methods have different behavior depending on the hierarchy the view controller
+finds itself in. The ancestors are interrogated in turn until one is found which
+provides an implementation. If either reaches the root view controller then the
+provided view controller will be displayed using `presentViewController()`.
+
+The following table details the behaviors exhibited in different scenarios:
+
+|                         | `show`    | `showDetail`                      |
+|-------------------------|-----------|-----------------------------------|
+| Navigation Controller   | `push`    | -                                 |
+| Expanded Split View     | -         | redirect to a `show` on secondary |
+| Collapsed Split View    | -         | redirect to a `show` on primary   |
+| Vanilla view controller | -         | -                                 |
+| Root                    | `present` | `present`                         |
+
+This might look complicated, but the end result is that using the show and
+show detail methods will not only guarantee that the supplied view controller
+will be displayed, but that it will make sense for the current context.
+
 
 ## Overriding Default Behavior
 
