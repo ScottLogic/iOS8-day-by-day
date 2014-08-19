@@ -29,7 +29,7 @@ class ChromaKeyFilter: CIFilter {
     kernel = createKernel()
   }
   
-  required init(coder aDecoder: NSCoder!) {
+  required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     kernel = createKernel()
   }
