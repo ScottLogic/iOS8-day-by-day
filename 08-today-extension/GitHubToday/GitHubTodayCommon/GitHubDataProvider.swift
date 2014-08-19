@@ -37,18 +37,18 @@ import Foundation
   }
   
   // NSCoding
-  public required init(coder aDecoder: NSCoder!) {
+  public required init(coder aDecoder: NSCoder) {
     self.id = aDecoder.decodeIntegerForKey("id")
     self.eventType = GitHubEventType.fromRaw(aDecoder.decodeObjectForKey("eventType") as String)!
     self.repoName = aDecoder.decodeObjectForKey("repoName") as? String
     self.time = aDecoder.decodeObjectForKey("time") as? NSDate
   }
   
-  public func encodeWithCoder(aCoder: NSCoder!) {
+  public func encodeWithCoder(aCoder: NSCoder) {
     aCoder.encodeInteger(id, forKey: "id")
     aCoder.encodeObject(eventType.toRaw(), forKey: "eventType")
-    aCoder.encodeObject(repoName, forKey: "repoName")
-    aCoder.encodeObject(time, forKey: "time")
+    aCoder.encodeObject(repoName!, forKey: "repoName")
+    aCoder.encodeObject(time!, forKey: "time")
   }
   
   public convenience init(json: JSONValue) {
@@ -153,7 +153,7 @@ public class GitHubDataProvider {
     let url = NSURL(string: "https://api.github.com/users/\(user)/events")
     let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {
       (data, response, error) in
-      if error {
+      if (error != nil) {
         println("Error: \(error.localizedDescription)")
         return
       }
