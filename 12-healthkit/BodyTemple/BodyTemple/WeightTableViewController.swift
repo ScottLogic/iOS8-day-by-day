@@ -90,7 +90,7 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
     
     let query = HKSampleQuery(sampleType: weightSampleType, predicate: predicate, limit: 0, sortDescriptors: nil, resultsHandler: {
       (query, results, error) in
-      if !results {
+      if !(results != nil) {
         println("There was an error running the query: \(error)")
       }
       
