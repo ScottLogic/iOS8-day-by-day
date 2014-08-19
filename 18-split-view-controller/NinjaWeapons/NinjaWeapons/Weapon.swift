@@ -50,7 +50,7 @@ class WeaponProvider {
   
   private func loadWeaponsFromPListNamed(plistName: String) -> [Weapon] {
     let path = NSBundle.mainBundle().pathForResource(plistName, ofType: "plist")
-    let rawArray = NSArray(contentsOfFile: path)
+    let rawArray = NSArray(contentsOfFile: path!)
     var weaponCollection = [Weapon]()
     for rawWeapon in rawArray as [[String:String]] {
       weaponCollection.append(Weapon(dictionary: rawWeapon))
