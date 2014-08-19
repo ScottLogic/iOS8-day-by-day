@@ -80,7 +80,7 @@ class ShareViewController: SLComposeServiceViewController {
     }
     
     // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
-    extensionContext.completeRequestReturningItems(nil, completionHandler: nil)
+    extensionContext.completeRequestReturningItems([AnyObject](), completionHandler: nil)
   }
   
   override func configurationItems() -> [AnyObject]! {
@@ -105,7 +105,7 @@ class ShareViewController: SLComposeServiceViewController {
     // Create the JSON payload
     var jsonError: NSError?
     let jsonData = NSJSONSerialization.dataWithJSONObject(jsonObject, options: nil, error: &jsonError)
-    if jsonData {
+    if (jsonData != nil) {
       request.HTTPBody = jsonData
     } else {
       if let error = jsonError {
