@@ -54,9 +54,8 @@ class PhotosCollectionViewController: UICollectionViewController {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as PhotosCollectionViewCell
     
     // Configure the cell
-    self.imageManager.requestImageForAsset(images[indexPath.item] as PHAsset, targetSize: CGSize(width: 320, height: 320), contentMode: .AspectFill, options: nil) { image, info in
-      cell.photoImageView.image = image
-    }
+    cell.imageManager = imageManager
+    cell.imageAsset = images[indexPath.item] as? PHAsset
     
     return cell
   }

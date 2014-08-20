@@ -15,8 +15,19 @@
 //
 
 import UIKit
+import Photos
 
 class PhotosCollectionViewCell: UICollectionViewCell {
+  
+  var imageAsset: PHAsset? {
+    didSet {
+      self.imageManager?.requestImageForAsset(imageAsset!, targetSize: CGSize(width: 320, height: 320), contentMode: .AspectFill, options: nil) { image, info in
+        self.photoImageView.image = image
+      }
+    }
+  }
+  
+  var imageManager: PHImageManager?
     
   @IBOutlet weak var photoImageView: UIImageView!
 }
