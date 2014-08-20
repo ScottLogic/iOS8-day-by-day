@@ -14,21 +14,9 @@
 // limitations under the License.
 //
 
-
 import UIKit
-import Photos
 
-class ViewController: UIViewController {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+class PhotosCollectionViewCell: UICollectionViewCell {
     
-    
-    let images = PHAsset.fetchAssetsWithMediaType(.Image, options: nil)
-    println("Count: \(images.count)")
-    
-  }
-  
+  @IBOutlet weak var photoImageView: UIImageView!
 }
-
