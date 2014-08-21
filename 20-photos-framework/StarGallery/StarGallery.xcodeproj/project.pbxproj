@@ -13,6 +13,7 @@
 		226F369F19A5329A00317C2F /* StarGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F369E19A5329A00317C2F /* StarGalleryTests.swift */; };
 		226F36A919A53B1500317C2F /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F36A819A53B1500317C2F /* PhotosCollectionViewController.swift */; };
 		226F36AB19A542EC00317C2F /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F36AA19A542EC00317C2F /* PhotosCollectionViewCell.swift */; };
+		22732A7419A60283006036BD /* ImageCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22732A7319A60283006036BD /* ImageCacheController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		226F369E19A5329A00317C2F /* StarGalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarGalleryTests.swift; sourceTree = "<group>"; };
 		226F36A819A53B1500317C2F /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		226F36AA19A542EC00317C2F /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		22732A7319A60283006036BD /* ImageCacheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				226F368919A5329A00317C2F /* Supporting Files */,
 				226F36A819A53B1500317C2F /* PhotosCollectionViewController.swift */,
 				226F36AA19A542EC00317C2F /* PhotosCollectionViewCell.swift */,
+				22732A7319A60283006036BD /* ImageCacheController.swift */,
 			);
 			path = StarGallery;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22732A7419A60283006036BD /* ImageCacheController.swift in Sources */,
 				226F36A919A53B1500317C2F /* PhotosCollectionViewController.swift in Sources */,
 				226F36AB19A542EC00317C2F /* PhotosCollectionViewCell.swift in Sources */,
 				226F368C19A5329A00317C2F /* AppDelegate.swift in Sources */,
@@ -401,6 +405,7 @@
 				226F36A419A5329A00317C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		226F36A519A5329A00317C2F /* Build configuration list for PBXNativeTarget "StarGalleryTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +414,7 @@
 				226F36A719A5329A00317C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -22,29 +22,20 @@ let reuseIdentifier = "Cell"
 class PhotosCollectionViewController: UICollectionViewController {
   
   var images: PHFetchResult! = nil
-  let imageManager = PHImageManager()
+  let imageManager = PHCachingImageManager()
+  var imageCacheController: ImageCacheController!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     images = PHAsset.fetchAssetsWithMediaType(.Image, options: nil)
+    imageCacheController = ImageCacheController(imageManager: imageManager, images: images, preheatSize: 1)
   }
-  
-  /*
-  // MARK: - Navigation
-  
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-  // Get the new view controller using [segue destinationViewController].
-  // Pass the selected object to the new view controller.
-  }
-  */
   
   // MARK: UICollectionViewDataSource
   
   override func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
     return 1
   }
-  
   
   override func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
     return images.count
@@ -60,4 +51,9 @@ class PhotosCollectionViewController: UICollectionViewController {
     return cell
   }
   
+  
+  // MARK: - ScrollViewDelegate
+  override func scrollViewDidScroll(scrollView: UIScrollView!) {
+    imageCacheController.updateVisibleCells(collectionView.indexPathsForVisibleItems() as [NSIndexPath])
+  }
 }
