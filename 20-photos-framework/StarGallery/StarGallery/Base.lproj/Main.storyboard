@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Sn-fn-awD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Sn-fn-awD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
         <!--Photos Collection View Controller-->
@@ -29,10 +29,23 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNt-Fi-YeW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                         </imageView>
+                                        <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9L-y3-uaH">
+                                            <rect key="frame" x="-20" y="212" width="128" height="128"/>
+                                            <color key="tintColor" red="1" green="0.86195106580000003" blue="0.15694230179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="star">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="handleStarButtonPressed:" destination="vSe-P5-cFX" eventType="touchUpInside" id="nH5-3L-52K"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="m9L-y3-uaH" secondAttribute="bottom" constant="-20" id="0D8-XQ-XYz"/>
+                                    <constraint firstItem="m9L-y3-uaH" firstAttribute="leading" secondItem="vSe-P5-cFX" secondAttribute="leading" constant="-20" id="9UW-R0-dof"/>
                                     <constraint firstAttribute="bottom" secondItem="fNt-Fi-YeW" secondAttribute="bottom" id="ZM4-Er-oQ5"/>
                                     <constraint firstItem="fNt-Fi-YeW" firstAttribute="top" secondItem="vSe-P5-cFX" secondAttribute="top" id="aUd-UV-vsg"/>
                                     <constraint firstAttribute="trailing" secondItem="fNt-Fi-YeW" secondAttribute="trailing" id="ud7-e8-SDG"/>
@@ -40,6 +53,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="photoImageView" destination="fNt-Fi-YeW" id="1v1-FL-sSz"/>
+                                    <outlet property="starButton" destination="m9L-y3-uaH" id="o8d-Dt-bqt"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -54,4 +68,7 @@
             <point key="canvasLocation" x="140" y="85"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star" width="128" height="128"/>
+    </resources>
 </document>

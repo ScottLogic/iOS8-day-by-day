@@ -19,7 +19,7 @@ import Photos
 
 let reuseIdentifier = "Cell"
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController, PHPhotoLibraryChangeObserver {
   
   var images: PHFetchResult! = nil
   let imageManager = PHCachingImageManager()
@@ -29,6 +29,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     super.viewDidLoad()
     images = PHAsset.fetchAssetsWithMediaType(.Image, options: nil)
     imageCacheController = ImageCacheController(imageManager: imageManager, images: images, preheatSize: 1)
+    PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
   }
   
   // MARK: UICollectionViewDataSource
@@ -51,9 +52,24 @@ class PhotosCollectionViewController: UICollectionViewController {
     return cell
   }
   
-  
   // MARK: - ScrollViewDelegate
   override func scrollViewDidScroll(scrollView: UIScrollView!) {
     imageCacheController.updateVisibleCells(collectionView.indexPathsForVisibleItems() as [NSIndexPath])
+  }
+  
+  // MARK: - PHPhotoLibraryChangeObserver
+  func photoLibraryDidChange(changeInstance: PHChange!) {
+    let changeDetails = changeInstance.changeDetailsForFetchResult(images)
+    
+    self.images = changeDetails.fetchResultAfterChanges
+    dispatch_async(dispatch_get_main_queue()) {
+      // Loop through the visible cell indices
+      for indexPath in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath]{
+        if changeDetails.changedIndexes.containsIndex(indexPath.item) {
+          let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as PhotosCollectionViewCell
+          cell.imageAsset = changeDetails.fetchResultAfterChanges[indexPath.item] as? PHAsset
+        }
+      }
+    }
   }
 }
