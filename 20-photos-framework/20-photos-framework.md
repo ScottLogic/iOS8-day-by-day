@@ -9,10 +9,25 @@ but have a read through the rest of this post first!
 
 ## Introduction
 
+Providing access to the images in the system photo gallery is a fairly standard
+requirement for many apps - from social, through to photo editing. iOS has
+provided this ability through many releases, but it has never been particularly
+easy. In iOS8, a new __PhotoKit__ framework has been introduced, which provides
+complete access to the user's photo gallery - from the models which make up the
+library data structure, through to the automatic retrieval of images from within
+iCloud.
 
+This post is going to take a look at some of the basics of using the new
+framework - from how the assets datastore is structured, accessed and updated
+through to how you can create a caching image manager.
+
+The accompanying app is called __StarGallery__ and is a simple implementation
+of a gallery backed by the photo library. The app is able to update the
+'favorite' status of the photos, and demonstrates how to use the in-built image
+cache. As ever, the source code is available on the ShinobiControls github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
 
 ![Star Gallery](assets/star_gallery.png)
-
 
 ## Photo Library Outline
 
@@ -225,5 +240,21 @@ checking the favorites album in the Photos app:
 
 ![Photos App](assets/photos_app.png)
 
-
 ## Conclusion
+
+This new framework makes working with images on the device both much easier for
+the developer and a more seamless experience for the user. In this article 
+you've seen how to access the data models, the images and to perform simple
+model updates. There is even more depth to the framework, which allows you to
+create new assets, and to perform asset content edits as well. If you'd like to
+read an article on some of the more advanced features then drop me a line.
+
+As ever, the source code is available on the ShinobiControls github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+
+You should follow me on twitter - I'm [@iwantmyrealname](https://twitter.com/iwantmyrealname) -
+and let me know if you'd like to read an article about advanced PhotoKit.
+
+sam
+
+
