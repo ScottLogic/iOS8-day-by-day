@@ -233,7 +233,7 @@ This now completes the 'favoriting' functionality of the __StarGallery__ app -
 tapping the _star_ icon will toggle the favorite status:
 
 ![Before Favorite](assets/before_favourite.png)
-![After Favorite](assets/after_favorite.png)
+![After Favorite](assets/after_favourite.png)
 
 You can check that the photo library underlying data store is being updated by
 checking the favorites album in the Photos app:
