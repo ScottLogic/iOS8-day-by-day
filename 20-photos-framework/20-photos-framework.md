@@ -11,6 +11,8 @@ but have a read through the rest of this post first!
 
 
 
+![Star Gallery](assets/star_gallery.png)
+
 
 ## Photo Library Outline
 
@@ -136,6 +138,92 @@ exist in the cache.
 
 ## Performing Model Updates
 
+Having immutable model objects is great for thread-safety, but it does mean that
+updating the photo library is made a little more complex. You can't just update
+some settings on the model objects and then request the framework to persist
+them. Instead, you must create a change request, and then get the library to
+perform it.
+
+`PHPhotoLibrary` has a `performChanges()` method, which takes a closure
+containing the required change requests. Each of the model types has an
+associated change request class - for example `PHAssetChangeRequest`, and they
+are instantiated using a model object. Once you have the change request object,
+you can mutate it to match the change you wish to perform. Since this is created
+within the `performChanges()` closure, the framework will then perform this
+change asynchronously.
+
+In the accompanying app, there is a star button which, when pressed, will toggle
+the 'favorite' status of an asset. The following is the method which gets called:
+
+    @IBAction func handleStarButtonPressed(sender: AnyObject) {
+      PHPhotoLibrary.sharedPhotoLibrary().performChanges({
+        let changeRequest = PHAssetChangeRequest(forAsset: self.imageAsset)
+        changeRequest.favorite = !self.imageAsset!.favorite
+      }, completionHandler: nil)
+    }
+
+Here, the change request is created using `PHAssetChangeRequest(forAsset:)` with
+the image asset associated with this cell, before toggling the value of the
+`favorite` property.
+
+In this instance the `completionHandler` closure is `nil`, but you can get a
+callback with the status of the change request.
+
 ## Registering for Update Notifications
+
+Now that you've managed to update the asset in the photo library, you might be
+wondering about how to update your UI. You could use the completion block in the
+`performChanges()` method, but there is a more generic approach.
+
+You can subscribe to change notifications on a photo library, meaning that you
+will be informed whenever it changes - irrespective of whether the change comes
+from your app, or elsewhere (e.g. the Photos app).
+
+Registering for updates is as simple as:
+
+    PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
+
+In order for this to work, your class must adopt the `PHPhotoLibraryChangeObserver`
+protocol, which includes the `photoLibraryDidChange(changeInstance: PHChange!)`
+method.
+
+The `PHChange` class encapsulates the library update, and you can request either
+to get the change details for a specific object, or a `PHFetchRequest`. In 
+__StarGallery__, the `PHFetchResultChangeDetails` are requested for the fetch
+request displayed in the collection view:
+
+    func photoLibraryDidChange(changeInstance: PHChange!) {
+      let changeDetails = changeInstance.changeDetailsForFetchResult(images)
+      self.images = changeDetails.fetchResultAfterChanges
+      dispatch_async(dispatch_get_main_queue()) {
+        // Loop through the visible cell indices
+        for indexPath in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath]{
+          if changeDetails.changedIndexes.containsIndex(indexPath.item) {
+            let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as PhotosCollectionViewCell
+            cell.imageAsset = changeDetails.fetchResultAfterChanges[indexPath.item] as? PHAsset
+          }
+        }
+      }
+    }
+
+This implementation then determines which of the visible cells are affected by
+this change, and provides them with the updated model object, which will update
+the appearance appropriately.
+
+Note that in addition to the `fetchResultAfterChanges` and `changedIndexes`, the
+`PHFetchResultChanges` class also includes details of inserted, deleted and
+moved objects.
+
+This now completes the 'favoriting' functionality of the __StarGallery__ app -
+tapping the _star_ icon will toggle the favorite status:
+
+![Before Favorite](assets/before_favourite.png)
+![After Favorite](assets/after_favorite.png)
+
+You can check that the photo library underlying data store is being updated by
+checking the favorites album in the Photos app:
+
+![Photos App](assets/photos_app.png)
+
 
 ## Conclusion
