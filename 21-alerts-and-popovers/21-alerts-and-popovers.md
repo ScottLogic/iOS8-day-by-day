@@ -29,6 +29,78 @@ The sample app which accompanies this project is available on github at
 
 ## Pop Overs
 
+Popovers are now completely adaptive - which means that rather than having
+separate code paths for iPhone and iPad, they can be used on every device. A new
+class `UIPopoverPresentationController` has been introduced, and this controls
+the presentation of a view controller in a popover style. You don't create one
+of these directly, but instead one is created for you by UIKit when the 
+`modalPresentationStyle` property on `UIViewController` is set to `.Modal`.
+
+    let popoverVC = storyboard.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
+    popoverVC.modalPresentationStyle = .Popover
+
+You can then get hold of the popover presentation controller from the
+`popoverPresentationController` property of `UIViewController`:
+
+    let popoverController = popoverVC.popoverPresentationController
+
+This has settings that you'll recognize from `UIPopoverController` which you can
+use to configure the popover:
+
+    popoverController.sourceView = sender
+    popoverController.sourceRect = sender.bounds
+    popoverController.permittedArrowDirections = .Any
+
+Then, presenting the popover is as simple as calling `presentViewController()`:
+
+    presentViewController(popoverVC, animated: true, completion: nil)
+
+The popover presentation controller is inherently adaptive - a regular
+horizontal size class will show a traditional popover, but a compact will (by
+default) present using a full-screen modal presentation.
+
+![Regular width](assets/popover-regular-width.png)
+![Compact Width](assets/popover-compact-width.png)
+
+You can configure exactly how the adapted view controller appears (i.e. for 
+compact width) using a `UIPopoverPresentationDelegate`. This has two methods -
+one for specifying the modal presentation style, and the other for returning a
+custom view controller.
+
+You set the delegate as you'd expect:
+
+    popoverController.delegate = self
+
+The adaptive presentation style can be either `.FullScreen` or `.OverFullScreen`,
+the difference being that fullscreen will remove the presenting view controller's
+view, whereas over-fullscreen won't. You can set it with the following delegate
+method:
+
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+      return .FullScreen
+    }
+
+You can see the difference by setting the background color to semi-transparent, 
+as shown below:
+
+![FullScreen](assets/popover-fullscreen.png)
+![Over FullScreen](aseets/popover-over-fullscreen.png)
+
+The other delegate method allows you to return a completely custom view
+controller for the adaptive display. For example, the following will put the
+popover view controller inside a navigation controller:
+
+  func presentationController(controller: UIPresentationController!, 
+            viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+    return UINavigationController(rootViewController: controller.presentedViewController)
+  }
+
+And will result in something that looks like this:
+
+![Popover in Nav Controller](assets/popover-navcontroller.png)
+
+Note that none of this has changed the appearance for regular width - that will
+still show as a standard popover controller.
 
 ## Alerts
 

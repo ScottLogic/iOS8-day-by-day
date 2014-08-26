@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
   
   @IBAction func handleActionSheetPressed(sender: UIView) {
     let actionSheet = UIAlertController(title: "Action Sheet", message: "Using the alert controller", preferredStyle: .ActionSheet)
-    if let presentationController = actionSheet.presentationController as? UIPopoverPresentationController {
+    if let presentationController = actionSheet.popoverPresentationController {
       presentationController.sourceView = sender
       presentationController.sourceRect = sender.bounds
     }
