@@ -16,7 +16,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPopoverPresentationControllerDelegate {
                             
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     let popoverController = popoverVC.popoverPresentationController
     popoverController.sourceView = sender as UIView
     popoverController.permittedArrowDirections = .Any
+    popoverController.delegate = self
     presentViewController(popoverVC, animated: true, completion: nil)
   }
   
@@ -37,6 +38,17 @@ class ViewController: UIViewController {
   }
   
   @IBAction func handleActionSheetPressed(sender: AnyObject) {
+  }
+  
+  
+  
+  // MARK: - UIPopoverPresentationControllerDelegate
+  func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+    return .FullScreen
+  }
+  
+  func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+    return UINavigationController(rootViewController: controller.presentedViewController)
   }
 }
 

@@ -79,10 +79,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Popover View Controller-->
         <scene sceneID="EEW-NY-JkR">
             <objects>
-                <viewController id="T2v-Vw-ndF" sceneMemberID="viewController">
+                <viewController id="T2v-Vw-ndF" customClass="PopoverViewController" customModule="AppAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uDP-VY-6Hy"/>
                         <viewControllerLayoutGuide type="bottom" id="XD5-KR-Sha"/>
@@ -97,10 +97,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evH-9f-aMx">
+                                <rect key="frame" x="273" y="348" width="54" height="30"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="T2v-Vw-ndF" eventType="touchUpInside" id="fS7-iO-kJ2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.86195106580000003" blue="0.15694230179999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="cum-Wv-ZtG" secondAttribute="centerX" id="B2F-8Z-ezo"/>
+                            <constraint firstItem="evH-9f-aMx" firstAttribute="centerX" secondItem="cum-Wv-ZtG" secondAttribute="centerX" id="ZPO-aN-MvO"/>
+                            <constraint firstItem="evH-9f-aMx" firstAttribute="top" secondItem="cum-Wv-ZtG" secondAttribute="bottom" constant="24" id="ssN-Nz-3ko"/>
                             <constraint firstAttribute="centerY" secondItem="cum-Wv-ZtG" secondAttribute="centerY" id="wa3-0K-62b"/>
                         </constraints>
                     </view>
@@ -109,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="1125" y="154"/>
         </scene>
-        <!--View Controller-->
+        <!--Popover View Controller-->
         <scene sceneID="Nhl-al-Jkl">
             <objects>
-                <viewController storyboardIdentifier="codePopover" id="fBa-Bf-egE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="codePopover" id="fBa-Bf-egE" customClass="PopoverViewController" customModule="AppAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WT0-06-v1D"/>
                         <viewControllerLayoutGuide type="bottom" id="0bu-AG-dlD"/>
@@ -134,6 +145,7 @@
                             <constraint firstAttribute="centerX" secondItem="hj7-3h-PuZ" secondAttribute="centerX" id="OVU-GF-Wb7"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1V-8z-d03" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

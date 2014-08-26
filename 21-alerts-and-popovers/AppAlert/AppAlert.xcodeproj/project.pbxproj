@@ -12,6 +12,7 @@
 		22197EA019ABFCD900C99CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22197E9E19ABFCD900C99CF7 /* Main.storyboard */; };
 		22197EA219ABFCD900C99CF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22197EA119ABFCD900C99CF7 /* Images.xcassets */; };
 		22197EAE19ABFCD900C99CF7 /* AppAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22197EAD19ABFCD900C99CF7 /* AppAlertTests.swift */; };
+		22197EB819ACC34300C99CF7 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22197EB719ACC34300C99CF7 /* PopoverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		22197EA719ABFCD900C99CF7 /* AppAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22197EAC19ABFCD900C99CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22197EAD19ABFCD900C99CF7 /* AppAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertTests.swift; sourceTree = "<group>"; };
+		22197EB719ACC34300C99CF7 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				22197E9E19ABFCD900C99CF7 /* Main.storyboard */,
 				22197EA119ABFCD900C99CF7 /* Images.xcassets */,
 				22197E9819ABFCD900C99CF7 /* Supporting Files */,
+				22197EB719ACC34300C99CF7 /* PopoverViewController.swift */,
 			);
 			path = AppAlert;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22197E9D19ABFCD900C99CF7 /* ViewController.swift in Sources */,
+				22197EB819ACC34300C99CF7 /* PopoverViewController.swift in Sources */,
 				22197E9B19ABFCD900C99CF7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +401,7 @@
 				22197EB319ABFCD900C99CF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22197EB419ABFCD900C99CF7 /* Build configuration list for PBXNativeTarget "AppAlertTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +410,7 @@
 				22197EB619ABFCD900C99CF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
