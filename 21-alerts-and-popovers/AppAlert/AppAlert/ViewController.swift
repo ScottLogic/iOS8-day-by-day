@@ -35,6 +35,19 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
   }
   
   @IBAction func handleAlertPressed(sender: AnyObject) {
+    let alert = UIAlertController(title: "Alert", message: "Using the alert controller", preferredStyle: UIAlertControllerStyle.Alert)
+    
+    let dismissHandler = {
+      (action: UIAlertAction!) in
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: dismissHandler))
+    alert.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: dismissHandler))
+    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: dismissHandler))
+    alert.addTextFieldWithConfigurationHandler { textField in
+      textField.placeholder = "Sample text field"
+    }
+    presentViewController(alert, animated: true, completion: nil)
   }
   
   @IBAction func handleActionSheetPressed(sender: AnyObject) {
