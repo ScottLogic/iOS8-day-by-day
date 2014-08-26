@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRh-is-dRC">
+                                <rect key="frame" x="219" y="55" width="164" height="41"/>
+                                <color key="backgroundColor" red="1" green="0.29128207420000002" blue="0.4937258739" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="PopOver from IB">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="T2v-Vw-ndF" kind="popoverPresentation" popoverAnchorView="dRh-is-dRC" id="kMZ-Zr-Gj8">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sv2-Jm-mPm">
+                                <rect key="frame" x="201" y="161" width="201" height="41"/>
+                                <color key="backgroundColor" red="1" green="0.29128207420000002" blue="0.4937258739" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="PopOver from Code">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handlePopoverPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CN8-tr-Vgc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMN-uF-TIY">
+                                <rect key="frame" x="241" y="373" width="121" height="41"/>
+                                <color key="backgroundColor" red="1" green="0.29128207420000002" blue="0.4937258739" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="ActionSheet">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleActionSheetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PaX-HE-Z82"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaU-TV-x1d">
+                                <rect key="frame" x="279" y="267" width="45" height="41"/>
+                                <color key="backgroundColor" red="1" green="0.29128207420000002" blue="0.4937258739" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Alert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleAlertPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jy9-R1-g0l"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sv2-Jm-mPm" firstAttribute="centerX" secondItem="dRh-is-dRC" secondAttribute="centerX" id="Dng-je-L1Z"/>
+                            <constraint firstItem="dRh-is-dRC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="IFu-W2-XH4"/>
+                            <constraint firstItem="MaU-TV-x1d" firstAttribute="top" secondItem="sv2-Jm-mPm" secondAttribute="bottom" constant="65" id="IS4-tb-TqL"/>
+                            <constraint firstAttribute="centerX" secondItem="dRh-is-dRC" secondAttribute="centerX" constant="-0.5" id="Jzp-hB-BVk"/>
+                            <constraint firstItem="EMN-uF-TIY" firstAttribute="centerX" secondItem="MaU-TV-x1d" secondAttribute="centerX" id="Ue9-P4-JIG"/>
+                            <constraint firstItem="sv2-Jm-mPm" firstAttribute="centerX" secondItem="MaU-TV-x1d" secondAttribute="centerX" id="ZEw-Cm-cIB"/>
+                            <constraint firstItem="EMN-uF-TIY" firstAttribute="top" secondItem="MaU-TV-x1d" secondAttribute="bottom" constant="65" id="jG1-bX-w5x"/>
+                            <constraint firstItem="sv2-Jm-mPm" firstAttribute="top" secondItem="dRh-is-dRC" secondAttribute="bottom" constant="65" id="ooc-Qb-Tkh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Popover View Controller-->
+        <scene sceneID="EEW-NY-JkR">
+            <objects>
+                <viewController id="T2v-Vw-ndF" customClass="PopoverViewController" customModule="AppAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uDP-VY-6Hy"/>
+                        <viewControllerLayoutGuide type="bottom" id="XD5-KR-Sha"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HDn-i0-1AJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IB Popover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cum-Wv-ZtG">
+                                <rect key="frame" x="210" y="276" width="180" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evH-9f-aMx">
+                                <rect key="frame" x="273" y="348" width="54" height="30"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="T2v-Vw-ndF" eventType="touchUpInside" id="fS7-iO-kJ2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.86195106580000003" blue="0.15694230179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="cum-Wv-ZtG" secondAttribute="centerX" id="B2F-8Z-ezo"/>
+                            <constraint firstItem="evH-9f-aMx" firstAttribute="centerX" secondItem="cum-Wv-ZtG" secondAttribute="centerX" id="ZPO-aN-MvO"/>
+                            <constraint firstItem="evH-9f-aMx" firstAttribute="top" secondItem="cum-Wv-ZtG" secondAttribute="bottom" constant="24" id="ssN-Nz-3ko"/>
+                            <constraint firstAttribute="centerY" secondItem="cum-Wv-ZtG" secondAttribute="centerY" id="wa3-0K-62b"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uax-el-0am" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="154"/>
+        </scene>
+        <!--Popover View Controller-->
+        <scene sceneID="Nhl-al-Jkl">
+            <objects>
+                <viewController storyboardIdentifier="codePopover" id="fBa-Bf-egE" customClass="PopoverViewController" customModule="AppAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WT0-06-v1D"/>
+                        <viewControllerLayoutGuide type="bottom" id="0bu-AG-dlD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KZp-QN-1fI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Popover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj7-3h-PuZ">
+                                <rect key="frame" x="180" y="276" width="241" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.44098753670000002" green="0.84555206469999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="hj7-3h-PuZ" secondAttribute="centerY" id="4B2-ka-zEi"/>
+                            <constraint firstAttribute="centerX" secondItem="hj7-3h-PuZ" secondAttribute="centerX" id="OVU-GF-Wb7"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1V-8z-d03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="854"/>
+        </scene>
+    </scenes>
+</document>
