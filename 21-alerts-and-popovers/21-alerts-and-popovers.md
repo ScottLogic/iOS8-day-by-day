@@ -104,9 +104,93 @@ still show as a standard popover controller.
 
 ## Alerts
 
+In the past, alerts were actually a subclass of `UIView`, which were then
+displayed in a new `UIWindow`. This caused all kinds of issues with rotation and
+really doesn't fit the adaptive rotation-agnostic world of iOS8. Since alerts
+are just another way to present content, they have been brought in-line with the
+rest of UIKit, in that it is just a `UIViewController` that is displayed using
+the `presentViewController()` method.
+
+The class you need is `UIAlertController`, and it is instantiated with a title,
+message and preferred style:
+
+    let alert = UIAlertController(title: "Alert",
+                                  message: "Using the alert controller",
+                                  preferredStyle: .Alert)
+
+There are two options for the `preferredStyle`, and this represents the
+difference between alerts and actionsheets.
+
+The API has been modernized to use closures instead of delegate callbacks, so
+you can add buttons as actions:
+
+    alert.addAction(UIAlertAction(title: "Cancel",
+                                  style: .Cancel,
+                                  handler: dismissHandler))
+
+Here, `dismissHandler` is defined as follows:
+
+    let dismissHandler = {
+      (action: UIAlertAction!) in
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+There are three different styles for `UIAlertAction`: `.Cancel`, `.Default` and
+`.Destructive`.
+
+You can also add text fields to alerts with
+`addTextFieldWithConfigurationHandler`, which requires a closure which takes a
+`UITextField` and configures it appropriately:
+
+    alert.addTextFieldWithConfigurationHandler { textField in
+      textField.placeholder = "Sample text field"
+    }
+
+Since `UIAlertController` is a subclass of `UIViewController`, you can then
+present it as you would any other:
+
+    presentViewController(alert, animated: true, completion: nil)
+
+This will look like this:
+
+![Alert Controller](assets/alert-controller.png)
 
 ## ActionSheets
 
+Action sheets are actually a different style of a `UIAlertController`:
+
+    let actionSheet = UIAlertController(title: "Action Sheet",
+                                        message: "Using the alert controller",
+                                        preferredStyle: .ActionSheet)
+
+You can't display text fields in an action sheet, but actions are created in
+exactly the same way as for an alert:
+
+    let dismissHandler = {
+      (action: UIAlertAction!) in
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    actionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: dismissHandler))
+    actionSheet.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: dismissHandler))
+    actionSheet.addAction(UIAlertAction(title: "OK", style: .Default, handler: dismissHandler))
+
+Action sheets are adaptive, and when in a regular horizontal size class will
+appear as a popover controller. You can configure the popover controller by
+grabbing hold of the popover presentation controller, exactly as you did for
+popover controllers:
+
+    if let presentationController = actionSheet.popoverPresentationController {
+      presentationController.sourceView = sender
+      presentationController.sourceRect = sender.bounds
+    }
+
+And since an action sheet is again a `UIViewController` subclass, you present it
+in the same way:
+
+    presentViewController(actionSheet, animated: true, completion: nil)
+
+![ActionSheet Compact Width](assets/actionsheet-compact-width.png)
+![ActionSheet Regular Width](assets/actionsheet-regular-width.png)
 
 ## Conclusion
 
