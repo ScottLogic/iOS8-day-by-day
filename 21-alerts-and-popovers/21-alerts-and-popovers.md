@@ -84,16 +84,16 @@ You can see the difference by setting the background color to semi-transparent,
 as shown below:
 
 ![FullScreen](assets/popover-fullscreen.png)
-![Over FullScreen](aseets/popover-over-fullscreen.png)
+![Over FullScreen](assets/popover-over-fullscreen.png)
 
 The other delegate method allows you to return a completely custom view
 controller for the adaptive display. For example, the following will put the
 popover view controller inside a navigation controller:
 
-  func presentationController(controller: UIPresentationController!, 
-            viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
-    return UINavigationController(rootViewController: controller.presentedViewController)
-  }
+    func presentationController(controller: UIPresentationController!, 
+              viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+      return UINavigationController(rootViewController: controller.presentedViewController)
+    }
 
 And will result in something that looks like this:
 
