@@ -22,5 +22,21 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
+  
+  
+  @IBAction func handlePopoverPressed(sender: AnyObject) {
+    let popoverVC = storyboard.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
+    popoverVC.modalPresentationStyle = .Popover
+    let popoverController = popoverVC.popoverPresentationController
+    popoverController.sourceView = sender as UIView
+    popoverController.permittedArrowDirections = .Any
+    presentViewController(popoverVC, animated: true, completion: nil)
+  }
+  
+  @IBAction func handleAlertPressed(sender: AnyObject) {
+  }
+  
+  @IBAction func handleActionSheetPressed(sender: AnyObject) {
+  }
 }
 
