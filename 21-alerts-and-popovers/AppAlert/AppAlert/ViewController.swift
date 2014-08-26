@@ -50,7 +50,20 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
     presentViewController(alert, animated: true, completion: nil)
   }
   
-  @IBAction func handleActionSheetPressed(sender: AnyObject) {
+  @IBAction func handleActionSheetPressed(sender: UIView) {
+    let actionSheet = UIAlertController(title: "Action Sheet", message: "Using the alert controller", preferredStyle: .ActionSheet)
+    let presentationController = actionSheet.presentationController as UIPopoverPresentationController
+    presentationController.sourceView = sender
+    presentationController.sourceRect = sender.bounds
+    
+    let dismissHandler = {
+      (action: UIAlertAction!) in
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    actionSheet.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: dismissHandler))
+    actionSheet.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: dismissHandler))
+    actionSheet.addAction(UIAlertAction(title: "OK", style: .Default, handler: dismissHandler))
+    presentViewController(actionSheet, animated: true, completion: nil)
   }
   
   
