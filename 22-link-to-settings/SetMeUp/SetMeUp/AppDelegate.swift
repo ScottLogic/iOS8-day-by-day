@@ -23,7 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
     // Override point for customization after application launch.
+    prepareDefaultSettings()
     return true
+  }
+  
+  private func prepareDefaultSettings() {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let defaults = [ "AppTitle" : "SetMeUp" ]
+    userDefaults.registerDefaults(defaults)
+    userDefaults.synchronize()
+    println(userDefaults.dictionaryRepresentation())
   }
 
 }

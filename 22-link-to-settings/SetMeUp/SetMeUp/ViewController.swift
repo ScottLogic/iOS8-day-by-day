@@ -17,11 +17,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-                            
+  
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var takeMeButton: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultsChanged", name: NSUserDefaultsDidChangeNotification, object: nil)
+    configureAppearance()
   }
-
+  
+  @IBAction func handleTakeMeButtonPressed(sender: AnyObject) {
+    UIApplication.sharedApplication().openURL(NSURL.URLWithString(UIApplicationOpenSettingsURLString))
+  }
+  
+  
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+  
+  private func configureAppearance() {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    titleLabel.text = userDefaults.stringForKey("AppTitle")
+  }
+  
+  func defaultsChanged() {
+    configureAppearance()
+  }
 }
 
