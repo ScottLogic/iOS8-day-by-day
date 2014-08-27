@@ -94,3 +94,16 @@ that the settings in the settings app are not persisted to NSUserDefaults.
 Therefore this app doesn't behave as expected. This will be fixed very soon.
 
 ## Conclusion
+
+As promised - today's post was pretty short. If you're already using a settings
+bundle then this makes life super easy for your users. If you've decided to
+implement your own settings UI because it's difficult to get to the settings app,
+then it might be time to check out the settings bundle.
+
+The code for today's project is available on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Take a look at it and please do say hi - I'm
+[@iwantmyrealname](https://twitter.com/iwantmyrealname)
+on twitter.
+
+sam
