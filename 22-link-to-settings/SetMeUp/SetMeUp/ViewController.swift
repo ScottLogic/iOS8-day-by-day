@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
     NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultsChanged", name: NSUserDefaultsDidChangeNotification, object: nil)
     configureAppearance()
   }
