@@ -22,22 +22,24 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   
   var input: PHContentEditingInput?
   
+  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var thresholdSlider: UISlider!
+  @IBAction func handleThresholdSliderChanged(sender: AnyObject) {
+    
+  }
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   // MARK: - PHContentEditingController
   
   func canHandleAdjustmentData(adjustmentData: PHAdjustmentData?) -> Bool {
     // Inspect the adjustmentData to determine whether your extension can work with past edits.
-    // (Typically, you use its formatIdentifier and formatVersion properties to do this.)
-    return false
+    return adjustmentData?.formatIdentifier == "com.shinobicontrols.chromakey" &&
+           adjustmentData?.formatVersion == "1.0"
   }
   
   func startContentEditingWithInput(contentEditingInput: PHContentEditingInput?, placeholderImage: UIImage) {
@@ -45,6 +47,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
     // If you returned YES from canHandleAdjustmentData:, contentEditingInput has the original image and adjustment data.
     // If you returned NO, the contentEditingInput has past edits "baked in".
     input = contentEditingInput
+    imageView.image = input?.displaySizeImage
   }
   
   func finishContentEditingWithCompletionHandler(completionHandler: ((PHContentEditingOutput!) -> Void)!) {
