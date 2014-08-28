@@ -12,6 +12,11 @@
 		22CF1CDC19AFD292002D4F59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1CDA19AFD292002D4F59 /* Main.storyboard */; };
 		22CF1CDE19AFD292002D4F59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1CDD19AFD292002D4F59 /* Images.xcassets */; };
 		22CF1CEA19AFD293002D4F59 /* ChromaKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CE919AFD293002D4F59 /* ChromaKeyTests.swift */; };
+		22CF1CFA19AFD5AB002D4F59 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF1CF919AFD5AB002D4F59 /* PhotosUI.framework */; };
+		22CF1CFC19AFD5AB002D4F59 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF1CFB19AFD5AB002D4F59 /* Photos.framework */; };
+		22CF1D0119AFD5AB002D4F59 /* PhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */; };
+		22CF1D0319AFD5AB002D4F59 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */; };
+		22CF1D0619AFD5AB002D4F59 /* ChromaKeyExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,7 +27,35 @@
 			remoteGlobalIDString = 22CF1CD019AFD292002D4F59;
 			remoteInfo = ChromaKey;
 		};
+		22CF1D0419AFD5AB002D4F59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22CF1CC919AFD292002D4F59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22CF1CF619AFD5AB002D4F59;
+			remoteInfo = ChromaKeyExtension;
+		};
+		22CF1D0719AFD5AB002D4F59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22CF1CC919AFD292002D4F59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22CF1CF619AFD5AB002D4F59;
+			remoteInfo = ChromaKeyExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22CF1D0C19AFD5AB002D4F59 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				22CF1D0619AFD5AB002D4F59 /* ChromaKeyExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		22CF1CD119AFD292002D4F59 /* ChromaKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChromaKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +67,12 @@
 		22CF1CE319AFD293002D4F59 /* ChromaKeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChromaKeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CF1CE819AFD293002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CF1CE919AFD293002D4F59 /* ChromaKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaKeyTests.swift; sourceTree = "<group>"; };
+		22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChromaKeyExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		22CF1CF919AFD5AB002D4F59 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		22CF1CFB19AFD5AB002D4F59 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		22CF1CFF19AFD5AB002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
+		22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +90,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22CF1CF419AFD5AB002D4F59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CF1CFA19AFD5AB002D4F59 /* PhotosUI.framework in Frameworks */,
+				22CF1CFC19AFD5AB002D4F59 /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +107,8 @@
 			children = (
 				22CF1CD319AFD292002D4F59 /* ChromaKey */,
 				22CF1CE619AFD293002D4F59 /* ChromaKeyTests */,
+				22CF1CFD19AFD5AB002D4F59 /* ChromaKeyExtension */,
+				22CF1CF819AFD5AB002D4F59 /* Frameworks */,
 				22CF1CD219AFD292002D4F59 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +118,7 @@
 			children = (
 				22CF1CD119AFD292002D4F59 /* ChromaKey.app */,
 				22CF1CE319AFD293002D4F59 /* ChromaKeyTests.xctest */,
+				22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +160,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		22CF1CF819AFD5AB002D4F59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CF919AFD5AB002D4F59 /* PhotosUI.framework */,
+				22CF1CFB19AFD5AB002D4F59 /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22CF1CFD19AFD5AB002D4F59 /* ChromaKeyExtension */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */,
+				22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */,
+				22CF1CFE19AFD5AB002D4F59 /* Supporting Files */,
+			);
+			path = ChromaKeyExtension;
+			sourceTree = "<group>";
+		};
+		22CF1CFE19AFD5AB002D4F59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CFF19AFD5AB002D4F59 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,10 +197,13 @@
 				22CF1CCD19AFD292002D4F59 /* Sources */,
 				22CF1CCE19AFD292002D4F59 /* Frameworks */,
 				22CF1CCF19AFD292002D4F59 /* Resources */,
+				22CF1D0C19AFD5AB002D4F59 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				22CF1D0519AFD5AB002D4F59 /* PBXTargetDependency */,
+				22CF1D0819AFD5AB002D4F59 /* PBXTargetDependency */,
 			);
 			name = ChromaKey;
 			productName = ChromaKey;
@@ -147,6 +228,23 @@
 			productReference = 22CF1CE319AFD293002D4F59 /* ChromaKeyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22CF1D0919AFD5AB002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyExtension" */;
+			buildPhases = (
+				22CF1CF319AFD5AB002D4F59 /* Sources */,
+				22CF1CF419AFD5AB002D4F59 /* Frameworks */,
+				22CF1CF519AFD5AB002D4F59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChromaKeyExtension;
+			productName = ChromaKeyExtension;
+			productReference = 22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +260,9 @@
 					22CF1CE219AFD293002D4F59 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 22CF1CD019AFD292002D4F59;
+					};
+					22CF1CF619AFD5AB002D4F59 = {
+						CreatedOnToolsVersion = 6.0;
 					};
 				};
 			};
@@ -180,6 +281,7 @@
 			targets = (
 				22CF1CD019AFD292002D4F59 /* ChromaKey */,
 				22CF1CE219AFD293002D4F59 /* ChromaKeyTests */,
+				22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +300,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22CF1CF519AFD5AB002D4F59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CF1D0319AFD5AB002D4F59 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +331,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22CF1CF319AFD5AB002D4F59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CF1D0119AFD5AB002D4F59 /* PhotoEditingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -228,6 +346,16 @@
 			isa = PBXTargetDependency;
 			target = 22CF1CD019AFD292002D4F59 /* ChromaKey */;
 			targetProxy = 22CF1CE419AFD293002D4F59 /* PBXContainerItemProxy */;
+		};
+		22CF1D0519AFD5AB002D4F59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */;
+			targetProxy = 22CF1D0419AFD5AB002D4F59 /* PBXContainerItemProxy */;
+		};
+		22CF1D0819AFD5AB002D4F59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */;
+			targetProxy = 22CF1D0719AFD5AB002D4F59 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -378,6 +506,30 @@
 			};
 			name = Release;
 		};
+		22CF1D0A19AFD5AB002D4F59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChromaKeyExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		22CF1D0B19AFD5AB002D4F59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChromaKeyExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -403,6 +555,14 @@
 			buildConfigurations = (
 				22CF1CF119AFD293002D4F59 /* Debug */,
 				22CF1CF219AFD293002D4F59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22CF1D0919AFD5AB002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22CF1D0A19AFD5AB002D4F59 /* Debug */,
+				22CF1D0B19AFD5AB002D4F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
