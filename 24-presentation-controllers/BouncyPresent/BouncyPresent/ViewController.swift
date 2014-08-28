@@ -17,15 +17,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-                            
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  
+  let overlayTransitioningDelegate = OverlayTransitioningDelegate()
+  
+  override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    if segue.identifier == "bouncySegue" {
+      let overlayVC = segue.destinationViewController as UIViewController
+      prepareOverlayVC(overlayVC)
+    }
   }
   
   @IBAction func handleBouncyPresentPressed(sender: AnyObject) {
     let overlayVC = storyboard.instantiateViewControllerWithIdentifier("overlayViewController") as UIViewController
+    prepareOverlayVC(overlayVC)
     presentViewController(overlayVC, animated: true, completion: nil)
+  }
+  
+  private func prepareOverlayVC(overlayVC: UIViewController) {
+    overlayVC.transitioningDelegate = overlayTransitioningDelegate
   }
   
 }

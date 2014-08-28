@@ -14,6 +14,8 @@
 		22CF1CB319AFB208002D4F59 /* BouncyPresentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CB219AFB208002D4F59 /* BouncyPresentTests.swift */; };
 		22CF1CBD19AFB493002D4F59 /* PaddedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CBC19AFB493002D4F59 /* PaddedButton.swift */; };
 		22CF1CBF19AFB5A2002D4F59 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */; };
+		22CF1CC319AFB90A002D4F59 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CC219AFB90A002D4F59 /* OverlayPresentationController.swift */; };
+		22CF1CC519AFB93A002D4F59 /* OverlayTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CC419AFB93A002D4F59 /* OverlayTransitioningDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		22CF1CB219AFB208002D4F59 /* BouncyPresentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyPresentTests.swift; sourceTree = "<group>"; };
 		22CF1CBC19AFB493002D4F59 /* PaddedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedButton.swift; sourceTree = "<group>"; };
 		22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
+		22CF1CC219AFB90A002D4F59 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
+		22CF1CC419AFB93A002D4F59 /* OverlayTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTransitioningDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +83,14 @@
 		22CF1C9C19AFB208002D4F59 /* BouncyPresent */ = {
 			isa = PBXGroup;
 			children = (
+				22CF1CC119AFB8C1002D4F59 /* Views */,
+				22CF1CC019AFB8B3002D4F59 /* Custom Presentation */,
 				22CF1C9F19AFB208002D4F59 /* AppDelegate.swift */,
 				22CF1CA119AFB208002D4F59 /* ViewController.swift */,
+				22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */,
 				22CF1CA319AFB208002D4F59 /* Main.storyboard */,
 				22CF1CA619AFB208002D4F59 /* Images.xcassets */,
 				22CF1C9D19AFB208002D4F59 /* Supporting Files */,
-				22CF1CBC19AFB493002D4F59 /* PaddedButton.swift */,
-				22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */,
 			);
 			path = BouncyPresent;
 			sourceTree = "<group>";
@@ -113,6 +118,23 @@
 				22CF1CB119AFB208002D4F59 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22CF1CC019AFB8B3002D4F59 /* Custom Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CC219AFB90A002D4F59 /* OverlayPresentationController.swift */,
+				22CF1CC419AFB93A002D4F59 /* OverlayTransitioningDelegate.swift */,
+			);
+			name = "Custom Presentation";
+			sourceTree = "<group>";
+		};
+		22CF1CC119AFB8C1002D4F59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CBC19AFB493002D4F59 /* PaddedButton.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,8 +238,10 @@
 			files = (
 				22CF1CA219AFB208002D4F59 /* ViewController.swift in Sources */,
 				22CF1CBD19AFB493002D4F59 /* PaddedButton.swift in Sources */,
+				22CF1CC319AFB90A002D4F59 /* OverlayPresentationController.swift in Sources */,
 				22CF1CA019AFB208002D4F59 /* AppDelegate.swift in Sources */,
 				22CF1CBF19AFB5A2002D4F59 /* OverlayViewController.swift in Sources */,
+				22CF1CC519AFB93A002D4F59 /* OverlayTransitioningDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
