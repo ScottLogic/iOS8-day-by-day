@@ -66,12 +66,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQZ-Qw-6tB" customClass="PaddedButton" customModule="BouncyPresent" customModuleProvider="target">
-                                <rect key="frame" x="254" y="276" width="92" height="48"/>
+                                <rect key="frame" x="0.0" y="492" width="600" height="68"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Dismiss">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="handleDismissedPressed:" destination="hI7-7f-OS1" eventType="touchUpInside" id="m2p-9U-i7O"/>
                                 </connections>
@@ -79,8 +84,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.29128207420000002" blue="0.4937258739" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="bQZ-Qw-6tB" secondAttribute="centerX" id="AkC-aH-5JQ"/>
-                            <constraint firstAttribute="centerY" secondItem="bQZ-Qw-6tB" secondAttribute="centerY" id="Deb-la-kCT"/>
+                            <constraint firstAttribute="trailing" secondItem="bQZ-Qw-6tB" secondAttribute="trailing" id="Udv-cK-PLG"/>
+                            <constraint firstItem="bQZ-Qw-6tB" firstAttribute="leading" secondItem="jhQ-lS-h6y" secondAttribute="leading" id="YmS-eP-596"/>
+                            <constraint firstItem="pvq-Ht-ist" firstAttribute="top" secondItem="bQZ-Qw-6tB" secondAttribute="bottom" constant="40" id="dlJ-FV-F8g"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -35,6 +35,7 @@ class ViewController: UIViewController {
   
   private func prepareOverlayVC(overlayVC: UIViewController) {
     overlayVC.transitioningDelegate = overlayTransitioningDelegate
+    overlayVC.modalPresentationStyle = .Custom
   }
   
 }

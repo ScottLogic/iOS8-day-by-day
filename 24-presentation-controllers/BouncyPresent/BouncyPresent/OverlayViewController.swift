@@ -21,7 +21,12 @@ class OverlayViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    // These settings are of questionable (OK, they look shit) style, but I never said I was a designer
+    view.layer.cornerRadius = 20.0
+    view.layer.shadowColor = UIColor.blackColor().CGColor
+    view.layer.shadowOffset = CGSizeMake(0, 0)
+    view.layer.shadowRadius = 10
+    view.layer.shadowOpacity = 0.5
   }
   
 
