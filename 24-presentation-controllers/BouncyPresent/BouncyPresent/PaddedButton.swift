@@ -16,17 +16,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-                            
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
-  
-  @IBAction func handleBouncyPresentPressed(sender: AnyObject) {
-    let overlayVC = storyboard.instantiateViewControllerWithIdentifier("overlayViewController") as UIViewController
-    presentViewController(overlayVC, animated: true, completion: nil)
+@IBDesignable
+class PaddedButton: UIButton {
+
+  override func intrinsicContentSize() -> CGSize {
+    var size = super.intrinsicContentSize()
+    size.height += 10
+    size.width  += 20
+    return size
   }
   
 }
-

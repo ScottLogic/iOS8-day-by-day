@@ -16,17 +16,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-                            
+class OverlayViewController: UIViewController {
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // Do any additional setup after loading the view.
   }
   
-  @IBAction func handleBouncyPresentPressed(sender: AnyObject) {
-    let overlayVC = storyboard.instantiateViewControllerWithIdentifier("overlayViewController") as UIViewController
-    presentViewController(overlayVC, animated: true, completion: nil)
+
+  @IBAction func handleDismissedPressed(sender: AnyObject) {
+    presentingViewController.dismissViewControllerAnimated(true, completion: nil)
   }
   
 }
-

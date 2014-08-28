@@ -12,6 +12,8 @@
 		22CF1CA519AFB208002D4F59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1CA319AFB208002D4F59 /* Main.storyboard */; };
 		22CF1CA719AFB208002D4F59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1CA619AFB208002D4F59 /* Images.xcassets */; };
 		22CF1CB319AFB208002D4F59 /* BouncyPresentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CB219AFB208002D4F59 /* BouncyPresentTests.swift */; };
+		22CF1CBD19AFB493002D4F59 /* PaddedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CBC19AFB493002D4F59 /* PaddedButton.swift */; };
+		22CF1CBF19AFB5A2002D4F59 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		22CF1CAC19AFB208002D4F59 /* BouncyPresentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BouncyPresentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CF1CB119AFB208002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CF1CB219AFB208002D4F59 /* BouncyPresentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyPresentTests.swift; sourceTree = "<group>"; };
+		22CF1CBC19AFB493002D4F59 /* PaddedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedButton.swift; sourceTree = "<group>"; };
+		22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				22CF1CA319AFB208002D4F59 /* Main.storyboard */,
 				22CF1CA619AFB208002D4F59 /* Images.xcassets */,
 				22CF1C9D19AFB208002D4F59 /* Supporting Files */,
+				22CF1CBC19AFB493002D4F59 /* PaddedButton.swift */,
+				22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */,
 			);
 			path = BouncyPresent;
 			sourceTree = "<group>";
@@ -209,7 +215,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				22CF1CA219AFB208002D4F59 /* ViewController.swift in Sources */,
+				22CF1CBD19AFB493002D4F59 /* PaddedButton.swift in Sources */,
 				22CF1CA019AFB208002D4F59 /* AppDelegate.swift in Sources */,
+				22CF1CBF19AFB5A2002D4F59 /* OverlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
