@@ -16,6 +16,7 @@
 		22CF1CBF19AFB5A2002D4F59 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */; };
 		22CF1CC319AFB90A002D4F59 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CC219AFB90A002D4F59 /* OverlayPresentationController.swift */; };
 		22CF1CC519AFB93A002D4F59 /* OverlayTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CC419AFB93A002D4F59 /* OverlayTransitioningDelegate.swift */; };
+		22CF1CC719AFC148002D4F59 /* BouncyViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CC619AFC148002D4F59 /* BouncyViewControllerAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		22CF1CBE19AFB5A2002D4F59 /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 		22CF1CC219AFB90A002D4F59 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
 		22CF1CC419AFB93A002D4F59 /* OverlayTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTransitioningDelegate.swift; sourceTree = "<group>"; };
+		22CF1CC619AFC148002D4F59 /* BouncyViewControllerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncyViewControllerAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				22CF1CC219AFB90A002D4F59 /* OverlayPresentationController.swift */,
 				22CF1CC419AFB93A002D4F59 /* OverlayTransitioningDelegate.swift */,
+				22CF1CC619AFC148002D4F59 /* BouncyViewControllerAnimator.swift */,
 			);
 			name = "Custom Presentation";
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				22CF1CA019AFB208002D4F59 /* AppDelegate.swift in Sources */,
 				22CF1CBF19AFB5A2002D4F59 /* OverlayViewController.swift in Sources */,
 				22CF1CC519AFB93A002D4F59 /* OverlayTransitioningDelegate.swift in Sources */,
+				22CF1CC719AFC148002D4F59 /* BouncyViewControllerAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

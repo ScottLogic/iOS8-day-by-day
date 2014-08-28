@@ -48,4 +48,9 @@ class OverlayPresentationController: UIPresentationController {
   override func frameOfPresentedViewInContainerView() -> CGRect {
     return containerView.bounds.rectByInsetting(dx: 30, dy: 30)
   }
+  
+  override func containerViewWillLayoutSubviews() {
+    dimmingView.frame = containerView.bounds
+    presentedView().frame = frameOfPresentedViewInContainerView()
+  }
 }
