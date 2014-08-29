@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UN5-VG-5zs">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UN5-VG-5zs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Fwq-uw-OoQ">
-                                <rect key="frame" x="14" y="488" width="292" height="31"/>
+                                <rect key="frame" x="14" y="478" width="292" height="31"/>
                                 <connections>
                                     <action selector="handleThresholdSliderChanged:" destination="ObA-dk-sSI" eventType="valueChanged" id="kVR-eq-pfU"/>
                                 </connections>
@@ -29,13 +29,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Fwq-uw-OoQ" firstAttribute="top" secondItem="UN5-VG-5zs" secondAttribute="bottom" constant="-50" id="0Mv-R7-6eg"/>
                             <constraint firstItem="UN5-VG-5zs" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" id="AyJ-Jn-wSg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fwq-uw-OoQ" secondAttribute="trailing" id="EAB-6c-cOo"/>
-                            <constraint firstItem="Fwq-uw-OoQ" firstAttribute="top" secondItem="UN5-VG-5zs" secondAttribute="bottom" constant="8" id="HvU-Tx-yLA"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="UN5-VG-5zs" secondAttribute="bottom" id="JLr-Nl-C0a"/>
                             <constraint firstAttribute="trailing" secondItem="UN5-VG-5zs" secondAttribute="trailing" id="Lrx-q3-jQ7"/>
                             <constraint firstItem="Fwq-uw-OoQ" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" id="nZx-7Z-flu"/>
                             <constraint firstItem="UN5-VG-5zs" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" id="phn-K6-era"/>
-                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="Fwq-uw-OoQ" secondAttribute="bottom" constant="10" id="t9X-1u-4LJ"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
