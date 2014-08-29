@@ -20,12 +20,15 @@ import PhotosUI
 
 class PhotoEditingViewController: UIViewController, PHContentEditingController {
   
+  let filter = ChromaKeyFilter()
   var input: PHContentEditingInput?
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var thresholdSlider: UISlider!
-  @IBAction func handleThresholdSliderChanged(sender: AnyObject) {
-    
+  @IBAction func handleThresholdSliderChanged(sender: UISlider) {
+    if abs(filter.threshold - CGFloat(sender.value)) > 0.05 {
+      updateOutputImage()
+    }
   }
   
   
@@ -47,7 +50,9 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
     // If you returned YES from canHandleAdjustmentData:, contentEditingInput has the original image and adjustment data.
     // If you returned NO, the contentEditingInput has past edits "baked in".
     input = contentEditingInput
-    imageView.image = input?.displaySizeImage
+    filter.inputImage = CIImage(image: input?.displaySizeImage)
+    filter.activeColor = CIColor(red: 0, green: 1, blue: 0)
+    updateOutputImage()
   }
   
   func finishContentEditingWithCompletionHandler(completionHandler: ((PHContentEditingOutput!) -> Void)!) {
@@ -79,6 +84,18 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   func cancelContentEditing() {
     // Clean up temporary files, etc.
     // May be called after finishContentEditingWithCompletionHandler: while you prepare output.
+  }
+  
+  
+  // MARK: - Utility methods
+  private func updateOutputImage() {
+    filter.threshold = CGFloat(thresholdSlider.value)
+    imageView.image = filteredImage()
+  }
+  
+  private func filteredImage() -> UIImage {
+    let outputImage = filter.outputImage
+    return UIImage(CIImage: outputImage)
   }
   
 }

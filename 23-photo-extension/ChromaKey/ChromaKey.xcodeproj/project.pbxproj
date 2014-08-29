@@ -17,10 +17,7 @@
 		22CF1D0119AFD5AB002D4F59 /* PhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */; };
 		22CF1D0319AFD5AB002D4F59 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */; };
 		22CF1D0619AFD5AB002D4F59 /* ChromaKeyExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		22CF1D1719B00EBC002D4F59 /* ChromaKeyFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CF1D1619B00EBC002D4F59 /* ChromaKeyFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22CF1D2619B00EBC002D4F59 /* ChromaKeyFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF1D1219B00EBC002D4F59 /* ChromaKeyFilter.framework */; };
-		22CF1D2719B00EBC002D4F59 /* ChromaKeyFilter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF1D1219B00EBC002D4F59 /* ChromaKeyFilter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		22CF1D3119B00ED7002D4F59 /* ChromaKeyFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF1D1219B00EBC002D4F59 /* ChromaKeyFilter.framework */; };
+		22CF1D3719B01229002D4F59 /* ChromaKeyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,20 +42,6 @@
 			remoteGlobalIDString = 22CF1CF619AFD5AB002D4F59;
 			remoteInfo = ChromaKeyExtension;
 		};
-		22CF1D2419B00EBC002D4F59 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 22CF1CC919AFD292002D4F59 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 22CF1D1119B00EBC002D4F59;
-			remoteInfo = ChromaKeyFilter;
-		};
-		22CF1D2819B00EBC002D4F59 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 22CF1CC919AFD292002D4F59 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 22CF1D1119B00EBC002D4F59;
-			remoteInfo = ChromaKeyFilter;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,7 +62,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				22CF1D2719B00EBC002D4F59 /* ChromaKeyFilter.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,9 +84,7 @@
 		22CF1CFF19AFD5AB002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
 		22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		22CF1D1219B00EBC002D4F59 /* ChromaKeyFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChromaKeyFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22CF1D1519B00EBC002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22CF1D1619B00EBC002D4F59 /* ChromaKeyFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChromaKeyFilter.h; sourceTree = "<group>"; };
+		22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaKeyFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22CF1D2619B00EBC002D4F59 /* ChromaKeyFilter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,16 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22CF1D3119B00ED7002D4F59 /* ChromaKeyFilter.framework in Frameworks */,
 				22CF1CFA19AFD5AB002D4F59 /* PhotosUI.framework in Frameworks */,
 				22CF1CFC19AFD5AB002D4F59 /* Photos.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		22CF1D0E19B00EBC002D4F59 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +120,6 @@
 				22CF1CD319AFD292002D4F59 /* ChromaKey */,
 				22CF1CE619AFD293002D4F59 /* ChromaKeyTests */,
 				22CF1CFD19AFD5AB002D4F59 /* ChromaKeyExtension */,
-				22CF1D1319B00EBC002D4F59 /* ChromaKeyFilter */,
 				22CF1CF819AFD5AB002D4F59 /* Frameworks */,
 				22CF1CD219AFD292002D4F59 /* Products */,
 			);
@@ -161,7 +131,6 @@
 				22CF1CD119AFD292002D4F59 /* ChromaKey.app */,
 				22CF1CE319AFD293002D4F59 /* ChromaKeyTests.xctest */,
 				22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */,
-				22CF1D1219B00EBC002D4F59 /* ChromaKeyFilter.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */,
+				22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */,
 				22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */,
 				22CF1CFE19AFD5AB002D4F59 /* Supporting Files */,
 			);
@@ -230,35 +200,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		22CF1D1319B00EBC002D4F59 /* ChromaKeyFilter */ = {
-			isa = PBXGroup;
-			children = (
-				22CF1D1619B00EBC002D4F59 /* ChromaKeyFilter.h */,
-				22CF1D1419B00EBC002D4F59 /* Supporting Files */,
-			);
-			path = ChromaKeyFilter;
-			sourceTree = "<group>";
-		};
-		22CF1D1419B00EBC002D4F59 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				22CF1D1519B00EBC002D4F59 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		22CF1D0F19B00EBC002D4F59 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22CF1D1719B00EBC002D4F59 /* ChromaKeyFilter.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		22CF1CD019AFD292002D4F59 /* ChromaKey */ = {
@@ -276,8 +218,6 @@
 			dependencies = (
 				22CF1D0519AFD5AB002D4F59 /* PBXTargetDependency */,
 				22CF1D0819AFD5AB002D4F59 /* PBXTargetDependency */,
-				22CF1D2519B00EBC002D4F59 /* PBXTargetDependency */,
-				22CF1D2919B00EBC002D4F59 /* PBXTargetDependency */,
 			);
 			name = ChromaKey;
 			productName = ChromaKey;
@@ -319,24 +259,6 @@
 			productReference = 22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		22CF1D1119B00EBC002D4F59 /* ChromaKeyFilter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 22CF1D2A19B00EBC002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyFilter" */;
-			buildPhases = (
-				22CF1D0D19B00EBC002D4F59 /* Sources */,
-				22CF1D0E19B00EBC002D4F59 /* Frameworks */,
-				22CF1D0F19B00EBC002D4F59 /* Headers */,
-				22CF1D1019B00EBC002D4F59 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ChromaKeyFilter;
-			productName = ChromaKeyFilter;
-			productReference = 22CF1D1219B00EBC002D4F59 /* ChromaKeyFilter.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -354,9 +276,6 @@
 						TestTargetID = 22CF1CD019AFD292002D4F59;
 					};
 					22CF1CF619AFD5AB002D4F59 = {
-						CreatedOnToolsVersion = 6.0;
-					};
-					22CF1D1119B00EBC002D4F59 = {
 						CreatedOnToolsVersion = 6.0;
 					};
 				};
@@ -377,7 +296,6 @@
 				22CF1CD019AFD292002D4F59 /* ChromaKey */,
 				22CF1CE219AFD293002D4F59 /* ChromaKeyTests */,
 				22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */,
-				22CF1D1119B00EBC002D4F59 /* ChromaKeyFilter */,
 			);
 		};
 /* End PBXProject section */
@@ -407,13 +325,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		22CF1D1019B00EBC002D4F59 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -439,13 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22CF1D0119AFD5AB002D4F59 /* PhotoEditingViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		22CF1D0D19B00EBC002D4F59 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				22CF1D3719B01229002D4F59 /* ChromaKeyFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,16 +371,6 @@
 			isa = PBXTargetDependency;
 			target = 22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */;
 			targetProxy = 22CF1D0719AFD5AB002D4F59 /* PBXContainerItemProxy */;
-		};
-		22CF1D2519B00EBC002D4F59 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 22CF1D1119B00EBC002D4F59 /* ChromaKeyFilter */;
-			targetProxy = 22CF1D2419B00EBC002D4F59 /* PBXContainerItemProxy */;
-		};
-		22CF1D2919B00EBC002D4F59 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 22CF1D1119B00EBC002D4F59 /* ChromaKeyFilter */;
-			targetProxy = 22CF1D2819B00EBC002D4F59 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -650,46 +545,6 @@
 			};
 			name = Release;
 		};
-		22CF1D2B19B00EBC002D4F59 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ChromaKeyFilter/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		22CF1D2C19B00EBC002D4F59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ChromaKeyFilter/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -723,14 +578,6 @@
 			buildConfigurations = (
 				22CF1D0A19AFD5AB002D4F59 /* Debug */,
 				22CF1D0B19AFD5AB002D4F59 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		22CF1D2A19B00EBC002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyFilter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				22CF1D2B19B00EBC002D4F59 /* Debug */,
-				22CF1D2C19B00EBC002D4F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
