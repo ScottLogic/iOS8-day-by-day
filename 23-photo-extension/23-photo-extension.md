@@ -28,6 +28,36 @@ code from the ShinobiControls github at
 
 ## Creating a Photo Extension
 
+In the same way as for the other extension types, the easiest way to create a
+photos extension is to use the template provided by Xcode 6:
+
+![Extension Template](assets/extension_template.png)
+
+This create a new target, and within it a subclass of `UIViewController`, which
+adopts the `PHContentEditingController` protocol. This adds some lifecycle
+methods which are are specific to photo extensions.
+
+You can probably guess from the fact that this is a view controller, that a
+photo extension has UI which is provided by you. In fact, the view controller is
+presented with a navigation bar containing the name of the photo extension. The
+rest is up to you. Since it's just a subclass of `UIViewController` you can use
+all the usual techniques, including creating the design in a storyboard.
+
+In the ChromaKey extension which accompanies this article, a simple design
+including a slider is used to display the live result from the filter, and to
+configure the threshold. This layout is created in the storyboard.
+
+The project also contains the custom `CIFilter` class from day 19 - and the 
+`PhotoEditingViewController` contains a reference to one:
+
+    class PhotoEditingViewController: UIViewController, PHContentEditingController {
+      
+      let filter = ChromaKeyFilter()
+      ...
+    }
+
+You'll use this filter both during the interactive editing phase, and also when
+rendering the final image.
 
 ## Starting Interactive Editing
 
