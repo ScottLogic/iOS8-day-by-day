@@ -67,6 +67,15 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
       // output.adjustmentData = <#new adjustment data#>
       // let renderedJPEGData = <#output JPEG#>
       // renderedJPEGData.writeToURL(output.renderedContentURL, atomically: true)
+      let fullSizeImage = CIImage(contentsOfURL: self.input?.fullSizeImageURL)
+      UIGraphicsBeginImageContext(fullSizeImage.extent().size);
+      self.filter.inputImage = fullSizeImage
+      UIImage(CIImage: self.filter.outputImage()).drawInRect(fullSizeImage.extent())
+      let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+      let jpegData = UIImageJPEGRepresentation(outputImage, 1.0)
+      UIGraphicsEndImageContext()
+      
+      jpegData.writeToURL(output.renderedContentURL, atomically: true)
       
       // Call completion handler to commit edit to Photos.
       completionHandler?(output)
