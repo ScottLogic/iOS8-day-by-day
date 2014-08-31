@@ -21,7 +21,7 @@ class ChromaKeyFilter : CIFilter {
   var kernel: CIColorKernel?
   var inputImage: CIImage?
   var activeColor = CIColor(red: 0.0, green: 1.0, blue: 0.0)
-  var threshold: CGFloat = 0.7
+  var threshold: Float = 0.7
   
   // MARK: - Initialization
   override init() {
@@ -58,3 +58,22 @@ class ChromaKeyFilter : CIFilter {
     return CIColorKernel(string: kernelString)
   }
 }
+
+extension ChromaKeyFilter {
+  func encodeFilterParameters() -> NSData {
+    var dataDict = [String : AnyObject]()
+    dataDict["activeColor"] = activeColor
+    dataDict["threshold"]   = threshold
+    return NSKeyedArchiver.archivedDataWithRootObject(dataDict)
+  }
+
+  func importFilterParameters(data: NSData?) {
+    if let data = data {
+      if let dataDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String : AnyObject] {
+        activeColor = dataDict["color"] as? CIColor ?? activeColor
+        threshold   = dataDict["threshold"] as? NSNumber ?? threshold
+      }
+    }
+  }
+}
+

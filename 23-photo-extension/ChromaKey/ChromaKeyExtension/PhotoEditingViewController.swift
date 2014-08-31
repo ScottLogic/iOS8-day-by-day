@@ -22,11 +22,13 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   
   let filter = ChromaKeyFilter()
   var input: PHContentEditingInput?
+  let formatIdentifier = "com.shinobicontrols.chromakey"
+  let formatVersion    = "1.0"
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var thresholdSlider: UISlider!
   @IBAction func handleThresholdSliderChanged(sender: UISlider) {
-    if abs(filter.threshold - CGFloat(sender.value)) > 0.05 {
+    if abs(filter.threshold - sender.value) > 0.05 {
       updateOutputImage()
     }
   }
@@ -41,8 +43,16 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   
   func canHandleAdjustmentData(adjustmentData: PHAdjustmentData?) -> Bool {
     // Inspect the adjustmentData to determine whether your extension can work with past edits.
-    return adjustmentData?.formatIdentifier == "com.shinobicontrols.chromakey" &&
-           adjustmentData?.formatVersion == "1.0"
+    let id = adjustmentData?.formatIdentifier
+    let version = adjustmentData?.formatVersion
+    
+    let sameVersion = version == formatVersion
+    let sameId = id == formatIdentifier
+    
+    return sameId && sameVersion
+    
+    //return adjustmentData?.formatIdentifier == formatIdentifier &&
+    //       adjustmentData?.formatVersion == formatVersion
   }
   
   func startContentEditingWithInput(contentEditingInput: PHContentEditingInput?, placeholderImage: UIImage) {
@@ -51,12 +61,16 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
     // If you returned NO, the contentEditingInput has past edits "baked in".
     input = contentEditingInput
     filter.inputImage = CIImage(image: input?.displaySizeImage)
-    filter.activeColor = CIColor(red: 0, green: 1, blue: 0)
+    if let adjustmentData = contentEditingInput?.adjustmentData {
+      filter.importFilterParameters(adjustmentData.data)
+    }
+    thresholdSlider.value = filter.threshold
     updateOutputImage()
   }
   
   func finishContentEditingWithCompletionHandler(completionHandler: ((PHContentEditingOutput!) -> Void)!) {
     // Update UI to reflect that editing has finished and output is being rendered.
+    thresholdSlider.enabled = false
     
     // Render and provide output on a background queue.
     dispatch_async(dispatch_get_global_queue(CLong(DISPATCH_QUEUE_PRIORITY_DEFAULT), 0)) {
@@ -64,9 +78,12 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
       let output = PHContentEditingOutput(contentEditingInput: self.input)
       
       // Provide new adjustments and render output to given location.
-      // output.adjustmentData = <#new adjustment data#>
-      // let renderedJPEGData = <#output JPEG#>
-      // renderedJPEGData.writeToURL(output.renderedContentURL, atomically: true)
+      let newAdjustmentData = PHAdjustmentData(formatIdentifier: self.formatIdentifier,
+                                               formatVersion: self.formatVersion,
+                                               data: self.filter.encodeFilterParameters())
+      output.adjustmentData = newAdjustmentData
+      
+      // Write the JPEG Data
       let fullSizeImage = CIImage(contentsOfURL: self.input?.fullSizeImageURL)
       UIGraphicsBeginImageContext(fullSizeImage.extent().size);
       self.filter.inputImage = fullSizeImage
@@ -98,7 +115,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   
   // MARK: - Utility methods
   private func updateOutputImage() {
-    filter.threshold = CGFloat(thresholdSlider.value)
+    filter.threshold = thresholdSlider.value
     imageView.image = filteredImage()
   }
   
@@ -106,5 +123,4 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
     let outputImage = filter.outputImage
     return UIImage(CIImage: outputImage)
   }
-  
 }
