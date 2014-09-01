@@ -46,14 +46,13 @@ class GLRenderer {
       EAGLContext.setCurrentContext(glView.context)
     }
     
-    // clear eagl view to grey
-    glClearColor(0.5, 0.5, 0.5, 1.0);
+    // clear eagl view to black
+    glClearColor(0.0, 0.0, 0.0, 1.0);
     glClear(0x00004000)
     
     // set the blend mode to "source over" so that CI will use that
     glEnable(0x0BE2);
     glBlendFunc(1, 0x0303);
-    
     
     renderContext.drawImage(image, inRect: drawFrame, fromRect: drawFrame)
     
