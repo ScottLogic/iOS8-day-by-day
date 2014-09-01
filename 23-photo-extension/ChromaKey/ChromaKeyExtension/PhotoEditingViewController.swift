@@ -24,12 +24,14 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   var input: PHContentEditingInput?
   let formatIdentifier = "com.shinobicontrols.chromakey"
   let formatVersion    = "1.0"
+  var glRenderer: GLRenderer?
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var thresholdSlider: UISlider!
   @IBAction func handleThresholdSliderChanged(sender: UISlider) {
+    updateOutputImage()
     if abs(filter.threshold - sender.value) > 0.05 {
-      updateOutputImage()
+      //updateOutputImage()
     }
   }
   
@@ -50,7 +52,6 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
     let sameId = id == formatIdentifier
     
     return sameId && sameVersion
-    
     //return adjustmentData?.formatIdentifier == formatIdentifier &&
     //       adjustmentData?.formatVersion == formatVersion
   }
@@ -65,6 +66,8 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
       filter.importFilterParameters(adjustmentData.data)
     }
     thresholdSlider.value = filter.threshold
+    glRenderer = GLRenderer(frame: view.bounds, superview: view)
+    view.bringSubviewToFront(thresholdSlider)
     updateOutputImage()
   }
   
@@ -116,7 +119,8 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   // MARK: - Utility methods
   private func updateOutputImage() {
     filter.threshold = thresholdSlider.value
-    imageView.image = filteredImage()
+    //imageView.image = filteredImage()
+    glRenderer?.renderImage(filter.outputImage)
   }
   
   private func filteredImage() -> UIImage {

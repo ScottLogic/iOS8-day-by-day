@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		227EE90E19B3F0B300A85006 /* GLRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE90D19B3F0B300A85006 /* GLRenderer.swift */; };
 		22CF1CD719AFD292002D4F59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CD619AFD292002D4F59 /* AppDelegate.swift */; };
 		22CF1CD919AFD292002D4F59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CD819AFD292002D4F59 /* ViewController.swift */; };
 		22CF1CDC19AFD292002D4F59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1CDA19AFD292002D4F59 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		227EE90D19B3F0B300A85006 /* GLRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLRenderer.swift; sourceTree = "<group>"; };
 		22CF1CD119AFD292002D4F59 /* ChromaKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChromaKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CF1CD519AFD292002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CF1CD619AFD292002D4F59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */,
 				22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */,
 				22CF1CFE19AFD5AB002D4F59 /* Supporting Files */,
+				227EE90D19B3F0B300A85006 /* GLRenderer.swift */,
 			);
 			path = ChromaKeyExtension;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227EE90E19B3F0B300A85006 /* GLRenderer.swift in Sources */,
 				22CF1D0119AFD5AB002D4F59 /* PhotoEditingViewController.swift in Sources */,
 				22CF1D3719B01229002D4F59 /* ChromaKeyFilter.swift in Sources */,
 			);
@@ -564,6 +568,7 @@
 				22CF1CEF19AFD293002D4F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22CF1CF019AFD293002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +577,7 @@
 				22CF1CF219AFD293002D4F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22CF1D0919AFD5AB002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyExtension" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +586,7 @@
 				22CF1D0B19AFD5AB002D4F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
