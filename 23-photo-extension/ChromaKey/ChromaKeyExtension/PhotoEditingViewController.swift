@@ -30,9 +30,6 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   @IBOutlet weak var thresholdSlider: UISlider!
   @IBAction func handleThresholdSliderChanged(sender: UISlider) {
     updateOutputImage()
-    if abs(filter.threshold - sender.value) > 0.05 {
-      //updateOutputImage()
-    }
   }
   
   
