@@ -25,32 +25,25 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   let formatIdentifier = "com.shinobicontrols.chromakey"
   let formatVersion    = "1.0"
   var glRenderer: GLRenderer?
-  
-  @IBOutlet weak var imageView: UIImageView!
+
   @IBOutlet weak var thresholdSlider: UISlider!
   @IBAction func handleThresholdSliderChanged(sender: UISlider) {
     updateOutputImage()
   }
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    glRenderer = GLRenderer(frame: view.bounds, superview: view)
+    view.bringSubviewToFront(thresholdSlider)
   }
   
   // MARK: - PHContentEditingController
   
   func canHandleAdjustmentData(adjustmentData: PHAdjustmentData?) -> Bool {
     // Inspect the adjustmentData to determine whether your extension can work with past edits.
-    let id = adjustmentData?.formatIdentifier
-    let version = adjustmentData?.formatVersion
-    
-    let sameVersion = version == formatVersion
-    let sameId = id == formatIdentifier
-    
-    return sameId && sameVersion
-    //return adjustmentData?.formatIdentifier == formatIdentifier &&
-    //       adjustmentData?.formatVersion == formatVersion
+    return adjustmentData?.formatIdentifier == formatIdentifier &&
+           adjustmentData?.formatVersion == formatVersion
   }
   
   func startContentEditingWithInput(contentEditingInput: PHContentEditingInput?, placeholderImage: UIImage) {
@@ -63,8 +56,6 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
       filter.importFilterParameters(adjustmentData.data)
     }
     thresholdSlider.value = filter.threshold
-    glRenderer = GLRenderer(frame: view.bounds, superview: view)
-    view.bringSubviewToFront(thresholdSlider)
     updateOutputImage()
   }
   
@@ -116,12 +107,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   // MARK: - Utility methods
   private func updateOutputImage() {
     filter.threshold = thresholdSlider.value
-    //imageView.image = filteredImage()
     glRenderer?.renderImage(filter.outputImage)
   }
-  
-  private func filteredImage() -> UIImage {
-    let outputImage = filter.outputImage
-    return UIImage(CIImage: outputImage)
-  }
+
 }
