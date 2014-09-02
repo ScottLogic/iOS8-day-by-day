@@ -30,6 +30,36 @@ As ever, the source code is available on the ShinobiControls github, at
 
 ## The role of the Presentation Controller
 
+Whenever a view controller appears on the screen of an iOS device, it is said to
+be presented. The improvements to alerts and the suchlike discussed in day 21
+included consolidating all the different techniques into using view controllers,
+so that they too become view controller presentations. In order to control how a
+view controller is presented, iOS8 introduces `UIPresentationController`.
+
+UIKit uses a presentation controller to manage the presentation of view
+controllers from the moment they appear, through their lifetime, until they are
+dismissed. The common modal presentation styles (such as popover) have built-in
+presentation controllers, which exhibit the desired behavior, but if you
+wish to provide your own then you must set the `modalPresentationStyle` to
+`.Custom` (further implementation detail will be discussed later).
+
+The presentation controller is responsible for positioning the view controller
+which is being presented, and for adding any extra views to the view hierarchy
+as appropriate. For example, in the sample app today, the presentation
+controller will ensure that the presented view controller is inset from the
+container, and a view which appears to dim the background will be added behind
+the presented view controller.
+
+On the surface of it, presentation controllers don't allow you to do anything
+that you couldn't do before using the view controller transitioning system
+in iOS7, but the responsibilities are much clearer. An animation controller is
+responsible for the animation and the display of the view controller's content,
+and the presentation controller is responsible for the appearance of everything
+else. In the past, view controllers were responsible for views which weren't
+within their own view hierarchy, which was confusing at best. As you'll see,
+presentation controllers control the wider view hierarchy, and have hooks which
+allow them to animate alongside the existing animations.
+
 ## Creating a custom Presentation Controller
 
 ## Custom Presentation Animation
