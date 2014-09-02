@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		227EE90E19B3F0B300A85006 /* GLRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227EE90D19B3F0B300A85006 /* GLRenderer.swift */; };
+		22CF1CD719AFD292002D4F59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CD619AFD292002D4F59 /* AppDelegate.swift */; };
+		22CF1CD919AFD292002D4F59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CD819AFD292002D4F59 /* ViewController.swift */; };
+		22CF1CDC19AFD292002D4F59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1CDA19AFD292002D4F59 /* Main.storyboard */; };
+		22CF1CDE19AFD292002D4F59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1CDD19AFD292002D4F59 /* Images.xcassets */; };
+		22CF1CEA19AFD293002D4F59 /* ChromaKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CE919AFD293002D4F59 /* ChromaKeyTests.swift */; };
+		22CF1CFA19AFD5AB002D4F59 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF1CF919AFD5AB002D4F59 /* PhotosUI.framework */; };
+		22CF1CFC19AFD5AB002D4F59 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF1CFB19AFD5AB002D4F59 /* Photos.framework */; };
+		22CF1D0119AFD5AB002D4F59 /* PhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */; };
+		22CF1D0319AFD5AB002D4F59 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */; };
+		22CF1D0619AFD5AB002D4F59 /* ChromaKeyExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		22CF1D3719B01229002D4F59 /* ChromaKeyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22CF1CE419AFD293002D4F59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22CF1CC919AFD292002D4F59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22CF1CD019AFD292002D4F59;
+			remoteInfo = ChromaKey;
+		};
+		22CF1D0419AFD5AB002D4F59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22CF1CC919AFD292002D4F59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22CF1CF619AFD5AB002D4F59;
+			remoteInfo = ChromaKeyExtension;
+		};
+		22CF1D0719AFD5AB002D4F59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22CF1CC919AFD292002D4F59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22CF1CF619AFD5AB002D4F59;
+			remoteInfo = ChromaKeyExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22CF1D0C19AFD5AB002D4F59 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				22CF1D0619AFD5AB002D4F59 /* ChromaKeyExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22CF1D2D19B00EBC002D4F59 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		227EE90D19B3F0B300A85006 /* GLRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLRenderer.swift; sourceTree = "<group>"; };
+		22CF1CD119AFD292002D4F59 /* ChromaKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChromaKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22CF1CD519AFD292002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22CF1CD619AFD292002D4F59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22CF1CD819AFD292002D4F59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22CF1CDB19AFD292002D4F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22CF1CDD19AFD292002D4F59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22CF1CE319AFD293002D4F59 /* ChromaKeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChromaKeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22CF1CE819AFD293002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22CF1CE919AFD293002D4F59 /* ChromaKeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaKeyTests.swift; sourceTree = "<group>"; };
+		22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChromaKeyExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		22CF1CF919AFD5AB002D4F59 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		22CF1CFB19AFD5AB002D4F59 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		22CF1CFF19AFD5AB002D4F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
+		22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaKeyFilter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22CF1CCE19AFD292002D4F59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22CF1CE019AFD293002D4F59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22CF1CF419AFD5AB002D4F59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CF1CFA19AFD5AB002D4F59 /* PhotosUI.framework in Frameworks */,
+				22CF1CFC19AFD5AB002D4F59 /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22CF1CC819AFD292002D4F59 = {
+			isa = PBXGroup;
+			children = (
+				22CF1CD319AFD292002D4F59 /* ChromaKey */,
+				22CF1CE619AFD293002D4F59 /* ChromaKeyTests */,
+				22CF1CFD19AFD5AB002D4F59 /* ChromaKeyExtension */,
+				22CF1CF819AFD5AB002D4F59 /* Frameworks */,
+				22CF1CD219AFD292002D4F59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22CF1CD219AFD292002D4F59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CD119AFD292002D4F59 /* ChromaKey.app */,
+				22CF1CE319AFD293002D4F59 /* ChromaKeyTests.xctest */,
+				22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22CF1CD319AFD292002D4F59 /* ChromaKey */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CD619AFD292002D4F59 /* AppDelegate.swift */,
+				22CF1CD819AFD292002D4F59 /* ViewController.swift */,
+				22CF1CDA19AFD292002D4F59 /* Main.storyboard */,
+				22CF1CDD19AFD292002D4F59 /* Images.xcassets */,
+				22CF1CD419AFD292002D4F59 /* Supporting Files */,
+			);
+			path = ChromaKey;
+			sourceTree = "<group>";
+		};
+		22CF1CD419AFD292002D4F59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CD519AFD292002D4F59 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22CF1CE619AFD293002D4F59 /* ChromaKeyTests */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CE919AFD293002D4F59 /* ChromaKeyTests.swift */,
+				22CF1CE719AFD293002D4F59 /* Supporting Files */,
+			);
+			path = ChromaKeyTests;
+			sourceTree = "<group>";
+		};
+		22CF1CE719AFD293002D4F59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CE819AFD293002D4F59 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22CF1CF819AFD5AB002D4F59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CF919AFD5AB002D4F59 /* PhotosUI.framework */,
+				22CF1CFB19AFD5AB002D4F59 /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22CF1CFD19AFD5AB002D4F59 /* ChromaKeyExtension */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */,
+				22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */,
+				227EE90D19B3F0B300A85006 /* GLRenderer.swift */,
+				22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */,
+				22CF1CFE19AFD5AB002D4F59 /* Supporting Files */,
+			);
+			path = ChromaKeyExtension;
+			sourceTree = "<group>";
+		};
+		22CF1CFE19AFD5AB002D4F59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1CFF19AFD5AB002D4F59 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22CF1CD019AFD292002D4F59 /* ChromaKey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22CF1CED19AFD293002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKey" */;
+			buildPhases = (
+				22CF1CCD19AFD292002D4F59 /* Sources */,
+				22CF1CCE19AFD292002D4F59 /* Frameworks */,
+				22CF1CCF19AFD292002D4F59 /* Resources */,
+				22CF1D0C19AFD5AB002D4F59 /* Embed App Extensions */,
+				22CF1D2D19B00EBC002D4F59 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22CF1D0519AFD5AB002D4F59 /* PBXTargetDependency */,
+				22CF1D0819AFD5AB002D4F59 /* PBXTargetDependency */,
+			);
+			name = ChromaKey;
+			productName = ChromaKey;
+			productReference = 22CF1CD119AFD292002D4F59 /* ChromaKey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22CF1CE219AFD293002D4F59 /* ChromaKeyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22CF1CF019AFD293002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyTests" */;
+			buildPhases = (
+				22CF1CDF19AFD293002D4F59 /* Sources */,
+				22CF1CE019AFD293002D4F59 /* Frameworks */,
+				22CF1CE119AFD293002D4F59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22CF1CE519AFD293002D4F59 /* PBXTargetDependency */,
+			);
+			name = ChromaKeyTests;
+			productName = ChromaKeyTests;
+			productReference = 22CF1CE319AFD293002D4F59 /* ChromaKeyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22CF1D0919AFD5AB002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyExtension" */;
+			buildPhases = (
+				22CF1CF319AFD5AB002D4F59 /* Sources */,
+				22CF1CF419AFD5AB002D4F59 /* Frameworks */,
+				22CF1CF519AFD5AB002D4F59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChromaKeyExtension;
+			productName = ChromaKeyExtension;
+			productReference = 22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22CF1CC919AFD292002D4F59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ShinobiControls;
+				TargetAttributes = {
+					22CF1CD019AFD292002D4F59 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					22CF1CE219AFD293002D4F59 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 22CF1CD019AFD292002D4F59;
+					};
+					22CF1CF619AFD5AB002D4F59 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = 22CF1CCC19AFD292002D4F59 /* Build configuration list for PBXProject "ChromaKey" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22CF1CC819AFD292002D4F59;
+			productRefGroup = 22CF1CD219AFD292002D4F59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22CF1CD019AFD292002D4F59 /* ChromaKey */,
+				22CF1CE219AFD293002D4F59 /* ChromaKeyTests */,
+				22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22CF1CCF19AFD292002D4F59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CF1CDC19AFD292002D4F59 /* Main.storyboard in Resources */,
+				22CF1CDE19AFD292002D4F59 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22CF1CE119AFD293002D4F59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22CF1CF519AFD5AB002D4F59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CF1D0319AFD5AB002D4F59 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22CF1CCD19AFD292002D4F59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CF1CD919AFD292002D4F59 /* ViewController.swift in Sources */,
+				22CF1CD719AFD292002D4F59 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22CF1CDF19AFD293002D4F59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CF1CEA19AFD293002D4F59 /* ChromaKeyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22CF1CF319AFD5AB002D4F59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227EE90E19B3F0B300A85006 /* GLRenderer.swift in Sources */,
+				22CF1D0119AFD5AB002D4F59 /* PhotoEditingViewController.swift in Sources */,
+				22CF1D3719B01229002D4F59 /* ChromaKeyFilter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22CF1CE519AFD293002D4F59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22CF1CD019AFD292002D4F59 /* ChromaKey */;
+			targetProxy = 22CF1CE419AFD293002D4F59 /* PBXContainerItemProxy */;
+		};
+		22CF1D0519AFD5AB002D4F59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */;
+			targetProxy = 22CF1D0419AFD5AB002D4F59 /* PBXContainerItemProxy */;
+		};
+		22CF1D0819AFD5AB002D4F59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22CF1CF619AFD5AB002D4F59 /* ChromaKeyExtension */;
+			targetProxy = 22CF1D0719AFD5AB002D4F59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22CF1CDA19AFD292002D4F59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22CF1CDB19AFD292002D4F59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22CF1CEB19AFD293002D4F59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22CF1CEC19AFD293002D4F59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22CF1CEE19AFD293002D4F59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ChromaKey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		22CF1CEF19AFD293002D4F59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ChromaKey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		22CF1CF119AFD293002D4F59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChromaKeyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChromaKey.app/ChromaKey";
+			};
+			name = Debug;
+		};
+		22CF1CF219AFD293002D4F59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChromaKeyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChromaKey.app/ChromaKey";
+			};
+			name = Release;
+		};
+		22CF1D0A19AFD5AB002D4F59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChromaKeyExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		22CF1D0B19AFD5AB002D4F59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChromaKeyExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22CF1CCC19AFD292002D4F59 /* Build configuration list for PBXProject "ChromaKey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22CF1CEB19AFD293002D4F59 /* Debug */,
+				22CF1CEC19AFD293002D4F59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22CF1CED19AFD293002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22CF1CEE19AFD293002D4F59 /* Debug */,
+				22CF1CEF19AFD293002D4F59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22CF1CF019AFD293002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22CF1CF119AFD293002D4F59 /* Debug */,
+				22CF1CF219AFD293002D4F59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22CF1D0919AFD5AB002D4F59 /* Build configuration list for PBXNativeTarget "ChromaKeyExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22CF1D0A19AFD5AB002D4F59 /* Debug */,
+				22CF1D0B19AFD5AB002D4F59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22CF1CC919AFD292002D4F59 /* Project object */;
+}
