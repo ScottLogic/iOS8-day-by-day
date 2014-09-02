@@ -21,6 +21,7 @@ import PhotosUI
 class PhotoEditingViewController: UIViewController, PHContentEditingController {
   
   let filter = ChromaKeyFilter()
+  var includesChanges = false
   var input: PHContentEditingInput?
   let formatIdentifier = "com.shinobicontrols.chromakey"
   let formatVersion    = "1.0"
@@ -29,6 +30,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   @IBOutlet weak var thresholdSlider: UISlider!
   @IBAction func handleThresholdSliderChanged(sender: UISlider) {
     updateOutputImage()
+    includesChanges = true
   }
   
   override func viewDidLoad() {
@@ -95,7 +97,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   var shouldShowCancelConfirmation: Bool {
     // Determines whether a confirmation to discard changes should be shown to the user on cancel.
     // (Typically, this should be "true" if there are any unsaved changes.)
-    return false
+    return includesChanges
   }
   
   func cancelContentEditing() {
