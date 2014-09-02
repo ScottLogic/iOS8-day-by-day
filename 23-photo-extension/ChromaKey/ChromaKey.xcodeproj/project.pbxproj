@@ -188,9 +188,9 @@
 			children = (
 				22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */,
 				22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */,
+				227EE90D19B3F0B300A85006 /* GLRenderer.swift */,
 				22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */,
 				22CF1CFE19AFD5AB002D4F59 /* Supporting Files */,
-				227EE90D19B3F0B300A85006 /* GLRenderer.swift */,
 			);
 			path = ChromaKeyExtension;
 			sourceTree = "<group>";
