@@ -12,14 +12,11 @@ import GLKit
 class GLRenderer {
   
   var glView: GLKView
-  var glViewBounds: CGRect
   var renderContext: CIContext!
-  
   
   init(glView: GLKView) {
     self.glView = glView
     self.renderContext = CIContext(EAGLContext: glView.context)
-    self.glViewBounds = CGRect(x: 0, y: 0, width: glView.drawableWidth, height: glView.drawableHeight)
   }
   
   convenience init(frame: CGRect, superview: UIView) {
@@ -30,20 +27,23 @@ class GLRenderer {
   }
   
   func renderImage(image: CIImage) {
-    var drawFrame = image.extent()
-    /*let imageAR = drawFrame.width / drawFrame.height
-    let viewAR = glViewBounds.width / glViewBounds.height
-    if imageAR > viewAR {
-      drawFrame.origin.x += (drawFrame.width - drawFrame.height * viewAR) / 2.0
-      drawFrame.size.width = drawFrame.height / viewAR
-    } else {
-      drawFrame.origin.y += (drawFrame.height - drawFrame.width / viewAR) / 2.0
-      drawFrame.size.height = drawFrame.width / viewAR
-    }
-    */
     glView.bindDrawable()
     if glView.context != EAGLContext.currentContext() {
       EAGLContext.setCurrentContext(glView.context)
+    }
+    
+    // Calculate the position and size of the image within the GLView
+    // This code is equivalent to UIViewContentModeScaleAspectFit
+    let imageSize = image.extent().size
+    var drawFrame = CGRectMake(0, 0, CGFloat(glView.drawableWidth), CGFloat(glView.drawableHeight))
+    let imageAR = imageSize.width / imageSize.height
+    let viewAR = drawFrame.width / drawFrame.height
+    if imageAR > viewAR {
+      drawFrame.origin.y += (drawFrame.height - drawFrame.width / imageAR) / 2.0
+      drawFrame.size.height = drawFrame.width / imageAR
+    } else {
+      drawFrame.origin.x += (drawFrame.width - drawFrame.height * imageAR) / 2.0
+      drawFrame.size.width = drawFrame.height * imageAR
     }
     
     // clear eagl view to black
@@ -54,11 +54,9 @@ class GLRenderer {
     glEnable(0x0BE2);
     glBlendFunc(1, 0x0303);
     
-    renderContext.drawImage(image, inRect: drawFrame, fromRect: drawFrame)
+    renderContext.drawImage(image, inRect: drawFrame, fromRect: image.extent())
     
     glView.display()
-
   }
-  
   
 }
