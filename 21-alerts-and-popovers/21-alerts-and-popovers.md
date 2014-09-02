@@ -34,7 +34,7 @@ separate code paths for iPhone and iPad, they can be used on every device. A new
 class `UIPopoverPresentationController` has been introduced, and this controls
 the presentation of a view controller in a popover style. You don't create one
 of these directly, but instead one is created for you by UIKit when the 
-`modalPresentationStyle` property on `UIViewController` is set to `.Modal`.
+`modalPresentationStyle` property on `UIViewController` is set to `.Popover`.
 
     let popoverVC = storyboard.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
     popoverVC.modalPresentationStyle = .Popover
