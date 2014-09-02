@@ -58,7 +58,11 @@ The project also contains the custom `CIFilter` class from day 19 - and the
     }
 
 You'll use this filter both during the interactive editing phase, and also when
-rendering the final image.
+rendering the final image. Note that this doesn't necessarily represent a great
+use-case here: the ChromaKey filter relies on you creating an image which includes
+transparency which doesn't fit with rendering as JPEG. The concepts introduced
+here are all sound, and it wouldn't be too difficult to develop this extension
+into something more useful.
 
 ## Starting Interactive Editing
 
