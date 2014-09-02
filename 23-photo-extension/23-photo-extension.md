@@ -20,6 +20,8 @@ of photo extensions, you can create filters and more complex editing
 functionality that will be available to the Photos app and any other apps which
 request it.
 
+![Edit in Progress](assets/edit_in_progress.png)
+
 The sample code which accompanies today's article builds a photo extension from
 the chromakey core image filter that was used in day 19. You can get the source
 code from the ShinobiControls github at
@@ -260,7 +262,99 @@ Which leads on rather nicely to the concept of resumable editing.
 
 ## Resumable Editing
 
+As you make edits to an image, you are never replacing the original image in the
+Photos library. Instead you provide an edited version of the file, and some data
+which details exactly how the image was edited. This takes the form of a
+`PHAdjustmentData` object, which contains three important properties:
+`formatIdentifier` and `formatVersion` are strings which specify the plugin
+which performed the edit, and `data` is an `NSData` blob which is used by the
+editor to save the settings associated with the edit.
 
+When a user requests editing with a specified extension, then if the image has
+been previously edited, the system will call the `canHandleAdjustmentData()`
+method on the `PHContentEditingController` object. At this point you can take a
+look at the adjustment data object and determine whether or not your extension
+understands it:
+
+    let formatIdentifier = "com.shinobicontrols.chromakey"
+    let formatVersion    = "1.0"
+    func canHandleAdjustmentData(adjustmentData: PHAdjustmentData?) -> Bool {
+      return adjustmentData?.formatIdentifier == formatIdentifier &&
+             adjustmentData?.formatVersion == formatVersion
+    }
+
+In the ChromaKey project, the format identifier and version are specified as
+variables, and the extension will only return `true` if the edit was made with
+exactly the same version.
+
+The framework then goes on to call the `startContentEditingWithInput()` method,
+but the content it provides differs according to the return value of 
+`canHandleAdjustmentData()`. If the extension has said that it understands the
+adjustment data from the previous edit, then you'll be given the original image,
+and then have to re-create the filter's settings from before. This allows the
+user to update their latest edit.
+
+However, if your extension doesn't understand the previous edit, then the
+framework will provide a pre-rendered image, and your filter will be starting
+from scratch - effectively layering your edit on top of the previous one.
+
+In the `startContentEditingWithInput()` method, the following lines are added to
+import the filter settings from the adjustment data:
+
+    if let adjustmentData = contentEditingInput?.adjustmentData {
+      filter.importFilterParameters(adjustmentData.data)
+    }
+
+Note that this just calls the following method on `ChromaKeyFilter` to attempt
+to extract the filter settings from the provided `NSData` blob:
+
+    func importFilterParameters(data: NSData?) {
+      if let data = data {
+        if let dataDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String : AnyObject] {
+          activeColor = dataDict["color"] as? CIColor ?? activeColor
+          threshold   = dataDict["threshold"] as? NSNumber ?? threshold
+        }
+      }
+    }
+
+The `activeColor` and `threshold` properties are preset with defaults, so that
+if this fails at any point, the filter will resort to its default values:
+
+    var activeColor = CIColor(red: 0.0, green: 1.0, blue: 0.0)
+    var threshold: Float = 0.7
+
+In order for the extension to be able to resume an existing edit, then when an
+edit is completed, it needs to write this `adjustmentData` back to the Photos
+framework. The `PHContentEditingOutput` object has an `adjustmentData` property
+which you can populate in the `finishContentEditingWithCompletionHandler()`
+method:
+
+    let newAdjustmentData = PHAdjustmentData(formatIdentifier: self.formatIdentifier,
+                                             formatVersion: self.formatVersion,
+                                             data: self.filter.encodeFilterParameters())
+    output.adjustmentData = newAdjustmentData
+
+This uses another utility method on `ChromaKeyFilter`:
+
+    func encodeFilterParameters() -> NSData {
+      var dataDict = [String : AnyObject]()
+      dataDict["activeColor"] = activeColor
+      dataDict["threshold"]   = threshold
+      return NSKeyedArchiver.archivedDataWithRootObject(dataDict)
+    }
+
+Note that `newAdjustmentData` is created using the format identifier and version
+that are used as a check in `canHandleAdjustmentData()`. This is important,
+since it is these that all extensions will check against to determine whether
+they are going to be able to interpret a previous edit, or whether they need to
+perform their filter on top of a pre-rendered image.
+
+Now, when you run this extension, set a threshold, save the edit and then re-
+edit it, you'll see that the threshold slider persists between the different
+edits:
+
+![Edit Photo](assets/edited_photo.png)
+![Re-edited](assets/re-edited.png)
 
 ## Conclusion
 
