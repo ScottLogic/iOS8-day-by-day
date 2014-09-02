@@ -17,8 +17,7 @@ learn the basics behind the photo extension.
 Extension points are ways that you can write your own code and functionality
 which enhance the OS in more far-reaching ways than just your app. In the case
 of photo extensions, you can create filters and more complex editing
-functionality that will be available to the Photos app and any other apps which
-request it.
+functionality that will be available to the Photos app.
 
 ![Edit in Progress](assets/edit_in_progress.png)
 
