@@ -157,9 +157,106 @@ edit.
 
 ## Discard Changes?
 
+When the user sees your extension, part of the framework-provided UI is a
+navigation bar including __Cancel__ and __Done__ buttons:
+
+![Navigation Bar](assets/nav_bar.png)
+
+When the user presses the cancel button then you'll get a call to the
+`cancelContentEditing()` method which will allow you to perform any tidying up
+of temporary files and the suchlike before the extension disappears.
+
+You also get a chance to tell the framework that you'd like a "are you sure?"
+style dialog to be thrown up before the user dismisses your extension. This is
+via the `shouldShowCancelationConfirmation` property:
+
+    var shouldShowCancelConfirmation: Bool {
+      return includesChanges
+    }
+
+In ChromaKey, there is an `includesChanges` boolean property, which defaults to
+`false`, but is updated to `true` as soon as the user interacts with the slider:
+
+    @IBAction func handleThresholdSliderChanged(sender: UISlider) {
+      updateOutputImage()
+      includesChanges = true
+    }
+
+This means that if the user just starts the extension and immediately cancels it
+then they won't see a question dialog, but as soon as they change any values
+then it'll prompt them to ask whether they'd like to discard their changes or
+not:
+
+![Discard Changes](assets/discard_changes.png)
+
+Now you've looked at the cancel button, it's time to turn your attention to the
+more important __Done__ button.
 
 ## Finalizing the Edit
 
+Once the user has completed choosing their settings for the edit, using the
+interactive editing functionality you've provided for them, they'll tap the
+__Done__ button to save those changes. From your point of view, at this stage
+you'll want to apply the filter the user has configured to the full size image
+and then provide this back to the Photos framework for storage in the library.
+
+`PHContentEditingController` specifies a method which will be called when the
+edit is completed - `finishContentEditingWithCompletionHandler()`. At this point
+you should disable any UI, and then apply the filter as it is currently
+configured to the full-sized image that is provided on the `PHContentEditingInput`
+object.
+
+The following shows the implementation in __ChromaKey__:
+
+    func finishContentEditingWithCompletionHandler(completionHandler: ((PHContentEditingOutput!) -> Void)!) {
+      // Update UI to reflect that editing has finished and output is being rendered.
+      thresholdSlider.enabled = false
+      
+      // Render and provide output on a background queue.
+      dispatch_async(dispatch_get_global_queue(CLong(DISPATCH_QUEUE_PRIORITY_DEFAULT), 0)) {
+        // Create editing output from the editing input.
+        let output = PHContentEditingOutput(contentEditingInput: self.input)
+        
+        // Write the JPEG Data
+        let fullSizeImage = CIImage(contentsOfURL: self.input?.fullSizeImageURL)
+        UIGraphicsBeginImageContext(fullSizeImage.extent().size);
+        self.filter.inputImage = fullSizeImage
+        UIImage(CIImage: self.filter.outputImage()).drawInRect(fullSizeImage.extent())
+        let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+        let jpegData = UIImageJPEGRepresentation(outputImage, 1.0)
+        UIGraphicsEndImageContext()
+        
+        jpegData.writeToURL(output.renderedContentURL, atomically: true)
+        
+        // Call completion handler to commit edit to Photos.
+        completionHandler?(output)
+      }
+    }
+
+The rendering of the larger image all takes place on a background queue,
+ensuring that you aren't blocking the UI.
+
+Within the rendering routine, the first operation is creating a 
+`PHContentEditingOutput` object from the aforementioned `PHContentEditingInput`
+object. This has two properties on it - one of which you'll learn about in the
+_Resumable Editing_ section. The property you're interested in here is the 
+`renderedContentURL`. The Photos framework expects that your editing extension
+will take the image it provided at the `fullSizeImageURL` location (on the input
+object), apply your editing process, and then write the result to the
+`renderedContentURL`.
+
+The next chunk of code performs just that - pulling the image from the CoreImage
+context into a CoreGraphics context, so that a JPEG representation can be
+created.
+
+Once the output image has been written, then you need to tell the framework that
+you're done, by calling the supplied `completionHandler()`, passing in the
+output object that you created.
+
+The Photos framework will then update both it's data store, and the underlying
+asset as well. Note that, your edit will not overwrite the original asset -
+instead you are providing a new version, which the user can revert at any time.
+Which leads on rather nicely to the concept of resumable editing.
 
 ## Resumable Editing
 
