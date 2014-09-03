@@ -62,6 +62,171 @@ allow them to animate alongside the existing animations.
 
 ## Creating a custom Presentation Controller
 
+Custom presentation controllers inherit from `UIPresentationController`, which
+provides various methods which hook in to the lifecycle of a view controller
+presentation. In the associated sample project, `OverlayPresentationController`
+is a custom presentation controller, which ensures that the presented view
+controller is inset from the container, and the background content is suitably
+dimmed:
+
+![Completed](assets/completed_product.png)
+
+The dimming view is a property on the `OverlayPresentationController`, so that a
+reference is maintained:
+
+    class OverlayPresentationController: UIPresentationController {
+       let dimmingView = UIView()
+       ...
+    }
+
+The view is configured more fully during the initialization of the presentation
+controller. Note that `init(presentedViewController:, presentingViewController:)`
+is the designated initializer of `UIPresentationController`, so it's imperative
+that the super method is called:
+
+    override init(presentedViewController: UIViewController!, presentingViewController: UIViewController!) {
+      super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
+      dimmingView.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
+    }
+
+This dimming view should be added to the view hierarchy when the view controller
+is presented, and removed when it is dismissed. The 
+`presentationTransitionWillBegin()` method is called when the presentation is
+starting:
+
+    override func presentationTransitionWillBegin() {
+      dimmingView.frame = containerView.bounds
+      dimmingView.alpha = 0.0
+      containerView.insertSubview(dimmingView, atIndex: 0)
+      
+      presentedViewController.transitionCoordinator().animateAlongsideTransition({
+        context in
+        self.dimmingView.alpha = 1.0
+      }, completion: nil)
+    }
+
+Here the dimming view is sized and positioned appropriately, and set as fully
+transparent. It is also added at the back of the container view's view
+hierarchy, i.e. behind the presented view controller's view.
+
+Then, in order to fade the dimming view in, you can grab hold of the transition
+coordinator from the presented view controller and use the
+`animateAlongsideTransition()` method to specify animations which will occur as
+part of the view controller's transition animation. Here, the alpha of the view
+is updated so that it appears.
+
+The opposite approach is used in the `dismissTransitionWillBegin()` method to
+remove the dimming view:
+
+    override func dismissalTransitionWillBegin() {
+      presentedViewController.transitionCoordinator().animateAlongsideTransition({
+        context in
+        self.dimmingView.alpha = 0.0
+      }, completion: {
+        context in
+        self.dimmingView.removeFromSuperview()
+      })
+    }
+
+If you run the app now, then you won't actually see any difference in your
+presentation. This is for two reasons:
+
+1. UIKit isn't aware that it should be using your custom presentation
+controller.
+2. The presented view still has its default, full-screen size. You won't see the
+dimming view until the presented view is smaller.
+
+You can fix the latter of these with the `frameOfPresentedViewInContainerView()`
+method on your presentation controller:
+
+    override func frameOfPresentedViewInContainerView() -> CGRect {
+      return containerView.bounds.rectByInsetting(dx: 30, dy: 30)
+    }
+
+This ensures that the presented view will have a frame inset from the container
+view by 30 points on each edge.
+
+## Using the custom Presentation Controller
+
+iOS7 introduced customizable view controller transitions via the
+`UIViewControllerTransitioningDelegate` protocol. In iOS8, this has been
+extended with a new method for providing a presentation controller. You need to
+create a transitioning delegate object which adopts this protocol and returns
+the presentation controller that you've created:
+
+    class OverlayTransitioningDelegate : NSObject, UIViewControllerTransitioningDelegate {
+      func presentationControllerForPresentedViewController(presented: UIViewController!,
+                              presentingViewController presenting: UIViewController!,
+                              sourceViewController source: UIViewController!) -> UIPresentationController! {
+          
+        return OverlayPresentationController(presentedViewController: presented,
+                                             presentingViewController: presenting)
+      }
+    }
+
+Note that UIKit will maintain a strong reference to the presentation controller
+for the duration of the presentation, so you don't need to.
+
+There are two main ways of initiating a view controller presentation, through a
+segue in a storyboard, or entirely through code. You can customize the
+presentation for both of these.
+
+Presenting from code involves creating the view controller and then using 
+`presentViewController(_, animated:, completion:)` to present it:
+
+    @IBAction func handleBouncyPresentPressed(sender: AnyObject) {
+      let overlayVC = storyboard.instantiateViewControllerWithIdentifier("overlayViewController") as UIViewController
+      prepareOverlayVC(overlayVC)
+      presentViewController(overlayVC, animated: true, completion: nil)
+    }
+
+Importantly, the `prepareOverlayVC(_)` utility method does the necessary
+customization:
+
+    private func prepareOverlayVC(overlayVC: UIViewController) {
+      overlayVC.transitioningDelegate = overlayTransitioningDelegate
+      overlayVC.modalPresentationStyle = .Custom
+    }
+
+Here, the `modalPresentationStyle` is set to `.Custom`, which means that UIKit
+will query the transitioning delegate for a presentation controller, rather than
+use one of it's internal implementations. The `transitioningDelegate` property
+is also set. Note that since this is a delegate object, UIKit will not maintain
+a reference, so you need to keep a transitioning delegate around:
+
+    let overlayTransitioningDelegate = OverlayTransitioningDelegate()
+
+You can use this same utility method for customizing the presentation of a view
+controller via a segue:
+
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+      if segue.identifier == "bouncySegue" {
+        let overlayVC = segue.destinationViewController as UIViewController
+        prepareOverlayVC(overlayVC)
+      }
+    }
+
+The segue is appropriately named in the storyboard, and then the
+`prepareForSegue()` method will configure the presented view controller when
+appropriate:
+
+![Segue naming](assets/segue_naming.png)
+
+You can now run the app up, and you'll see that you have successfully managed to
+customize the presentation of your overlay view controller:
+
+![Completed Product](assets/completed_product.png)
+
+However, if you rotate the device, then you'll notice that your view isn't
+adapting to the bounds change as you might expect:
+
+![Not Adaptive](assets/not_adaptive.png)
+
+Let's take a look at ways to fix that.
+
+## Adaptive UI with Presentation Controllers
+
+
 ## Custom Presentation Animation
 
 ## Conclusion

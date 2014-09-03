@@ -36,7 +36,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hI7-7f-OS1" kind="presentation" identifier="bouncySegue" id="wnM-v8-hAw"/>
+                                    <segue destination="hI7-7f-OS1" kind="custom" identifier="bouncySegue" id="wnM-v8-hAw"/>
                                 </connections>
                             </button>
                         </subviews>
