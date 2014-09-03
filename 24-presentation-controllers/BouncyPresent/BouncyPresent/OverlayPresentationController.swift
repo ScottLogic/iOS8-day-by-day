@@ -29,14 +29,14 @@ class OverlayPresentationController: UIPresentationController {
     dimmingView.alpha = 0.0
     containerView.insertSubview(dimmingView, atIndex: 0)
     
-    presentedViewController.transitionCoordinator().animateAlongsideTransition({
+    presentedViewController.transitionCoordinator()?.animateAlongsideTransition({
       context in
       self.dimmingView.alpha = 1.0
     }, completion: nil)
   }
   
   override func dismissalTransitionWillBegin() {
-    presentedViewController.transitionCoordinator().animateAlongsideTransition({
+    presentedViewController.transitionCoordinator()?.animateAlongsideTransition({
       context in
       self.dimmingView.alpha = 0.0
     }, completion: {
