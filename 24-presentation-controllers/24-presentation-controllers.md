@@ -226,6 +226,52 @@ Let's take a look at ways to fix that.
 
 ## Adaptive UI with Presentation Controllers
 
+One of the core facilitators of adaptive layout in UIKit is the
+`UIContentContainer` protocol, which you've already seen (back on 
+[day 7](http://www.shinobicontrols.com/blog/posts/2014/07/28/ios8-day-by-day-day-7-adaptive-layout-and-uitraitcollection/)
+)
+`UIViewController` adopts. This is responsible for two levels of layout
+adaptivity - coarse grained changes through trait collections changing (i.e.
+size classes), and more fine-grained changes via view sizes changing.
+
+Since presentation controllers can be thought of as the root 'controller' for a
+presented view controller, they too adopt the `UIContentContainer` protocol, so
+once again you get the opportunity to adapt the presentation according to the
+the trait collection and size.
+
+You also get an even more fine-grained layer in the form of
+`contentViewWillLayoutSubviews()` and `contentViewDidLayoutSubviews()`. These
+are equivalent to their `UIViewController` counterparts `viewWillLayoutSubviews()`
+and `viewDidLayoutSubviews()`, and you can use them to precisely control the
+appearance whenever a layout pass occurs.
+
+There are several possible approaches to fixing the dimming view resizing
+problem you saw at the end of the last section:
+
+- Create the dimming view with autolayout constraints that will pin it to the
+edges of the content view.
+- Override `viewWillTransitionToSize(size:, withTransitionCoordinator:)` in the
+presentation controller and update the dimming view appropriately.
+- Override `contentViewWillLayoutSubviews()` and again, update the dimming view
+appropriately.
+
+Since we all know how to use autolayout, and 
+[day 14](http://www.shinobicontrols.com/blog/posts/2014/08/06/ios8-day-by-day-day-14-rotation-deprecation/)
+introduced the size transition method on `UIContentContainer`, in the
+accompanying sample project, the last option is used:
+
+    override func containerViewWillLayoutSubviews() {
+      dimmingView.frame = containerView.bounds
+      presentedView().frame = frameOfPresentedViewInContainerView()
+    }
+
+Here, the frames of both the dimming view and the presented view are updated to
+ensure they are correctly sized and positioned.
+
+Run the app up again now and you'll see that the rotation behavior is as
+expected:
+
+![Landscape Correct](assets/landscape_correct.png)
 
 ## Custom Presentation Animation
 
