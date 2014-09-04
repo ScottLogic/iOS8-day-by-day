@@ -88,9 +88,9 @@ The sample app which accompanies this article is incredibly simple. It shows a
 navigation controller which which has the tap, swipe and compact height
 properties set to true:
 
-    navigationController.hidesBarsOnSwipe = true
-    navigationController.hidesBarsOnTap = true
-    navigationController.hidesBarsWhenVerticallyCompact = true
+    navigationController?.hidesBarsOnSwipe = true
+    navigationController?.hidesBarsOnTap = true
+    navigationController?.hidesBarsWhenVerticallyCompact = true
 
 The app will start with the bars visible by default:
 

@@ -21,9 +21,9 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    navigationController.hidesBarsOnSwipe = true
-    navigationController.hidesBarsOnTap = true
-    navigationController.hidesBarsWhenVerticallyCompact = true
+    navigationController?.hidesBarsOnSwipe = true
+    navigationController?.hidesBarsOnTap = true
+    navigationController?.hidesBarsWhenVerticallyCompact = true
   }
 }
 
