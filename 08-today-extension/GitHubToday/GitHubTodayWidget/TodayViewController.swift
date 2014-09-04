@@ -80,7 +80,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   
   @IBAction func handleMoreButtonTapped(sender: AnyObject) {
     let url = NSURL(scheme: "githubtoday", host: nil, path: "/\(currentEvent?.id)")
-    extensionContext.openURL(url, completionHandler: nil)
+    extensionContext?.openURL(url, completionHandler: nil)
   }
   
 }

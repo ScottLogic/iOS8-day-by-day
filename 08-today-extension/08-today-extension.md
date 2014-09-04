@@ -271,7 +271,7 @@ the `extensionContext` to link from the widget to the relevant row in the app:
 
     @IBAction func handleMoreButtonTapped(sender: AnyObject) {
       let url = NSURL(scheme: "githubtoday", host: nil, path: "/\(currentEvent?.id)")
-      extensionContext.openURL(url, completionHandler: nil)
+      extensionContext?.openURL(url, completionHandler: nil)
     }
 
 ![](assets/today_extension.png)
