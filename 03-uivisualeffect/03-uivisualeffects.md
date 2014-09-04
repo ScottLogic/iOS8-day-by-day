@@ -121,7 +121,7 @@ to the blur effect which only affects the background). This effect effect not
 only looks great, it also ensures that the content is always legible.
 
 Since the vibrancy needs to appear different for each of the different blur effect
-types, it's necessary to initialise it with a blur effect. This means that it's
+types, it's necessary to initialize it with a blur effect. This means that it's
 not possible to apply a vibrancy effect to a view which doesn't also have a blur
 effect applied to it.
 

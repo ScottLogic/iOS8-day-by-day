@@ -31,8 +31,8 @@ class ViewController: UIViewController, TransformControlsDelegate {
     imageView.transform = transform
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-    if segue.identifier? == "showTransformController" {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    if segue.identifier == "showTransformController" {
       if let transformController = segue.destinationViewController as? TransformControlsViewController {
         transformController.transformDelegate = self
         transformController.currentTransform = imageView.transform
