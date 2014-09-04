@@ -28,7 +28,7 @@ class HorseRaceTests: XCTestCase {
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
     // Get hold of the view controller
-    let window = UIApplication.sharedApplication().delegate.window!
+    let window = UIApplication.sharedApplication().delegate?.window!
     viewController = window?.rootViewController as? ViewController
     raceController = viewController.raceController
   }
