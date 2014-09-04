@@ -25,13 +25,14 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
   
   
   @IBAction func handlePopoverPressed(sender: UIView) {
-    let popoverVC = storyboard.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
+    let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
     popoverVC.modalPresentationStyle = .Popover
-    let popoverController = popoverVC.popoverPresentationController
-    popoverController.sourceView = sender
-    popoverController.sourceRect = sender.bounds
-    popoverController.permittedArrowDirections = .Any
-    popoverController.delegate = self
+    if let popoverController = popoverVC.popoverPresentationController {
+      popoverController.sourceView = sender
+      popoverController.sourceRect = sender.bounds
+      popoverController.permittedArrowDirections = .Any
+      popoverController.delegate = self
+    }
     presentViewController(popoverVC, animated: true, completion: nil)
   }
   

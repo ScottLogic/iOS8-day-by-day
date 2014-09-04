@@ -27,6 +27,6 @@ class PopoverViewController: UIViewController {
     
   }
   @IBAction func dismissPressed(sender: AnyObject) {
-    presentingViewController.dismissViewControllerAnimated(true, completion: nil)
+    presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
   }
 }

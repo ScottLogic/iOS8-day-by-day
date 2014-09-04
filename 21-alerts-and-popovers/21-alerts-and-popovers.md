@@ -36,7 +36,7 @@ the presentation of a view controller in a popover style. You don't create one
 of these directly, but instead one is created for you by UIKit when the 
 `modalPresentationStyle` property on `UIViewController` is set to `.Popover`.
 
-    let popoverVC = storyboard.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
+    let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
     popoverVC.modalPresentationStyle = .Popover
 
 You can then get hold of the popover presentation controller from the
