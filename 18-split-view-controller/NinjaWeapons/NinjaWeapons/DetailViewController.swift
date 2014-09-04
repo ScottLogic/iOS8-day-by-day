@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
   var weapon: Weapon? {
     didSet {
       // Update the view.
-      if view != nil {
+      if isViewLoaded() {
         self.configureView()
       }
     }

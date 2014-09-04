@@ -39,10 +39,10 @@ class MasterViewController: UITableViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showDetail" {
       let indexPath = self.tableView.indexPathForSelectedRow()
-      if let weapon = weaponProvider?.weapons[indexPath.row] {
+      if let weapon = weaponProvider?.weapons[indexPath!.row] {
         let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
         controller.weapon = weapon
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem()
+        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
         controller.navigationItem.leftItemsSupplementBackButton = true
       }
     }
@@ -62,7 +62,7 @@ class MasterViewController: UITableViewController {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
     
     let weapon = weaponProvider?.weapons[indexPath.row]
-    cell.textLabel.text = weapon?.name
+    cell.textLabel?.text = weapon?.name
     return cell
   }
 }

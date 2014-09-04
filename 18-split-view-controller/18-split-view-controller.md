@@ -114,7 +114,7 @@ the current view:
         performTraitCollectionOverrideForSize(view.bounds.size)
       }
       
-      override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+      override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         performTraitCollectionOverrideForSize(size)
       }
       
@@ -184,7 +184,7 @@ The new and improved `UISplitViewController` is great - removing both idiom
 checks and repeated code. It's out-the-box functionality is suitable for many
 use cases, but is easily extendable to cover more esoteric requirements.
 
-If you want to dive head-first into teh new `UISplitViewController` in loads
+If you want to dive head-first into the new `UISplitViewController` in loads
 more detail then I've written an entire chapter on the topic in the Ray
 Wenderlich iOS8 By Tutorials book. It comes highly recommended (by me, as one of
 the authors) and you can grab your copy from here.
