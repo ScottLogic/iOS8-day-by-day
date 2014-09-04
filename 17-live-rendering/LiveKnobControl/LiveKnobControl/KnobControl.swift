@@ -80,6 +80,10 @@ class KnobControl : UIControl {
     self.knobRenderer.updateWithBounds(bounds)
   }
   }
+  
+  override func layoutSubviews() {
+    self.knobRenderer.updateWithBounds(bounds)
+  }
 
   func createKnobUI() {
     self.knobRenderer.color = tintColor

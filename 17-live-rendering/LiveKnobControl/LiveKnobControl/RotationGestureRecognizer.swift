@@ -20,7 +20,7 @@ class RotationGestureRecognizer : UIPanGestureRecognizer {
 
   var touchAngle: CGFloat
 
-  override init(target: AnyObject?, action: Selector) {
+  override init(target: AnyObject, action: Selector) {
     self.touchAngle = 0
     super.init(target: target, action: action)
     self.maximumNumberOfTouches = 1;
@@ -46,8 +46,8 @@ class RotationGestureRecognizer : UIPanGestureRecognizer {
 
   func calculateAngleToPoint(point: CGPoint) -> CGFloat {
     // Offset by the center
-    let centerOffset = CGPointMake(point.x - CGRectGetMidX(self.view.bounds),
-      point.y - CGRectGetMidY(self.view.bounds))
+    let centerOffset = CGPointMake(point.x - CGRectGetMidX(self.view!.bounds),
+      point.y - CGRectGetMidY(self.view!.bounds))
     return atan2(centerOffset.y, centerOffset.x)
   }
 }
