@@ -226,7 +226,7 @@ The following shows the implementation in __ChromaKey__:
         let fullSizeImage = CIImage(contentsOfURL: self.input?.fullSizeImageURL)
         UIGraphicsBeginImageContext(fullSizeImage.extent().size);
         self.filter.inputImage = fullSizeImage
-        UIImage(CIImage: self.filter.outputImage()).drawInRect(fullSizeImage.extent())
+        UIImage(CIImage: self.filter.outputImage.drawInRect(fullSizeImage.extent())
         let outputImage = UIGraphicsGetImageFromCurrentImageContext()
         let jpegData = UIImageJPEGRepresentation(outputImage, 1.0)
         UIGraphicsEndImageContext()
