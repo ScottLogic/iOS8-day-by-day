@@ -19,15 +19,15 @@ import UIKit
 class TableViewController: UITableViewController {
 
   // Datasource methods
-  override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 2;
   }
   
-  override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 20;
   }
   
-  override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     switch indexPath.section {
     case 0:
       if let cell = tableView.dequeueReusableCellWithIdentifier("RightDetailCell", forIndexPath: indexPath) as? UITableViewCell {
@@ -42,12 +42,12 @@ class TableViewController: UITableViewController {
         return cell
       }
     default:
-      return nil
+      return UITableViewCell()
     }
-    return nil
+    return UITableViewCell()
   }
   
-  override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+  override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
     switch section {
     case 0:
       return "Autosizing for Free!"
