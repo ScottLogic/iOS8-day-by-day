@@ -34,15 +34,15 @@ class PhotosCollectionViewController: UICollectionViewController, PHPhotoLibrary
   
   // MARK: UICollectionViewDataSource
   
-  override func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
+  override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
     return 1
   }
   
-  override func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
+  override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return images.count
   }
   
-  override func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
+  override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as PhotosCollectionViewCell
     
     // Configure the cell
@@ -53,8 +53,9 @@ class PhotosCollectionViewController: UICollectionViewController, PHPhotoLibrary
   }
   
   // MARK: - ScrollViewDelegate
-  override func scrollViewDidScroll(scrollView: UIScrollView!) {
-    imageCacheController.updateVisibleCells(collectionView.indexPathsForVisibleItems() as [NSIndexPath])
+  override func scrollViewDidScroll(scrollView: UIScrollView) {
+    let indexPaths = collectionView?.indexPathsForVisibleItems()
+    imageCacheController.updateVisibleCells(indexPaths as [NSIndexPath])
   }
   
   // MARK: - PHPhotoLibraryChangeObserver
@@ -64,9 +65,10 @@ class PhotosCollectionViewController: UICollectionViewController, PHPhotoLibrary
     self.images = changeDetails.fetchResultAfterChanges
     dispatch_async(dispatch_get_main_queue()) {
       // Loop through the visible cell indices
-      for indexPath in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath]{
+      let indexPaths = self.collectionView?.indexPathsForVisibleItems()
+      for indexPath in indexPaths as [NSIndexPath] {
         if changeDetails.changedIndexes.containsIndex(indexPath.item) {
-          let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as PhotosCollectionViewCell
+          let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as PhotosCollectionViewCell
           cell.imageAsset = changeDetails.fetchResultAfterChanges[indexPath.item] as? PHAsset
         }
       }

@@ -212,9 +212,10 @@ request displayed in the collection view:
       self.images = changeDetails.fetchResultAfterChanges
       dispatch_async(dispatch_get_main_queue()) {
         // Loop through the visible cell indices
-        for indexPath in self.collectionView.indexPathsForVisibleItems() as [NSIndexPath]{
+        let indexPaths = self.collectionView?.indexPathsForVisibleItems()
+        for indexPath in indexPaths as [NSIndexPath]{
           if changeDetails.changedIndexes.containsIndex(indexPath.item) {
-            let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as PhotosCollectionViewCell
+            let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as PhotosCollectionViewCell
             cell.imageAsset = changeDetails.fetchResultAfterChanges[indexPath.item] as? PHAsset
           }
         }
