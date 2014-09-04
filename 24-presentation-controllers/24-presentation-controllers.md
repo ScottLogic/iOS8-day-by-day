@@ -328,3 +328,35 @@ place of the rather dull ease-in-out animation curve, you've now got a more
 interesting bounce.
 
 ## Conclusion
+
+On the surface of it you might not think that presentation controllers offer you
+much more functionality than you had in iOS7. In some respects you'd be correct.
+However, the much better software design with the separation of concerns and
+single responsibility goes a long way to understanding the protocol soup that is
+view controller presentations.
+
+Presentation controllers are also imperative in the adoption of adaptivity
+throughout UIKit. To get great adaptivity you need not only to be able to adapt
+layouts, but also view controller hierarchies. This would have been incredibly
+difficult using just view controller hierarchies. Presentation controllers which
+respond to the adaptive concepts of `UIContentContainer` give you, the
+developer, great power to completely change the appearance of an app, including
+the view controller hierarchy, in a device and context dependent manner.
+
+I think that it's going to take a while before we fully understand the best
+practices and usefulness of presentation controllers, but that's true of the
+entire adaptive approach to app design. In the long run I think it'll result in
+easier to understand, more maintainable apps, which work on a huge variety of
+devices.
+
+Don't forget that the code for today's article is available on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://www.shinobicontrols.com/iOS8-day-by-day).
+You can fork it, have a play with it and see what you think. If you haven't
+already then please star the repo - it's nice to feel loved. In the same vein,
+please do follow me on twitter and send me lots of hugs and kisses - I'm
+[@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+sam
+
+
+
