@@ -275,4 +275,56 @@ expected:
 
 ## Custom Presentation Animation
 
+The focus of today's blog post isn't creating custom animations for view
+controller transitions. This functionality was introduced back in iOS7 (in fact
+[day 10](http://www.shinobicontrols.com/blog/posts/2013/10/03/ios7-day-by-day-day-10-custom-uiviewcontroller-transitions)
+of iOS7 Day-by-Day covers the architecture in some detail), but it is worth
+seeing how this interacts with the new presentation controllers.
+
+Custom animations are the realm of the `UIViewControllerAnimatedTransitioning`
+protocol, and as such require just two methods to be implemented:
+
+    class BouncyViewControllerAnimator : NSObject, UIViewControllerAnimatedTransitioning {
+      
+      func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        return 0.8
+      }
+      
+      func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        if let presentedView = transitionContext.viewForKey(UITransitionContextToViewKey) {
+          let centre = presentedView.center
+          presentedView.center = CGPointMake(centre.x, -presentedView.bounds.size.height)
+          transitionContext.containerView().addSubview(presentedView)
+          
+          UIView.animateWithDuration(self.transitionDuration(transitionContext),
+            delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10.0, options: nil,
+            animations: {
+              presentedView.center = centre
+            }, completion: {
+              _ in
+              transitionContext.completeTransition(true)
+          })
+        }
+      }
+    }
+
+
+You'll notice here that `animateTransition()` is only concerned with the
+presented view - obtaining it, positioning it, adding it to the view hierarchy
+and animating it. In the past, the animator would also be trying to animate
+other aspects of the view hierarchy (such as the dimming view), but with the
+introduction of the presentation controller, it has much more well-defined
+responsibilities.
+
+The other thing you need to remember to do is to update the transitioning
+delegate so that UIKit knows there is a custom animator it should be using:
+
+    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+      return BouncyViewControllerAnimator()
+    }
+
+And then you're done. You can run the app up again now and you'll see that in
+place of the rather dull ease-in-out animation curve, you've now got a more
+interesting bounce.
+
 ## Conclusion
