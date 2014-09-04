@@ -296,7 +296,7 @@ into view. There is a perfect method to for this:
 
     override func presentationAnimationDidFinish() {
       // Only interested in the first item
-      let extensionItem = extensionContext.inputItems[0] as NSExtensionItem
+      let extensionItem = extensionContext?.inputItems[0] as NSExtensionItem
       // Extract an image (if one exists)
       imageFromExtensionItem(extensionItem) {
         image in
@@ -340,7 +340,7 @@ in its simplest form it must look like this:
       ...
 
       // Inform the host that we're done, so it un-blocks its UI.
-      extensionContext.completeRequestReturningItems(nil, completionHandler: nil)
+      extensionContext?.completeRequestReturningItems(nil, completionHandler: nil)
     }
 
 Setting up an `NSURLSession` is pretty standard:
@@ -433,7 +433,7 @@ Finally, you can ask the session to create a task associated with the request yo
 built, and then call `resume()` on it to kick it off in the background:
 
     // Create the task, and kick it off
-    let task = session.dataTaskWithRequest(request)
+    let task = session.dataTaskWithRequest(request!)
     task.resume()
 
 If you run through this process now, with your own requestb.in URL in place, then

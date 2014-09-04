@@ -47,7 +47,7 @@ class ShareViewController: SLComposeServiceViewController {
   
   override func presentationAnimationDidFinish() {
     // Only interested in the first item
-    let extensionItem = extensionContext.inputItems[0] as NSExtensionItem
+    let extensionItem = extensionContext?.inputItems[0] as NSExtensionItem
     // Extract an image (if one exists)
     imageFromExtensionItem(extensionItem) {
       image in
@@ -71,16 +71,12 @@ class ShareViewController: SLComposeServiceViewController {
     let request = urlRequestWithImage(attachedImage, text: contentText)
     
     // Create the task, and kick it off
-    let task = session.dataTaskWithRequest(request)
+    let task = session.dataTaskWithRequest(request!)
     
-    if task != nil {
-      task.resume()
-    } else {
-      println("The task is nil - you probably need to configure your share group")
-    }
+    task.resume()
     
     // Inform the host that we're done, so it un-blocks its UI. Note: Alternatively you could call super's -didSelectPost, which will similarly complete the extension context.
-    extensionContext.completeRequestReturningItems([AnyObject](), completionHandler: nil)
+    extensionContext?.completeRequestReturningItems([AnyObject](), completionHandler: nil)
   }
   
   override func configurationItems() -> [AnyObject]! {
