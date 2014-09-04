@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 
   @IBOutlet var bgImageView: UIImageView!
   
-  override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+  override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
     let transitionToWide = size.width > size.height
     let image = UIImage(named: transitionToWide ? "bg_wide" : "bg_tall")
     

@@ -90,7 +90,7 @@ For example, in __DeprecateToRotate__, there are 2 possible background images -
 one which should be associated with a __tall__ orientation, and one with
 __wide__. The following method performs the switch between the background images:
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
       let transitionToWide = size.width > size.height
       let image = UIImage(named: transitionToWide ? "bg_wide" : "bg_tall")
       
