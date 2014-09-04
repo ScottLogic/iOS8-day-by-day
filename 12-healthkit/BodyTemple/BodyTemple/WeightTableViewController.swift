@@ -37,25 +37,25 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
   }
   
   // MARK: - Table view data source
-  override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     // Return the number of sections.
     return 1
   }
   
-  override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // Return the number of rows in the section.
     return weightSamples.count
   }
   
-  override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("WeightCell", forIndexPath: indexPath) as UITableViewCell
     // Configure the cell...
     let sample = weightSamples[indexPath.row]
     let weight = sample.quantity.doubleValueForUnit(HKUnit(fromString: "kg"))
     
     
-    cell.detailTextLabel.text = "\(massFormatter.stringFromValue(weight, unit:.Kilogram))"
-    cell.textLabel.text = "\(dateFormatter.stringFromDate(sample.startDate))"
+    cell.detailTextLabel?.text = "\(massFormatter.stringFromValue(weight, unit:.Kilogram))"
+    cell.textLabel?.text = "\(dateFormatter.stringFromDate(sample.startDate))"
   
     return cell
   }
@@ -63,7 +63,7 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
   // MARK: - Navigation
   
   // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if segue.identifier == "addWeightSample" {

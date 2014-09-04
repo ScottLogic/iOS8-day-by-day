@@ -42,7 +42,7 @@ class TabBarViewController: UITabBarController {
       self.healthStore = HKHealthStore()
     }
     
-    for vc in viewControllers {
+    for vc in viewControllers as [UIViewController] {
       if let healthStoreUser = vc as? HealthStoreUser {
         healthStoreUser.healthStore = self.healthStore
       }

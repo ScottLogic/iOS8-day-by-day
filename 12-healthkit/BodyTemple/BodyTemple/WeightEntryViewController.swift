@@ -43,7 +43,7 @@ class WeightEntryViewController: UIViewController {
       let sample = HKQuantitySample(type: weightType, quantity: weightValue, startDate: datePicker.date, endDate: datePicker.date, metadata: metadata)
       weightEntryDelegate?.weightEntryDidComplete(sample)
     }
-    navigationController.popViewControllerAnimated(true)
+    navigationController?.popViewControllerAnimated(true)
   }
   
   //MARK: Utility functions
