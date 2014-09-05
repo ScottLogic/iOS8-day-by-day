@@ -14,6 +14,7 @@
 		22C5135B19B9BE7F004B3936 /* NotifyTimelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5135A19B9BE7F004B3936 /* NotifyTimelyTests.swift */; };
 		22C5136519B9C811004B3936 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5136419B9C811004B3936 /* PaddedLabel.swift */; };
 		22C5136719B9CB7E004B3936 /* ConfigureTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5136619B9CB7E004B3936 /* ConfigureTimerViewController.swift */; };
+		22C5136919BA0CCD004B3936 /* TimerNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5136819BA0CCD004B3936 /* TimerNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		22C5135A19B9BE7F004B3936 /* NotifyTimelyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyTimelyTests.swift; sourceTree = "<group>"; };
 		22C5136419B9C811004B3936 /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		22C5136619B9CB7E004B3936 /* ConfigureTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureTimerViewController.swift; sourceTree = "<group>"; };
+		22C5136819BA0CCD004B3936 /* TimerNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				22C5134519B9BE7F004B3936 /* Supporting Files */,
 				22C5136419B9C811004B3936 /* PaddedLabel.swift */,
 				22C5136619B9CB7E004B3936 /* ConfigureTimerViewController.swift */,
+				22C5136819BA0CCD004B3936 /* TimerNotifications.swift */,
 			);
 			path = NotifyTimely;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C5136919BA0CCD004B3936 /* TimerNotifications.swift in Sources */,
 				22C5136519B9C811004B3936 /* PaddedLabel.swift in Sources */,
 				22C5134A19B9BE7F004B3936 /* ViewController.swift in Sources */,
 				22C5134819B9BE7F004B3936 /* AppDelegate.swift in Sources */,

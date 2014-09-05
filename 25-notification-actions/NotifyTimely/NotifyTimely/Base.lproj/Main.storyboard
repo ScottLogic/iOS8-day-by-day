@@ -25,6 +25,9 @@
                                     <color key="titleColor" red="0.1507152641" green="0.35794979980000002" blue="0.53186782529999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleTimerButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gCN-lv-xbt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRx-rw-1ht">
                                 <rect key="frame" x="300" y="365" width="142" height="70"/>
@@ -34,6 +37,9 @@
                                     <color key="titleColor" red="0.1507152641" green="0.35794979980000002" blue="0.53186782529999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleTimerButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hzk-hI-8Pw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vI-2s-4ET">
                                 <rect key="frame" x="16" y="365" width="142" height="70"/>
@@ -46,6 +52,9 @@
                                     <color key="titleColor" red="0.1507152641" green="0.35794979980000002" blue="0.53186782529999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleTimerButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IjT-3u-vBR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unu-QQ-nCv">
                                 <rect key="frame" x="442" y="365" width="142" height="70"/>
@@ -104,6 +113,13 @@
                             <constraint firstItem="JRx-rw-1ht" firstAttribute="width" secondItem="oAy-Vn-V3D" secondAttribute="width" id="zt2-mJ-gmt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editButton" destination="Unu-QQ-nCv" id="NoV-i1-yfH"/>
+                        <outlet property="restartButton" destination="6vI-2s-4ET" id="uEQ-cP-pV1"/>
+                        <outlet property="startButton" destination="oAy-Vn-V3D" id="Lqd-Wc-uEe"/>
+                        <outlet property="stopButton" destination="JRx-rw-1ht" id="TWy-UI-yKJ"/>
+                        <outlet property="timerStatusLabel" destination="ZPA-B2-Usd" id="DIV-ld-AKH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
