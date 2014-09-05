@@ -16,11 +16,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, TimerConfigurationDelegate {
                             
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "configureTimer" {
+      if let configVC = segue.destinationViewController as? ConfigureTimerViewController {
+        configVC.timerConfigDelegate = self
+      }
+    }
+  }
+  
+  
+  // MARK: - TimerConfigurationDelegate Methods
+  func configurationDidCancel() {
+    dismissViewControllerAnimated(true, completion: nil)
+  }
+  
+  func configurationDidSetDuration(duration: Float) {
+    dismissViewControllerAnimated(true, completion: nil)
   }
 
 }

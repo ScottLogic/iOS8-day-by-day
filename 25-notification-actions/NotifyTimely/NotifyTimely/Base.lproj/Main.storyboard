@@ -56,7 +56,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ScG-Hg-dx4" kind="presentation" id="0ZJ-h5-rc2"/>
+                                    <segue destination="ScG-Hg-dx4" kind="presentation" identifier="configureTimer" id="0ZJ-h5-rc2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NotifyTimely" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ati-ky-3nY" customClass="PaddedLabel" customModule="NotifyTimely" customModuleProvider="target">
@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="253" y="380"/>
         </scene>
-        <!--View Controller-->
+        <!--Configure Timer View Controller-->
         <scene sceneID="I3s-C0-EFT">
             <objects>
-                <viewController id="ScG-Hg-dx4" sceneMemberID="viewController">
+                <viewController id="ScG-Hg-dx4" customClass="ConfigureTimerViewController" customModule="NotifyTimely" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YzV-Km-zzq"/>
                         <viewControllerLayoutGuide type="bottom" id="U03-GJ-DHu"/>
@@ -121,7 +121,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Duration" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-wN-N4a">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Timer Duration (s)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-wN-N4a">
                                 <rect key="frame" x="16" y="179" width="568" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="35f-xH-QxO"/>
@@ -144,6 +144,9 @@
                                     <color key="titleColor" red="0.1507152641" green="0.35794979980000002" blue="0.53186782529999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleCancelButtonPressed:" destination="ScG-Hg-dx4" eventType="touchUpInside" id="tbS-ju-uHC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xec-pD-QQf">
                                 <rect key="frame" x="16" y="274" width="284" height="70"/>
@@ -156,6 +159,9 @@
                                     <color key="titleColor" red="0.1507152641" green="0.35794979980000002" blue="0.53186782529999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="handleSaveButtonPressed:" destination="ScG-Hg-dx4" eventType="touchUpInside" id="NLC-QS-3yg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.35686275360000003" green="0.73725491759999995" blue="0.98823535439999999" alpha="0.5" colorSpace="deviceRGB"/>
@@ -175,6 +181,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="uhw-wN-N4a" secondAttribute="trailing" id="tqy-v0-zb6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="durationTextField" destination="uhw-wN-N4a" id="dHd-2y-ELG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzP-fi-Ar0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
