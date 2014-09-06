@@ -15,6 +15,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TimerNotificationManagerDelegate {
   func timerStatusChanged()
@@ -35,6 +36,7 @@ class TimerNotificationManager: Printable {
 
   init() {
     timerDuration = 30.0
+    registerForNotifications()
   }
   
   func startTimer() {
@@ -62,4 +64,10 @@ class TimerNotificationManager: Printable {
     }
   }
   
+  
+  private func registerForNotifications() {
+    let requestedTypes = UIUserNotificationType.Alert | .Sound
+    let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: nil)
+    UIApplication.sharedApplication().registerUserNotificationSettings(settingsRequest)
+  }
 }
