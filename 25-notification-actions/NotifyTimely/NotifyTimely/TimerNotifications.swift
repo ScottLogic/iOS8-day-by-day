@@ -45,7 +45,11 @@ class TimerNotificationManager: Printable {
   }
   
   var description: String {
-    return "Timer Duration: \(timerDuration). Currently Running: \(timerRunning)"
+    if timerRunning {
+      return "\(timerDuration)s timer, running"
+    } else {
+      return "\(timerDuration)s timer, stopped"
+    }
   }
 
   init() {

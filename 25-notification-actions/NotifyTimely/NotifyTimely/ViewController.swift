@@ -63,7 +63,7 @@ class ViewController: UIViewController, TimerConfigurationDelegate, TimerNotific
       setButton(stopButton, enabled: timerRunning)
       setButton(editButton, enabled: !timerRunning)
       
-      timerStatusLabel.text = "\(timerNotificationManager)"
+      timerStatusLabel.text = "\(timerNotificationManager!)"
     }
   }
   
