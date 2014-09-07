@@ -30,6 +30,11 @@ class ViewController: UIViewController, TimerConfigurationDelegate, TimerNotific
   @IBOutlet weak var stopButton: UIButton!
   @IBOutlet weak var editButton: UIButton!
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureTimerUI()
+  }
+
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "configureTimer" {
       if let configVC = segue.destinationViewController as? ConfigureTimerViewController {

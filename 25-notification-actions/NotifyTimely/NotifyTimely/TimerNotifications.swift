@@ -81,16 +81,19 @@ class TimerNotificationManager: Printable {
     timerRunning = false
   }
   
-  func handleActionWithIdentifier(identifier: String) {
-    switch identifier {
-    case restartTimerActionString:
-      restartTimer()
-    case snoozeTimerActionString:
-      scheduleTimerWithOffset(snoozeDuration)
-    case editTimerActionString:
-      delegate?.presentEditOptions()
-    default:
-      println("Unrecognised Identifier")
+  func handleActionWithIdentifier(identifier: String?) {
+    timerRunning = false
+    if let identifier = identifier {
+      switch identifier {
+      case restartTimerActionString:
+        restartTimer()
+      case snoozeTimerActionString:
+        scheduleTimerWithOffset(snoozeDuration)
+      case editTimerActionString:
+        delegate?.presentEditOptions()
+      default:
+        println("Unrecognised Identifier")
+      }
     }
   }
   
