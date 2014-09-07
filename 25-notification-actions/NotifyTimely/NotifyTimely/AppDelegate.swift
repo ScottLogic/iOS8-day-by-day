@@ -24,11 +24,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
     if let vc = window?.rootViewController as? ViewController {
       vc.timerNotificationManager = timerNotificationManager
     }
     
     return true
+  }
+  
+  func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+    // Pass the "firing" event onto the notification manager
+    timerNotificationManager.timerFired()
+  }
+  
+  func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+    // Pass the action name onto the manager
+    if let identifier = identifier {
+      timerNotificationManager.handleActionWithIdentifier(identifier)
+    }
   }
 
 }

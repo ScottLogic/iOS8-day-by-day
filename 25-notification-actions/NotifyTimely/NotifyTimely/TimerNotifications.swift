@@ -25,9 +25,11 @@ let timerFiredCategoryString = "TimerFiredCategory"
 
 protocol TimerNotificationManagerDelegate {
   func timerStatusChanged()
+  func presentEditOptions()
 }
 
 class TimerNotificationManager: Printable {
+  let snoozeDuration: Float = 5.0
   var delegate: TimerNotificationManagerDelegate?
   
   var timerRunning: Bool {
@@ -56,9 +58,7 @@ class TimerNotificationManager: Printable {
   func startTimer() {
     if !timerRunning {
       // Create the notification...
-      let timer = createTimer()
-      UIApplication.sharedApplication().scheduleLocalNotification(timer)
-      timerRunning = true
+      scheduleTimerWithOffset(timerDuration)
     }
   }
   
@@ -77,17 +77,40 @@ class TimerNotificationManager: Printable {
     }
   }
   
+  func timerFired() {
+    timerRunning = false
+  }
+  
+  func handleActionWithIdentifier(identifier: String) {
+    switch identifier {
+    case restartTimerActionString:
+      restartTimer()
+    case snoozeTimerActionString:
+      scheduleTimerWithOffset(snoozeDuration)
+    case editTimerActionString:
+      delegate?.presentEditOptions()
+    default:
+      println("Unrecognised Identifier")
+    }
+  }
+  
   // MARK: - Utility methods
   private func checkForPreExistingTimer() {
     if UIApplication.sharedApplication().scheduledLocalNotifications.count > 0 {
       timerRunning = true
     }
   }
+  
+  private func scheduleTimerWithOffset(fireOffset: Float) {
+    let timer = createTimer(fireOffset)
+    UIApplication.sharedApplication().scheduleLocalNotification(timer)
+    timerRunning = true
+  }
 
-  private func createTimer() -> UILocalNotification {
+  private func createTimer(fireOffset: Float) -> UILocalNotification {
     let notification = UILocalNotification()
     notification.category = timerFiredCategoryString
-    notification.fireDate = NSDate(timeIntervalSinceNow: NSTimeInterval(timerDuration))
+    notification.fireDate = NSDate(timeIntervalSinceNow: NSTimeInterval(fireOffset))
     notification.alertBody = "Your time is up!"
     return notification
   }

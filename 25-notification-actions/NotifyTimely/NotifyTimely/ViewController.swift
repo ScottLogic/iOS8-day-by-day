@@ -81,6 +81,10 @@ class ViewController: UIViewController, TimerConfigurationDelegate, TimerNotific
   func timerStatusChanged() {
     configureTimerUI()
   }
+  
+  func presentEditOptions() {
+    performSegueWithIdentifier("configureTimer", sender: self)
+  }
 
 }
 
