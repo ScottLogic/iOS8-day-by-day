@@ -26,6 +26,7 @@ notifications as a trigger. The sample application is called __NotifyTimely__
 and the source code is available on github at
 [github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
 
+![Timer App](assets/timer_app.png)
 
 ## Requesting Permission
 
@@ -236,6 +237,108 @@ This is great, but tapping on the buttons doesn't actually do anything, yet.
 
 ## Handling Actions
 
+All the previous application delegate call-backs associated with notifications
+still exist and work, but two new ones have been added:
 
+- `application(_, handleActionWithIdentifier:, forRemoteNotification:, completionHandler:)`
+- `application(_, handleActionWithIdentifier:, forLocalNotification:, completionHandler:)`
+
+Clearly the only difference between these two methods is the original source of
+the notification - all of the other parameters are the same.
+
+The action identifier argument is a string, and matches the `identifer` property
+on the `UIUserNotificationAction` you created. This is used to determine which
+button the user actually pressed.
+
+The `completionHandler` argument is a closure which you need to call once you've
+finished processing the action. It's great that you're provided this - it means
+that you can perform asynchronous operations without the system killing your
+process when you're in the background.
+
+The following is the implementation of the handler for local notification in the
+accompanying timer app:
+
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?,
+                    forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+      // Pass the action name onto the manager
+      timerNotificationManager.handleActionWithIdentifier(identifier)
+      completionHandler()
+    }
+
+In this instance, the action is handled by the timer manager in the following
+method:
+
+    func handleActionWithIdentifier(identifier: String?) {
+      timerRunning = false
+      if let identifier = identifier {
+        switch identifier {
+        case restartTimerActionString:
+          restartTimer()
+        case snoozeTimerActionString:
+          scheduleTimerWithOffset(snoozeDuration)
+        case editTimerActionString:
+          delegate?.presentEditOptions()
+        default:
+          println("Unrecognised Identifier")
+        }
+      }
+    }
+
+Note that if your action was specified to be `.Foreground`, then the handle
+action method will be called after the app has relaunched into the foreground.
+This means in the case of the timer app, that the `delegate` property on the
+timer manager will have been set, and therefore the following code will run:
+
+    func presentEditOptions() {
+      performSegueWithIdentifier("configureTimer", sender: self)
+    }
+
+Resulting in the edit UI being presented - right from tapping a button in a
+notification:
+
+![Edit Timer](assets/edit_timer.png)
+
+If the actions are specified to be `.Background`, then the UI will obviously not
+be loaded, and you'll get a few seconds to complete whatever tasks you need.
+
+
+## Foreground Notifications
+
+As before, UIKit will only present the notification UI if the app is not
+currently active (i.e. in the foreground). Although this hasn't changed, it's
+still worth remembering how to create your own alert which appears when the
+foreground app receives a notification:
+
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+      // Pass the "firing" event onto the notification manager
+      timerNotificationManager.timerFired()
+      if application.applicationState == .Active {
+        let alert = UIAlertController(title: "NotifyTimely", message: "Your time is up", preferredStyle: .Alert)
+        // Handler for each of the actions
+        let actionAndDismiss = {
+          (action: String?) -> ((UIAlertAction!) -> ()) in
+          return {
+            _ in
+            self.timerNotificationManager.handleActionWithIdentifier(action)
+            self.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+          }
+        }
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: actionAndDismiss(nil)))
+        alert.addAction(UIAlertAction(title: "Restart", style: .Default, handler: actionAndDismiss(restartTimerActionString)))
+        alert.addAction(UIAlertAction(title: "Snooze", style: .Destructive, handler: actionAndDismiss(snoozeTimerActionString)))
+        window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+      }
+    }
+
+This method checks to see that the app state is `.Active`, before creating a new
+`UIAlertController` to present to the user. The actions associated with the
+alert actually just trigger exactly the same handler methods as the notification
+alert handler does, so actually the amount of duplicated code is kept to a
+minimum.
+
+This produces an alert like this:
+
+![Foreground Alert](assets/foreground_alert.png)
 
 ## Conclusion
