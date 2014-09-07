@@ -17,6 +17,12 @@
 import Foundation
 import UIKit
 
+let restartTimerActionString = "RestartTimer"
+let editTimerActionString = "EditTimer"
+let snoozeTimerActionString = "SnoozeTimer"
+let timerFiredCategoryString = "TimerFiredCategory"
+
+
 protocol TimerNotificationManagerDelegate {
   func timerStatusChanged()
 }
@@ -67,7 +73,39 @@ class TimerNotificationManager: Printable {
   
   private func registerForNotifications() {
     let requestedTypes = UIUserNotificationType.Alert | .Sound
-    let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: nil)
+    let categories = NSSet(object: timerFiredNotificationCategory())
+    let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: categories)
     UIApplication.sharedApplication().registerUserNotificationSettings(settingsRequest)
+  }
+  
+  
+  private func timerFiredNotificationCategory() -> UIUserNotificationCategory {
+    let restartAction = UIMutableUserNotificationAction()
+    restartAction.identifier = restartTimerActionString
+    restartAction.destructive = false
+    restartAction.title = "Restart"
+    restartAction.activationMode = .Background
+    restartAction.authenticationRequired = false
+    
+    let editAction = UIMutableUserNotificationAction()
+    editAction.identifier = editTimerActionString
+    editAction.destructive = true
+    editAction.title = "Edit"
+    editAction.activationMode = .Foreground
+    editAction.authenticationRequired = true
+    
+    let snoozeAction = UIMutableUserNotificationAction()
+    snoozeAction.identifier = snoozeTimerActionString
+    snoozeAction.destructive = false
+    snoozeAction.title = "Snooze"
+    snoozeAction.activationMode = .Background
+    snoozeAction.authenticationRequired = false
+    
+    let category = UIMutableUserNotificationCategory()
+    category.identifier = timerFiredCategoryString
+    category.setActions([restartAction, snoozeAction], forContext: .Minimal)
+    category.setActions([restartAction, snoozeAction, editAction], forContext: .Default)
+    
+    return category
   }
 }

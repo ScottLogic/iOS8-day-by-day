@@ -18,20 +18,17 @@ import UIKit
 
 class ViewController: UIViewController, TimerConfigurationDelegate, TimerNotificationManagerDelegate {
   
-  let timerNotificationManager = TimerNotificationManager()
+  var timerNotificationManager: TimerNotificationManager? {
+    didSet {
+      timerNotificationManager?.delegate = self
+    }
+  }
   
   @IBOutlet weak var timerStatusLabel: PaddedLabel!
   @IBOutlet weak var restartButton: UIButton!
   @IBOutlet weak var startButton: UIButton!
   @IBOutlet weak var stopButton: UIButton!
   @IBOutlet weak var editButton: UIButton!
-  
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    timerNotificationManager.delegate = self
-  }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "configureTimer" {
@@ -44,24 +41,25 @@ class ViewController: UIViewController, TimerConfigurationDelegate, TimerNotific
   @IBAction func handleTimerButtonPress(sender: UIButton) {
     switch sender {
     case restartButton:
-      timerNotificationManager.restartTimer()
+      timerNotificationManager?.restartTimer()
     case startButton:
-      timerNotificationManager.startTimer()
+      timerNotificationManager?.startTimer()
     case stopButton:
-      timerNotificationManager.stopTimer()
+      timerNotificationManager?.stopTimer()
     default:
       println("Unknown Sender")
     }
   }
   
   private func configureTimerUI() {
-    let timerRunning = timerNotificationManager.timerRunning
-    setButton(restartButton, enabled: timerRunning)
-    setButton(startButton, enabled: !timerRunning)
-    setButton(stopButton, enabled: timerRunning)
-    setButton(editButton, enabled: !timerRunning)
-    
-    timerStatusLabel.text = "\(timerNotificationManager)"
+    if let timerRunning = timerNotificationManager?.timerRunning {
+      setButton(restartButton, enabled: timerRunning)
+      setButton(startButton, enabled: !timerRunning)
+      setButton(stopButton, enabled: timerRunning)
+      setButton(editButton, enabled: !timerRunning)
+      
+      timerStatusLabel.text = "\(timerNotificationManager)"
+    }
   }
   
   private func setButton(button: UIButton, enabled: Bool) {
@@ -75,7 +73,7 @@ class ViewController: UIViewController, TimerConfigurationDelegate, TimerNotific
   }
   
   func configurationDidSetDuration(duration: Float) {
-    timerNotificationManager.timerDuration = duration
+    timerNotificationManager?.timerDuration = duration
     dismissViewControllerAnimated(true, completion: nil)
   }
   
