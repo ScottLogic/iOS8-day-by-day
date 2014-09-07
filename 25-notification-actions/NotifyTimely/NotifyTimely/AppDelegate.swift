@@ -35,6 +35,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
     // Pass the "firing" event onto the notification manager
     timerNotificationManager.timerFired()
+    if application.applicationState == .Active {
+      let alert = UIAlertController(title: "NotifyTimely", message: "Your time is up", preferredStyle: .Alert)
+      // Handler for each of the actions
+      let actionAndDismiss = {
+        (action: String?) -> ((UIAlertAction!) -> ()) in
+        return {
+          _ in
+          self.timerNotificationManager.handleActionWithIdentifier(action)
+          self.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
+      }
+      
+      alert.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: actionAndDismiss(nil)))
+      alert.addAction(UIAlertAction(title: "Restart", style: .Default, handler: actionAndDismiss(restartTimerActionString)))
+      alert.addAction(UIAlertAction(title: "Snooze", style: .Destructive, handler: actionAndDismiss(snoozeTimerActionString)))
+      window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+    }
   }
   
   func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {

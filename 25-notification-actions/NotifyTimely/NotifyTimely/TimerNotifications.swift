@@ -75,10 +75,8 @@ class TimerNotificationManager: Printable {
   }
   
   func restartTimer() {
-    if timerRunning {
-      stopTimer()
-      startTimer()
-    }
+    stopTimer()
+    startTimer()
   }
   
   func timerFired() {
