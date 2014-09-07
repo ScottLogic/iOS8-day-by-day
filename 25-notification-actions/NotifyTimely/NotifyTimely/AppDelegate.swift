@@ -57,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
     // Pass the action name onto the manager
     timerNotificationManager.handleActionWithIdentifier(identifier)
+    completionHandler()
   }
 
 }
