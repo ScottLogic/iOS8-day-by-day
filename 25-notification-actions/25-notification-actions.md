@@ -342,3 +342,32 @@ This produces an alert like this:
 ![Foreground Alert](assets/foreground_alert.png)
 
 ## Conclusion
+
+The most important part of today's post is that you absolutely __must__ update
+your existing apps. Otherwise, come iOS8, users will no longer see the
+notifications you'd expect them to. The API for registering for notifications is
+pretty simple, and separating out the arrival vector from the user notification
+permissions makes it easier for both developers and users to understand.
+
+That's not the most fun part though. Being able to specify custom actions for
+notifications could be really quite powerful. In some cases you'll be able to
+have entire apps which provide incredibly powerful functionality whilst never
+actually being launched into the foreground. Even though you only get two or
+four 'slots' in which to put your custom actions, there is a lot you can do with
+that, and I'm quite excited to see what the apps whose notifications I read
+every day decide to do with them.
+
+As ever, all the code for today's sample project __NotifyTimely__ is available
+on the ShinobiControls github page at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+You should take a look, and then praise ShinobiControls for creating this
+material by downloading a trial of our native UI controls suite. Simply click
+the __Get a FREE Trial Here!__ link below. You'll be much loved - in fact - say
+hi to me on twitter ([@iwantmyrealname](https://twitter.com/iwantmyrealname))
+and I'll send you a hug.
+
+sam
+
+
+
+
