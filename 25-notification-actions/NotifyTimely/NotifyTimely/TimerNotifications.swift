@@ -28,8 +28,14 @@ protocol TimerNotificationManagerDelegate {
 }
 
 class TimerNotificationManager: Printable {
-  var timerRunning = false
   var delegate: TimerNotificationManagerDelegate?
+  
+  var timerRunning: Bool {
+    didSet {
+      delegate?.timerStatusChanged()
+    }
+  }
+  
   var timerDuration: Float {
     didSet {
       delegate?.timerStatusChanged()
@@ -41,25 +47,26 @@ class TimerNotificationManager: Printable {
   }
 
   init() {
+    timerRunning = false
     timerDuration = 30.0
     registerForNotifications()
+    checkForPreExistingTimer()
   }
   
   func startTimer() {
     if !timerRunning {
       // Create the notification...
-      
+      let timer = createTimer()
+      UIApplication.sharedApplication().scheduleLocalNotification(timer)
       timerRunning = true
-      delegate?.timerStatusChanged()
     }
   }
   
   func stopTimer() {
     if timerRunning {
-      // Kill the notification
-      
+      // Kill all local notifications
+      UIApplication.sharedApplication().cancelAllLocalNotifications()
       timerRunning = false
-      delegate?.timerStatusChanged()
     }
   }
   
@@ -70,6 +77,20 @@ class TimerNotificationManager: Printable {
     }
   }
   
+  // MARK: - Utility methods
+  private func checkForPreExistingTimer() {
+    if UIApplication.sharedApplication().scheduledLocalNotifications.count > 0 {
+      timerRunning = true
+    }
+  }
+
+  private func createTimer() -> UILocalNotification {
+    let notification = UILocalNotification()
+    notification.category = timerFiredCategoryString
+    notification.fireDate = NSDate(timeIntervalSinceNow: NSTimeInterval(timerDuration))
+    notification.alertBody = "Your time is up!"
+    return notification
+  }
   
   private func registerForNotifications() {
     let requestedTypes = UIUserNotificationType.Alert | .Sound
@@ -77,7 +98,6 @@ class TimerNotificationManager: Printable {
     let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: categories)
     UIApplication.sharedApplication().registerUserNotificationSettings(settingsRequest)
   }
-  
   
   private func timerFiredNotificationCategory() -> UIUserNotificationCategory {
     let restartAction = UIMutableUserNotificationAction()
