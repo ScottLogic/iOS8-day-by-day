@@ -15,13 +15,40 @@
 //
 
 import UIKit
+import Photos
+import AVKit
 
 class VideoDetailViewController: UIViewController {
   
+  let imageManager = PHImageManager.defaultManager()
+  var player: AVPlayer? {
+    didSet {
+      if let avpVC = self.childViewControllers.first as? AVPlayerViewController {
+        dispatch_async(dispatch_get_main_queue()) {
+          avpVC.player = self.player
+        }
+      }
+    }
+  }
+  var videoAsset: PHAsset? {
+    didSet {
+      configureView()
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     // Do any additional setup after loading the view.
+    configureView()
+  }
+  
+  func configureView() {
+    if let videoAsset = videoAsset {
+      imageManager?.requestPlayerItemForVideo(videoAsset, options: nil, resultHandler: {
+        playerItem, info in
+        self.player = AVPlayer(playerItem: playerItem)
+      })
+    }
   }
   
 }

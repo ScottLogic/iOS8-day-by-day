@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Video Detail View Controller-->
         <scene sceneID="w6u-Is-e2P">
             <objects>
-                <viewController id="ktm-zb-4D9" sceneMemberID="viewController">
+                <viewController id="ktm-zb-4D9" customClass="VideoDetailViewController" customModule="VCR" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zlr-0k-qc0"/>
                         <viewControllerLayoutGuide type="bottom" id="gu1-lT-k2d"/>

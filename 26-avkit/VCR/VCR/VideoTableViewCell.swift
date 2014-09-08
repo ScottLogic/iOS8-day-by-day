@@ -25,12 +25,16 @@ class VideoTableViewCell: UITableViewCell {
   var imageManager: PHImageManager?
   var videoAsset: PHAsset? {
     didSet {
-      if let videoAsset = videoAsset {
-        let durationString = NSString(format:"%0.1f", videoAsset.duration)
-        self.videoNameLabel.text = "\(durationString)s"
-        self.imageManager?.requestImageForAsset(videoAsset, targetSize: CGSize(width: 150, height: 150), contentMode: .AspectFill, options: nil) { image, info in
-          self.thumbnailImageView.image = image
-        }
+      configureView()
+    }
+  }
+  
+  func configureView() {
+    if let videoAsset = videoAsset {
+      let durationString = NSString(format:"%0.1f", videoAsset.duration)
+      self.videoNameLabel.text = "\(durationString)s"
+      self.imageManager?.requestImageForAsset(videoAsset, targetSize: CGSize(width: 150, height: 150), contentMode: .AspectFill, options: nil) { image, info in
+        self.thumbnailImageView.image = image
       }
     }
   }

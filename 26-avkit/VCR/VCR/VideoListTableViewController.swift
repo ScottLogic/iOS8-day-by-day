@@ -27,7 +27,16 @@ class VideoListTableViewController: UITableViewController {
     videos = PHAsset.fetchAssetsWithMediaType(.Video, options: nil)
   }
   
-  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    if segue.identifier == "showVideoDetail" {
+      if let detailVC = segue.destinationViewController as? VideoDetailViewController {
+        let indexPath = tableView.indexPathForSelectedRow()
+        if let indexPath = indexPath {
+          detailVC.videoAsset = videos[indexPath.row] as? PHAsset
+        }
+      }
+    }
+  }
   
   // MARK: - Table view data source
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
