@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		22C5137919BD859B004B3936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5137819BD859B004B3936 /* AppDelegate.swift */; };
-		22C5137B19BD859B004B3936 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5137A19BD859B004B3936 /* ViewController.swift */; };
 		22C5137E19BD859B004B3936 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C5137C19BD859B004B3936 /* Main.storyboard */; };
 		22C5138019BD859B004B3936 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C5137F19BD859B004B3936 /* Images.xcassets */; };
 		22C5138C19BD859B004B3936 /* VCRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5138B19BD859B004B3936 /* VCRTests.swift */; };
+		22C5139619BD9962004B3936 /* VideoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5139519BD9962004B3936 /* VideoListTableViewController.swift */; };
+		22FE859F19BD9C46006705AF /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +29,13 @@
 		22C5137319BD859B004B3936 /* VCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C5137719BD859B004B3936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C5137819BD859B004B3936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22C5137A19BD859B004B3936 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22C5137D19BD859B004B3936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22C5137F19BD859B004B3936 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22C5138519BD859B004B3936 /* VCRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VCRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C5138A19BD859B004B3936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C5138B19BD859B004B3936 /* VCRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRTests.swift; sourceTree = "<group>"; };
+		22C5139519BD9962004B3936 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
+		22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				22C5137819BD859B004B3936 /* AppDelegate.swift */,
-				22C5137A19BD859B004B3936 /* ViewController.swift */,
 				22C5137C19BD859B004B3936 /* Main.storyboard */,
 				22C5137F19BD859B004B3936 /* Images.xcassets */,
 				22C5137619BD859B004B3936 /* Supporting Files */,
+				22C5139519BD9962004B3936 /* VideoListTableViewController.swift */,
+				22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */,
 			);
 			path = VCR;
 			sourceTree = "<group>";
@@ -208,8 +211,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22C5137B19BD859B004B3936 /* ViewController.swift in Sources */,
 				22C5137919BD859B004B3936 /* AppDelegate.swift in Sources */,
+				22C5139619BD9962004B3936 /* VideoListTableViewController.swift in Sources */,
+				22FE859F19BD9C46006705AF /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +401,7 @@
 				22C5139119BD859B004B3936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22C5139219BD859B004B3936 /* Build configuration list for PBXNativeTarget "VCRTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +410,7 @@
 				22C5139419BD859B004B3936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
