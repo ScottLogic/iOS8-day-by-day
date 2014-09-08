@@ -14,6 +14,7 @@
 		22C5138C19BD859B004B3936 /* VCRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5138B19BD859B004B3936 /* VCRTests.swift */; };
 		22C5139619BD9962004B3936 /* VideoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5139519BD9962004B3936 /* VideoListTableViewController.swift */; };
 		22D0929E19BDAD5000E7BD6C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D0929D19BDAD5000E7BD6C /* AVKit.framework */; };
+		22D092A019BDC57200E7BD6C /* countdown_new.mov in Resources */ = {isa = PBXBuildFile; fileRef = 22D0929F19BDC57200E7BD6C /* countdown_new.mov */; };
 		22FE859F19BD9C46006705AF /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		22C5138B19BD859B004B3936 /* VCRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRTests.swift; sourceTree = "<group>"; };
 		22C5139519BD9962004B3936 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
 		22D0929D19BDAD5000E7BD6C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		22D0929F19BDC57200E7BD6C /* countdown_new.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = countdown_new.mov; sourceTree = "<group>"; };
 		22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 		22C5137519BD859B004B3936 /* VCR */ = {
 			isa = PBXGroup;
 			children = (
+				22D0929F19BDC57200E7BD6C /* countdown_new.mov */,
 				22C5137819BD859B004B3936 /* AppDelegate.swift */,
 				22C5137C19BD859B004B3936 /* Main.storyboard */,
 				22C5137F19BD859B004B3936 /* Images.xcassets */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C5137E19BD859B004B3936 /* Main.storyboard in Resources */,
+				22D092A019BDC57200E7BD6C /* countdown_new.mov in Resources */,
 				22C5138019BD859B004B3936 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

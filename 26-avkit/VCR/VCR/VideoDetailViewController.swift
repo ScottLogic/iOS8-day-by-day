@@ -46,9 +46,14 @@ class VideoDetailViewController: UIViewController {
     if let videoAsset = videoAsset {
       imageManager?.requestPlayerItemForVideo(videoAsset, options: nil, resultHandler: {
         playerItem, info in
-        self.player = AVPlayer(playerItem: playerItem)
+        self.player = self.createPlayerByPrefixingItem(playerItem)
       })
     }
+  }
+  
+  private func createPlayerByPrefixingItem(playerItem: AVPlayerItem) -> AVPlayer {
+    let countdown = AVPlayerItem(URL: NSBundle.mainBundle().URLForResource("countdown_new", withExtension: "mov"))
+    return AVQueuePlayer(items: [countdown, playerItem])
   }
   
 }
