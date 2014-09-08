@@ -15,12 +15,34 @@
                     <view key="view" contentMode="scaleToFill" id="FkF-0m-4vK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5u-fy-aTn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="5iU-Zg-bRe" kind="embed" identifier="embedAVPlayer" id="v1L-AP-yTg"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f5u-fy-aTn" firstAttribute="height" secondItem="FkF-0m-4vK" secondAttribute="height" id="9Kf-34-Phl"/>
+                            <constraint firstAttribute="centerY" secondItem="f5u-fy-aTn" secondAttribute="centerY" id="KIC-xZ-WFA"/>
+                            <constraint firstItem="f5u-fy-aTn" firstAttribute="width" secondItem="FkF-0m-4vK" secondAttribute="width" id="KWx-vL-Ibe"/>
+                            <constraint firstAttribute="centerX" secondItem="f5u-fy-aTn" secondAttribute="centerX" id="LSM-FL-PPL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q6z-zG-TDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40" y="387"/>
+            <point key="canvasLocation" x="40" y="471"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="jvR-AT-DdW">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="5iU-Zg-bRe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXV-7H-1pG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="471"/>
         </scene>
         <!--Video Library-->
         <scene sceneID="t4I-9F-DpP">
@@ -60,6 +82,7 @@
                                 <connections>
                                     <outlet property="thumbnailImageView" destination="lZR-q2-W4P" id="XW4-FH-HBY"/>
                                     <outlet property="videoNameLabel" destination="ZTT-aV-7sE" id="XgF-iv-gBL"/>
+                                    <segue destination="ktm-zb-4D9" kind="showDetail" identifier="showVideoDetail" id="FsL-cG-ZZV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -104,4 +127,7 @@
             <point key="canvasLocation" x="-780" y="56"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FsL-cG-ZZV"/>
+    </inferredMetricsTieBreakers>
 </document>

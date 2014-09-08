@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224B47A119BDA5A600E4A124 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224B47A019BDA5A600E4A124 /* VideoDetailViewController.swift */; };
 		22C5137919BD859B004B3936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5137819BD859B004B3936 /* AppDelegate.swift */; };
 		22C5137E19BD859B004B3936 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C5137C19BD859B004B3936 /* Main.storyboard */; };
 		22C5138019BD859B004B3936 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C5137F19BD859B004B3936 /* Images.xcassets */; };
 		22C5138C19BD859B004B3936 /* VCRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5138B19BD859B004B3936 /* VCRTests.swift */; };
 		22C5139619BD9962004B3936 /* VideoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5139519BD9962004B3936 /* VideoListTableViewController.swift */; };
+		22D0929E19BDAD5000E7BD6C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D0929D19BDAD5000E7BD6C /* AVKit.framework */; };
 		22FE859F19BD9C46006705AF /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		224B47A019BDA5A600E4A124 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		22C5137319BD859B004B3936 /* VCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C5137719BD859B004B3936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C5137819BD859B004B3936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		22C5138A19BD859B004B3936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C5138B19BD859B004B3936 /* VCRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRTests.swift; sourceTree = "<group>"; };
 		22C5139519BD9962004B3936 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
+		22D0929D19BDAD5000E7BD6C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D0929E19BDAD5000E7BD6C /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,7 @@
 		22C5136A19BD859B004B3936 = {
 			isa = PBXGroup;
 			children = (
+				22D0929D19BDAD5000E7BD6C /* AVKit.framework */,
 				22C5137519BD859B004B3936 /* VCR */,
 				22C5138819BD859B004B3936 /* VCRTests */,
 				22C5137419BD859B004B3936 /* Products */,
@@ -83,6 +89,7 @@
 				22C5137619BD859B004B3936 /* Supporting Files */,
 				22C5139519BD9962004B3936 /* VideoListTableViewController.swift */,
 				22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */,
+				224B47A019BDA5A600E4A124 /* VideoDetailViewController.swift */,
 			);
 			path = VCR;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 				22C5137919BD859B004B3936 /* AppDelegate.swift in Sources */,
 				22C5139619BD9962004B3936 /* VideoListTableViewController.swift in Sources */,
 				22FE859F19BD9C46006705AF /* VideoTableViewCell.swift in Sources */,
+				224B47A119BDA5A600E4A124 /* VideoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

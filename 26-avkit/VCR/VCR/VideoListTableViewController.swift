@@ -14,7 +14,6 @@
 // limitations under the License.
 //
 
-
 import UIKit
 import Photos
 
@@ -28,10 +27,7 @@ class VideoListTableViewController: UITableViewController {
     videos = PHAsset.fetchAssetsWithMediaType(.Video, options: nil)
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+  
   
   // MARK: - Table view data source
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -40,7 +36,6 @@ class VideoListTableViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete method implementation.
     // Return the number of rows in the section.
     return videos?.count ?? 0
   }
