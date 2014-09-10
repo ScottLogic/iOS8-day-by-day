@@ -32,8 +32,13 @@ If you're using the simulator then you can add some videos to the library by
 dragging them in from the finder, and then selecting "save" from the sharing
 menu.
 
+## Using AVKit to play a video
 
 
+## Integration with Photos Framework
+
+
+## AVFoundation Pipeline
 
 
 ## Conclusion
