@@ -33,6 +33,33 @@ dragging them in from the finder, and then selecting "save" from the sharing
 menu.
 
 
+
+
+
 ## Conclusion
 
+If you're using `MPMoviePlayerViewController` then you don't need to worry about
+it being deprecated - it's still around. However, more than likely, it'll be a
+really easy operation to switch to the new `AVPlayerViewController` - much of
+the API is replicated (well, from `MPMoviePlayerController`). 
+
+If you've had to implement your own UI on top of an `AVPlayerLayer` then
+transitioning to `AVPlayerViewController` is likely to be a little more
+difficult. However, it does reduce the area of code that you're responsible for
+as iOS upgrades in future. It also ensures that a common appearance for playing
+videos is used across both the system apps and yours.
+
+Combined with the ease of plugging the new Photos framework into AVKit, it's
+certainly worth taking a look at. If you're implementing new video playback
+functionality in an app then AVKit is definitely the place to start - and will
+serve you well 90% of the time.
+
+As mentioned in the introduction, the accompanying app demos building a simple
+video browser and player for all the videos in the user's library. The source
+code is available on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Give me a shout if you have any feedback - either in the comments below, or on
+Twitter - I'm [@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+sam
 
