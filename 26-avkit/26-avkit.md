@@ -139,6 +139,42 @@ playback tool.
 
 ## AVFoundation Pipeline
 
+As mentioned at the top of this article, on of the great features of the new
+`AVPlayerViewController` is that it sits on top of, and allows access to, the
+underlying AVFoundation pipeline. This means that you can easily visualize the
+output of the complex compositing and audio-mixing effects that you apply to
+your input videos.
+
+As a simple demonstration of this, the __VCR__ app uses `AVQueuePlayer` to
+preface the playback of every video in the library with a surprisingly
+irritating countdown timer.
+
+    func configureView() {
+      if let videoAsset = videoAsset {
+        imageManager?.requestPlayerItemForVideo(videoAsset, options: nil, resultHandler: {
+          playerItem, info in
+          self.player = self.createPlayerByPrefixingItem(playerItem)
+        })
+      }
+    } 
+
+Here, the `createPlayerByPrefixingItem()` method is used to create an `AVPlayer`
+which includes the requested item, and also the `countdown_new.mov` file, located
+within the app's bundle:
+
+    private func createPlayerByPrefixingItem(playerItem: AVPlayerItem) -> AVPlayer {
+      let countdown = AVPlayerItem(URL: NSBundle.mainBundle().URLForResource("countdown_new", withExtension: "mov"))
+      return AVQueuePlayer(items: [countdown, playerItem])
+    }
+
+This means that when the user selects a video for playback, they'll first have
+to sit through this delight:
+
+![Countdown](assets/countdown.png)
+
+Obviously this is somewhat of a stupid example, but it shows that you have
+access to the complete AVFoundation pipeline, as well as the convenience of
+system-provided playback UI.
 
 ## Conclusion
 
