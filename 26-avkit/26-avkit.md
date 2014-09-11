@@ -52,6 +52,11 @@ just drag one onto the storyboard from the object library:
 In this example, the player is a contained by the `VideoDetailViewController`,
 which sets up the `player` property appropriately.
 
+> __Note:__ If you do reference AVKit within the storyboard, then you may well
+have to manually link against the library yourself - like off've the olden days.
+You can do this from the project settings page, in the _Linked Frameworks and
+Libraries_ panel.
+
 There are two ways you can create an `AVPlayer` - either with a URL or a
 `PlayerItem`. The URL approach matches the `MPMoviePlayerViewController` use
 case - where the location of a video file, either local or remote, is provided.
@@ -77,7 +82,60 @@ playback with fully adaptive and context aware playback controls:
 
 ## Integration with Photos Framework
 
+Back on [day 20](http://www.shinobicontrols.com/blog/posts/2014/08/22/ios8-day-by-day-day-20-photos-framework/)
+we had a quick run-down of the new Photos framework, and how it can make access
+to the photo library super-easy on iOS8. Well, despite its name, the Photos
+framework also includes access to all of the videos in the user's library, and
+with that comes the ability to use AVKit for easy playback.
 
+If you take a look at the accompanying __VCR__ app, you'll see it is a master-
+detail app, which shows a list of all videos, with thumbnails in the master, and
+then plays the video back when the user taps on a specific cell.
+
+Grabbing all the videos from the library using the Photos framework is simple:
+
+    videos = PHAsset.fetchAssetsWithMediaType(.Video, options: nil)
+
+And getting thumbnails for the table cells is similarly easy:
+
+      self.imageManager?.requestImageForAsset(videoAsset, targetSize: CGSize(width: 150, height: 150),
+                                              contentMode: .AspectFill, options: nil) {
+        image, info in
+        self.thumbnailImageView.image = image
+      }
+
+The `PHImageManager` class has several methods for requesting video content -
+one of which will return a `AVPlayerItem` - exactly what's needed to create the
+`AVPlayer` needed by AVKit. It's an asynchronous API, since the `PHAsset` you're
+requesting the `AVPlayerItem` for might well be remote. Here, the `videoAsset`
+is a property of type `PHAsset`, provided by the master view controller during
+the segue to the detail:
+
+      imageManager?.requestPlayerItemForVideo(videoAsset, options: nil, resultHandler: {
+        playerItem, info in
+        self.player = AVPlayer(playerItem: playerItem)
+      })
+
+The `player` property has a `didSet` closure, which will provide the new 
+`AVPlayer` to the appropriate child view controller:
+
+    var player: AVPlayer? {
+      didSet {
+        if let avpVC = self.childViewControllers.first as? AVPlayerViewController {
+          dispatch_async(dispatch_get_main_queue()) {
+            avpVC.player = self.player
+          }
+        }
+      }
+    }
+
+Note that since setting the `player` property on the `AVPlayerViewController` is
+going to be performing lots of UI operations, it's imperative that it is called
+on the main queue - hence the `dispatch_async()` call.
+
+You can see this in action in the __VCR__ app which accompanies the project. It
+has a relatively small amount of code to create a simple video browser and
+playback tool.
 
 ## AVFoundation Pipeline
 
