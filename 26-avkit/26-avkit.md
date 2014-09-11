@@ -92,6 +92,8 @@ If you take a look at the accompanying __VCR__ app, you'll see it is a master-
 detail app, which shows a list of all videos, with thumbnails in the master, and
 then plays the video back when the user taps on a specific cell.
 
+![List View](assets/list_view.png)
+
 Grabbing all the videos from the library using the Photos framework is simple:
 
     videos = PHAsset.fetchAssetsWithMediaType(.Video, options: nil)
