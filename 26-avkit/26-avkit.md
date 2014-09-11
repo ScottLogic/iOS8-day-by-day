@@ -34,8 +34,49 @@ menu.
 
 ## Using AVKit to play a video
 
+AVKit is an incredibly simple framework - consisting of just one class on iOS - 
+`AVPlayerViewController`. This is a subclass of `UIViewController` with a few
+additional properties associated with video playback. The most important of
+these is the `player` property, which is of type `AVPlayer`. This is a class
+from AVFoundation and represents the control of playback. In the past if you
+wanted to use `AVPlayer`, you'd use the `AVPlayerLayer` subclass of `CALayer` to
+visualize the video stream, and create your own UI for video controls.
+`AVPlayerViewController` handles both of these things for you, simply by setting
+the `player` property to an `AVPlayer` object.
+
+`AVPlayerViewController` is fully integrated into Interface Builder - so you can
+just drag one onto the storyboard from the object library:
+
+![Storyboard Integration](assets/storyboard.png)
+
+In this example, the player is a contained by the `VideoDetailViewController`,
+which sets up the `player` property appropriately.
+
+There are two ways you can create an `AVPlayer` - either with a URL or a
+`PlayerItem`. The URL approach matches the `MPMoviePlayerViewController` use
+case - where the location of a video file, either local or remote, is provided.
+AVFoundation then takes care of grabbing the content, buffering it and then
+playing it back.
+
+      if let avpVC = self.childViewControllers.first as? AVPlayerViewController {
+        dispatch_async(dispatch_get_main_queue()) {
+          let url = NSURL(string: "/path/to/my/video")
+          avpVC.player = AVPlayer(URL: url)
+        }
+      }
+
+The player-item approach is a link into the AVFoundation pipeline, and allows
+you to specify assets and create AVFoundation compositions for playback.
+
+Setting the `player` property is all that you you need to do to get video
+playback with fully adaptive and context aware playback controls:
+
+![Standard UI](assets/standard_ui.png)
+![Fullscreen UI](assets/fullscreen_ui.png)
+
 
 ## Integration with Photos Framework
+
 
 
 ## AVFoundation Pipeline
