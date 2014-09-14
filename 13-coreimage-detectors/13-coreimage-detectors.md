@@ -163,8 +163,8 @@ this time with the detector type string being `CIDetectorTypeQRCode`:
 
 And then exactly the same procedure is used to actually perform the detection -
 calling `featuresInImage()` and providing a `CIImage`. This time it will return
-an array of `CIBarcodeFeature` objects - each of which has the same corner
-points, with the addition of `codeRawData`, `codeType` and `codeString`.
+an array of `CIQRCodeFeature` objects - each of which has the same corner
+points, with the addition of `messageString`.
 
 The following method will again highlight the location of the barcode within the
 provided image, but also return the decoded string:
@@ -174,10 +174,10 @@ provided image, but also return the decoded string:
       var decode = ""
       if let detector = detector {
         let features = detector.featuresInImage(image)
-        for feature in features as [CIBarcodeFeature] {
+        for feature in features as [CIQRCodeFeature] {
           resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
             bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
-          decode = feature.codeString
+          decode = feature.messageString
         }
       }
       return (resultImage, decode)
