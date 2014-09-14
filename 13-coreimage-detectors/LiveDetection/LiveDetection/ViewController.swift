@@ -88,10 +88,10 @@ class ViewController: UIViewController {
     var decode = ""
     if let detector = detector {
       let features = detector.featuresInImage(image)
-      for feature in features as [CIBarcodeFeature] {
+      for feature in features as [CIQRCodeFeature] {
         resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
           bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
-        decode = feature.codeString
+        decode = feature.messageString
       }
     }
     return (resultImage, decode)
