@@ -111,4 +111,43 @@ so be sure to check them out on a device.
 
 ## Restrictions on Launch Screen XIBs
 
+The launch screen XIBs don't support all the features you're used to from IB, so
+don't get too carried away. The XIB is meant to be very quick to render, and the
+(presumably) cached on the device - therefore there are some restrictions on
+what UI elements you can use.
+
+You should construct the UI from __UIImageView__ and __UILabel__ objects -
+definitely not __UIWebView__. There can be no custom code associated with a
+launch XIB, so outlets and custom classes won't work.
+
+You can (and absolutely should) use Auto Layout to layout your UI. Your XIB is
+also fully size-class compliant, which is how you should be adapting the launch
+screen to the different devices it will run on.
+
+For more information about adopting adaptive layout in iOS8 you should check out
+day 7 of iOS8 Day-by-Day.
+
 ## Conclusion
+
+This is a welcome improvement to iOS and Xcode, making the development and
+release process that little bit easier, and also delivering app bundle size
+improvements.
+
+However, the biggest takeaway from today's post should be that you need to
+either provide new launch images or make the change to XIB launch screens if you
+properly want to support the new iPhone 6 and 6 Plus. This isn't particularly
+obvious - since your app will run on the new devices, but it runs in scaled
+mode.
+
+Today's app is a little bit different because it was actually created with Xcode
+5 and then upgraded to include the new launch XIBs in Xcode 6. As such, the git
+history might be of some use in looking how this was achieved. It's available in
+the iOS8 Day-by-Day git repo on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+
+Hope you're still enjoying this series - there's still loads of stuff to write
+about, but I'll only do it if it's useful. Drop me a tweet to let me know if you
+want more - I'm [@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+
+sam
