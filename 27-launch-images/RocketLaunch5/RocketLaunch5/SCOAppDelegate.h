@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit
 
 @interface SCOAppDelegate : UIResponder <UIApplicationDelegate>
 
