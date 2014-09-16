@@ -73,5 +73,42 @@ Surely there's a better way?
 
 ## Creating a launch screen XIB
 
+As Apple's Human Interface Guide suggests that your launch screen should
+probably look like the first screen that a user sees, then wouldn't it be great
+if you could create the launch screen in the same way as you create your UI?
+Well, with iOS8 you can - by providing a launch screen as a XIB.
+
+When you create a new iOS project in Xcode 6 then it'll automatically create a
+XIB launch screen file and set up the project correctly to use it, but upgrading
+an existing app is pretty easy as well.
+
+There's a new template for a launch screen file, which you can use by creating a
+new file in your project:
+
+![Creating Launch Screen](assets/creating_launch_screen.png)
+
+This will create a default screen containing the name of your project, and some
+copyright information:
+
+![Default Launch Screen](assets/default_launch_screen.png)
+
+If you run the app up now, then you'll see that your app is still using the old
+files - you need to tell the project what to use as a launch screen. You can do
+this in the __App Icons and Launch Images__ panel of your app's settings.
+
+![Switching to XIB](assets/switching_to_xib.png)
+
+You need to select the XIB you created from the __Launch Screen File__ drop down
+menu, and update the __Launch Images Source__ to __Don't Use Asset Catalogs__:
+
+![Don't use asset catalogs](assets/dont_use_asset_catalogs.png)
+
+Once you've done this you can build and run your app and notice that the new
+launch screen is being used in place of the old images, which you can delete.
+
+> __Note:__ It seems that the new launch images don't always work on simulators,
+so be sure to check them out on a device.
+
+## Restrictions on Launch Screen XIBs
 
 ## Conclusion
