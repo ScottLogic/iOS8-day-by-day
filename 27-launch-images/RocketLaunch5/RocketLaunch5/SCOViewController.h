@@ -14,7 +14,7 @@
 // limitations under the License.
 //
 
-@import UIKit
+@import UIKit;
 
 @interface SCOViewController : UIViewController
 
