@@ -115,6 +115,7 @@ the current view:
       }
       
       override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
         performTraitCollectionOverrideForSize(size)
       }
       
