@@ -27,6 +27,7 @@ class ViewController: UIViewController, UIDocumentMenuDelegate, UIDocumentPicker
   @IBAction func handleImportMenuPressed(sender: AnyObject) {
     let importMenu = UIDocumentMenuViewController(documentTypes: [kUTTypeText as NSString], inMode: .Import)
     importMenu.delegate = self
+    importMenu.addOptionWithTitle("Create New Document", image: nil, order: .First, handler: { println("New Doc Requested") })
     presentViewController(importMenu, animated: true, completion: nil)
   }
   
