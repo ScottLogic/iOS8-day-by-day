@@ -15,13 +15,39 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIDocumentMenuDelegate, UIDocumentPickerDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
+  
+  @IBAction func handleImportMenuPressed(sender: AnyObject) {
+    let importMenu = UIDocumentMenuViewController(documentTypes: [kUTTypeText as NSString], inMode: .Import)
+    importMenu.delegate = self
+    presentViewController(importMenu, animated: true, completion: nil)
+  }
+  
+  @IBAction func handleImportPickerPressed(sender: AnyObject) {
+    let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeText as NSString], inMode: .Import)
+    documentPicker.delegate = self
+    presentViewController(documentPicker, animated: true, completion: nil)
+  }
+  
+  // MARK:- UIDocumentMenuDelegate
+  func documentMenu(documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+    documentPicker.delegate = self
+    presentViewController(documentPicker, animated: true, completion: nil)
+  }
+  
+  // MARK:- UIDocumentPickerDelegate
+  func documentPicker(controller: UIDocumentPickerViewController, didPickDocumentAtURL url: NSURL) {
+    // Do something
+    println(url)
+  }
+  
 
 }
 

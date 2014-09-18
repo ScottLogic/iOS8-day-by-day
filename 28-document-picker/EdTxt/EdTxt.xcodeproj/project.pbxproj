@@ -36,6 +36,7 @@
 		22D21E6019C9FB860090A99A /* EdTxtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdTxtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D21E6519C9FB860090A99A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D21E6619C9FB860090A99A /* EdTxtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdTxtTests.swift; sourceTree = "<group>"; };
+		22D21E7019CA0C860090A99A /* EdTxt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = EdTxt.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		22D21E4D19C9FB860090A99A /* EdTxt */ = {
 			isa = PBXGroup;
 			children = (
+				22D21E7019CA0C860090A99A /* EdTxt.entitlements */,
 				22D21E5019C9FB860090A99A /* AppDelegate.swift */,
 				22D21E5219C9FB860090A99A /* ViewController.swift */,
 				22D21E5419C9FB860090A99A /* Main.storyboard */,
@@ -161,6 +163,12 @@
 				TargetAttributes = {
 					22D21E4A19C9FB860090A99A = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = D23W9URMHY;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					22D21E5F19C9FB860090A99A = {
 						CreatedOnToolsVersion = 6.0;
@@ -338,9 +346,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EdTxt/EdTxt.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EdTxt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -348,9 +360,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EdTxt/EdTxt.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EdTxt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -407,6 +423,7 @@
 				22D21E6C19C9FB860090A99A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22D21E6D19C9FB860090A99A /* Build configuration list for PBXNativeTarget "EdTxtTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +432,7 @@
 				22D21E6F19C9FB860090A99A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
