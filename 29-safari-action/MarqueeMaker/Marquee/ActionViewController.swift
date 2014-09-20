@@ -57,11 +57,7 @@ class ActionViewController: UIViewController {
       }
     }
   }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+
   
   @IBAction func done() {
     // Return any edited content to the host app.
