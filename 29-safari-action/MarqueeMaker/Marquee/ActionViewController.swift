@@ -17,7 +17,10 @@
 import UIKit
 import MobileCoreServices
 
-class ActionViewController: UITableViewController {
+class ActionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  
+  @IBOutlet weak var tableView: UITableView!
+
   
   var tagList = [TagStatus]()
   
@@ -26,6 +29,7 @@ class ActionViewController: UITableViewController {
     
     // Populate the tag map
     tagList = createTagList()
+    
     
     // Get the item[s] we're handling from the extension context.
     
@@ -40,16 +44,22 @@ class ActionViewController: UITableViewController {
     self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
   }
   
+  @IBAction func cancel(sender: AnyObject) {
+    let error = NSError(domain: "errorDomain", code: 0, userInfo: nil)
+    self.extensionContext!.cancelRequestWithError(error)
+  }
+  
+  
   // MARK:- UITableViewDataSource
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
   
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return tagList.count
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("tagTypeCell", forIndexPath: indexPath) as UITableViewCell
     let tag = tagList[indexPath.row]
     cell.textLabel?.text = tag.name
@@ -58,7 +68,7 @@ class ActionViewController: UITableViewController {
   }
   
   // MARK:- UITableViewDelegate
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     var tag = tagList[indexPath.row]
     tag.toggleStatus()
     if let cell = tableView.cellForRowAtIndexPath(indexPath) {
