@@ -21,7 +21,6 @@ class ActionViewController: UIViewController, UITableViewDataSource, UITableView
   
   @IBOutlet weak var tableView: UITableView!
 
-  
   var tagList = [TagStatus]()
   
   override func viewDidLoad() {
@@ -29,19 +28,20 @@ class ActionViewController: UIViewController, UITableViewDataSource, UITableView
     
     // Populate the tag map
     tagList = createTagList()
-    
-    
-    // Get the item[s] we're handling from the extension context.
-    
-    // For example, look for an image and place it into an image view.
-    // Replace this with something appropriate for the type[s] your extension supports.
   }
 
   
   @IBAction func done() {
-    // Return any edited content to the host app.
-    // This template doesn't do anything, so we just echo the passed in items.
-    self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
+    // Find out which tags need marqueefying
+    let marqueeTagNames = tagList.filter{ $0.status }.map{ $0.tag }
+    
+    // Parcel them up in an NSExtensionItem
+    let extensionItem = NSExtensionItem()
+    let jsDict = [ NSExtensionJavaScriptFinalizeArgumentKey : [ "marqueeTagNames" : marqueeTagNames ]]
+    extensionItem.attachments = [ NSItemProvider(item: jsDict, typeIdentifier: kUTTypePropertyList as NSString)]
+    
+    // Send them back to the javascript processor
+    self.extensionContext!.completeRequestReturningItems([extensionItem], completionHandler: nil)
   }
   
   @IBAction func cancel(sender: AnyObject) {
