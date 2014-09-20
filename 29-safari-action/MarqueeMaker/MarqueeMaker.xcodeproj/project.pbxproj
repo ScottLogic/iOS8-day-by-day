@@ -16,6 +16,7 @@
 		22318F5119CD74C300D6CF18 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F5019CD74C300D6CF18 /* ActionViewController.swift */; };
 		22318F5319CD74C300D6CF18 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22318F5219CD74C300D6CF18 /* MainInterface.storyboard */; };
 		22318F5619CD74C300D6CF18 /* Marquee.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22318F4C19CD74C300D6CF18 /* Marquee.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		22318F5E19CDEA5300D6CF18 /* TagStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F5D19CDEA5300D6CF18 /* TagStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		22318F4F19CD74C300D6CF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22318F5019CD74C300D6CF18 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		22318F5219CD74C300D6CF18 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		22318F5D19CDEA5300D6CF18 /* TagStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				22318F5019CD74C300D6CF18 /* ActionViewController.swift */,
 				22318F5219CD74C300D6CF18 /* MainInterface.storyboard */,
 				22318F4E19CD74C300D6CF18 /* Supporting Files */,
+				22318F5D19CDEA5300D6CF18 /* TagStatus.swift */,
 			);
 			path = Marquee;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22318F5E19CDEA5300D6CF18 /* TagStatus.swift in Sources */,
 				22318F5119CD74C300D6CF18 /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

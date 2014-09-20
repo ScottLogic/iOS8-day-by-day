@@ -17,45 +17,20 @@
 import UIKit
 import MobileCoreServices
 
-class ActionViewController: UIViewController {
+class ActionViewController: UITableViewController {
   
-  @IBOutlet weak var imageView: UIImageView!
+  var tagList = [TagStatus]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Populate the tag map
+    tagList = createTagList()
     
     // Get the item[s] we're handling from the extension context.
     
     // For example, look for an image and place it into an image view.
     // Replace this with something appropriate for the type[s] your extension supports.
-    var imageFound = false
-    for item: AnyObject in self.extensionContext!.inputItems {
-      let inputItem = item as NSExtensionItem
-      for provider: AnyObject in inputItem.attachments! {
-        let itemProvider = provider as NSItemProvider
-        if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeImage as NSString) {
-          // This is an image. We'll load it, then place it in our image view.
-          weak var weakImageView = self.imageView
-          itemProvider.loadItemForTypeIdentifier(kUTTypeImage as NSString, options: nil, completionHandler: { (image, error) in
-            if image != nil {
-              NSOperationQueue.mainQueue().addOperationWithBlock {
-                if let imageView = weakImageView {
-                  imageView.image = image as? UIImage
-                }
-              }
-            }
-          })
-          
-          imageFound = true
-          break
-        }
-      }
-      
-      if (imageFound) {
-        // We only handle one image, so stop looking for more.
-        break
-      }
-    }
   }
 
   
@@ -64,5 +39,38 @@ class ActionViewController: UIViewController {
     // This template doesn't do anything, so we just echo the passed in items.
     self.extensionContext!.completeRequestReturningItems(self.extensionContext!.inputItems, completionHandler: nil)
   }
+  
+  // MARK:- UITableViewDataSource
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return tagList.count
+  }
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("tagTypeCell", forIndexPath: indexPath) as UITableViewCell
+    let tag = tagList[indexPath.row]
+    cell.textLabel?.text = tag.name
+    cell.accessoryType = tag.status ? .Checkmark : .None
+    return cell
+  }
+  
+  // MARK:- UITableViewDelegate
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    var tag = tagList[indexPath.row]
+    tag.toggleStatus()
+    if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+      cell.accessoryType = tag.status ? .Checkmark : .None
+    }
+  }
+
+  
+  // MARK:- Utility Methods
+  private func createTagList() -> [TagStatus] {
+    return ["h1", "h2", "h3", "h4", "p"].map { TagStatus(name: $0) }
+  }
+  
   
 }
