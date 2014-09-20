@@ -28,6 +28,8 @@
 		<dict>
 			<key>NSExtensionActivationRule</key>
 			<string>TRUEPREDICATE</string>
+			<key>NSExtensionJavaScriptPreprocessingFile</key>
+			<string>MarqueeExtensionJavaScript</string>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>
