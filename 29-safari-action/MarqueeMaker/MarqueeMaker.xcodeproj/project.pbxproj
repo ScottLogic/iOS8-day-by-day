@@ -13,6 +13,9 @@
 		22318F3019CD736C00D6CF18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22318F2F19CD736C00D6CF18 /* Images.xcassets */; };
 		22318F3319CD736C00D6CF18 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22318F3119CD736C00D6CF18 /* LaunchScreen.xib */; };
 		22318F3F19CD736C00D6CF18 /* MarqueeMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F3E19CD736C00D6CF18 /* MarqueeMakerTests.swift */; };
+		22318F5119CD74C300D6CF18 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F5019CD74C300D6CF18 /* ActionViewController.swift */; };
+		22318F5319CD74C300D6CF18 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22318F5219CD74C300D6CF18 /* MainInterface.storyboard */; };
+		22318F5619CD74C300D6CF18 /* Marquee.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22318F4C19CD74C300D6CF18 /* Marquee.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +26,35 @@
 			remoteGlobalIDString = 22318F2219CD736C00D6CF18;
 			remoteInfo = MarqueeMaker;
 		};
+		22318F5419CD74C300D6CF18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22318F1B19CD736C00D6CF18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22318F4B19CD74C300D6CF18;
+			remoteInfo = Marquee;
+		};
+		22318F5719CD74C300D6CF18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22318F1B19CD736C00D6CF18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22318F4B19CD74C300D6CF18;
+			remoteInfo = Marquee;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22318F5C19CD74C300D6CF18 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				22318F5619CD74C300D6CF18 /* Marquee.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		22318F2319CD736C00D6CF18 /* MarqueeMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarqueeMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +67,10 @@
 		22318F3819CD736C00D6CF18 /* MarqueeMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarqueeMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22318F3D19CD736C00D6CF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22318F3E19CD736C00D6CF18 /* MarqueeMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeMakerTests.swift; sourceTree = "<group>"; };
+		22318F4C19CD74C300D6CF18 /* Marquee.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Marquee.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		22318F4F19CD74C300D6CF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22318F5019CD74C300D6CF18 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		22318F5219CD74C300D6CF18 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +88,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22318F4919CD74C300D6CF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +103,7 @@
 			children = (
 				22318F2519CD736C00D6CF18 /* MarqueeMaker */,
 				22318F3B19CD736C00D6CF18 /* MarqueeMakerTests */,
+				22318F4D19CD74C300D6CF18 /* Marquee */,
 				22318F2419CD736C00D6CF18 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +113,7 @@
 			children = (
 				22318F2319CD736C00D6CF18 /* MarqueeMaker.app */,
 				22318F3819CD736C00D6CF18 /* MarqueeMakerTests.xctest */,
+				22318F4C19CD74C300D6CF18 /* Marquee.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +156,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		22318F4D19CD74C300D6CF18 /* Marquee */ = {
+			isa = PBXGroup;
+			children = (
+				22318F5019CD74C300D6CF18 /* ActionViewController.swift */,
+				22318F5219CD74C300D6CF18 /* MainInterface.storyboard */,
+				22318F4E19CD74C300D6CF18 /* Supporting Files */,
+			);
+			path = Marquee;
+			sourceTree = "<group>";
+		};
+		22318F4E19CD74C300D6CF18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22318F4F19CD74C300D6CF18 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +184,13 @@
 				22318F1F19CD736C00D6CF18 /* Sources */,
 				22318F2019CD736C00D6CF18 /* Frameworks */,
 				22318F2119CD736C00D6CF18 /* Resources */,
+				22318F5C19CD74C300D6CF18 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				22318F5519CD74C300D6CF18 /* PBXTargetDependency */,
+				22318F5819CD74C300D6CF18 /* PBXTargetDependency */,
 			);
 			name = MarqueeMaker;
 			productName = MarqueeMaker;
@@ -150,6 +215,23 @@
 			productReference = 22318F3819CD736C00D6CF18 /* MarqueeMakerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		22318F4B19CD74C300D6CF18 /* Marquee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22318F5919CD74C300D6CF18 /* Build configuration list for PBXNativeTarget "Marquee" */;
+			buildPhases = (
+				22318F4819CD74C300D6CF18 /* Sources */,
+				22318F4919CD74C300D6CF18 /* Frameworks */,
+				22318F4A19CD74C300D6CF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Marquee;
+			productName = Marquee;
+			productReference = 22318F4C19CD74C300D6CF18 /* Marquee.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +247,9 @@
 					22318F3719CD736C00D6CF18 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 22318F2219CD736C00D6CF18;
+					};
+					22318F4B19CD74C300D6CF18 = {
+						CreatedOnToolsVersion = 6.0;
 					};
 				};
 			};
@@ -183,6 +268,7 @@
 			targets = (
 				22318F2219CD736C00D6CF18 /* MarqueeMaker */,
 				22318F3719CD736C00D6CF18 /* MarqueeMakerTests */,
+				22318F4B19CD74C300D6CF18 /* Marquee */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +288,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22318F4A19CD74C300D6CF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22318F5319CD74C300D6CF18 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +319,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22318F4819CD74C300D6CF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22318F5119CD74C300D6CF18 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -232,6 +334,16 @@
 			isa = PBXTargetDependency;
 			target = 22318F2219CD736C00D6CF18 /* MarqueeMaker */;
 			targetProxy = 22318F3919CD736C00D6CF18 /* PBXContainerItemProxy */;
+		};
+		22318F5519CD74C300D6CF18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22318F4B19CD74C300D6CF18 /* Marquee */;
+			targetProxy = 22318F5419CD74C300D6CF18 /* PBXContainerItemProxy */;
+		};
+		22318F5819CD74C300D6CF18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22318F4B19CD74C300D6CF18 /* Marquee */;
+			targetProxy = 22318F5719CD74C300D6CF18 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -388,6 +500,30 @@
 			};
 			name = Release;
 		};
+		22318F5A19CD74C300D6CF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Marquee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		22318F5B19CD74C300D6CF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Marquee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +549,14 @@
 			buildConfigurations = (
 				22318F4619CD736C00D6CF18 /* Debug */,
 				22318F4719CD736C00D6CF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22318F5919CD74C300D6CF18 /* Build configuration list for PBXNativeTarget "Marquee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22318F5A19CD74C300D6CF18 /* Debug */,
+				22318F5B19CD74C300D6CF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
