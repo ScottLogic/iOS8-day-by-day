@@ -26,7 +26,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagTypeCell" textLabel="42V-ZW-l72" style="IBUITableViewCellStyleDefault" id="weK-kX-our">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tagTypeCell" textLabel="42V-ZW-l72" style="IBUITableViewCellStyleDefault" id="weK-kX-our">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="weK-kX-our" id="Jhi-xm-Xrh">
                                     <autoresizingMask key="autoresizingMask"/>

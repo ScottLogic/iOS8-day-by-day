@@ -16,11 +16,11 @@
 
 import Foundation
 
-struct TagStatus {
+class TagStatus {
   let name: String
   var status: Bool
   
-  mutating func toggleStatus() {
+  func toggleStatus() {
     status = !status
   }
   

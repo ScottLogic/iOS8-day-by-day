@@ -63,6 +63,7 @@ class ActionViewController: UITableViewController {
     tag.toggleStatus()
     if let cell = tableView.cellForRowAtIndexPath(indexPath) {
       cell.accessoryType = tag.status ? .Checkmark : .None
+      cell.selected = false
     }
   }
 
