@@ -62,7 +62,7 @@ class ActionViewController: UIViewController, UITableViewDataSource, UITableView
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("tagTypeCell", forIndexPath: indexPath) as UITableViewCell
     let tag = tagList[indexPath.row]
-    cell.textLabel?.text = tag.name
+    cell.textLabel?.text = "\(tag)"
     cell.accessoryType = tag.status ? .Checkmark : .None
     return cell
   }
@@ -76,11 +76,14 @@ class ActionViewController: UIViewController, UITableViewDataSource, UITableView
       cell.selected = false
     }
   }
-
   
   // MARK:- Utility Methods
   private func createTagList() -> [TagStatus] {
-    return ["h1", "h2", "h3", "h4", "p"].map { TagStatus(name: $0) }
+    return [("Heading 1", "h1"),
+            ("Heading 2", "h2"),
+            ("Heading 3", "h3"),
+            ("Heading 4", "h4"),
+            ("Paragraph", "p")].map { (name: String, tag: String) in TagStatus(tag: tag,name: name) }
   }
   
   

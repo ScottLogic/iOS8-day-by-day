@@ -18,14 +18,23 @@ import Foundation
 
 class TagStatus {
   let name: String
+  let tag: String
   var status: Bool
   
   func toggleStatus() {
     status = !status
   }
   
-  init(name: String) {
+  init(tag: String, name: String) {
     self.name = name
+    self.tag = tag
     self.status = false
+  }
+}
+
+
+extension TagStatus: Printable {
+  var description: String {
+    return "\(name) (\(tag))"
   }
 }
