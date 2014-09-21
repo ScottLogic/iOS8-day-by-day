@@ -28,6 +28,26 @@ class ActionViewController: UIViewController, UITableViewDataSource, UITableView
     
     // Populate the tag map
     tagList = createTagList()
+    
+    for item: AnyObject in self.extensionContext!.inputItems {
+      let inputItem = item as NSExtensionItem
+      for provider: AnyObject in inputItem.attachments! {
+        let itemProvider = provider as NSItemProvider
+        if itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as NSString) {
+          // You _HAVE_ to call loadItemForTypeIdentifier in order to get the JS injected
+          itemProvider.loadItemForTypeIdentifier(kUTTypePropertyList as NSString, options: nil, completionHandler: {
+            (list, error) in
+            if let results = list as? NSDictionary {
+              NSOperationQueue.mainQueue().addOperationWithBlock {
+                // We don't actually care about this...
+                println(results)
+              }
+            }
+          })
+        }
+      }
+    }
+
   }
 
   
