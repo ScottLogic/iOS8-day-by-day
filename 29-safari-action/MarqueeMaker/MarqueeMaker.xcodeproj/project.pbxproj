@@ -18,6 +18,7 @@
 		22318F5619CD74C300D6CF18 /* Marquee.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22318F4C19CD74C300D6CF18 /* Marquee.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		22318F5E19CDEA5300D6CF18 /* TagStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F5D19CDEA5300D6CF18 /* TagStatus.swift */; };
 		22318F6119CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 22318F5F19CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js */; };
+		22EC5EAC19CE29A20022D462 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22EC5EAB19CE29A20022D462 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		22318F5219CD74C300D6CF18 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		22318F5D19CDEA5300D6CF18 /* TagStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagStatus.swift; sourceTree = "<group>"; };
 		22318F5F19CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = MarqueeExtensionJavaScript.js; sourceTree = "<group>"; };
+		22EC5EAB19CE29A20022D462 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				22318F4E19CD74C300D6CF18 /* Supporting Files */,
 				22318F5D19CDEA5300D6CF18 /* TagStatus.swift */,
 				22318F5F19CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js */,
+				22EC5EAB19CE29A20022D462 /* Images.xcassets */,
 			);
 			path = Marquee;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22EC5EAC19CE29A20022D462 /* Images.xcassets in Resources */,
 				22318F6119CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js in Resources */,
 				22318F5319CD74C300D6CF18 /* MainInterface.storyboard in Resources */,
 			);
@@ -511,6 +515,8 @@
 		22318F5A19CD74C300D6CF18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -525,6 +531,8 @@
 		22318F5B19CD74C300D6CF18 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Marquee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -551,6 +559,7 @@
 				22318F4419CD736C00D6CF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22318F4519CD736C00D6CF18 /* Build configuration list for PBXNativeTarget "MarqueeMakerTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +568,7 @@
 				22318F4719CD736C00D6CF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22318F5919CD74C300D6CF18 /* Build configuration list for PBXNativeTarget "Marquee" */ = {
 			isa = XCConfigurationList;
@@ -567,6 +577,7 @@
 				22318F5B19CD74C300D6CF18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
