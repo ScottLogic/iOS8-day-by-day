@@ -16,8 +16,8 @@ function TagContentWrapper() {
   
   this.wrapContentOfTagList = function(typeList, wrapperCreator) {
     typeList.forEach(function(type){
-                     self.wrapContentOfTags(type, wrapperCreator);
-                     });
+      self.wrapContentOfTags(type, wrapperCreator);
+    });
   };
 }
 
@@ -25,25 +25,22 @@ var tagContentWrapper = new TagContentWrapper;
 
 var marqueeWrapper = function(typeList) {
   tagContentWrapper.wrapContentOfTagList(typeList, function() {
-                                         return document.createElement("marquee");
-                                         });
+    return document.createElement("marquee");
+  });
 }
-
 
 
 /* The Extension Code for use with the iOS Action Extension */
 var MarqueeMakerExtension = function() {};
 
 MarqueeMakerExtension.prototype = {
-run: function(arguments) {
-  console.log("initiation");
-  arguments.completionFunction({"baseURI" : document.baseURI});
-},
-  
-finalize: function(arguments) {
-  console.log("HELLO");
-  marqueeWrapper(arguments["tagList"]);
-}
+  run: function(arguments) {
+    arguments.completionFunction({"baseURI" : document.baseURI});
+  },
+    
+  finalize: function(arguments) {
+    marqueeWrapper(arguments["marqueeTagNames"]);
+  }
 }
 
 var ExtensionPreprocessingJS = new MarqueeMakerExtension;
