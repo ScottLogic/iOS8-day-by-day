@@ -272,3 +272,24 @@ change.
 
 ## Conclusion
 
+Action extensions are pretty cool - you can do some interesting things with
+them, but they're aren't really that significantly different to sharing
+extensions. The really interesting part of today's post is the ability to write
+javascript which will interact with the web page displayed - both pre and post
+extension invocation.
+
+Admittedly, this marquee extension is nothing more than an irritation, but the
+possibilities here are huge - in the WWDC keynote, a translation engine was
+demoed using action extensions, and already we're seeing innovative uses by
+password managers.
+
+As ever, the code for today's post is available on the ShinobiControls github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Take a look and let me know what you think - if you could star the repo that'd
+be super!
+
+Also, let me know on twitter what topics I've not covered yet that you'd be
+interested in reading about - I'm [@iwantmyrealname](https://twitter.com/iwantmyrealname)
+
+
+sam
