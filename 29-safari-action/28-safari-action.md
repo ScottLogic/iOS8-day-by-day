@@ -30,6 +30,39 @@ app, __MarqueeMaker__ is available on github at
 
 ## Creating an Action Extension
 
+Creating an action extension is best performed in the same way that you create
+any of the extensions - via the templates in Xcode. Since all extensions
+require that they are bundled with a host app, you need to create an app first,
+and then add the extension to it:
+
+![Action Extension](assets/choosing_action_extension.png)
+
+Action extensions can either have UI or not. If your extension doesn't require
+any input from the user in order to run, then you can choose not to have any UI.
+The accompanying app does have some UI - allowing the user to specify which HTML
+tags they'd like to manipulate:
+
+![Interface](assets/choosing_interface.png)
+
+Once you've done that then you'll be presented with a template that includes a
+good starting point for building your extension. If you've selected to include a
+user interface, then you'll be provided a view controller and storyboard in
+which to build it. As ever, it's highly recommended to use adaptive layout to
+create your interface.
+
+You'll want to create an icon image to represent your app in the share sheet.
+This icon is actually just the extension icon - which you can provide using an
+asset catalog - ensuring that it is set correctly in the project settings:
+
+![Asset Catalog](assets/specify_asset_catalog.png)
+
+Note that the action sheet uses template images - i.e. your icon image should be
+composed of a single color and transparent. The non-transparent pixels will be
+transformed to match the other icons in the sheet:
+
+![Template Icons](assets/template_icons.png)
+![Mapped Icons](assets/mapped_icons.png)
+
 
 ## Extracting Content from a Web Page
 
