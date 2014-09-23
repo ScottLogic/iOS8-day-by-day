@@ -187,6 +187,11 @@ You can run any type of javascript you like here - so you can extract all the
 images from a web page, or query the DOM in any clever ways you can think of.
 The possibilities are endless.
 
+It's worth noting that debugging an extension which includes a JS preprocessor
+can be quite hard work. However, it is possible to get a handle on what your JS
+is doing by using the iOS safari debugger - which is part of the desktop version
+of Safari - in the hidden __Developer__ menu.
+
 ## Interacting with JavaScript
 
 The javascript preprocessor is available to both action and sharing extensions -
