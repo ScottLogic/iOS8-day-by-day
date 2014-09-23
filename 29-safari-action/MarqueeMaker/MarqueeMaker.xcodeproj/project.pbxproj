@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22318F2919CD736C00D6CF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F2819CD736C00D6CF18 /* AppDelegate.swift */; };
+		22318F2B19CD736C00D6CF18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F2A19CD736C00D6CF18 /* ViewController.swift */; };
+		22318F2E19CD736C00D6CF18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22318F2C19CD736C00D6CF18 /* Main.storyboard */; };
+		22318F3019CD736C00D6CF18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22318F2F19CD736C00D6CF18 /* Images.xcassets */; };
+		22318F3319CD736C00D6CF18 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22318F3119CD736C00D6CF18 /* LaunchScreen.xib */; };
+		22318F3F19CD736C00D6CF18 /* MarqueeMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F3E19CD736C00D6CF18 /* MarqueeMakerTests.swift */; };
+		22318F5119CD74C300D6CF18 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F5019CD74C300D6CF18 /* ActionViewController.swift */; };
+		22318F5319CD74C300D6CF18 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22318F5219CD74C300D6CF18 /* MainInterface.storyboard */; };
+		22318F5619CD74C300D6CF18 /* Marquee.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22318F4C19CD74C300D6CF18 /* Marquee.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		22318F5E19CDEA5300D6CF18 /* TagStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22318F5D19CDEA5300D6CF18 /* TagStatus.swift */; };
+		22318F6119CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js in Resources */ = {isa = PBXBuildFile; fileRef = 22318F5F19CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js */; };
+		22EC5EAC19CE29A20022D462 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22EC5EAB19CE29A20022D462 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22318F3919CD736C00D6CF18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22318F1B19CD736C00D6CF18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22318F2219CD736C00D6CF18;
+			remoteInfo = MarqueeMaker;
+		};
+		22318F5419CD74C300D6CF18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22318F1B19CD736C00D6CF18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22318F4B19CD74C300D6CF18;
+			remoteInfo = Marquee;
+		};
+		22318F5719CD74C300D6CF18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22318F1B19CD736C00D6CF18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22318F4B19CD74C300D6CF18;
+			remoteInfo = Marquee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22318F5C19CD74C300D6CF18 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				22318F5619CD74C300D6CF18 /* Marquee.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		22318F2319CD736C00D6CF18 /* MarqueeMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarqueeMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22318F2719CD736C00D6CF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22318F2819CD736C00D6CF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22318F2A19CD736C00D6CF18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22318F2D19CD736C00D6CF18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22318F2F19CD736C00D6CF18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22318F3219CD736C00D6CF18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		22318F3819CD736C00D6CF18 /* MarqueeMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarqueeMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22318F3D19CD736C00D6CF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22318F3E19CD736C00D6CF18 /* MarqueeMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeMakerTests.swift; sourceTree = "<group>"; };
+		22318F4C19CD74C300D6CF18 /* Marquee.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Marquee.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		22318F4F19CD74C300D6CF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22318F5019CD74C300D6CF18 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		22318F5219CD74C300D6CF18 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		22318F5D19CDEA5300D6CF18 /* TagStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagStatus.swift; sourceTree = "<group>"; };
+		22318F5F19CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = MarqueeExtensionJavaScript.js; sourceTree = "<group>"; };
+		22EC5EAB19CE29A20022D462 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22318F2019CD736C00D6CF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22318F3519CD736C00D6CF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22318F4919CD74C300D6CF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22318F1A19CD736C00D6CF18 = {
+			isa = PBXGroup;
+			children = (
+				22318F2519CD736C00D6CF18 /* MarqueeMaker */,
+				22318F3B19CD736C00D6CF18 /* MarqueeMakerTests */,
+				22318F4D19CD74C300D6CF18 /* Marquee */,
+				22318F2419CD736C00D6CF18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22318F2419CD736C00D6CF18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22318F2319CD736C00D6CF18 /* MarqueeMaker.app */,
+				22318F3819CD736C00D6CF18 /* MarqueeMakerTests.xctest */,
+				22318F4C19CD74C300D6CF18 /* Marquee.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22318F2519CD736C00D6CF18 /* MarqueeMaker */ = {
+			isa = PBXGroup;
+			children = (
+				22318F2819CD736C00D6CF18 /* AppDelegate.swift */,
+				22318F2A19CD736C00D6CF18 /* ViewController.swift */,
+				22318F2C19CD736C00D6CF18 /* Main.storyboard */,
+				22318F2F19CD736C00D6CF18 /* Images.xcassets */,
+				22318F3119CD736C00D6CF18 /* LaunchScreen.xib */,
+				22318F2619CD736C00D6CF18 /* Supporting Files */,
+			);
+			path = MarqueeMaker;
+			sourceTree = "<group>";
+		};
+		22318F2619CD736C00D6CF18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22318F2719CD736C00D6CF18 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22318F3B19CD736C00D6CF18 /* MarqueeMakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				22318F3E19CD736C00D6CF18 /* MarqueeMakerTests.swift */,
+				22318F3C19CD736C00D6CF18 /* Supporting Files */,
+			);
+			path = MarqueeMakerTests;
+			sourceTree = "<group>";
+		};
+		22318F3C19CD736C00D6CF18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22318F3D19CD736C00D6CF18 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22318F4D19CD74C300D6CF18 /* Marquee */ = {
+			isa = PBXGroup;
+			children = (
+				22318F5019CD74C300D6CF18 /* ActionViewController.swift */,
+				22318F5219CD74C300D6CF18 /* MainInterface.storyboard */,
+				22318F4E19CD74C300D6CF18 /* Supporting Files */,
+				22318F5D19CDEA5300D6CF18 /* TagStatus.swift */,
+				22318F5F19CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js */,
+				22EC5EAB19CE29A20022D462 /* Images.xcassets */,
+			);
+			path = Marquee;
+			sourceTree = "<group>";
+		};
+		22318F4E19CD74C300D6CF18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22318F4F19CD74C300D6CF18 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22318F2219CD736C00D6CF18 /* MarqueeMaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22318F4219CD736C00D6CF18 /* Build configuration list for PBXNativeTarget "MarqueeMaker" */;
+			buildPhases = (
+				22318F1F19CD736C00D6CF18 /* Sources */,
+				22318F2019CD736C00D6CF18 /* Frameworks */,
+				22318F2119CD736C00D6CF18 /* Resources */,
+				22318F5C19CD74C300D6CF18 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22318F5519CD74C300D6CF18 /* PBXTargetDependency */,
+				22318F5819CD74C300D6CF18 /* PBXTargetDependency */,
+			);
+			name = MarqueeMaker;
+			productName = MarqueeMaker;
+			productReference = 22318F2319CD736C00D6CF18 /* MarqueeMaker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22318F3719CD736C00D6CF18 /* MarqueeMakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22318F4519CD736C00D6CF18 /* Build configuration list for PBXNativeTarget "MarqueeMakerTests" */;
+			buildPhases = (
+				22318F3419CD736C00D6CF18 /* Sources */,
+				22318F3519CD736C00D6CF18 /* Frameworks */,
+				22318F3619CD736C00D6CF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22318F3A19CD736C00D6CF18 /* PBXTargetDependency */,
+			);
+			name = MarqueeMakerTests;
+			productName = MarqueeMakerTests;
+			productReference = 22318F3819CD736C00D6CF18 /* MarqueeMakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22318F4B19CD74C300D6CF18 /* Marquee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22318F5919CD74C300D6CF18 /* Build configuration list for PBXNativeTarget "Marquee" */;
+			buildPhases = (
+				22318F4819CD74C300D6CF18 /* Sources */,
+				22318F4919CD74C300D6CF18 /* Frameworks */,
+				22318F4A19CD74C300D6CF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Marquee;
+			productName = Marquee;
+			productReference = 22318F4C19CD74C300D6CF18 /* Marquee.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22318F1B19CD736C00D6CF18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ShinobiControls;
+				TargetAttributes = {
+					22318F2219CD736C00D6CF18 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					22318F3719CD736C00D6CF18 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 22318F2219CD736C00D6CF18;
+					};
+					22318F4B19CD74C300D6CF18 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = 22318F1E19CD736C00D6CF18 /* Build configuration list for PBXProject "MarqueeMaker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22318F1A19CD736C00D6CF18;
+			productRefGroup = 22318F2419CD736C00D6CF18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22318F2219CD736C00D6CF18 /* MarqueeMaker */,
+				22318F3719CD736C00D6CF18 /* MarqueeMakerTests */,
+				22318F4B19CD74C300D6CF18 /* Marquee */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22318F2119CD736C00D6CF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22318F2E19CD736C00D6CF18 /* Main.storyboard in Resources */,
+				22318F3319CD736C00D6CF18 /* LaunchScreen.xib in Resources */,
+				22318F3019CD736C00D6CF18 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22318F3619CD736C00D6CF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22318F4A19CD74C300D6CF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22EC5EAC19CE29A20022D462 /* Images.xcassets in Resources */,
+				22318F6119CDFCF600D6CF18 /* MarqueeExtensionJavaScript.js in Resources */,
+				22318F5319CD74C300D6CF18 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22318F1F19CD736C00D6CF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22318F2B19CD736C00D6CF18 /* ViewController.swift in Sources */,
+				22318F2919CD736C00D6CF18 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22318F3419CD736C00D6CF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22318F3F19CD736C00D6CF18 /* MarqueeMakerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22318F4819CD74C300D6CF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22318F5E19CDEA5300D6CF18 /* TagStatus.swift in Sources */,
+				22318F5119CD74C300D6CF18 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22318F3A19CD736C00D6CF18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22318F2219CD736C00D6CF18 /* MarqueeMaker */;
+			targetProxy = 22318F3919CD736C00D6CF18 /* PBXContainerItemProxy */;
+		};
+		22318F5519CD74C300D6CF18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22318F4B19CD74C300D6CF18 /* Marquee */;
+			targetProxy = 22318F5419CD74C300D6CF18 /* PBXContainerItemProxy */;
+		};
+		22318F5819CD74C300D6CF18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22318F4B19CD74C300D6CF18 /* Marquee */;
+			targetProxy = 22318F5719CD74C300D6CF18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22318F2C19CD736C00D6CF18 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22318F2D19CD736C00D6CF18 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22318F3119CD736C00D6CF18 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22318F3219CD736C00D6CF18 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22318F4019CD736C00D6CF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22318F4119CD736C00D6CF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22318F4319CD736C00D6CF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MarqueeMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		22318F4419CD736C00D6CF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MarqueeMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		22318F4619CD736C00D6CF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MarqueeMakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarqueeMaker.app/MarqueeMaker";
+			};
+			name = Debug;
+		};
+		22318F4719CD736C00D6CF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MarqueeMakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarqueeMaker.app/MarqueeMaker";
+			};
+			name = Release;
+		};
+		22318F5A19CD74C300D6CF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Marquee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		22318F5B19CD74C300D6CF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Marquee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22318F1E19CD736C00D6CF18 /* Build configuration list for PBXProject "MarqueeMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22318F4019CD736C00D6CF18 /* Debug */,
+				22318F4119CD736C00D6CF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22318F4219CD736C00D6CF18 /* Build configuration list for PBXNativeTarget "MarqueeMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22318F4319CD736C00D6CF18 /* Debug */,
+				22318F4419CD736C00D6CF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22318F4519CD736C00D6CF18 /* Build configuration list for PBXNativeTarget "MarqueeMakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22318F4619CD736C00D6CF18 /* Debug */,
+				22318F4719CD736C00D6CF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22318F5919CD74C300D6CF18 /* Build configuration list for PBXNativeTarget "Marquee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22318F5A19CD74C300D6CF18 /* Debug */,
+				22318F5B19CD74C300D6CF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22318F1B19CD736C00D6CF18 /* Project object */;
+}
