@@ -189,6 +189,81 @@ The possibilities are endless.
 
 ## Interacting with JavaScript
 
+The javascript preprocessor is available to both action and sharing extensions -
+providing the content extraction functionality for web pages.
+
+Action extensions are also able to run code _after_ the extension has completed.
+This enables you to update the displayed web page with content you've generated
+using your extension.
+
+The hook for this is pretty simple - in addition to the `run` method on the JS
+preprocessor object, there is also a `finalize` method, which again takes a
+single argument.
+
+In `MarqueeMaker`, the following shows the completed preprocessor object:
+
+    MarqueeMakerExtension.prototype = {
+      run: function(arguments) {
+        arguments.completionFunction({"baseURI" : document.baseURI});
+      },
+        
+      finalize: function(arguments) {
+        marqueeWrapper(arguments["marqueeTagNames"]);
+      }
+    }
+
+Here, `marqueeWrapper` is a method which will take an array of HTML tag names,
+and wrap their content with `<marquee>` tags. For example, if the tag array is 
+`["h1"]` then `<h1>Hello</h1>` would be replaced with
+`<h1><marquee>Hello</marquee>`. If you're interested in the JS code that does
+this then check out the accompanying app.
+
+The argument provided to the `finalize` function is just a JS dictionary, which
+you can generate in your Swift code.
+
+The UI for the `MarqueeMaker` app allows a user to select which of the HTML tags
+they'd like to add the `<marquee>` tag to:
+
+![Tag Selection](assets/tag_selection.png)
+
+When the user hits the __Done__ button, the following method is executed:
+
+    @IBAction func done() {
+      // Find out which tags need marqueefying
+      let marqueeTagNames = tagList.filter{ $0.status }.map{ $0.tag }
+      
+      // Parcel them up in an NSExtensionItem
+      let extensionItem = NSExtensionItem()
+      let jsDict = [ NSExtensionJavaScriptFinalizeArgumentKey : [ "marqueeTagNames" : marqueeTagNames ]]
+      extensionItem.attachments = [ NSItemProvider(item: jsDict, typeIdentifier: kUTTypePropertyList as NSString)]
+      
+      // Send them back to the javascript processor
+      self.extensionContext!.completeRequestReturningItems([extensionItem], completionHandler: nil)
+    }
+
+This method performs the following:
+
+1. `marqueeTagNames` determines which of the HTML tags the user selected from
+the table view, and is an array of strings - e.g. `["h1", "h2"]`.
+2. Providing data back to the JS preprocessor is done via `NSExtensionItem`
+objects. You need a dictionary with a key of `NSExtensionJavaScriptFinalizeArgumentKey`
+and the value of the data you want to send back. The value should be something
+that can be easily converted to JSON (i.e. array/dictionary).
+3. You then provide this dictionary as an attachment to the `NSExtensionItem`,
+with type `kUTTypePropertyList` - the same type you used to extract data _sent
+from_ the preprocessor.
+4. Finally, you send the extension item back to the preprocessor by calling 
+`completeRequestReturningItems(_, completionHandler:)` on the extension context.
+
+In the case of __MarqueeMaker__ the UI of the extension is used to determine
+_which_ of the HTML tags should be wrapped in `<marquee>` tags. The javascript
+preprocessor actually performs the DOM manipulation in order to effect the
+change.
+
+![Marquee 1](assets/marquee1.png) 
+![Marquee 2](assets/marquee2.png) 
+![Marquee 3](assets/marquee3.png)
+![Marquee 4](assets/marquee4.png) 
 
 ## Conclusion
 
