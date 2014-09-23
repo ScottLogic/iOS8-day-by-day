@@ -42,7 +42,7 @@ any input from the user in order to run, then you can choose not to have any UI.
 The accompanying app does have some UI - allowing the user to specify which HTML
 tags they'd like to manipulate:
 
-![Interface](assets/choosing_interface.png)
+![Interface](assets/choose_interface.png)
 
 Once you've done that then you'll be presented with a template that includes a
 good starting point for building your extension. If you've selected to include a
