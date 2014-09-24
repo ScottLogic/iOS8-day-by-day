@@ -341,7 +341,7 @@ written using Swift, and on the most-part are really simple to understand.
 
 There is a playground which contains some of the samples mentioned in this post -
 it's part of the Github repo which accompanies this series. You can get it at
-[github.com/ShinobiControl/iOS8-day-by-day](https://github.com/ShinobiControl/iOS8-day-by-day).
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
 
 If you have any questions or suggestions for additions / updates on this page then
 please do get in contact. You can leave a comment below, or tweet me - I'm
