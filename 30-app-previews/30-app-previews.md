@@ -78,4 +78,45 @@ video.
 
 ## Video Considerations
 
+Although this sorts the technicalities of actually getting video from a device
+into a recording, it's only the tip of the iceberg that is creating a great
+video.
+
+Apple has created a page full of info about how to create [App Previews](https://developer.apple.com/app-store/app-previews/),
+which goes some way to helping work out what to do. Some of the most important
+points are summarized below:
+
+- __Videos should be 15 to 30 seconds in length__
+- __The video will appear before the screenshots__
+- __iTunes Connect allows you to choose a poster image__. This is the image that
+is displayed before the video starts playing. Note that you can't change this
+without uploading a new binary to iTunes Connect, so choose wisely. Remember
+that this poster frame is taking the place of the first screenshot - so make
+sure it is as powerful as the screenshot it is replacing.
+- __You can submit device-specific videos__. This means iPad, 4-inch iPhone, 4.7-
+inch iPhone and 5.5-inch iPhone can all have their own videos.
+- __Apple is keen on well-produced videos__. this involves careful planning,
+storyboarding to create a well-formed story. It should demo the top 5 features
+of your app.
+- __Prepare appropriate demo data__.
+- __Previews (like screenshots) are for all audiences__. This means the content
+needs to be suitable for the 4+ age-group.
+- __Videos are not localized__. This is good in one respect - you don't need to
+create hundreds of versions of the same video. However, if you're marketing in
+multiple markets, you need to ensure that your video is understandable
+irrespective of the user's native language. You also can't include any pricing
+details, since these will vary by territory.
+- __Soundtracks are encouraged__. Make sure you have the rights for everything
+you want to use in your video.
+- __In-app purchases must be disclosed__. If your demo shows features only
+available via in-app purchase, you have to notify users of this. In a language-
+agnostic manner. Good luck with that.
+- __Videos should only feature on-device footage__. You should not have video of
+somebody using the app, or anything similar. In this respect it should be very
+much like the screenshots you're used to producing.
+
+Apple has helpfully produced a PDF guide of how to create app previews using
+[Final Cut Pro](https://developer.apple.com/app-store/app-previews/final-cut-pro/Creating-App-Previews-with-Final-Cut-Pro-X.pdf),
+which gives you some indication of the level of quality that Apple is expecting.
+
 ## Conclusion
