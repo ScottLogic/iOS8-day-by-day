@@ -30,4 +30,52 @@ In a change to the standard format, today's post doesn't have a sample project.
 It does describe how to get started with recording video from your device - with
 a sample demoing the __MarqueeMaker__ action extension from day 29.
 
+## Recording a Video
+
+In the past, when wanting to record video from a device you'd have to resort to
+using AirPlay and a 3rd-party app on OSX. AirPlay has low resolution, and a high
+compression ratio - allowing it to work over wireless networks. This means that
+a recording from a device looks shabby at best.
+
+New to iOS8 and OSX Yosemite, it's now possible to record directly from the
+device onto your computer. In fact, when you plug in an iOS8 device (via a
+lightning cable) it appears as a new camera.
+
+To record a video, you need to start out by opening QuickTime. Note, that by
+default, QuickTime doesn't open a window when you start it - but you can see
+that it has started in the dock:
+
+![QuickTime Dock](assets/quicktime_dock.png)
+
+You start a new recording via the __File__ menu:
+
+![New Recording](assets/new_movie_recording.png)
+
+This will open a new window and tell you that you need to select a camera:
+
+![No Camera](assets/no_camera_selected.png)
+
+If your iOS8 device is connected via a lightning cable then you'll be able to
+select it as a camera from the source menu:
+
+![Select Camera](assets/select_camera.png)
+
+QuickTime will then resize to mirror your device's current screen, at which
+point you can start recording. Notice also that the status bar has changed from
+the regular one to the standard one - displaying the "Apple Time" of 09:41,
+removing your service provider and filling your battery:
+
+![Ready to Record](assets/ready_to_record.png)
+
+This will allow you to create a simple video, that at the very least will allow
+you to record the source material to cut together to build your complete demo
+video.
+
+<video src="assets/sampleVideo.mov"
+             controls
+             height=480 width=268>
+</video>
+
+## Video Considerations
+
 ## Conclusion
