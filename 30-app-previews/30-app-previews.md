@@ -1,4 +1,4 @@
-# iOS8 Day-by-Day :: Day 8 :: Today Extension
+# iOS8 Day-by-Day :: Day 30 :: App Previews
 
 This post is part of a daily series of posts introducing the most exciting new
 parts of iOS8 for developers - [#iOS8DayByDay](https://twitter.com/search?q=%23iOS8DayByDay).
