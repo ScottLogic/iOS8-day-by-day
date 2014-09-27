@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2270595519D5D0C800FC664F /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270595419D5D0C800FC664F /* SecureStore.swift */; };
 		2281D14119D57FB4004E8D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281D14019D57FB4004E8D75 /* AppDelegate.swift */; };
 		2281D14319D57FB4004E8D75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281D14219D57FB4004E8D75 /* ViewController.swift */; };
 		2281D14619D57FB4004E8D75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2281D14419D57FB4004E8D75 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2270595419D5D0C800FC664F /* SecureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
 		2281D13B19D57FB4004E8D75 /* TouchyFeely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchyFeely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2281D13F19D57FB4004E8D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2281D14019D57FB4004E8D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				2281D14719D57FB4004E8D75 /* Images.xcassets */,
 				2281D14919D57FB4004E8D75 /* LaunchScreen.xib */,
 				2281D13E19D57FB4004E8D75 /* Supporting Files */,
+				2270595419D5D0C800FC664F /* SecureStore.swift */,
 			);
 			path = TouchyFeely;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				2281D14319D57FB4004E8D75 /* ViewController.swift in Sources */,
 				2281D14119D57FB4004E8D75 /* AppDelegate.swift in Sources */,
+				2270595519D5D0C800FC664F /* SecureStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +411,7 @@
 				2281D15C19D57FB4004E8D75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2281D15D19D57FB4004E8D75 /* Build configuration list for PBXNativeTarget "TouchyFeelyTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				2281D15F19D57FB4004E8D75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

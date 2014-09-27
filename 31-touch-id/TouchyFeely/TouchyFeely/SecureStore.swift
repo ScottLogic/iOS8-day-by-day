@@ -14,31 +14,9 @@
 // limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-
-  @IBOutlet weak var secretInputTextField: UITextField!
-  @IBOutlet weak var secretRetrievalLabel: UILabel!
-  @IBOutlet weak var commitButton: UIButton!
-  @IBOutlet weak var retrieveButton: UIButton!
-  
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-  }
-
-  
-  // MARK:- IBActions
-  @IBAction func commitSecret(sender: AnyObject) {
-  }
-
-  @IBAction func retrieveSecret(sender: AnyObject) {
-  }
-  
-  
+protocol SecureStore {
+  var containsSecret: Bool { get }
+  var secret: String? { get set }
 }
-

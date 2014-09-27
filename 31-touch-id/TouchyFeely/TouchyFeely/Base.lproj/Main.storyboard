@@ -32,6 +32,9 @@
                                         <state key="normal" title="save">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="commitSecret:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5e3-ae-7EL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.59607843140000005" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,6 +56,9 @@
                                         <state key="normal" title="retrieve">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="retrieveSecret:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDU-no-YUK"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your secret was..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vow-bC-xRr">
                                         <rect key="frame" x="8" y="120" width="584" height="59"/>
@@ -92,6 +98,12 @@
                             <constraint firstItem="8WF-s9-shK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vTV-dR-Uon"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="commitButton" destination="fRm-GB-YnC" id="a6q-Z2-VdG"/>
+                        <outlet property="retrieveButton" destination="1bB-Zl-TmK" id="cKn-oM-Mmb"/>
+                        <outlet property="secretInputTextField" destination="nqf-xE-2W1" id="17g-IF-fuH"/>
+                        <outlet property="secretRetrievalLabel" destination="vow-bC-xRr" id="NVl-WG-hZ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
