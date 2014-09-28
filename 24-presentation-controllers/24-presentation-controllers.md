@@ -240,8 +240,8 @@ once again you get the opportunity to adapt the presentation according to the
 the trait collection and size.
 
 You also get an even more fine-grained layer in the form of
-`contentViewWillLayoutSubviews()` and `contentViewDidLayoutSubviews()`. These
-are equivalent to their `UIViewController` counterparts `viewWillLayoutSubviews()`
+`containerViewWillLayoutSubviews()` and `containerViewDidLayoutSubviews()`.
+These are equivalent to their `UIViewController` counterparts `viewWillLayoutSubviews()`
 and `viewDidLayoutSubviews()`, and you can use them to precisely control the
 appearance whenever a layout pass occurs.
 
@@ -252,8 +252,8 @@ problem you saw at the end of the last section:
 edges of the content view.
 - Override `viewWillTransitionToSize(size:, withTransitionCoordinator:)` in the
 presentation controller and update the dimming view appropriately.
-- Override `contentViewWillLayoutSubviews()` and again, update the dimming view
-appropriately.
+- Override `containerViewWillLayoutSubviews()` and again, update the dimming
+view appropriately.
 
 Since we all know how to use autolayout, and 
 [day 14](http://www.shinobicontrols.com/blog/posts/2014/08/06/ios8-day-by-day-day-14-rotation-deprecation/)
