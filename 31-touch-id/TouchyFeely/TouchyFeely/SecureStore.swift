@@ -18,7 +18,6 @@ import Security
 import Foundation
 
 protocol SecureStore {
-  var containsSecret: Bool { get }
   var secret: String? { get set }
 }
 
@@ -41,29 +40,7 @@ class KeyChainStore: SecureStore {
     }
   }
   
-  var containsSecret: Bool {
-    return checkExistence()
-  }
-  
-  
   // MARK:- Utility methods
-  private func checkExistence() -> Bool {
-    let keyChainQuery = [
-      kSecClass       : kSecClassGenericPassword,
-      kSecAttrService : serviceIdentifier,
-      kSecAttrAccount : accountName,
-      kSecReturnData  : false,
-      kSecMatchLimit  : kSecMatchLimitOne
-    ]
-    
-    let status = SecItemCopyMatching(keyChainQuery, nil)
-    let success = errSecSuccess
-
-    return false
-    
-  }
-  
-  
   private func save(token: String) {
     if let data = token.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
       
