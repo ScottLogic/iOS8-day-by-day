@@ -115,7 +115,7 @@ standard UI share sheet:
 hit share then the debugger will automatically attach to the process associated
 with the extension.
 4. You can use the sharing extension from other apps on the simulator, but you
-won't have debuggin access. It's good to get it to a working state and then test
+won't have debugging access. It's good to get it to a working state and then test
 it within the Photos app.
 
 
