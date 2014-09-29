@@ -35,6 +35,7 @@ class ViewController: UIViewController {
   
   // MARK:- IBActions
   @IBAction func commitSecret(sender: AnyObject) {
+    secretInputTextField.resignFirstResponder()
     // Get the string to save
     let secretToSave = secretInputTextField.text
     // Save it
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
   }
 
   @IBAction func retrieveSecret(sender: AnyObject) {
+    secretInputTextField.resignFirstResponder()
     let secret = secureStore.secret
     secretRetrievalLabel.text = secret
     secretRetrievalLabel.alpha = 1.0

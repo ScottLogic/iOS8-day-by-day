@@ -47,11 +47,15 @@ class KeyChainStore: SecureStore {
       // Rather than update, just delete and continue
       delete()
       
+      // Create the appropriate access controls
+      let accessControl = SecAccessControlCreateWithFlags(kCFAllocatorDefault, kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly, .UserPresence, nil)
+      
       let keyChainQuery = [
-        kSecClass       : kSecClassGenericPassword,
-        kSecAttrService : serviceIdentifier,
-        kSecAttrAccount : accountName,
-        kSecValueData   : data
+        kSecClass             : kSecClassGenericPassword,
+        kSecAttrService       : serviceIdentifier,
+        kSecAttrAccount       : accountName,
+        kSecValueData         : data,
+        kSecAttrAccessControl : accessControl.takeUnretainedValue()
       ]
       
       SecItemAdd(keyChainQuery, nil)
@@ -60,11 +64,12 @@ class KeyChainStore: SecureStore {
   
   private func load() -> String? {
     let keyChainQuery = [
-      kSecClass       : kSecClassGenericPassword,
-      kSecAttrService : serviceIdentifier,
-      kSecAttrAccount : accountName,
-      kSecReturnData  : true,
-      kSecMatchLimit  : kSecMatchLimitOne
+      kSecClass              : kSecClassGenericPassword,
+      kSecAttrService        : serviceIdentifier,
+      kSecAttrAccount        : accountName,
+      kSecReturnData         : true,
+      kSecMatchLimit         : kSecMatchLimitOne,
+      kSecUseOperationPrompt : "Authenticate to retrieve your secret!"
     ]
     
     var extractedData: Unmanaged<AnyObject>? = nil
