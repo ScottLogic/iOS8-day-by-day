@@ -14,9 +14,111 @@
 // limitations under the License.
 //
 
+import Security
 import Foundation
 
 protocol SecureStore {
   var containsSecret: Bool { get }
   var secret: String? { get set }
 }
+
+
+class KeyChainStore: SecureStore {
+  var serviceIdentifier = "TouchyFeelySecureStore"
+  var accountName = "TouchyFeelyAccount"
+  
+  // MARK:- SecureStore protocol
+  var secret: String? {
+    get {
+      return load()
+    }
+    set {
+      if let newValue = newValue {
+        save(newValue)
+      } else {
+        delete()
+      }
+    }
+  }
+  
+  var containsSecret: Bool {
+    return checkExistence()
+  }
+  
+  
+  // MARK:- Utility methods
+  private func checkExistence() -> Bool {
+    let keyChainQuery = [
+      kSecClass       : kSecClassGenericPassword,
+      kSecAttrService : serviceIdentifier,
+      kSecAttrAccount : accountName,
+      kSecReturnData  : false,
+      kSecMatchLimit  : kSecMatchLimitOne
+    ]
+    
+    let status = SecItemCopyMatching(keyChainQuery, nil)
+    let success = errSecSuccess
+
+    return false
+    
+  }
+  
+  
+  private func save(token: String) {
+    if let data = token.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+      
+      // Rather than update, just delete and continue
+      delete()
+      
+      let keyChainQuery = [
+        kSecClass       : kSecClassGenericPassword,
+        kSecAttrService : serviceIdentifier,
+        kSecAttrAccount : accountName,
+        kSecValueData   : data
+      ]
+      
+      SecItemAdd(keyChainQuery, nil)
+    }
+  }
+  
+  private func load() -> String? {
+    let keyChainQuery = [
+      kSecClass       : kSecClassGenericPassword,
+      kSecAttrService : serviceIdentifier,
+      kSecAttrAccount : accountName,
+      kSecReturnData  : true,
+      kSecMatchLimit  : kSecMatchLimitOne
+    ]
+    
+    var extractedData: Unmanaged<AnyObject>? = nil
+    
+    let status = SecItemCopyMatching(keyChainQuery, &extractedData)
+    
+    let opaque = extractedData?.toOpaque()
+    var contentsOfKeychain: String?
+    
+    if let opaque = opaque {
+      let retrievedData = Unmanaged<NSData>.fromOpaque(opaque).takeUnretainedValue()
+      // Convert the data retrieved from the keychain into a string
+      contentsOfKeychain = NSString(data: retrievedData, encoding: NSUTF8StringEncoding)
+    } else {
+      println("Nothing was retrieved from the keychain. Status code \(status)")
+    }
+    
+    return contentsOfKeychain
+  }
+  
+  private func delete() {
+    // Instantiate a new default keychain query
+    let keyChainQuery = [
+      kSecClass       : kSecClassGenericPassword,
+      kSecAttrService : serviceIdentifier,
+      kSecAttrAccount : accountName
+    ]
+    
+    SecItemDelete(keyChainQuery)
+  }
+
+}
+
+
