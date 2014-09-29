@@ -23,20 +23,40 @@ class ViewController: UIViewController {
   @IBOutlet weak var commitButton: UIButton!
   @IBOutlet weak var retrieveButton: UIButton!
   
+  let secureStore = KeyChainStore()
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    
-    
+    secretRetrievalLabel.alpha = 0.0
   }
 
   
   // MARK:- IBActions
   @IBAction func commitSecret(sender: AnyObject) {
+    // Get the string to save
+    let secretToSave = secretInputTextField.text
+    // Save it
+    secureStore.secret = secretToSave
+    // Clear the input
+    secretInputTextField.text = ""
+    secretRetrievalLabel.text = "<placeholder>"
   }
 
   @IBAction func retrieveSecret(sender: AnyObject) {
+    let secret = secureStore.secret
+    secretRetrievalLabel.text = secret
+    secretRetrievalLabel.alpha = 1.0
+    let fadeOutTime = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * 1.0))
+    dispatch_after(fadeOutTime, dispatch_get_main_queue()) {
+      UIView.animateWithDuration(0.5, animations: {
+          self.secretRetrievalLabel.alpha = 0.0
+        }, completion: {
+          _ in
+          self.secretRetrievalLabel.text = "<placeholder>"
+      })
+    }
   }
   
   
