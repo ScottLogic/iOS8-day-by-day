@@ -193,3 +193,21 @@ attempting to retrieve this keychain item.
 
 ## Conclusion
 
+Touch ID is really cool - having only owned a phone that has it for a week I
+have no idea how I used to cope without it. The introduction of APIs that give
+access to Touch ID for 3rd party app developers is great. The Keychain API is
+particularly easy to use - it was far more fiddly working out how to use the
+Keychain in Swift than it was to add Touch ID support.
+
+The code for today's app, __TouchyFeely__ demos how to use the Keychain in this
+way, and is available on the ShinobiControls github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+
+If you are interested in establishing user presence when you don't require the
+Keychain then you can use the LocalAuthentication APIs. If you want me to write
+about it then give me a shout - I'm
+[@iwantmyrealname](https://twitter.com/iwantmyrealname) on twitter.
+
+
+sam
+
