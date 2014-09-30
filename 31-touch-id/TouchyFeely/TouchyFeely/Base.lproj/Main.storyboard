@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TouchyFeely" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oF2-SR-bHi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tell me a secret..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nqf-xE-2W1">
+                                        <rect key="frame" x="8" y="135" width="584" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRm-GB-YnC">
+                                        <rect key="frame" x="275" y="185" width="49" height="42"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="save">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="commitSecret:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5e3-ae-7EL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.59607843140000005" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="nqf-xE-2W1" secondAttribute="trailing" id="3Zt-51-P4h"/>
+                                    <constraint firstAttribute="centerY" secondItem="nqf-xE-2W1" secondAttribute="centerY" id="I1X-Uh-tc3"/>
+                                    <constraint firstAttribute="centerX" secondItem="fRm-GB-YnC" secondAttribute="centerX" id="ogc-Df-9I1"/>
+                                    <constraint firstItem="nqf-xE-2W1" firstAttribute="leading" secondItem="oF2-SR-bHi" secondAttribute="leadingMargin" id="paK-oL-XW3"/>
+                                    <constraint firstItem="fRm-GB-YnC" firstAttribute="top" secondItem="nqf-xE-2W1" secondAttribute="bottom" constant="20" id="wmq-WB-gN9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8WF-s9-shK">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bB-Zl-TmK">
+                                        <rect key="frame" x="262.5" y="48" width="75" height="42"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="retrieve">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retrieveSecret:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDU-no-YUK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your secret was..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vow-bC-xRr">
+                                        <rect key="frame" x="8" y="120" width="584" height="59"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="50"/>
+                                        <color key="textColor" red="0.1507152641" green="0.35794979980000002" blue="0.53186782529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.86666666670000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="vow-bC-xRr" secondAttribute="trailing" id="8js-Z9-Ek8"/>
+                                    <constraint firstAttribute="centerY" secondItem="vow-bC-xRr" secondAttribute="centerY" id="FX5-14-IQT"/>
+                                    <constraint firstAttribute="centerX" secondItem="1bB-Zl-TmK" secondAttribute="centerX" id="Yrt-3T-wTo"/>
+                                    <constraint firstItem="vow-bC-xRr" firstAttribute="leading" secondItem="8WF-s9-shK" secondAttribute="leadingMargin" id="igb-ZV-Sf9"/>
+                                    <constraint firstItem="vow-bC-xRr" firstAttribute="top" secondItem="1bB-Zl-TmK" secondAttribute="bottom" constant="30" id="m8Y-C7-4QE"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TouchyFeely" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1X-Gd-swn">
+                                <rect key="frame" x="198" y="40" width="204" height="47.5"/>
+                                <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8WF-s9-shK" secondAttribute="trailing" id="3OW-gg-x2o"/>
+                            <constraint firstItem="oF2-SR-bHi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5FY-og-nCO"/>
+                            <constraint firstItem="oF2-SR-bHi" firstAttribute="height" secondItem="8WF-s9-shK" secondAttribute="height" id="NiN-R3-zkU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8WF-s9-shK" secondAttribute="bottom" id="P6z-Ey-qkh"/>
+                            <constraint firstItem="8WF-s9-shK" firstAttribute="top" secondItem="oF2-SR-bHi" secondAttribute="bottom" id="RRw-5a-lkj"/>
+                            <constraint firstItem="oF2-SR-bHi" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VeA-sK-qSl"/>
+                            <constraint firstAttribute="trailing" secondItem="oF2-SR-bHi" secondAttribute="trailing" id="byS-Uz-8xR"/>
+                            <constraint firstItem="b1X-Gd-swn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="mLk-HY-WBf"/>
+                            <constraint firstAttribute="centerX" secondItem="b1X-Gd-swn" secondAttribute="centerX" id="puP-nq-amI"/>
+                            <constraint firstItem="8WF-s9-shK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vTV-dR-Uon"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commitButton" destination="fRm-GB-YnC" id="a6q-Z2-VdG"/>
+                        <outlet property="retrieveButton" destination="1bB-Zl-TmK" id="cKn-oM-Mmb"/>
+                        <outlet property="secretInputTextField" destination="nqf-xE-2W1" id="17g-IF-fuH"/>
+                        <outlet property="secretRetrievalLabel" destination="vow-bC-xRr" id="NVl-WG-hZ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
