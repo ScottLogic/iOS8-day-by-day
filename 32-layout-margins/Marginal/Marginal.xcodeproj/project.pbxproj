@@ -13,6 +13,7 @@
 		2294859919DC8F8400122619 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2294859819DC8F8400122619 /* Images.xcassets */; };
 		2294859C19DC8F8400122619 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2294859A19DC8F8400122619 /* LaunchScreen.xib */; };
 		229485A819DC8F8400122619 /* MarginalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229485A719DC8F8400122619 /* MarginalTests.swift */; };
+		22A2529E19DCA25A00279137 /* MarginConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A2529D19DCA25A00279137 /* MarginConfigView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		229485A119DC8F8400122619 /* MarginalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarginalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		229485A619DC8F8400122619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		229485A719DC8F8400122619 /* MarginalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginalTests.swift; sourceTree = "<group>"; };
+		22A2529D19DCA25A00279137 /* MarginConfigView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarginConfigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				2294859819DC8F8400122619 /* Images.xcassets */,
 				2294859A19DC8F8400122619 /* LaunchScreen.xib */,
 				2294858F19DC8F8400122619 /* Supporting Files */,
+				22A2529D19DCA25A00279137 /* MarginConfigView.swift */,
 			);
 			path = Marginal;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				2294859419DC8F8400122619 /* ViewController.swift in Sources */,
 				2294859219DC8F8400122619 /* AppDelegate.swift in Sources */,
+				22A2529E19DCA25A00279137 /* MarginConfigView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +411,7 @@
 				229485AD19DC8F8400122619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		229485AE19DC8F8400122619 /* Build configuration list for PBXNativeTarget "MarginalTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				229485B019DC8F8400122619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

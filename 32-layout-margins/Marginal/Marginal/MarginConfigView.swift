@@ -16,13 +16,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+@IBDesignable
+class MarginConfigView: UIView {
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-
+  @IBInspectable
+  var margin: CGFloat = 16 {
+    didSet {
+      self.layoutMargins = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+    }
   }
-
+  
 }
-
