@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,9 +21,38 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20n-n5-XQC" customClass="MarginConfigView" customModule="Marginal" customModuleProvider="target">
                                 <rect key="frame" x="16" y="0.0" width="568" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grg-Ng-khB">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grg-Ng-khB" customClass="MarginConfigView" customModule="Marginal" customModuleProvider="target">
                                         <rect key="frame" x="30" y="30" width="508" height="540"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDE-4b-CLF" customClass="MarginConfigView" customModule="Marginal" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="135" width="508" height="270"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oI3-Dk-6u5" customClass="MarginConfigView" customModule="Marginal" customModuleProvider="target">
+                                                        <rect key="frame" x="40" y="8" width="428" height="254"/>
+                                                        <color key="backgroundColor" red="0.95294117649999999" green="0.86666666670000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="oI3-Dk-6u5" secondAttribute="bottom" id="1Nd-mU-Q2h"/>
+                                                    <constraint firstItem="oI3-Dk-6u5" firstAttribute="top" secondItem="lDE-4b-CLF" secondAttribute="topMargin" id="QrP-Jp-kEW"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="oI3-Dk-6u5" secondAttribute="trailing" id="SBa-d6-eeQ"/>
+                                                    <constraint firstItem="oI3-Dk-6u5" firstAttribute="leading" secondItem="lDE-4b-CLF" secondAttribute="leadingMargin" id="ae4-ZE-awg"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="lDE-4b-CLF" firstAttribute="leading" secondItem="grg-Ng-khB" secondAttribute="leading" id="Aq9-YW-ANX"/>
+                                            <constraint firstItem="lDE-4b-CLF" firstAttribute="height" secondItem="grg-Ng-khB" secondAttribute="height" multiplier="0.5" id="UuD-lk-dc1"/>
+                                            <constraint firstAttribute="trailing" secondItem="lDE-4b-CLF" secondAttribute="trailing" id="XIa-6I-2tm"/>
+                                            <constraint firstAttribute="centerY" secondItem="lDE-4b-CLF" secondAttribute="centerY" id="pSL-Jm-NlT"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="margin">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.59607843140000005" green="0.80784313730000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

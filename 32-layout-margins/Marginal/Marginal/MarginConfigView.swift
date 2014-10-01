@@ -26,4 +26,14 @@ class MarginConfigView: UIView {
     }
   }
   
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    preservesSuperviewLayoutMargins = true
+  }
+  
+  required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    preservesSuperviewLayoutMargins = true
+  }
+  
 }
