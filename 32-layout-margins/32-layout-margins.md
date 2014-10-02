@@ -118,5 +118,37 @@ changed - allowing you to update your layout appropriately.
 
 ## Preserving Superview Layout Margins
 
+There is one remaining property on `UIView` that's related to layout margins - 
+`preservesSuperviewLayoutMargins`. This is a `Bool` with a default value of 
+`false`. It describes the very specific situation where the layout of a subview
+is relative to the a layout margin, but this layout margin is _outside_ the
+margin of the superview. This is quite complicated to explain, since it involves
+a hierarchy of three `UIView`s. The following diagram represents this scenario:
+
+![Don't Preserve Superview Margin](assets/dont_preserve_superview_margin.png)
+
+Here, the yellow view is positioned relative to the margin of its (white)
+superview. However, the white view is positioned _outside_ the margin of its
+(light green) superview. This has the result that the yellow view is positioned
+relative to a margin, but is ignoring the margin of the green view.
+
+By setting `preservesSuperviewLayoutMargins` to `true` this behavior changes.
+The following code is part of the white view:
+
+    override init(frame: CGRect) {
+      super.init(frame: frame)
+      preservesSuperviewLayoutMargins = true
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+      preservesSuperviewLayoutMargins = true
+    }
+
+Now, the positioning of the yellow view will respect the layout margins of the
+light green view:
+
+![Preserves Superview Layout Margins](assets/preserve_superview_margins.png)
+
 ## Conclusion
 
