@@ -152,3 +152,22 @@ light green view:
 
 ## Conclusion
 
+Today's article took a look at something that is pretty common in most other
+layout systems, but has been noticeably lacking in iOS. It's actually far more
+powerful and understandable than layout guides - probably due to there being far
+less mystery shrouding how it operates. It does appear to lack much
+documentation from Apple though, and so can be quite confusing at first.
+
+The __Marginal__ app which demos these concepts is available on the
+ShinobiControls github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+It'd be mega if you award it a star - as I'm writing this the repo is very close
+to 1000 stars.
+
+Any comments then gimme a shout on twitter - I'm
+[@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+
+sam
+
+
