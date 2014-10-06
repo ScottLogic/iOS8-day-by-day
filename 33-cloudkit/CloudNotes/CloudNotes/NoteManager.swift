@@ -16,12 +16,14 @@
 
 import Foundation
 import CoreLocation
+import CloudKit
 
 protocol Note {
   var title: String { get }
   var content: String { get }
   var location: CLLocation { get }
   var createdAt: NSDate { get }
+  var lastModifiedAt: NSDate { get }
 }
 
 protocol NoteManager {
@@ -29,3 +31,94 @@ protocol NoteManager {
   func getSummaryOfNotes(callback: (notes: [Note]) -> ())
   func getNote(noteID: String, callback: (Note) -> ())
 }
+
+
+class CloudKitNote: Note {
+  let record: CKRecord
+  
+  init(record: CKRecord) {
+    self.record = record
+  }
+  
+  init(note: Note) {
+    record = CKRecord(recordType: "Note")
+    title = note.title
+    content = note.content
+    location = note.location
+  }
+  
+  var title: String {
+    get {
+      return record.objectForKey("title") as String
+    }
+    set {
+      record.setObject(newValue, forKey: "title")
+    }
+  }
+  
+  var content: String {
+    get {
+      return record.objectForKey("content") as String
+    }
+    set {
+      record.setObject(newValue, forKey: "content")
+    }
+  }
+  
+  var location: CLLocation {
+    get {
+      return record.objectForKey("location") as CLLocation
+    }
+    set {
+      record.setObject(newValue, forKey: "location")
+    }
+  }
+  
+  var createdAt: NSDate {
+    return record.creationDate
+  }
+  
+  var lastModifiedAt: NSDate {
+    return record.modificationDate
+  }
+}
+
+
+class CloudKitNoteManager: NoteManager {
+  let database: CKDatabase
+  
+  init(database: CKDatabase) {
+    self.database = database
+  }
+  
+  func createNote(note: Note) {
+    let ckNote = CloudKitNote(note: note)
+    database.saveRecord(ckNote.record) { (record, error) in
+      if error != nil {
+        println("There was an error: \(error)")
+      } else {
+        println("Record saved successfully")
+      }
+    }
+  }
+  
+  func getSummaryOfNotes(callback: (notes: [Note]) -> ()) {
+    //
+  }
+  
+  func getNote(noteID: String, callback: (Note) -> ()) {
+    let recordID = CKRecordID(recordName: noteID)
+    database.fetchRecordWithID(recordID) {
+      (record, error) in
+      if error != nil {
+        println("There was an error: \(error)")
+      } else {
+        let note = CloudKitNote(record: record)
+        callback(note)
+      }
+    }
+  }
+}
+
+
+
