@@ -15,6 +15,7 @@
 		2215A21919E2B4F80048F2FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215A21719E2B4F80048F2FD /* LaunchScreen.xib */; };
 		2215A22519E2B4F80048F2FD /* CloudNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A22419E2B4F80048F2FD /* CloudNotesTests.swift */; };
 		2215A23019E2DF940048F2FD /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A22F19E2DF940048F2FD /* NoteManager.swift */; };
+		2240F8CA19E3232E00E979C0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F8C919E3232E00E979C0 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		2215A22319E2B4F80048F2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2215A22419E2B4F80048F2FD /* CloudNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudNotesTests.swift; sourceTree = "<group>"; };
 		2215A22F19E2DF940048F2FD /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		2240F8C919E3232E00E979C0 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				2215A22F19E2DF940048F2FD /* NoteManager.swift */,
+				2240F8C919E3232E00E979C0 /* Note.swift */,
 			);
 			name = "Data Layer";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2215A21119E2B4F80048F2FD /* DetailViewController.swift in Sources */,
+				2240F8CA19E3232E00E979C0 /* Note.swift in Sources */,
 				2215A23019E2DF940048F2FD /* NoteManager.swift in Sources */,
 				2215A20F19E2B4F80048F2FD /* MasterViewController.swift in Sources */,
 				2215A20D19E2B4F80048F2FD /* AppDelegate.swift in Sources */,
@@ -423,6 +427,7 @@
 				2215A22A19E2B4F80048F2FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2215A22B19E2B4F80048F2FD /* Build configuration list for PBXNativeTarget "CloudNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +436,7 @@
 				2215A22D19E2B4F80048F2FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
