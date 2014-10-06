@@ -14,6 +14,7 @@
 		2215A21619E2B4F80048F2FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2215A21519E2B4F80048F2FD /* Images.xcassets */; };
 		2215A21919E2B4F80048F2FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215A21719E2B4F80048F2FD /* LaunchScreen.xib */; };
 		2215A22519E2B4F80048F2FD /* CloudNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A22419E2B4F80048F2FD /* CloudNotesTests.swift */; };
+		2215A23019E2DF940048F2FD /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A22F19E2DF940048F2FD /* NoteManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		2215A21E19E2B4F80048F2FD /* CloudNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2215A22319E2B4F80048F2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2215A22419E2B4F80048F2FD /* CloudNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudNotesTests.swift; sourceTree = "<group>"; };
+		2215A22F19E2DF940048F2FD /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		2215A20919E2B4F80048F2FD /* CloudNotes */ = {
 			isa = PBXGroup;
 			children = (
+				2215A22E19E2B6F90048F2FD /* Data Layer */,
 				2215A20C19E2B4F80048F2FD /* AppDelegate.swift */,
 				2215A20E19E2B4F80048F2FD /* MasterViewController.swift */,
 				2215A21019E2B4F80048F2FD /* DetailViewController.swift */,
@@ -113,6 +116,14 @@
 				2215A22319E2B4F80048F2FD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2215A22E19E2B6F90048F2FD /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				2215A22F19E2DF940048F2FD /* NoteManager.swift */,
+			);
+			name = "Data Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2215A21119E2B4F80048F2FD /* DetailViewController.swift in Sources */,
+				2215A23019E2DF940048F2FD /* NoteManager.swift in Sources */,
 				2215A20F19E2B4F80048F2FD /* MasterViewController.swift in Sources */,
 				2215A20D19E2B4F80048F2FD /* AppDelegate.swift in Sources */,
 			);
