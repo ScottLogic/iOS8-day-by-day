@@ -19,7 +19,6 @@ import CloudKit
 
 class MasterViewController: UITableViewController, NoteEditingDelegate {
   
-  var detailViewController: DetailViewController? = nil
   let noteManager = CloudKitNoteManager(database: CKContainer.defaultContainer().privateCloudDatabase)
   var noteCollection: [Note] = [Note]() {
     didSet {
@@ -35,15 +34,9 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
     }
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem()
-    
-    if let split = self.splitViewController {
-      let controllers = split.viewControllers
-      self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
-    }
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    checkForICloud()
   }
   
   // MARK: - Segues
@@ -91,6 +84,19 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
     dismissViewControllerAnimated(true, completion: nil)
     let newCollection = noteCollection + [note]
     noteCollection = newCollection
+  }
+  
+  // MARK: - Utility methods
+  func checkForICloud() {
+    let iCloudToken = NSFileManager.defaultManager().ubiquityIdentityToken
+    if iCloudToken == nil {
+      let alertView = UIAlertController(title: "iCloud", message: "You should sign in to an iCloud account to enable full use of this app", preferredStyle: .Alert)
+      alertView.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
+        _ in
+        self.dismissViewControllerAnimated(true, completion: nil)
+      }))
+      presentViewController(alertView, animated: true, completion: nil)
+    }
   }
   
 }
