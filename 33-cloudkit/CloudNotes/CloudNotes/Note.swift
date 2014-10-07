@@ -19,9 +19,10 @@ import CloudKit
 
 
 protocol Note {
+  var id: String { get }
   var title: String { get }
-  var content: String { get }
-  var location: CLLocation { get }
+  var content: String? { get }
+  var location: CLLocation? { get }
   var createdAt: NSDate { get }
   var lastModifiedAt: NSDate { get }
 }
@@ -41,6 +42,10 @@ class CloudKitNote: Note {
     location = note.location
   }
   
+  var id: String {
+    return record.recordID.recordName
+  }
+  
   var title: String {
     get {
       return record.objectForKey("title") as String
@@ -50,18 +55,18 @@ class CloudKitNote: Note {
     }
   }
   
-  var content: String {
+  var content: String? {
     get {
-      return record.objectForKey("content") as String
+      return record.objectForKey("content") as? String
     }
     set {
       record.setObject(newValue, forKey: "content")
     }
   }
   
-  var location: CLLocation {
+  var location: CLLocation? {
     get {
-      return record.objectForKey("location") as CLLocation
+      return record.objectForKey("location") as? CLLocation
     }
     set {
       record.setObject(newValue, forKey: "location")
