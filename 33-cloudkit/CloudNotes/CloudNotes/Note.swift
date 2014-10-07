@@ -19,12 +19,23 @@ import CloudKit
 
 
 protocol Note {
-  var id: String { get }
-  var title: String { get }
-  var content: String? { get }
-  var location: CLLocation? { get }
+  var id: String? { get }
+  var title: String { get set }
+  var content: String? { get set }
+  var location: CLLocation? { get set }
   var createdAt: NSDate { get }
   var lastModifiedAt: NSDate { get }
+}
+
+class PrototypeNote: Note {
+  var id: String?
+  var title: String = ""
+  var content: String?
+  var location: CLLocation?
+  var createdAt: NSDate = NSDate.date()
+  var lastModifiedAt: NSDate = NSDate.date()
+  
+  init() { }
 }
 
 
@@ -42,7 +53,7 @@ class CloudKitNote: Note {
     location = note.location
   }
   
-  var id: String {
+  var id: String? {
     return record.recordID.recordName
   }
   

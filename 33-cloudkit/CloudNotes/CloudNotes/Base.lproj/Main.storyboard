@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7Y-yA-xK3">
-                                <rect key="frame" x="0.0" y="64" width="600" height="47.5"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="48"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVV-n3-0UR">
-                                <rect key="frame" x="16" y="127" width="568" height="172.5"/>
+                                <rect key="frame" x="16" y="128" width="568" height="172"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,7 +71,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ndT-FS-kZ6">
+                            <connections>
+                                <segue destination="2AC-t7-YKS" kind="show" identifier="editNote" id="3Rs-bQ-TKd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentLabel" destination="FVV-n3-0UR" id="wPA-Vw-Y0a"/>
                         <outlet property="mapView" destination="kGo-Rr-dmy" id="GDg-sR-PMM"/>
@@ -81,6 +87,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NS1-Oq-Ugz">
+            <objects>
+                <navigationController id="W5U-q5-kd2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S6P-4n-CDv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2AC-t7-YKS" kind="relationship" relationship="rootViewController" id="rxX-oB-YEX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ns3-IS-Cky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1549" y="-933"/>
+        </scene>
+        <!--Note Edit View Controller-->
+        <scene sceneID="GHd-Vw-bIA">
+            <objects>
+                <viewController id="2AC-t7-YKS" customClass="NoteEditViewController" customModule="CloudNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w76-ac-yOB"/>
+                        <viewControllerLayoutGuide type="bottom" id="IvA-II-qb3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xfU-uh-9xI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="New Note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyV-nt-eXh">
+                                <rect key="frame" x="16" y="72" width="568" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9U-GY-IgR">
+                                <rect key="frame" x="16" y="136" width="32" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5p-sK-Tct">
+                                <rect key="frame" x="16" y="160" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46b-Y5-ay4">
+                                <rect key="frame" x="16" y="212" width="61" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhy-sR-dqc">
+                                <rect key="frame" x="16" y="236" width="568" height="364"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k9U-GY-IgR" firstAttribute="leading" secondItem="xfU-uh-9xI" secondAttribute="leadingMargin" id="0UT-bO-g7L"/>
+                            <constraint firstItem="k9U-GY-IgR" firstAttribute="top" secondItem="iyV-nt-eXh" secondAttribute="bottom" constant="16" id="0ZG-zu-qXt"/>
+                            <constraint firstItem="iyV-nt-eXh" firstAttribute="leading" secondItem="xfU-uh-9xI" secondAttribute="leadingMargin" id="4g0-zz-uEq"/>
+                            <constraint firstItem="I5p-sK-Tct" firstAttribute="top" secondItem="k9U-GY-IgR" secondAttribute="bottom" constant="4" id="E71-o1-cXY"/>
+                            <constraint firstItem="hhy-sR-dqc" firstAttribute="top" secondItem="46b-Y5-ay4" secondAttribute="bottom" constant="4" id="PRP-yO-PRY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iyV-nt-eXh" secondAttribute="trailing" id="R2y-Hz-0cs"/>
+                            <constraint firstItem="I5p-sK-Tct" firstAttribute="leading" secondItem="xfU-uh-9xI" secondAttribute="leadingMargin" id="WqM-PJ-VCn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I5p-sK-Tct" secondAttribute="trailing" id="aBg-0p-2Ol"/>
+                            <constraint firstItem="IvA-II-qb3" firstAttribute="top" secondItem="hhy-sR-dqc" secondAttribute="bottom" id="e0D-6e-dx9"/>
+                            <constraint firstItem="46b-Y5-ay4" firstAttribute="leading" secondItem="xfU-uh-9xI" secondAttribute="leadingMargin" id="fep-hR-jKq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hhy-sR-dqc" secondAttribute="trailing" id="gTL-4Y-tXP"/>
+                            <constraint firstItem="46b-Y5-ay4" firstAttribute="top" secondItem="I5p-sK-Tct" secondAttribute="bottom" constant="22" id="hMg-nn-pxd"/>
+                            <constraint firstItem="iyV-nt-eXh" firstAttribute="top" secondItem="w76-ac-yOB" secondAttribute="bottom" constant="8" id="urq-Dm-9c9"/>
+                            <constraint firstItem="hhy-sR-dqc" firstAttribute="leading" secondItem="xfU-uh-9xI" secondAttribute="leadingMargin" id="w1C-2c-ZJO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aME-H7-LJJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="JTe-vx-iUX">
+                            <connections>
+                                <action selector="handleDoneButtonPressed:" destination="2AC-t7-YKS" id="WAV-23-k2i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentTextView" destination="hhy-sR-dqc" id="ZOV-Qv-5LD"/>
+                        <outlet property="titleTextField" destination="I5p-sK-Tct" id="bfP-pT-wFp"/>
+                        <outlet property="vcTitleLabel" destination="iyV-nt-eXh" id="Dwl-O6-HJd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKK-ER-p61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1625" y="-116"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -128,9 +228,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -139,7 +236,13 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="y9k-bl-eZe">
+                            <connections>
+                                <segue destination="W5U-q5-kd2" kind="showDetail" identifier="addNote" id="NaH-WJ-w1S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,6 +265,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="3Rs-bQ-TKd"/>
     </inferredMetricsTieBreakers>
 </document>

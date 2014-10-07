@@ -17,21 +17,34 @@
 import UIKit
 import MapKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, NoteEditingDelegate {
 
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var contentLabel: UILabel!
   @IBOutlet weak var mapView: MKMapView!
   
+  var noteManager: NoteManager?
   
-  var note: Note? {
+  var noteID: String? {
+    didSet {
+      // Request the full note content
+      if let noteID = noteID {
+        noteManager?.getNote(noteID) {
+          note in
+          self.note = note
+        }
+      }
+    }
+  }
+  
+  private var note: Note? {
     didSet {
         // Update the view.
         self.configureView()
     }
   }
 
-  func configureView() {
+  private func configureView() {
     // Update the user interface for the detail item.
     if let note = note {
       titleLabel.text = note.title
@@ -45,5 +58,19 @@ class DetailViewController: UIViewController {
     self.configureView()
   }
 
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "editNote" {
+      let editVC = segue.destinationViewController as NoteEditViewController
+      editVC.noteEditingDelegate = self
+      editVC.note = note
+    }
+  }
+  
+  // MARK:- NoteEditingDelegate
+  func completedEditingNote(note: Note) {
+    self.note = note
+    noteManager?.updateNote(note)
+    dismissViewControllerAnimated(true, completion: nil)
+  }
 }
 

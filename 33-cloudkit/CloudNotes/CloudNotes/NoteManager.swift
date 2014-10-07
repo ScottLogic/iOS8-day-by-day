@@ -23,6 +23,7 @@ protocol NoteManager {
   func createNote(note: Note)
   func getSummaryOfNotes(callback: (notes: [Note]) -> ())
   func getNote(noteID: String, callback: (Note) -> ())
+  func updateNote(note: Note)
 }
 
 
@@ -45,7 +46,11 @@ class CloudKitNoteManager: NoteManager {
   }
   
   func getSummaryOfNotes(callback: (notes: [Note]) -> ()) {
-    //
+    // Get a list of all notes. Only some keys populated tho
+  }
+  
+  func updateNote(note: Note) {
+    // Some here to save it
   }
   
   func getNote(noteID: String, callback: (Note) -> ()) {
