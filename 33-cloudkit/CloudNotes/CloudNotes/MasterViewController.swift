@@ -39,6 +39,12 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
     checkForICloud()
   }
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Grab the existing notes
+    noteManager.getSummaryOfNotes { self.noteCollection = $0 }
+  }
+  
   // MARK: - Segues
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -81,7 +87,9 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
   // MARK: - NoteEditingDelegate
   func completedEditingNote(note: Note) {
     noteManager.createNote(note)
-    dismissViewControllerAnimated(true, completion: nil)
+    dismissViewControllerAnimated(true, completion: {
+      println(self.navigationController?.viewControllers)
+      })
     let newCollection = noteCollection + [note]
     noteCollection = newCollection
   }

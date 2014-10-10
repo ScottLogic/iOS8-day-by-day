@@ -47,10 +47,39 @@ class CloudKitNoteManager: NoteManager {
   
   func getSummaryOfNotes(callback: (notes: [Note]) -> ()) {
     // Get a list of all notes. Only some keys populated tho
+    let query = CKQuery(recordType: "Note", predicate: NSPredicate(value: true))
+    let queryOperation = CKQueryOperation(query: query)
+    queryOperation.desiredKeys = ["title"]
+    var records = [Note]()
+    queryOperation.recordFetchedBlock = { record in records.append(CloudKitNote(record: record)) }
+    queryOperation.queryCompletionBlock = { _ in callback(notes: records) }
+    
+    database.addOperation(queryOperation)
+    
   }
   
   func updateNote(note: Note) {
+    // This the more specific version is preferred
+    let cloudKitNote = CloudKitNote(note: note)
+    updateNote(cloudKitNote)
+  }
+  
+  func updateNote(note: CloudKitNote) {
     // Some here to save it
+    let updateOperation = CKModifyRecordsOperation(recordsToSave: [note], recordIDsToDelete: nil)
+    updateOperation.perRecordCompletionBlock = { record, error in
+      if error != nil {
+        // Really important to handle this here
+        println("Unable to modify record: \(record). Error: \(error)")
+      }
+    }
+    updateOperation.modifyRecordsCompletionBlock = { saved, _, error in
+      if error != nil {
+        if error.code == CKErrorCode.PartialFailure.toRaw() {
+          println("There was a problem completing the operation. The following records had problems: \(error.userInfo?[CKPartialErrorsByItemIDKey])")
+        }
+      }
+    }
   }
   
   func getNote(noteID: String, callback: (Note) -> ()) {
