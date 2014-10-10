@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -38,12 +38,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" value="YES">
-                                        <string key="keyPath">preservesSuperviewLayoutMargins
-</string>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVV-n3-0UR">
                                 <rect key="frame" x="16" y="128" width="568" height="172"/>
@@ -88,22 +82,6 @@
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="NS1-Oq-Ugz">
-            <objects>
-                <navigationController id="W5U-q5-kd2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S6P-4n-CDv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="2AC-t7-YKS" kind="relationship" relationship="rootViewController" id="rxX-oB-YEX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ns3-IS-Cky" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1549" y="-933"/>
-        </scene>
         <!--Note Edit View Controller-->
         <scene sceneID="GHd-Vw-bIA">
             <objects>
@@ -117,40 +95,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="New Note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyV-nt-eXh">
-                                <rect key="frame" x="16" y="72" width="568" height="48"/>
+                                <rect key="frame" x="16" y="28" width="568" height="48"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9U-GY-IgR">
-                                <rect key="frame" x="16" y="136" width="32" height="20"/>
+                                <rect key="frame" x="16" y="92" width="32" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5p-sK-Tct">
-                                <rect key="frame" x="16" y="160" width="568" height="30"/>
+                                <rect key="frame" x="16" y="116" width="568" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46b-Y5-ay4">
-                                <rect key="frame" x="16" y="212" width="61" height="20"/>
+                                <rect key="frame" x="16" y="168" width="61" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhy-sR-dqc">
-                                <rect key="frame" x="16" y="236" width="568" height="364"/>
+                                <rect key="frame" x="16" y="192" width="568" height="408"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEh-rd-7ZT">
+                                <rect key="frame" x="547" y="28" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleDoneButtonPressed:" destination="2AC-t7-YKS" eventType="touchUpInside" id="x3R-a0-400"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="k9U-GY-IgR" firstAttribute="leading" secondItem="xfU-uh-9xI" secondAttribute="leadingMargin" id="0UT-bO-g7L"/>
                             <constraint firstItem="k9U-GY-IgR" firstAttribute="top" secondItem="iyV-nt-eXh" secondAttribute="bottom" constant="16" id="0ZG-zu-qXt"/>
+                            <constraint firstItem="vEh-rd-7ZT" firstAttribute="top" secondItem="w76-ac-yOB" secondAttribute="bottom" constant="8" id="18G-B7-IgR"/>
                             <constraint firstItem="iyV-nt-eXh" firstAttribute="leading" secondItem="xfU-uh-9xI" secondAttribute="leadingMargin" id="4g0-zz-uEq"/>
                             <constraint firstItem="I5p-sK-Tct" firstAttribute="top" secondItem="k9U-GY-IgR" secondAttribute="bottom" constant="4" id="E71-o1-cXY"/>
                             <constraint firstItem="hhy-sR-dqc" firstAttribute="top" secondItem="46b-Y5-ay4" secondAttribute="bottom" constant="4" id="PRP-yO-PRY"/>
@@ -163,15 +151,9 @@
                             <constraint firstItem="46b-Y5-ay4" firstAttribute="top" secondItem="I5p-sK-Tct" secondAttribute="bottom" constant="22" id="hMg-nn-pxd"/>
                             <constraint firstItem="iyV-nt-eXh" firstAttribute="top" secondItem="w76-ac-yOB" secondAttribute="bottom" constant="8" id="urq-Dm-9c9"/>
                             <constraint firstItem="hhy-sR-dqc" firstAttribute="leading" secondItem="xfU-uh-9xI" secondAttribute="leadingMargin" id="w1C-2c-ZJO"/>
+                            <constraint firstItem="vEh-rd-7ZT" firstAttribute="trailing" secondItem="xfU-uh-9xI" secondAttribute="trailingMargin" id="x1o-Wd-7C4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aME-H7-LJJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="JTe-vx-iUX">
-                            <connections>
-                                <action selector="handleDoneButtonPressed:" destination="2AC-t7-YKS" id="WAV-23-k2i"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="contentTextView" destination="hhy-sR-dqc" id="ZOV-Qv-5LD"/>
                         <outlet property="titleTextField" destination="I5p-sK-Tct" id="bfP-pT-wFp"/>
@@ -180,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKK-ER-p61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1625" y="-116"/>
+            <point key="canvasLocation" x="1621" y="-180"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -228,6 +210,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="xOA-He-biF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -239,7 +224,7 @@
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="y9k-bl-eZe">
                             <connections>
-                                <segue destination="W5U-q5-kd2" kind="showDetail" identifier="addNote" id="NaH-WJ-w1S"/>
+                                <segue destination="2AC-t7-YKS" kind="presentation" identifier="addNote" id="pSA-Gn-Cfp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -265,6 +250,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Rs-bQ-TKd"/>
+        <segue reference="xOA-He-biF"/>
+        <segue reference="pSA-Gn-Cfp"/>
     </inferredMetricsTieBreakers>
 </document>

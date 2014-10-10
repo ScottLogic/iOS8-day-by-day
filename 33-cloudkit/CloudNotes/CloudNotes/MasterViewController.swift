@@ -58,11 +58,8 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
         controller.navigationItem.leftItemsSupplementBackButton = true
       }
     } else if segue.identifier == "addNote" {
-      if let navVC = segue.destinationViewController as? UINavigationController {
-        let newNoteVC = navVC.topViewController as NoteEditViewController
-        newNoteVC.noteEditingDelegate = self
-      }
-      
+      let newNoteVC = segue.destinationViewController as NoteEditViewController
+      newNoteVC.noteEditingDelegate = self
     }
   }
   
@@ -88,11 +85,7 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
   // MARK: - NoteEditingDelegate
   func completedEditingNote(note: Note) {
     noteManager.createNote(note)
-    if splitViewController!.collapsed {
-      navigationController?.popToViewController(self, animated: true)
-    } else {
-      // Need to handle the expanded case
-    }
+    dismissViewControllerAnimated(true, completion: nil)
     let newCollection = noteCollection + [note]
     noteCollection = newCollection
   }
