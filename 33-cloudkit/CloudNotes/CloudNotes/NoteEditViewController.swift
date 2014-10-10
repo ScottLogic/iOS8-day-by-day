@@ -54,14 +54,13 @@ class NoteEditViewController: UIViewController {
   }
   
   @IBAction func handleDoneButtonPressed(sender: AnyObject) {
-    if note == nil {
-      note = PrototypeNote()
-    }
+    var newValuesNote: Note = note ?? PrototypeNote()
+
+    newValuesNote.title = titleTextField.text
+    newValuesNote.content = contentTextView.text
     
-    note?.title = titleTextField.text
-    note?.content = contentTextView.text
-    
-    noteEditingDelegate?.completedEditingNote(note!)
+    noteEditingDelegate?.completedEditingNote(newValuesNote)
+    note = newValuesNote
   }
   
 }

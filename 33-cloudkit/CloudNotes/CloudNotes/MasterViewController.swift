@@ -81,15 +81,18 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
     
     let note = noteCollection[indexPath.row]
     cell.textLabel?.text = note.title
+    cell.detailTextLabel?.text = "\(note.createdAt)"
     return cell
   }
   
   // MARK: - NoteEditingDelegate
   func completedEditingNote(note: Note) {
     noteManager.createNote(note)
-    dismissViewControllerAnimated(true, completion: {
-      println(self.navigationController?.viewControllers)
-      })
+    if splitViewController!.collapsed {
+      navigationController?.popToViewController(self, animated: true)
+    } else {
+      // Need to handle the expanded case
+    }
     let newCollection = noteCollection + [note]
     noteCollection = newCollection
   }

@@ -32,8 +32,8 @@ class PrototypeNote: Note {
   var title: String = ""
   var content: String?
   var location: CLLocation?
-  var createdAt: NSDate = NSDate.date()
-  var lastModifiedAt: NSDate = NSDate.date()
+  var createdAt: NSDate = NSDate()
+  var lastModifiedAt: NSDate = NSDate()
   
   init() { }
 }
