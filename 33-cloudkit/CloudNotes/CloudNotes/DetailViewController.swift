@@ -39,8 +39,10 @@ class DetailViewController: UIViewController, NoteEditingDelegate {
   
   private var note: Note? {
     didSet {
+      dispatch_async(dispatch_get_main_queue()) {
         // Update the view.
         self.configureView()
+      }
     }
   }
 
