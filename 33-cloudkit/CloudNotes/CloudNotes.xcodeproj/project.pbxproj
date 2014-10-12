@@ -15,9 +15,9 @@
 		2215A21919E2B4F80048F2FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2215A21719E2B4F80048F2FD /* LaunchScreen.xib */; };
 		2215A22519E2B4F80048F2FD /* CloudNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A22419E2B4F80048F2FD /* CloudNotesTests.swift */; };
 		2215A23019E2DF940048F2FD /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A22F19E2DF940048F2FD /* NoteManager.swift */; };
-		2215A23319E3C6550048F2FD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2215A23219E3C6550048F2FD /* CloudKit.framework */; };
 		2215A23519E422AF0048F2FD /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A23419E422AF0048F2FD /* NoteEditViewController.swift */; };
 		2240F8CA19E3232E00E979C0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F8C919E3232E00E979C0 /* Note.swift */; };
+		2280074019EB11F2009D2C78 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2280073F19EB11F2009D2C78 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +43,10 @@
 		2215A22319E2B4F80048F2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2215A22419E2B4F80048F2FD /* CloudNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudNotesTests.swift; sourceTree = "<group>"; };
 		2215A22F19E2DF940048F2FD /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
-		2215A23119E3C6350048F2FD /* CloudNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CloudNotes.entitlements; sourceTree = "<group>"; };
-		2215A23219E3C6550048F2FD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2215A23419E422AF0048F2FD /* NoteEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		2240F8C919E3232E00E979C0 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		2280073E19EB11EF009D2C78 /* CloudNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CloudNotes.entitlements; sourceTree = "<group>"; };
+		2280073F19EB11F2009D2C78 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2215A23319E3C6550048F2FD /* CloudKit.framework in Frameworks */,
+				2280074019EB11F2009D2C78 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,7 @@
 		2215A1FE19E2B4F80048F2FD = {
 			isa = PBXGroup;
 			children = (
-				2215A23219E3C6550048F2FD /* CloudKit.framework */,
+				2280073F19EB11F2009D2C78 /* CloudKit.framework */,
 				2215A20919E2B4F80048F2FD /* CloudNotes */,
 				2215A22119E2B4F80048F2FD /* CloudNotesTests */,
 				2215A20819E2B4F80048F2FD /* Products */,
@@ -90,7 +90,7 @@
 		2215A20919E2B4F80048F2FD /* CloudNotes */ = {
 			isa = PBXGroup;
 			children = (
-				2215A23119E3C6350048F2FD /* CloudNotes.entitlements */,
+				2280073E19EB11EF009D2C78 /* CloudNotes.entitlements */,
 				2215A22E19E2B6F90048F2FD /* Data Layer */,
 				2215A20C19E2B4F80048F2FD /* AppDelegate.swift */,
 				2215A20E19E2B4F80048F2FD /* MasterViewController.swift */,
