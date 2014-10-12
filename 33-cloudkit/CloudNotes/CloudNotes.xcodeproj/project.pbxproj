@@ -18,6 +18,7 @@
 		2215A23519E422AF0048F2FD /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A23419E422AF0048F2FD /* NoteEditViewController.swift */; };
 		2240F8CA19E3232E00E979C0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F8C919E3232E00E979C0 /* Note.swift */; };
 		2280074019EB11F2009D2C78 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2280073F19EB11F2009D2C78 /* CloudKit.framework */; };
+		2280074219EB24B6009D2C78 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280074119EB24B6009D2C78 /* LoadingOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2240F8C919E3232E00E979C0 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		2280073E19EB11EF009D2C78 /* CloudNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CloudNotes.entitlements; sourceTree = "<group>"; };
 		2280073F19EB11F2009D2C78 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2280074119EB24B6009D2C78 /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				2215A21719E2B4F80048F2FD /* LaunchScreen.xib */,
 				2215A20A19E2B4F80048F2FD /* Supporting Files */,
 				2215A23419E422AF0048F2FD /* NoteEditViewController.swift */,
+				2280074119EB24B6009D2C78 /* LoadingOverlay.swift */,
 			);
 			path = CloudNotes;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				2215A21119E2B4F80048F2FD /* DetailViewController.swift in Sources */,
 				2240F8CA19E3232E00E979C0 /* Note.swift in Sources */,
 				2215A23019E2DF940048F2FD /* NoteManager.swift in Sources */,
+				2280074219EB24B6009D2C78 /* LoadingOverlay.swift in Sources */,
 				2215A20F19E2B4F80048F2FD /* MasterViewController.swift in Sources */,
 				2215A20D19E2B4F80048F2FD /* AppDelegate.swift in Sources */,
 			);

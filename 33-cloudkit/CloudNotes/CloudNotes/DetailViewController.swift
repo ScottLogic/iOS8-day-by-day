@@ -69,7 +69,7 @@ class DetailViewController: UIViewController, NoteEditingDelegate {
   // MARK:- NoteEditingDelegate
   func completedEditingNote(note: Note) {
     self.note = note
-    noteManager?.updateNote(note)
+    noteManager?.updateNote(note, callback: nil)
     dismissViewControllerAnimated(true, completion: nil)
   }
 }

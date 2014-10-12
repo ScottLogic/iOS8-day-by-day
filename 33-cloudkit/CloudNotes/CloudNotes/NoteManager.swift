@@ -20,10 +20,10 @@ import CloudKit
 
 
 protocol NoteManager {
-  func createNote(note: Note)
+  func createNote(note: Note, callback: ((success: Bool, note: Note?) -> ())?)
   func getSummaryOfNotes(callback: (notes: [Note]) -> ())
   func getNote(noteID: String, callback: (Note) -> ())
-  func updateNote(note: Note)
+  func updateNote(note: Note, callback: ((success: Bool) -> ())?)
 }
 
 
@@ -34,13 +34,15 @@ class CloudKitNoteManager: NoteManager {
     self.database = database
   }
   
-  func createNote(note: Note) {
+  func createNote(note: Note, callback:((success: Bool, note: Note?) -> ())?) {
     let ckNote = CloudKitNote(note: note)
     database.saveRecord(ckNote.record) { (record, error) in
       if error != nil {
         println("There was an error: \(error)")
+        callback?(success: false, note: nil)
       } else {
         println("Record saved successfully")
+        callback?(success: true, note: ckNote)
       }
     }
   }
@@ -58,13 +60,13 @@ class CloudKitNoteManager: NoteManager {
     
   }
   
-  func updateNote(note: Note) {
+  func updateNote(note: Note, callback:((success: Bool) -> ())?) {
     // This the more specific version is preferred
     let cloudKitNote = CloudKitNote(note: note)
-    updateNote(cloudKitNote)
+    updateNote(cloudKitNote, callback: callback)
   }
   
-  func updateNote(note: CloudKitNote) {
+  func updateNote(note: CloudKitNote, callback:((success: Bool) -> ())?) {
     // Some here to save it
     let updateOperation = CKModifyRecordsOperation(recordsToSave: [note], recordIDsToDelete: nil)
     updateOperation.perRecordCompletionBlock = { record, error in
@@ -78,6 +80,9 @@ class CloudKitNoteManager: NoteManager {
         if error.code == CKErrorCode.PartialFailure.toRaw() {
           println("There was a problem completing the operation. The following records had problems: \(error.userInfo?[CKPartialErrorsByItemIDKey])")
         }
+        callback?(success: false)
+      } else {
+        callback?(success: true)
       }
     }
   }

@@ -19,10 +19,14 @@ import CloudKit
 
 class MasterViewController: UITableViewController, NoteEditingDelegate {
   
+  var loadingOverlay: LoadingOverlay!
+  
   let noteManager = CloudKitNoteManager(database: CKContainer.defaultContainer().privateCloudDatabase)
   var noteCollection: [Note] = [Note]() {
     didSet {
-      tableView.reloadData()
+      dispatch_async(dispatch_get_main_queue()) {
+        self.tableView.reloadData()
+      }
     }
   }
   
@@ -34,15 +38,23 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
     }
   }
   
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-    checkForICloud()
-  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Grab the existing notes
-    noteManager.getSummaryOfNotes { self.noteCollection = $0 }
+    noteManager.getSummaryOfNotes {
+      notes in
+      self.noteCollection = notes
+      self.showOverlay(false)
+    }
+    loadingOverlay = LoadingOverlay(frame: view.bounds)
+    view.addSubview(loadingOverlay)
+    
+    let topCons = NSLayoutConstraint(item: loadingOverlay, attribute: .Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1.0, constant: 0)
+    let leftCons = NSLayoutConstraint(item: loadingOverlay, attribute: .Left, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1.0, constant: 0)
+    let bottomCons = NSLayoutConstraint(item: loadingOverlay, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1.0, constant: 0)
+    let rightCons = NSLayoutConstraint(item: loadingOverlay, attribute: .Right, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1.0, constant: 0)
+    loadingOverlay.setTranslatesAutoresizingMaskIntoConstraints(true)
+    //NSLayoutConstraint.activateConstraints([topCons, leftCons, bottomCons, rightCons])
   }
   
   // MARK: - Segues
@@ -84,22 +96,24 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
   
   // MARK: - NoteEditingDelegate
   func completedEditingNote(note: Note) {
-    noteManager.createNote(note)
     dismissViewControllerAnimated(true, completion: nil)
-    let newCollection = noteCollection + [note]
-    noteCollection = newCollection
+    showOverlay(true)
+    noteManager.createNote(note) {
+      (success, newNote) in
+      self.showOverlay(false)
+      if let newNote = newNote {
+        let newCollection = self.noteCollection + [newNote]
+        self.noteCollection = newCollection
+      }
+    }
   }
   
   // MARK: - Utility methods
-  func checkForICloud() {
-    let iCloudToken = NSFileManager.defaultManager().ubiquityIdentityToken
-    if iCloudToken == nil {
-      let alertView = UIAlertController(title: "iCloud", message: "You should sign in to an iCloud account to enable full use of this app", preferredStyle: .Alert)
-      alertView.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
-        _ in
-        self.dismissViewControllerAnimated(true, completion: nil)
-      }))
-      presentViewController(alertView, animated: true, completion: nil)
+  private func showOverlay(show: Bool) {
+    dispatch_async(dispatch_get_main_queue()) {
+      UIView.animateWithDuration(0.5) {
+        self.loadingOverlay.alpha = show ? 1.0 : 0.0
+      }
     }
   }
   
