@@ -169,6 +169,34 @@ requirements.
 
 ## Enabling CloudKit
 
+CloudKit needs to be enabled on a per-app basis, and associated with a
+particular developer ID. This involves adding the appropriate entitlements to
+your app ID, and linking against the CloudKit framework.
+
+Xcode has you covered in this area - via the __Capabilities__ tab of you project
+settings file:
+
+![iCloud Entitlements](assets/icloud_entitlements.png)
+
+Flicking the switch will enable iCloud for your app:
+
+![Enable iCloud](assets/enable_icloud.png)
+
+Note that the default settings just enable the iCloud Key-Value store, and that
+you need to check the __CloudKit__ checkbox to link against the correct
+framework and configure the entitlements appropriately:
+
+![Enable CloudKit](assets/enable_cloudkit.png)
+
+At this point you can create custom containers, should you wish to, or you can
+stick with the default container created for you.
+
+Notice that there is also a button labeled __CloudKit Dashboard__ that will sned
+your browser to the web dashboard associated with this container. You can read
+more about the dashboard later in this article.
+
+Now that you've enabled CloudKit, you can go ahead and start creating pushing
+some data into it.
 
 ## Creating Records
 
