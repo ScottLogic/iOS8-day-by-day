@@ -24,6 +24,7 @@ protocol NoteManager {
   func getSummaryOfNotes(callback: (notes: [Note]) -> ())
   func getNote(noteID: String, callback: (Note) -> ())
   func updateNote(note: Note, callback: ((success: Bool) -> ())?)
+  func deleteNote(note: Note, callback: ((success: Bool) -> ())?)
 }
 
 
@@ -86,6 +87,25 @@ class CloudKitNoteManager: NoteManager {
       }
     }
     database.addOperation(updateOperation)
+  }
+  
+  func deleteNote(note: Note, callback: ((success: Bool) -> ())?) {
+    let deleteOperation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [CKRecordID(recordName: note.id)])
+    deleteOperation.perRecordCompletionBlock = { record, error in
+      if error != nil {
+        println("Unable to delete record: \(record). Error: \(error)")
+      }
+    }
+    deleteOperation.modifyRecordsCompletionBlock = { _, deleted, error in
+      if error != nil {
+        if error.code == CKErrorCode.PartialFailure.toRaw() {
+          println("There was a problem completing the operation. The following records had problems: \(error.userInfo?[CKPartialErrorsByItemIDKey])")
+        }
+        callback?(success: false)
+      }
+      callback?(success: true)
+    }
+    database.addOperation(deleteOperation)
   }
   
   func getNote(noteID: String, callback: (Note) -> ()) {

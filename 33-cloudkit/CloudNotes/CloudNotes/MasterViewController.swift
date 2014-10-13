@@ -46,6 +46,10 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
       self.noteCollection = notes
       self.showOverlay(false)
     }
+    
+    // Add an edit button
+    self.navigationItem.leftBarButtonItem = self.editButtonItem()
+    
     loadingOverlay = LoadingOverlay(frame: view.bounds)
     view.addSubview(loadingOverlay)
     
@@ -91,6 +95,26 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
     cell.textLabel?.text = note.title
     cell.detailTextLabel?.text = "\(note.createdAt)"
     return cell
+  }
+  
+  override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+    return .Delete
+  }
+  
+  override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+      let note = noteCollection[indexPath.row]
+      noteManager.deleteNote(note, callback: { success in
+        if success {
+          dispatch_async(dispatch_get_main_queue()) {
+            var newCollection = self.noteCollection
+            newCollection.removeAtIndex(indexPath.row)
+            self.noteCollection = newCollection
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+          }
+        }
+      })
+    }
   }
   
   // MARK: - NoteEditingDelegate
