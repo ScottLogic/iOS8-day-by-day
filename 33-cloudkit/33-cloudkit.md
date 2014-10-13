@@ -35,6 +35,9 @@ from the repo on the ShinobiControls github at
 
 ## High-level CloudKit Concepts
 
+Before jumping in to look at some code, there are some architectural concepts
+associated with CloudKit that you should get your head around.
+
 ### Authentication
 
 Since CloudKit is build on iCloud, there isn't actually any authentication to
