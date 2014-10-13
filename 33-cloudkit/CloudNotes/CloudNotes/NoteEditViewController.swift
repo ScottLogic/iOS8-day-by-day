@@ -15,17 +15,21 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol NoteEditingDelegate {
   func completedEditingNote(note: Note)
 }
 
 
-class NoteEditViewController: UIViewController {
+class NoteEditViewController: UIViewController, CLLocationManagerDelegate {
  
   @IBOutlet weak var vcTitleLabel: UILabel!
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var contentTextView: UITextView!
+  
+  let locationManager = CLLocationManager()
+  var locationPlaceholder: CLLocation?
   
   var note: Note? {
     didSet {
@@ -40,6 +44,13 @@ class NoteEditViewController: UIViewController {
     
     // Do any additional setup after loading the view.
     configureView()
+    
+    // Prepare for location updates
+    locationManager.requestWhenInUseAuthorization()
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    locationManager.distanceFilter = 500
+    locationManager.startUpdatingLocation()
   }
   
   
@@ -58,9 +69,23 @@ class NoteEditViewController: UIViewController {
 
     newValuesNote.title = titleTextField.text
     newValuesNote.content = contentTextView.text
+    newValuesNote.location = newValuesNote.location ?? locationPlaceholder
     
     noteEditingDelegate?.completedEditingNote(newValuesNote)
     note = newValuesNote
+  }
+  
+  // MARK:- CLLocationManagerDelegate
+  func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    if locationPlaceholder == nil {
+      if let location = locations.first as? CLLocation {
+        // Only want to save the location if it is accurate enough
+        if location.horizontalAccuracy < 300 {
+          locationPlaceholder = location
+          locationManager.stopUpdatingLocation()
+        }
+      }
+    }
   }
   
 }

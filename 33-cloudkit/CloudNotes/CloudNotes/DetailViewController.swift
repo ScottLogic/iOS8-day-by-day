@@ -54,7 +54,13 @@ class DetailViewController: UIViewController, NoteEditingDelegate {
     // Update the user interface for the detail item.
     if let note = note {
       titleLabel.text = note.title
-      contentLabel.text = note.content 
+      contentLabel.text = note.content
+      if let location = note.location {
+        let pin = MKPointAnnotation()
+        pin.coordinate = location.coordinate
+        self.mapView.centerCoordinate = location.coordinate
+        self.mapView.addAnnotation(pin)
+      }
     }
   }
 
