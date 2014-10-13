@@ -85,6 +85,7 @@ class CloudKitNoteManager: NoteManager {
         callback?(success: true)
       }
     }
+    database.addOperation(updateOperation)
   }
   
   func getNote(noteID: String, callback: (Note) -> ()) {

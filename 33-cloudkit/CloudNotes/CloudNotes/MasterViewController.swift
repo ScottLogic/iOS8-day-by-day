@@ -53,8 +53,7 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
     let leftCons = NSLayoutConstraint(item: loadingOverlay, attribute: .Left, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1.0, constant: 0)
     let bottomCons = NSLayoutConstraint(item: loadingOverlay, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1.0, constant: 0)
     let rightCons = NSLayoutConstraint(item: loadingOverlay, attribute: .Right, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1.0, constant: 0)
-    loadingOverlay.setTranslatesAutoresizingMaskIntoConstraints(true)
-    //NSLayoutConstraint.activateConstraints([topCons, leftCons, bottomCons, rightCons])
+    NSLayoutConstraint.activateConstraints([topCons, leftCons, bottomCons, rightCons])
   }
   
   // MARK: - Segues
