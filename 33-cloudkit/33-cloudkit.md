@@ -533,8 +533,8 @@ representation) in the detail view.
 
 ## Modifying Records
 
-- Update/Delete
-- Record ID
+The final two operations to look at in the basic CRUD CloudNotes app are update
+and delete.
 
 ## CloudKit Dashboard
 
@@ -544,13 +544,44 @@ representation) in the detail view.
 
 ## Summary of other Features
 
-- __Change Notifications__ Subscriptions 
-- __Blob fields__ CKAsset. Single record.
-- __Transactions__ Atomic commits
-- __Cascading Deletes__
-- __Save Rules__
-- __User lookups__
-- __Production__
+CloudKit is huge - and today's post has only really covered some of the more
+basic functionality. Here's a summary of some of the other features you'd expect
+from a datastore, and a brief description of how they apply in the CloudKit
+world:
+
+- __Change Notifications__ Subscriptions allow you to build a query and then ask
+iCloud to send you push messages whenever the results of the query are changed.
+Or you can create a record zone subscription which will send a push notification
+whenever data changes.
+- __Relationships__ `CKReference` allows you to specify that two records are
+related to each other. The documentation highly recommends that in one-to-many
+situations the reference goes backwards. i.e. a child has one parent rather than
+a parent having multiple children.
+- __Blob fields__ If you have large chunks of data (such as images) that you
+wish to associate with a record then you can use the `CKAsset` class to upload,
+retrieve and reference this data. Note that in iOS 8.1 it will only be possible
+for an asset to belong to a single record.
+- __Transactions__ In a custom zone it's possible to specify that a particular
+set of `CKOperation`s should be an 'atomic commit'. That is to say that either
+all operations will succeed, or none of them will be committed. This is really
+useful to maintain data integrity.
+- __Cascading Deletes__ By default, if you delete a record which has a reference
+to another record, then the child record will be deleted as well. It's worth
+noting that if you have multiple references to the same record, then the first
+delete will win - i.e. if you don't want the child deleted you need to change
+the default behavior.
+- __Save Rules__ In any database with multiple points of asynchronous access,
+managing conflicts is a hugely complex task. By default, CloudKit uses a very
+conservative rule, placing the responsibility for resolving these completely in
+your hands. If you wish to then force overwrite the contents of a record in
+iCloud then you must change the save rule to represent this.
+- __Production__ Whilst developing your app, the schema is being built up as you
+add records and structure. At the point that you want to push your app into the
+wide world, you don't want the schema changing again. Nor do you want your
+database full of dirty dev data. CloudKit allows you to switch to a production
+database through the CloudKit Dashboard. At this stage you are also able to
+specify which attributes should be indexed and searchable. This allows the
+database engine to optimize appropriately.
 
 ## Conclusion
 
