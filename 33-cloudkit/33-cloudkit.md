@@ -687,3 +687,44 @@ database engine to optimize appropriately.
 
 ## Conclusion
 
+Phew - that was a long one! As you have probably realized, CloudKit is enormous.
+It is incredibly versatile, and appears to be pretty well thought-out. It has
+loads of advantages - huge quotas, simplicity, versatility, functionality, user
+management, user trust, privacy, security etc. I do have some concerns about
+potential disadvantages as well though.
+
+As you might expect from Apple, the tooling of the first iteration just isn't
+quite there. Things don't always work as expected - the dashboard throws up
+frequent errors, I spent a long time trying to diagnose "internal server error",
+and simulator support is flaky at best. However, I'd expect all of these things
+to be fixed over the next year.
+
+Far more concerning is the lock-in to Apple. It might be great to prototype
+something with CloudKit, but can you definitely say that you don't want to build
+a custom web dashboard to your data at a later stage? Or maybe an Android app?
+It'd be great if Apple were to open up a REST API or something, to at least
+allow the possibility of expansion in the future, but it's not in their interest
+to do so.
+
+CloudKit is extremely powerful, and relatively easy to get started with. It's
+certainly worth having a play around with it, but be aware that it's not a magic
+bullet. You still need to cope with all the difficulties associated with a
+remote system going offline when the user moves out of range - local persistence
+and conflict resolution. And you should also consider whether or not this is a
+long-term solution, or just something for prototyping.
+
+As ever, the project associated with this article is available on the
+ShinobiControls github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Please remember that this project was created to demo CloudKit, and almost
+certainly has problems if you were to try and use it as a real note-taking app.
+Feel free to take it and fix that - I'll happily take a pull request.
+
+I've typed a lot today - I think you should reward me by following me and saying
+hi on twitter - I'm [@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+
+sam
+
+
+
