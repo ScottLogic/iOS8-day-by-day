@@ -418,7 +418,118 @@ Notice that both of these marshal back to the main queue for UI updates.
 
 ## Querying For Records
 
-- Alternative API
+There are two methods on the `NoteManager` protocol which represent queries for
+records - `getSummaryOfNotes(callback:)` and `getNote(noteID:, callback:)`.
+The latter of these uses the convenience API, and the implementation is as
+follows:
+
+    func getNote(noteID: String, callback: (Note) -> ()) {
+      let recordID = CKRecordID(recordName: noteID)
+      database.fetchRecordWithID(recordID) {
+        (record, error) in
+        if error != nil {
+          println("There was an error: \(error)")
+        } else {
+          let note = CloudKitNote(record: record)
+          callback(note)
+        }
+      }
+    }
+
+This uses the `CKDatabase` method `fetchRecordWithID`. As previously mentioned,
+a `CKRecordID` is a unique identifier for a record within a container -
+combining a zone ID with a record name. Since CloudNotes only uses the default
+zone, a `CKRecordID` can be constructed solely from the `noteID`.
+
+`fetchRecordWithID` is another asynchronous method, and so takes a completion
+handler closure which returns a `CKRecord` object, and an `NSError`. It's again
+really quite important to handle the error appropriately.
+
+Here, a `CloudKitNote` object is created from the returned `CKRecord`, and
+returned via the supplied callback. Note again that this will not be called on
+the main thread, so and UI updates will need marshaling to the main thread.
+
+There is also a convenience method on `CKDatabase` which allows you to run more
+generalized queries - `performQuery(_, inZoneWithID:, completionHandler:)`. A
+query is of the type `CKQuery`, which combines a record type with a predicate
+and sort descriptors. The predicate is of type `NSPredicate`, and can therefore
+be incredibly expressive. There are some things that `NSPredicate` can express
+that are not supported by `CKQuery` - and you can find details of exactly what
+is support in the `CKQuery` documentation. It is possible to include queries
+based on location - which is really helpful - removing any of the difficult
+spherical mathematics from your own code.
+
+The one thing that this convenience method doesn't allow you to do is restrict
+which fields you want returned. `CKRecord` objects can represent _partial_
+records - that is to say, not containing all the properties that exist on the
+original object. This can be really helpful if you just want to display a
+summary of records, each of which contains a huge number of properties.
+
+In CloudNotes, the table of all notes only needs the creation date and title of
+the notes, and therefore it would be good to not have to request the content and
+location (this is somewhat of a contrived example - the content and location
+properties of the note are pretty small).
+
+In order to request partial records, you have to drop the convenience API and
+use the operation-based API instead.
+
+### NSOperation-based API
+
+The convenience API is a wrapper around a much more powerful API - which is
+based around `NSOperation`. `CKOperation` is an abstract base class that
+represents all the different operations that are performed on a CloudKit
+database. There are concrete subclasses of this class, each of which represents
+a specific type of operation. For example:
+
+- `CKQueryOperation`
+- `CKModifyRecordsOperation`
+- `CKFetchSubscriptionsOperation`
+- ...
+
+You'll need to use the operation API whenever you want to perform slightly more
+complex tasks with the database. Since these objects all inherit from 
+`NSOperation`, they are invoked by adding them to an `NSOperationQueue`. You can
+either provide your own, or use the default one associated with the database.
+This affords you a huge amount of control when specifying dependencies between
+operations, and priorities.
+
+In CloudNotes, a `CKQueryOperation` is used in the implementation of
+`getSummaryOfNotes(callback:)`:
+
+    func getSummaryOfNotes(callback: (notes: [Note]) -> ()) {
+      let query = CKQuery(recordType: "Note", predicate: NSPredicate(value: true))
+      let queryOperation = CKQueryOperation(query: query)
+      queryOperation.desiredKeys = ["title"]
+      var records = [Note]()
+      queryOperation.recordFetchedBlock = { record in records.append(CloudKitNote(record: record)) }
+      queryOperation.queryCompletionBlock = { _ in callback(notes: records) }
+      
+      database.addOperation(queryOperation)
+    }
+
+Firstly, a `CKQuery` is constructed, which specifies the correct `recordType` of
+`Note`, and since the notes don't need filtering, the predicate is just the 
+`true` predicate - i.e. a filter that always returns `true`.
+
+You can then use this `CKQuery` object to instantiate a `CKQueryOperation`.
+Amongst other properties (such as `resultsLimit`), this has a property named
+`desiredKeys`. This is an array of strings, that allows you to specify which of
+the keys you want to retrieve - creating partial records. Since this method is
+used to populate the table view, on `title` is required.
+
+`recordFetchedBlock` and `queryCompletionBlock` allow you to provide closures
+which will be called after each record arrives and after the query completes
+respectively. These are used to construct an array of notes, and then passing
+them back via the supplied callback block.
+
+Finally, once you've created the operation, then you need to add it to an
+operation queue so that it gets invoked. Here it's being added to the default
+operation queue associated with the database.
+
+The combination of these two methods allows CloudNotes to retrieve the records
+from CloudKit, both for display in the table, and then (with a more rich
+representation) in the detail view.
+
 
 ## Modifying Records
 
