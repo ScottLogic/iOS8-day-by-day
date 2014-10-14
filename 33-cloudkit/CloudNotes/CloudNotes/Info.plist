@@ -32,7 +32,6 @@
 	<array>
 		<string>armv7</string>
 		<string>location-services</string>
-		<string>gps</string>
 	</array>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
