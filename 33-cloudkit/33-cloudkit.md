@@ -534,7 +534,66 @@ representation) in the detail view.
 ## Modifying Records
 
 The final two operations to look at in the basic CRUD CloudNotes app are update
-and delete.
+and delete. Both of these use the `CKModifyRecordsOperation` class to update the
+database. This has a constructor which takes an array of `recordsToSave`, and an
+array of record IDs to delete.
+
+It also has `perRecordCompletionBlock` and `modifyRecordsCompletionBlock`
+closures to get feedback on the process.
+
+The `updateNote(note:, callback:)` method is implemented as follows:
+
+    func updateNote(note: CloudKitNote, callback:((success: Bool) -> ())?) {
+      let updateOperation = CKModifyRecordsOperation(recordsToSave: [note], recordIDsToDelete: nil)
+      updateOperation.perRecordCompletionBlock = { record, error in
+        if error != nil {
+          // Really important to handle this here
+          println("Unable to modify record: \(record). Error: \(error)")
+        }
+      }
+      updateOperation.modifyRecordsCompletionBlock = { saved, _, error in
+        if error != nil {
+          if error.code == CKErrorCode.PartialFailure.toRaw() {
+            println("There was a problem completing the operation. The following records had problems: \(error.userInfo?[CKPartialErrorsByItemIDKey])")
+          }
+          callback?(success: false)
+        } else {
+          callback?(success: true)
+        }
+      }
+      database.addOperation(updateOperation)
+    }
+
+Again it's important to handle errors. In this instance, the error passed to the
+`modifyRecordCompletionBlock` might contain a code of `PartialFailure`, which
+indicates that some of the modifications weren't successful. In this case, you
+can get hold of the records involved with the `CKPartialErrorsByItemIDKey` entry
+on the `userInfo` dictionary.
+
+The `deleteNote(note:, callback:)` method is almost identical in its
+implementation:
+
+    func deleteNote(note: Note, callback: ((success: Bool) -> ())?) {
+      let deleteOperation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [CKRecordID(recordName: note.id)])
+      deleteOperation.perRecordCompletionBlock = { record, error in
+        if error != nil {
+          println("Unable to delete record: \(record). Error: \(error)")
+        }
+      }
+      deleteOperation.modifyRecordsCompletionBlock = { _, deleted, error in
+        if error != nil {
+          if error.code == CKErrorCode.PartialFailure.toRaw() {
+            println("There was a problem completing the operation. The following records had problems: \(error.userInfo?[CKPartialErrorsByItemIDKey])")
+          }
+          callback?(success: false)
+        }
+        callback?(success: true)
+      }
+      database.addOperation(deleteOperation)
+    }
+
+In this case, a `CKRecordID` is created for the specified note, and then this is
+added to the `recordIDsToDelete` array.
 
 ## CloudKit Dashboard
 
