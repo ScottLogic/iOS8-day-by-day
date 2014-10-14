@@ -604,9 +604,45 @@ added to the `recordIDsToDelete` array.
 
 ## CloudKit Dashboard
 
-- Overview
-- Can see structure
-- 
+You've now been building your datastore, and can grab things out of it, but it's
+very much a black box. It would be really helpful to be able to see what's going
+on inside your app's container. Well, Apple thought of this, and built the
+CloudKit Dashboard:
+
+![CloudKit Dashboard](assets/cloudkit_dashboard.png)
+
+You can access the dashboard via
+[icloud.developer.apple.com](https://icloud.developer.apple.com), or via the
+link in the iCloud capabilities tab.
+
+As you build up record types you can see them and their attributes. It's also
+possible to edit, remove and add new attributes to the types you've created, as
+well as specifying which should be indexed, searchable and sortable.
+
+The security roles pane allows you to specify roles, and associated permissions
+on a per-record-type basis. This allows you to build a structure to your public
+database whereby you have varying levels of protection:
+
+![Security Roles](assets/db_security.png)
+
+__Subscription Types__ allows you to see and edit the subscriptions that you've
+created from within your app, and you can also see the data that exists within
+the different zones. Note that although you can see all the public data (as you
+might expect), you can only see the private data associated with your developer
+account (i.e. the account you're logged in with).
+
+Because of this, it's really handy to have a different developer ID than your
+personal version. You can even log in to an iCloud ID on a simulator, although
+in order for it to be activated for iCloud, you __must__ log in to it on a
+device before hand. This is a pain.
+
+The final panel of interest is __Deployment__. This allows you to push changes
+(of structure etc) from your development database to production, and also to
+completely reset the development database. This functionality is invaluable, and
+if you're finding that all your CloudKit requests are getting internal server
+errors, then I'd suggest giving this big red button a try:
+
+![Deployment](assets/db_deployment.png)
 
 ## Summary of other Features
 
