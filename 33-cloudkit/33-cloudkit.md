@@ -416,6 +416,8 @@ And reloading the table's data when the `noteCollection` is updated:
 
 Notice that both of these marshal back to the main queue for UI updates.
 
+![Create Note](assets/create_note.png)
+
 ## Querying For Records
 
 There are two methods on the `NoteManager` protocol which represent queries for
@@ -530,6 +532,9 @@ The combination of these two methods allows CloudNotes to retrieve the records
 from CloudKit, both for display in the table, and then (with a more rich
 representation) in the detail view.
 
+![View Notes](assets/view_notes.png)
+![View Note](assets/view_note.png)
+
 
 ## Modifying Records
 
@@ -594,6 +599,8 @@ implementation:
 
 In this case, a `CKRecordID` is created for the specified note, and then this is
 added to the `recordIDsToDelete` array.
+
+![Delete Note](assets/delete_note.png)
 
 ## CloudKit Dashboard
 
