@@ -200,8 +200,221 @@ some data into it.
 
 ## Creating Records
 
-- Errors
-- Main thread
+The accompanying sample app is a note pad, with the following protocol
+representing the fields contained by a note:
+
+    protocol Note {
+      var id: String? { get }
+      var title: String { get set }
+      var content: String? { get set }
+      var location: CLLocation? { get set }
+      var createdAt: NSDate { get }
+      var lastModifiedAt: NSDate { get }
+    }
+
+In order to persist an object with these properties in CloudKit, you have to
+represent it as a `CKRecord`. As previously mentioned, if you don't specify a
+name then CloudKit will generate a unique name for your record automatically,
+and as you might expect `createdAt` and `lastModifiedAt` are similarly auto-
+managed. This leaves you with three properties which need representing in a
+`CKRecord`.
+
+A `CKRecord` behaves very much like an `NSDictionary`, in that you create fields
+by assigning values to keys. For example, __CloudNotes__ implements the custom
+properties from the `Note` protocol as follows:
+
+
+    class CloudKitNote: Note {
+      let record: CKRecord
+      
+      ...
+      
+      var title: String {
+        get {
+          return record.objectForKey("title") as String
+        }
+        set {
+          record.setObject(newValue, forKey: "title")
+        }
+      }
+      
+      var content: String? {
+        get {
+          return record.objectForKey("content") as? String
+        }
+        set {
+          record.setObject(newValue, forKey: "content")
+        }
+      }
+      
+      var location: CLLocation? {
+        get {
+          return record.objectForKey("location") as? CLLocation
+        }
+        set {
+          record.setObject(newValue, forKey: "location")
+        }
+      }
+    
+      ...
+    }
+
+`CloudKitNote` contains a `CKRecord` object, and the data for the properties is
+accessed via `objectForKey()` and `setObject(_, forKey:)`.
+
+There accessors for the non-custom properties just proxy through to the relevant
+properties on `CKRecord`:
+
+    var id: String? {
+      return record.recordID.recordName
+    }
+
+    var createdAt: NSDate {
+      return record.creationDate
+    }
+    
+    var lastModifiedAt: NSDate {
+      return record.modificationDate
+    }
+
+
+In this design, a `CloudKitNote` is either constructed with a `CKRecord` which
+has been returned from a CloudKit API, or from another `Note`:
+
+    init(record: CKRecord) {
+      self.record = record
+    }
+    
+    init(note: Note) {
+      record = CKRecord(recordType: "Note")
+      title = note.title
+      content = note.content
+      location = note.location
+    }
+
+Note that when creating a new `CKRecord` you have to specify _at least_ the
+`recordType`. This is a string, and represents a set of objects which share
+common attributes - similar in concept to a table in a relational database.
+
+Now that you have created an appropriate `CKRecord`, you need to tell CloudKit
+to save it. CloudKit actually has two distinct APIs, the so-called convenience
+API and the `NSOperation` API. As you might expect from the naming, the
+convenience API is a little easier to use, but at the cost of being less
+configurable. This article will use both APIs to show you a flavor of the two
+options.
+
+There is a convenience API method on `CKDatabase` that allows you to save a
+record, in the form of `saveRecord(_, completionHandler:)`. In order to use this
+you need to get hold of a reference to a `CKDatabase` object.
+
+Remember that a CloudKit app has one or more containers - and each of these has
+access to two databases. If you are just using the default container, then the
+`defaultContainer()` class method on `CKContainer` will return you a reference.
+A `CKContainer` object then has two database properties: `privateCloudDatabase`
+and `publicCloudDatabase`. Since CloudNotes is currently only supporting private
+notes, then it uses the `privateCloudDatabase` to construct a custom
+`CloudKitNoteManager` object:
+
+    let noteManager = CloudKitNoteManager(database: CKContainer.defaultContainer().privateCloudDatabase)
+
+`CloudKitNoteManager` is a helper class which implements the following protocol,
+to encompass all the different persistence methods that the app needs:
+
+    protocol NoteManager {
+      func createNote(note: Note, callback: ((success: Bool, note: Note?) -> ())?)
+      func getSummaryOfNotes(callback: (notes: [Note]) -> ())
+      func getNote(noteID: String, callback: (Note) -> ())
+      func updateNote(note: Note, callback: ((success: Bool) -> ())?)
+      func deleteNote(note: Note, callback: ((success: Bool) -> ())?)
+    }
+
+Designing your app in this way (using the `Note` and `NoteManager` protocols)
+will make it a lot easier to add a local persistence layer, or switch out
+CloudKit for an alternative should you decide to.
+
+The implementation of `createNote(note:, callback:)` in `CloudKitNoteManager`
+looks like this:
+
+    func createNote(note: Note, callback:((success: Bool, note: Note?) -> ())?) {
+      let ckNote = CloudKitNote(note: note)
+      database.saveRecord(ckNote.record) { (record, error) in
+        if error != nil {
+          println("There was an error: \(error)")
+          callback?(success: false, note: nil)
+        } else {
+          println("Record saved successfully")
+          callback?(success: true, note: ckNote)
+        }
+      }
+    }
+
+Notice that first we construct a `CloudKitNote` object from the supplied `Note`.
+This allows you to use any object that conforms to the `Note` protocol (in fact,
+in CloudNotes, this will be of type `PrototypeNote`, which is a POSO [I think I
+just invented that acronym (C)SD]).
+
+Once you have a `CKRecord` then you can call `saveRecord(_, completionHandler:)`
+on your `CKDatabase` object. The completion handler is a closure which includes
+a `Bool` to indicate success and an `NSError` object. It is vitally important
+that you implement this completion handler, and actually inspect the error.
+
+I'll say that again. You can't just ignore the error like you usually do.
+CloudKit __will fail__. For perfectly legitimate reasons. If you don't handle
+the error then your app __will lose data__.
+
+There are a total of 28 CloudKit-specific error codes, including things such as
+`NetworkUnavailable`, `NotAuthenticated`, `LimitExceeded` and
+`ServerRejectedRequest`. When you build an app around you need to _at least_
+investigate and handle the errors associated with network issues. Your users are
+guaranteed to try to use your app without network access. How you handle this is
+the difference between having users and not having users.
+
+Note that despite mentioning how important errors are, CloudNotes doesn't really
+handle that. Writing good error code is a pain, and is left to an exercise for
+the reader ;-)
+
+The other important thing that's worth mentioning is that the completion handler
+is not likely to be called back on the main thread. Therefore, ensure you
+marshal any UI code back onto the main queue.
+
+The following shows the `createNote(_, callback:)` method in use in the 
+`MasterViewController`, in a delegate method which creates a note:
+
+    func completedEditingNote(note: Note) {
+      dismissViewControllerAnimated(true, completion: nil)
+      showOverlay(true)
+      noteManager.createNote(note) {
+        (success, newNote) in
+        self.showOverlay(false)
+        if let newNote = newNote {
+          let newCollection = self.noteCollection + [newNote]
+          self.noteCollection = newCollection
+        }
+      }
+    }
+
+There are two points which involve updating the UI, hiding the "Loading" overlay
+(terrible UX, I know):
+
+    private func showOverlay(show: Bool) {
+      dispatch_async(dispatch_get_main_queue()) {
+        UIView.animateWithDuration(0.5) {
+          self.loadingOverlay.alpha = show ? 1.0 : 0.0
+        }
+      }
+    }
+
+And reloading the table's data when the `noteCollection` is updated:
+
+    var noteCollection: [Note] = [Note]() {
+      didSet {
+        dispatch_async(dispatch_get_main_queue()) {
+          self.tableView.reloadData()
+        }
+      }
+    }
+
+Notice that both of these marshal back to the main queue for UI updates.
 
 ## Querying For Records
 
