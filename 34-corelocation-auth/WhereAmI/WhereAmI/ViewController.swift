@@ -16,8 +16,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
   @IBOutlet weak var latValLabel: UILabel!
   @IBOutlet weak var longValLabel: UILabel!
@@ -27,9 +28,64 @@ class ViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
 
   
+  let locationManager = CLLocationManager()
+  
+  var historicalPoints = [CLLocationCoordinate2D]()
+  var routeTrack = MKPolyline()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    // Prepare the location manager
+    locationManager.delegate = self
+    locationManager.desiredAccuracy = 20
+    locationManager.startUpdatingLocation()
+    // Prepare the map view
+    mapView.delegate = self
+  }
+  
+  
+  // MARK:- CLLocationManagerDelegate methods
+  func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    if let location = locations.first as? CLLocation {
+      // Update the fields as expected:
+      latValLabel.text = "\(location.coordinate.latitude)"
+      longValLabel.text = "\(location.coordinate.longitude)"
+      altValLabel.text = "\(location.altitude) m"
+      accValLabel.text = "\(location.horizontalAccuracy) m"
+      spdValLabel.text = "\(location.speed) ms⁻¹"
+      // Re-center the map
+      mapView.centerCoordinate = location.coordinate
+      // And update the track on the map
+      historicalPoints.append(location.coordinate)
+      updateMapWithPoints(historicalPoints)
+    }
+  }
+  
+  // MARK:- MKMapViewDelegate methods
+  func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+    if let overlay = overlay as? MKPolyline {
+      let renderer = MKPolylineRenderer(polyline: overlay)
+      renderer.lineWidth = 4.0
+      renderer.strokeColor = UIColor.blueColor().colorWithAlphaComponent(0.7)
+      return renderer
+    }
+    return nil
+  }
+  
+  
+  // MARK:- Utility Methods
+  private func updateMapWithPoints(points: [CLLocationCoordinate2D]) {
+    let oldTrack = routeTrack
+    
+    // This has to be mutable, so we make a new reference
+    var coordinates = points
+    
+    // Create the new route track
+    routeTrack = MKPolyline(coordinates: &coordinates, count: points.count)
+    
+    // Switch them out
+    mapView.addOverlay(routeTrack)
+    mapView.removeOverlay(oldTrack)
   }
 
 }
