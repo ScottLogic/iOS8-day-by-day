@@ -162,3 +162,22 @@ location updates from the location manager via its delegate:
 
 
 ## Conclusion
+
+Today's post has been quite short, but nonetheless important. The lack of error
+reporting associated with this change in usage of `CLLocationManager` is sure to
+trip people up - especially the required keys in __Info.plist__.
+
+On the plus-side this really does represent an improvement in users' privacy.
+They then have really fine-grained control on which apps are able to do what,
+and in easy to understand terms.
+
+As ever, the code associated with today's post is available on the
+ShinobiControls github at:
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+
+Hope it's useful - let me know - 
+[@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+
+sam
+
