@@ -15,22 +15,21 @@
 //
 
 import UIKit
-import MapKit
 
-class ViewController: UIViewController {
+@IBDesignable
+class PaddedLabel: UILabel {
 
-  @IBOutlet weak var latValLabel: UILabel!
-  @IBOutlet weak var longValLabel: UILabel!
-  @IBOutlet weak var altValLabel: UILabel!
-  @IBOutlet weak var accValLabel: UILabel!
-  @IBOutlet weak var spdValLabel: UILabel!
-  @IBOutlet weak var mapView: MKMapView!
-
+  @IBInspectable
+  var horizontalPadding: CGFloat = 16
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  @IBInspectable
+  var verticalPadding: CGFloat = 16
+  
+  override func intrinsicContentSize() -> CGSize {
+    var size = super.intrinsicContentSize()
+    size.height += verticalPadding
+    size.width  += horizontalPadding
+    return size
   }
-
+  
 }
-

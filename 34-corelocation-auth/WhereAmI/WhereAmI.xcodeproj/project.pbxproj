@@ -13,6 +13,7 @@
 		22E68A4B19EE7C1800EA3481 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A4A19EE7C1800EA3481 /* Images.xcassets */; };
 		22E68A4E19EE7C1800EA3481 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A4C19EE7C1800EA3481 /* LaunchScreen.xib */; };
 		22E68A5A19EE7C1800EA3481 /* WhereAmITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A5919EE7C1800EA3481 /* WhereAmITests.swift */; };
+		22E68A6419EE881000EA3481 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A6319EE881000EA3481 /* PaddedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		22E68A5319EE7C1800EA3481 /* WhereAmITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereAmITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E68A5819EE7C1800EA3481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E68A5919EE7C1800EA3481 /* WhereAmITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereAmITests.swift; sourceTree = "<group>"; };
+		22E68A6319EE881000EA3481 /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				22E68A4A19EE7C1800EA3481 /* Images.xcassets */,
 				22E68A4C19EE7C1800EA3481 /* LaunchScreen.xib */,
 				22E68A4119EE7C1800EA3481 /* Supporting Files */,
+				22E68A6319EE881000EA3481 /* PaddedLabel.swift */,
 			);
 			path = WhereAmI;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E68A6419EE881000EA3481 /* PaddedLabel.swift in Sources */,
 				22E68A4619EE7C1800EA3481 /* ViewController.swift in Sources */,
 				22E68A4419EE7C1800EA3481 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				22E68A5F19EE7C1800EA3481 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22E68A6019EE7C1800EA3481 /* Build configuration list for PBXNativeTarget "WhereAmITests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				22E68A6219EE7C1800EA3481 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
