@@ -38,6 +38,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     // Prepare the location manager
     locationManager.delegate = self
     locationManager.desiredAccuracy = 20
+    // Need to ask for the right permissions
+    locationManager.requestWhenInUseAuthorization()
+    
     locationManager.startUpdatingLocation()
     // Prepare the map view
     mapView.delegate = self
