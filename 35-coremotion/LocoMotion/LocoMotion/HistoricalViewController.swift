@@ -15,12 +15,57 @@
 //
 
 import UIKit
+import CoreMotion
 
-class HistoricalViewController: UIViewController {
+class HistoricalViewController: UITableViewController {
 
+  let motionActivityManager = CMMotionActivityManager()
+  let motionHandlerQueue = NSOperationQueue()
+  
+  var activityCollection: ActivityCollection? {
+    didSet {
+      dispatch_async(dispatch_get_main_queue()) {
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    fetchMotionActivityData()
   }
+  
+  
+  // MARK:- Motion Activity Methods
+  func fetchMotionActivityData() {
+    if CMMotionActivityManager.isActivityAvailable() {
+      let oneWeekInterval = 24 * 3600 as NSTimeInterval
+      motionActivityManager.queryActivityStartingFromDate(NSDate(timeIntervalSinceNow: -oneWeekInterval),
+                                                          toDate: NSDate(), toQueue: motionHandlerQueue) {
+        (activities, error) in
+        if error != nil {
+          println("There was an error retrieving the motion results: \(error)")
+        }
+        self.activityCollection = ActivityCollection(activities: activities as [CMMotionActivity])
+      }
+    }
+  }
+  
+  // MARK:- UITableViewController methods
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return activityCollection?.activities.count ?? 0
+  }
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MotionActivityCell
+    cell.activity = activityCollection?.activities[indexPath.row]
+    return cell
+  }
+  
 }
 

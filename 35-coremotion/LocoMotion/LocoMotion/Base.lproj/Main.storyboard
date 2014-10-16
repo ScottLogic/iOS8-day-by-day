@@ -4,45 +4,74 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Historical-->
-        <scene sceneID="hNz-n2-bh7">
+        <!--Historical Motion-->
+        <scene sceneID="lSH-xt-1q1">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="HistoricalViewController" customModule="LocoMotion" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                <tableViewController id="Ltb-dY-90e" customClass="HistoricalViewController" customModule="LocoMotion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" id="egs-hw-Me1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="158" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="195" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Historical" image="first" id="acW-dT-cKf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="76" id="deG-Dv-uVS" customClass="MotionActivityCell" customModule="LocoMotion" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="deG-Dv-uVS" id="lqg-zk-ECn">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycle" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-gI-uQm">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="73"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="128" id="gi7-Aj-Ocn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pq-Qt-Lhy">
+                                            <rect key="frame" x="136" y="23" width="42" height="30"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="S7E-gI-uQm" firstAttribute="leading" secondItem="lqg-zk-ECn" secondAttribute="leading" id="9Hw-L6-uRz"/>
+                                        <constraint firstAttribute="bottom" secondItem="S7E-gI-uQm" secondAttribute="bottom" constant="2" id="Db7-cR-cwC"/>
+                                        <constraint firstAttribute="centerY" secondItem="8Pq-Qt-Lhy" secondAttribute="centerY" id="IQj-kc-8lG"/>
+                                        <constraint firstItem="8Pq-Qt-Lhy" firstAttribute="leading" secondItem="S7E-gI-uQm" secondAttribute="trailing" constant="8" id="U6u-HT-gjl"/>
+                                        <constraint firstItem="S7E-gI-uQm" firstAttribute="top" secondItem="lqg-zk-ECn" secondAttribute="top" id="XJL-L3-Ymn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconImageView" destination="S7E-gI-uQm" id="DKS-L2-nNP"/>
+                                    <outlet property="titleLabel" destination="8Pq-Qt-Lhy" id="hCO-9Y-LER"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ltb-dY-90e" id="vus-XZ-DRU"/>
+                            <outlet property="delegate" destination="Ltb-dY-90e" id="MEl-T7-g3U"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Historical Motion" id="JW0-Xd-N8A"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9Z-0k-h1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="1509" y="-352"/>
+        </scene>
+        <!--Historical-->
+        <scene sceneID="6eB-wa-e2U">
+            <objects>
+                <navigationController id="PVY-uk-An4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Historical" image="first" id="Ys7-8G-2YE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GCd-ur-DKC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ltb-dY-90e" kind="relationship" relationship="rootViewController" id="tjA-vf-9Es"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfQ-fX-DoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-350"/>
         </scene>
         <!--Live-->
         <scene sceneID="wg7-f3-ORb">
@@ -95,8 +124,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="PVY-uk-An4" kind="relationship" relationship="viewControllers" id="l3K-Kb-zRW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -105,6 +134,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cycle" width="128" height="123"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

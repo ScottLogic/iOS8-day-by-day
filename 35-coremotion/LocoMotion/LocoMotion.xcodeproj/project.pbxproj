@@ -14,6 +14,9 @@
 		22E68A7D19EFD82A00EA3481 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A7C19EFD82A00EA3481 /* Images.xcassets */; };
 		22E68A8019EFD82A00EA3481 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A7E19EFD82A00EA3481 /* LaunchScreen.xib */; };
 		22E68A8C19EFD82A00EA3481 /* LocoMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A8B19EFD82A00EA3481 /* LocoMotionTests.swift */; };
+		22E68A9619EFF63C00EA3481 /* MotionActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A9519EFF63C00EA3481 /* MotionActivityCell.swift */; };
+		22E68A9919F0048100EA3481 /* ImageAttribution.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A9719F0048100EA3481 /* ImageAttribution.txt */; };
+		22E68A9C19F0178A00EA3481 /* ActivityCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A9B19F0178A00EA3481 /* ActivityCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		22E68A8519EFD82A00EA3481 /* LocoMotionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocoMotionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E68A8A19EFD82A00EA3481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E68A8B19EFD82A00EA3481 /* LocoMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocoMotionTests.swift; sourceTree = "<group>"; };
+		22E68A9519EFF63C00EA3481 /* MotionActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionActivityCell.swift; sourceTree = "<group>"; };
+		22E68A9719F0048100EA3481 /* ImageAttribution.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ImageAttribution.txt; sourceTree = "<group>"; };
+		22E68A9B19F0178A00EA3481 /* ActivityCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,9 @@
 				22E68A7C19EFD82A00EA3481 /* Images.xcassets */,
 				22E68A7E19EFD82A00EA3481 /* LaunchScreen.xib */,
 				22E68A7119EFD82900EA3481 /* Supporting Files */,
+				22E68A9519EFF63C00EA3481 /* MotionActivityCell.swift */,
+				22E68A9719F0048100EA3481 /* ImageAttribution.txt */,
+				22E68A9B19F0178A00EA3481 /* ActivityCollection.swift */,
 			);
 			path = LocoMotion;
 			sourceTree = "<group>";
@@ -164,6 +173,7 @@
 				TargetAttributes = {
 					22E68A6D19EFD82900EA3481 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = XJ74287KY8;
 					};
 					22E68A8419EFD82A00EA3481 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -197,6 +207,7 @@
 			files = (
 				22E68A7B19EFD82A00EA3481 /* Main.storyboard in Resources */,
 				22E68A8019EFD82A00EA3481 /* LaunchScreen.xib in Resources */,
+				22E68A9919F0048100EA3481 /* ImageAttribution.txt in Resources */,
 				22E68A7D19EFD82A00EA3481 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +228,8 @@
 			files = (
 				22E68A7819EFD82A00EA3481 /* LiveViewController.swift in Sources */,
 				22E68A7419EFD82900EA3481 /* AppDelegate.swift in Sources */,
+				22E68A9619EFF63C00EA3481 /* MotionActivityCell.swift in Sources */,
+				22E68A9C19F0178A00EA3481 /* ActivityCollection.swift in Sources */,
 				22E68A7619EFD82A00EA3481 /* HistoricalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,9 +355,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LocoMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -352,9 +368,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LocoMotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
