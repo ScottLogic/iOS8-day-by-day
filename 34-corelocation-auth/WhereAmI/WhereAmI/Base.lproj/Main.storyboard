@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhereAmI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="77Q-IE-U37">
+                                <rect key="frame" x="0.0" y="316" width="600" height="284"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where Am I?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQ1-Kt-3Om" customClass="PaddedLabel" customModule="WhereAmI" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
+                                <color key="backgroundColor" red="0.11872271118924434" green="0.0057848016222572882" blue="0.33333333333333331" alpha="0.23999999999999999" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="42"/>
+                                <color key="textColor" red="0.11872271118924434" green="0.0057848016222572882" blue="0.33333333333333331" alpha="0.83999999999999997" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
+                                        <real key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3i-SL-LcH" customClass="PaddedLabel" customModule="WhereAmI" customModuleProvider="target">
+                                <rect key="frame" x="16" y="97" width="568" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.76510930698208846" blue="0.51662960701663829" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.11872271118924434" green="0.0057848016222572882" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q30-BM-wcT" customClass="PaddedLabel" customModule="WhereAmI" customModuleProvider="target">
+                                <rect key="frame" x="16" y="140" width="568" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.76510930698208846" blue="0.51662960701663829" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.1187227112" green="0.0057848016220000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f9-uB-IRl" customClass="PaddedLabel" customModule="WhereAmI" customModuleProvider="target">
+                                <rect key="frame" x="16" y="183" width="568" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.76510930698208846" blue="0.51662960701663829" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.1187227112" green="0.0057848016220000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RK-m6-cjq" customClass="PaddedLabel" customModule="WhereAmI" customModuleProvider="target">
+                                <rect key="frame" x="16" y="226" width="568" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.76510930698208846" blue="0.51662960701663829" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.1187227112" green="0.0057848016220000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wys-mn-3d5" customClass="PaddedLabel" customModule="WhereAmI" customModuleProvider="target">
+                                <rect key="frame" x="16" y="269" width="568" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.76510930698208846" blue="0.51662960701663829" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.1187227112" green="0.0057848016220000001" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="latVal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh7-iz-Vc4">
+                                <rect key="frame" x="243" y="97" width="341" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="longVal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H34-Bu-F65">
+                                <rect key="frame" x="243" y="140" width="341" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="altVal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkw-8T-2G0">
+                                <rect key="frame" x="243" y="183" width="341" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="accVal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izV-YJ-4Gl">
+                                <rect key="frame" x="243" y="226" width="341" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spdVal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftq-cu-wi8">
+                                <rect key="frame" x="243" y="269" width="341" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79489059543881613" green="0.87596318087144986" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2RK-m6-cjq" firstAttribute="top" secondItem="izV-YJ-4Gl" secondAttribute="top" id="2m8-0W-5HV"/>
+                            <constraint firstItem="77Q-IE-U37" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="3jV-MZ-KYB"/>
+                            <constraint firstItem="2RK-m6-cjq" firstAttribute="bottom" secondItem="izV-YJ-4Gl" secondAttribute="bottom" id="52c-Z9-uRT"/>
+                            <constraint firstItem="6f9-uB-IRl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8j6-2a-hnx"/>
+                            <constraint firstItem="gkw-8T-2G0" firstAttribute="trailing" secondItem="6f9-uB-IRl" secondAttribute="trailing" id="AKZ-AJ-WzY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I3i-SL-LcH" secondAttribute="trailing" id="C4I-2e-1c5"/>
+                            <constraint firstItem="2RK-m6-cjq" firstAttribute="top" secondItem="6f9-uB-IRl" secondAttribute="bottom" constant="8" id="DcX-ng-Au2"/>
+                            <constraint firstItem="Wys-mn-3d5" firstAttribute="top" secondItem="2RK-m6-cjq" secondAttribute="bottom" constant="8" id="Fri-bi-Iwo"/>
+                            <constraint firstItem="KQ1-Kt-3Om" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H9Z-rA-bjj"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="77Q-IE-U37" secondAttribute="bottom" id="ID1-ES-bDt"/>
+                            <constraint firstItem="I3i-SL-LcH" firstAttribute="top" secondItem="KQ1-Kt-3Om" secondAttribute="bottom" constant="15" id="Ik3-7N-IlJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6f9-uB-IRl" secondAttribute="trailing" id="M1I-i9-8xX"/>
+                            <constraint firstAttribute="trailing" secondItem="KQ1-Kt-3Om" secondAttribute="trailing" id="MQu-DY-9I6"/>
+                            <constraint firstItem="gkw-8T-2G0" firstAttribute="top" secondItem="6f9-uB-IRl" secondAttribute="top" id="MbU-V9-6s8"/>
+                            <constraint firstItem="izV-YJ-4Gl" firstAttribute="width" secondItem="2RK-m6-cjq" secondAttribute="width" multiplier="0.6" id="N1R-vg-59Z"/>
+                            <constraint firstItem="Uh7-iz-Vc4" firstAttribute="trailing" secondItem="I3i-SL-LcH" secondAttribute="trailing" id="Prl-w8-I2s"/>
+                            <constraint firstItem="q30-BM-wcT" firstAttribute="bottom" secondItem="H34-Bu-F65" secondAttribute="bottom" id="Qdz-Ws-O5i"/>
+                            <constraint firstItem="Wys-mn-3d5" firstAttribute="trailing" secondItem="Ftq-cu-wi8" secondAttribute="trailing" id="S43-Vy-tpl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q30-BM-wcT" secondAttribute="trailing" id="Tdk-Zp-P5X"/>
+                            <constraint firstItem="gkw-8T-2G0" firstAttribute="width" secondItem="6f9-uB-IRl" secondAttribute="width" multiplier="0.6" id="VcS-Dm-R2M"/>
+                            <constraint firstItem="Uh7-iz-Vc4" firstAttribute="top" secondItem="I3i-SL-LcH" secondAttribute="top" id="XJ9-0B-LmJ"/>
+                            <constraint firstItem="Uh7-iz-Vc4" firstAttribute="width" secondItem="I3i-SL-LcH" secondAttribute="width" multiplier="0.6" id="XoD-Xy-vgN"/>
+                            <constraint firstItem="q30-BM-wcT" firstAttribute="top" secondItem="I3i-SL-LcH" secondAttribute="bottom" constant="8" id="ZTQ-4C-aCN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2RK-m6-cjq" secondAttribute="trailing" id="Zbu-cS-KiH"/>
+                            <constraint firstItem="q30-BM-wcT" firstAttribute="trailing" secondItem="H34-Bu-F65" secondAttribute="trailing" id="Zwa-sD-QW8"/>
+                            <constraint firstItem="6f9-uB-IRl" firstAttribute="top" secondItem="q30-BM-wcT" secondAttribute="bottom" constant="8" id="bua-e4-Zai"/>
+                            <constraint firstItem="gkw-8T-2G0" firstAttribute="bottom" secondItem="6f9-uB-IRl" secondAttribute="bottom" id="cmU-Sd-J2k"/>
+                            <constraint firstItem="Wys-mn-3d5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="etr-ir-eKN"/>
+                            <constraint firstItem="q30-BM-wcT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iza-nK-Rfb"/>
+                            <constraint firstItem="77Q-IE-U37" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="m9p-Or-1Em"/>
+                            <constraint firstItem="77Q-IE-U37" firstAttribute="top" secondItem="Wys-mn-3d5" secondAttribute="bottom" constant="12" id="oio-rG-PV8"/>
+                            <constraint firstItem="Ftq-cu-wi8" firstAttribute="width" secondItem="Wys-mn-3d5" secondAttribute="width" multiplier="0.6" id="pmA-lk-4LR"/>
+                            <constraint firstItem="H34-Bu-F65" firstAttribute="width" secondItem="q30-BM-wcT" secondAttribute="width" multiplier="0.6" id="r0j-Rd-nCL"/>
+                            <constraint firstItem="q30-BM-wcT" firstAttribute="top" secondItem="H34-Bu-F65" secondAttribute="top" id="r77-Kq-XcS"/>
+                            <constraint firstItem="KQ1-Kt-3Om" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rHf-PS-lj5"/>
+                            <constraint firstItem="Uh7-iz-Vc4" firstAttribute="bottom" secondItem="I3i-SL-LcH" secondAttribute="bottom" id="sQn-5B-bpD"/>
+                            <constraint firstItem="Wys-mn-3d5" firstAttribute="top" secondItem="Ftq-cu-wi8" secondAttribute="top" id="sht-ij-ky2"/>
+                            <constraint firstItem="2RK-m6-cjq" firstAttribute="trailing" secondItem="izV-YJ-4Gl" secondAttribute="trailing" id="u69-wi-nSJ"/>
+                            <constraint firstItem="2RK-m6-cjq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uH6-5G-9nE"/>
+                            <constraint firstItem="Wys-mn-3d5" firstAttribute="bottom" secondItem="Ftq-cu-wi8" secondAttribute="bottom" id="wrX-Qf-mlW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wys-mn-3d5" secondAttribute="trailing" id="xUA-9J-IDz"/>
+                            <constraint firstItem="I3i-SL-LcH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yni-Ed-bgC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accValLabel" destination="izV-YJ-4Gl" id="Ue0-7f-Ufo"/>
+                        <outlet property="altValLabel" destination="gkw-8T-2G0" id="n0D-9f-rfp"/>
+                        <outlet property="latValLabel" destination="Uh7-iz-Vc4" id="Bhq-nr-BAy"/>
+                        <outlet property="longValLabel" destination="H34-Bu-F65" id="ZYR-KM-Cao"/>
+                        <outlet property="mapView" destination="77Q-IE-U37" id="YZ3-fz-BcI"/>
+                        <outlet property="spdValLabel" destination="Ftq-cu-wi8" id="m2K-0i-5HO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="502"/>
+        </scene>
+    </scenes>
+</document>
