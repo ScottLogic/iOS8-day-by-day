@@ -16,7 +16,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class LiveViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()

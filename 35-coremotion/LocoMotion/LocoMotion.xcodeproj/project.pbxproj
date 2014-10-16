@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		22E68A7419EFD82900EA3481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A7319EFD82900EA3481 /* AppDelegate.swift */; };
-		22E68A7619EFD82A00EA3481 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A7519EFD82A00EA3481 /* FirstViewController.swift */; };
-		22E68A7819EFD82A00EA3481 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A7719EFD82A00EA3481 /* SecondViewController.swift */; };
+		22E68A7619EFD82A00EA3481 /* HistoricalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A7519EFD82A00EA3481 /* HistoricalViewController.swift */; };
+		22E68A7819EFD82A00EA3481 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A7719EFD82A00EA3481 /* LiveViewController.swift */; };
 		22E68A7B19EFD82A00EA3481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A7919EFD82A00EA3481 /* Main.storyboard */; };
 		22E68A7D19EFD82A00EA3481 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A7C19EFD82A00EA3481 /* Images.xcassets */; };
 		22E68A8019EFD82A00EA3481 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A7E19EFD82A00EA3481 /* LaunchScreen.xib */; };
@@ -30,8 +30,8 @@
 		22E68A6E19EFD82900EA3481 /* LocoMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocoMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E68A7219EFD82900EA3481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E68A7319EFD82900EA3481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22E68A7519EFD82A00EA3481 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		22E68A7719EFD82A00EA3481 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		22E68A7519EFD82A00EA3481 /* HistoricalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalViewController.swift; sourceTree = "<group>"; };
+		22E68A7719EFD82A00EA3481 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		22E68A7A19EFD82A00EA3481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22E68A7C19EFD82A00EA3481 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22E68A7F19EFD82A00EA3481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				22E68A7319EFD82900EA3481 /* AppDelegate.swift */,
-				22E68A7519EFD82A00EA3481 /* FirstViewController.swift */,
-				22E68A7719EFD82A00EA3481 /* SecondViewController.swift */,
+				22E68A7519EFD82A00EA3481 /* HistoricalViewController.swift */,
+				22E68A7719EFD82A00EA3481 /* LiveViewController.swift */,
 				22E68A7919EFD82A00EA3481 /* Main.storyboard */,
 				22E68A7C19EFD82A00EA3481 /* Images.xcassets */,
 				22E68A7E19EFD82A00EA3481 /* LaunchScreen.xib */,
@@ -215,9 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E68A7819EFD82A00EA3481 /* SecondViewController.swift in Sources */,
+				22E68A7819EFD82A00EA3481 /* LiveViewController.swift in Sources */,
 				22E68A7419EFD82900EA3481 /* AppDelegate.swift in Sources */,
-				22E68A7619EFD82A00EA3481 /* FirstViewController.swift in Sources */,
+				22E68A7619EFD82A00EA3481 /* HistoricalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +411,7 @@
 				22E68A9119EFD82A00EA3481 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22E68A9219EFD82A00EA3481 /* Build configuration list for PBXNativeTarget "LocoMotionTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				22E68A9419EFD82A00EA3481 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

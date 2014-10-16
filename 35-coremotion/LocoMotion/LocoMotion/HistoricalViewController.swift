@@ -16,7 +16,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class HistoricalViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
