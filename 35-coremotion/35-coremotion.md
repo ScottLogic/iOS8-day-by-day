@@ -109,6 +109,63 @@ the `isActivityAvailable()`
 
 ## Pedometer Data
 
+iOS7 introduced the ability to quantify the walking behavior of the user via the
+`CMStepCounter` class. Well, that lasted all of a year - iOS8 deprecates it in
+place of the much more generically named `CMPedometer`. This new class adds
+functionality for measuring distance and floors climbed, where available.
+
+The class methods `isStepCountingAvailable()`, `isDistanceAvailable()` and 
+`isFloorCountingAvailable()` provide info on what capabilities are available on
+the current device.
+
+Again, you can request both live data, and historical data. Historical data is
+provided through the `queryPedometerDataFromDate(_, toDate:, withHandler:)` and
+live data via `startPedometerUpdatesFromDate(_, withHandler:)` and
+`stopPedometerUpdates()`.
+
+Both of these handlers have two parameters: an `NSError` and a `CMPedometerData`
+object which contains properties for `numberOfSteps`, `distance`, 
+`floorsAscended` and `floorsDescended`. The following code queries for pedometer
+data between two dates:
+
+    pedometer?.queryPedometerDataFromDate(activity?.startDate, toDate: activity?.endDate) {
+      (data, error) -> Void in
+      if error != nil {
+        println("There was an error requesting data from the pedometer: \(error)")
+      } else {
+        dispatch_async(dispatch_get_main_queue()) {
+          self.pedometerLabel.text = self.constructPedometerString(data)
+        }
+      }
+    }
+
+This renders the appropriate data for the running and walking activities in the
+historical table view:
+
+![Historical Data](assets/historical.png)
+
+Since 'step count' is a cumulative property, requesting live data also requires
+you provide a start date. Then, each call to your handler closure will give you
+the current cumulative total from the start date you provided:
+
+    pedometer.startPedometerUpdatesFromDate(NSDate()) {
+      (data, error) in
+      if error != nil {
+        println("There was an error obtaining pedometer data: \(error)")
+      } else {
+        dispatch_async(dispatch_get_main_queue()) {
+          self.floorsLabel.text = "\(data.floorsAscended)"
+          self.stepsLabel.text = "\(data.numberOfSteps)"
+          self.distanceLabel.text = "\(self.lengthFormatter.stringFromMeters(data.distance))"
+        }
+      }
+    }
+
+Note that again, you should marshal any UI updates to the main queue, even
+though (somewhat inconsistently) you don't provide the pedometer with a queue
+that you'd like your results delivered on.
+
+![Live Walk](assets/live_walk.png)
 
 ## Altimeter Data
 

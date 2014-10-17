@@ -59,7 +59,7 @@ class LiveViewController: UIViewController {
     pedometer.startPedometerUpdatesFromDate(NSDate()) {
       (data, error) in
       if error != nil {
-        println("There was an error obtainng pedometer data: \(error)")
+        println("There was an error obtaining pedometer data: \(error)")
       } else {
         dispatch_async(dispatch_get_main_queue()) {
           self.floorsLabel.text = "\(data.floorsAscended)"
