@@ -169,6 +169,61 @@ that you'd like your results delivered on.
 
 ## Altimeter Data
 
+iPhone 6 and 6 Plus added a barometer, allowing you to measure the air pressure,
+and therefore infer the relative change in altitude over small periods of time.
+It doesn't make sense to present historical relative altitude, and therefore
+you can only access data from this sensor on a live basis. The API is, however,
+very similar to that of the previous APIs you've seen in this article.
+
+`CMAltimeter` has a class method `isRelativeAltitudeAvailable()` that will tell
+you whether or not the current device supports relative altitude measurements.
+Provided it is, you can then use 
+`startRelativeAltitudeUpdatesToQueue(_, withHandler:)` and
+`stopRelativeAltitudeUpdates()` to receive the updates.
+
+The handler is called with two parameters - a `CMAltitudeData` and `NSError`.
+`CMAltitudeData` has a `pressure` property that represents the current pressure
+(measured in kilopascals) and a `relativeAltitude` property. This
+`relativeAltitude` property represents the _change_ in altitude
+_since the previous measurement_.
+
+The following implements this functionality:
+
+    altimeter.startRelativeAltitudeUpdatesToQueue(dataProcessingQueue) {
+      (data, error) in
+      if error != nil {
+        println("There was an error obtaining altimeter data: \(error)")
+      } else {
+        dispatch_async(dispatch_get_main_queue()) {
+          self.altChange += data.relativeAltitude
+          self.altitudeLabel.text = "\(self.lengthFormatter.stringFromMeters(self.altChange))"
+        }
+      }
+    }
+
+This ensures that the displayed altitude delta represents the change since the
+beginning of the session.
+
+![Running](assets/live_run.png)
+![Walking](assets/live_walk.png)
 
 ## Conclusion
+
+These new additions to CoreMotion are primarily there to wrap the new
+functionality provided by the improvements to hardware. They do offer some
+interesting possibilities around data driven apps, and represent the versatility
+of the motion co-processor chips that Apple has created.
+
+I have a few issues with the API - although all these classes are performing
+very similar operations, some of the methods allow you to provide a queue,
+whilst others don't. Maybe somebody could tell me why this is.
+
+Today's app (__Locomotion__) demos both the live and historical data
+functionality, and is available on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+
+
+sam
+
+[@iwantmyrealname](https://twitter.com/iwantmyrealname)
 
