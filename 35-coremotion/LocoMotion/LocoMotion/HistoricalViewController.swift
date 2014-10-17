@@ -21,6 +21,9 @@ class HistoricalViewController: UITableViewController {
 
   let motionActivityManager = CMMotionActivityManager()
   let motionHandlerQueue = NSOperationQueue()
+  let dateFormatter = NSDateFormatter()
+  let lengthFormatter = NSLengthFormatter()
+  let pedometer = CMPedometer()
   
   var activityCollection: ActivityCollection? {
     didSet {
@@ -34,6 +37,8 @@ class HistoricalViewController: UITableViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     fetchMotionActivityData()
+    dateFormatter.dateStyle = .NoStyle
+    dateFormatter.timeStyle = .ShortStyle
   }
   
   
@@ -63,6 +68,9 @@ class HistoricalViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MotionActivityCell
+    cell.dateFormatter = dateFormatter
+    cell.lengthFormatter = lengthFormatter
+    cell.pedometer = pedometer
     cell.activity = activityCollection?.activities[indexPath.row]
     return cell
   }

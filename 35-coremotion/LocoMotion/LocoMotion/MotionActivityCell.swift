@@ -22,6 +22,7 @@ class MotionActivityCell: UITableViewCell {
   
   @IBOutlet weak var iconImageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var pedometerLabel: UILabel!
   
   
   var activity: Activity? {
@@ -29,6 +30,10 @@ class MotionActivityCell: UITableViewCell {
       prepareCellForActivity(activity)
     }
   }
+  
+  var dateFormatter: NSDateFormatter?
+  var lengthFormatter: NSLengthFormatter?
+  var pedometer: CMPedometer?
   
   
   // MARK:- Utility methods
@@ -38,17 +43,48 @@ class MotionActivityCell: UITableViewCell {
       switch activity.type {
       case .Cycling:
         imageName = "cycle"
+        pedometerLabel.text = ""
       case .Running:
         imageName = "run"
+        requestPedometerData()
       case .Walking:
         imageName = "walk"
+        requestPedometerData()
       default:
         imageName = ""
+        pedometerLabel.text = ""
       }
 
       iconImageView.image = UIImage(named: imageName)
-      titleLabel.text = "\(activity.startDate) - \(activity.endDate)"
+      titleLabel.text = "\(dateFormatter!.stringFromDate(activity.startDate)) - \(dateFormatter!.stringFromDate(activity.endDate))"
     }
+  }
+  
+  private func requestPedometerData() {
+    pedometer?.queryPedometerDataFromDate(activity?.startDate, toDate: activity?.endDate) {
+      (data, error) -> Void in
+      if error != nil {
+        println("There was an error requesting data from the pedometer: \(error)")
+      } else {
+        dispatch_async(dispatch_get_main_queue()) {
+          self.pedometerLabel.text = self.constructPedometerString(data)
+        }
+      }
+    }
+  }
+  
+  private func constructPedometerString(data: CMPedometerData) -> String {
+    var pedometerString = ""
+    if CMPedometer.isStepCountingAvailable() {
+      pedometerString += "\(data.numberOfSteps) steps | "
+    }
+    if CMPedometer.isDistanceAvailable() {
+      pedometerString += "\(lengthFormatter!.stringFromMeters(data.distance)) | "
+    }
+    if CMPedometer.isFloorCountingAvailable() {
+      pedometerString += "\(data.floorsAscended) floors"
+    }
+    return pedometerString
   }
 
 }

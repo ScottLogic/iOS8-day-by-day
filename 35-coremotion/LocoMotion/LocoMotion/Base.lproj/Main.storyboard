@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Historical Motion-->
@@ -19,28 +20,39 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycle" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-gI-uQm">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="73"/>
+                                            <rect key="frame" x="0.0" y="8" width="128" height="59"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="128" id="gi7-Aj-Ocn"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pq-Qt-Lhy">
-                                            <rect key="frame" x="136" y="23" width="42" height="30"/>
+                                            <rect key="frame" x="136" y="8" width="42" height="30"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedometer Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4R-fe-yxW">
+                                            <rect key="frame" x="136" y="46" width="456" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="S7E-gI-uQm" firstAttribute="leading" secondItem="lqg-zk-ECn" secondAttribute="leading" id="9Hw-L6-uRz"/>
-                                        <constraint firstAttribute="bottom" secondItem="S7E-gI-uQm" secondAttribute="bottom" constant="2" id="Db7-cR-cwC"/>
-                                        <constraint firstAttribute="centerY" secondItem="8Pq-Qt-Lhy" secondAttribute="centerY" id="IQj-kc-8lG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="S7E-gI-uQm" secondAttribute="bottom" id="Db7-cR-cwC"/>
+                                        <constraint firstItem="K4R-fe-yxW" firstAttribute="leading" secondItem="8Pq-Qt-Lhy" secondAttribute="leading" id="HSb-RH-Kfb"/>
                                         <constraint firstItem="8Pq-Qt-Lhy" firstAttribute="leading" secondItem="S7E-gI-uQm" secondAttribute="trailing" constant="8" id="U6u-HT-gjl"/>
-                                        <constraint firstItem="S7E-gI-uQm" firstAttribute="top" secondItem="lqg-zk-ECn" secondAttribute="top" id="XJL-L3-Ymn"/>
+                                        <constraint firstItem="S7E-gI-uQm" firstAttribute="top" secondItem="lqg-zk-ECn" secondAttribute="topMargin" id="XJL-L3-Ymn"/>
+                                        <constraint firstItem="8Pq-Qt-Lhy" firstAttribute="top" secondItem="lqg-zk-ECn" secondAttribute="topMargin" id="lYn-Xy-0SK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="K4R-fe-yxW" secondAttribute="trailing" id="mwt-HI-Dg2"/>
+                                        <constraint firstItem="K4R-fe-yxW" firstAttribute="top" secondItem="8Pq-Qt-Lhy" secondAttribute="bottom" constant="8" id="nmC-bc-flX"/>
+                                        <constraint firstItem="K4R-fe-yxW" firstAttribute="bottom" secondItem="lqg-zk-ECn" secondAttribute="bottomMargin" id="zqV-RW-juH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="iconImageView" destination="S7E-gI-uQm" id="DKS-L2-nNP"/>
+                                    <outlet property="pedometerLabel" destination="K4R-fe-yxW" id="xbx-8u-qeT"/>
                                     <outlet property="titleLabel" destination="8Pq-Qt-Lhy" id="hCO-9Y-LER"/>
                                 </connections>
                             </tableViewCell>
