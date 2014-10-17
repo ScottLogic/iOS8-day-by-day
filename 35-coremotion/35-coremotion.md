@@ -25,6 +25,87 @@ code from the ShinobiControls github at
 
 ## Motion Activity Data
 
+At the highest level, CoreMotion offers estimates of "activity" data - i.e. an
+estimate of what the user is actually doing. This is the result of a
+classification algorithm which takes all the motion sensors (along with other
+data) into account. In iOS7, the activities could be classified into
+__running__, __walking__, __automotive__ and __stationary__. iOS8 adds a new
+classification in the form of __cycling__.
+
+Getting hold of motion activity data can take place in two different ways -
+dependent on your use case. You can either request up to 7 days worth of
+historical data, or you can ask for a live stream of updates, as the device
+recognizes changes in the activity state.
+
+`CMMotionActivityManager` is the class that is responsible for motion
+activities, and a historical 'pull' query uses the
+`queryActivityStartingFromDate(_, toDate:, toQueue:, withHandler:)`. Notice that
+you have to provide a queue upon which your results will be delivered - this is
+great for maintaining a responsive app, and is just an instance of 
+`NSOperationQueue`:
+
+    let oneWeekInterval = 24 * 3600 as NSTimeInterval
+    motionActivityManager.queryActivityStartingFromDate(NSDate(timeIntervalSinceNow: -oneWeekInterval),
+                                                        toDate: NSDate(), toQueue: motionHandlerQueue) {
+      (activities, error) in
+      if error != nil {
+        println("There was an error retrieving the motion results: \(error)")
+      }
+      self.activityCollection = ActivityCollection(activities: activities as [CMMotionActivity])
+    }
+
+The handler is called with an array of `CMMotionActivity` objects and an error.
+If the user hasn't authorized use of the motion sensors then you can inspect the
+error and see that it has a type of `CMErrorMotionActivityNotAuthorized`.
+
+A `CMMotionActivity` object has some `Bool` properties, which determine which
+kind of activity was detected. These comprise `stationary`, `walking`, `running`,
+`automotive`, `cycling` and `unknown`. There are various rules which specify
+when each of these can occur (e.g. `unknown` will only be true when the device
+has just been turned on) and most of them were present in iOS7. iOS8 adds the
+cycling state. The activity also has a `startDate` and a `confidence`.
+
+The first time you run an app, CoreMotion will present the user with
+an alert asking whether they are happy to share their motion data:
+
+![Request Permission](assets/requesting_permission.png)
+
+__LocoMotion__ pulls the last 24 hours of activity data out, and displays in in
+a table:
+
+![Historical Data](assets/historical.png)
+
+Getting live activity data from `CMMotionActivityManager` uses the
+`startActivityUpdatesToQueue(_, withHandler:)` method. Again this requires an 
+`NSOperationQueue` to determine which queue the results should be delivered on,
+and a handler, which has a single `CMMotionActivity` argument.
+
+The following method updates an image view with an appropriate logo given the
+current activity type:
+
+    activityManager.startActivityUpdatesToQueue(dataProcessingQueue) {
+      data in
+      dispatch_async(dispatch_get_main_queue()) {
+        if data.running {
+          self.activityImageView.image = UIImage(named: "run")
+        } else if data.cycling {
+          self.activityImageView.image = UIImage(named: "cycle")
+        } else if data.walking {
+          self.activityImageView.image = UIImage(named: "walk")
+        } else {
+          self.activityImageView.image = nil
+        }
+      }
+    }
+
+Note that unless you request that results are delivered on the main queue, then
+you'll need to marshal any UI updates over to the main queue.
+
+You use the `stopActivityUpdates()` method to cancel the delivery of updates.
+
+To determine whether the current device supports motion activities, you can use
+the `isActivityAvailable()`
+
 
 ## Pedometer Data
 
