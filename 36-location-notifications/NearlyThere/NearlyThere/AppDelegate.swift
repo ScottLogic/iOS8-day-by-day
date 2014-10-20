@@ -22,7 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    if launchOptions?[UIApplicationLaunchOptionsLocationKey] != nil {
+      println("It's a location event")
+    }
     return true
+  }
+  
+  func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+    println("\(notification)")
+    if notification.region != nil {
+      println("It's a location notification!")
+    }
   }
 }
 

@@ -161,6 +161,7 @@
 				TargetAttributes = {
 					227059AC19F512D4003D0222 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = XJ74287KY8;
 					};
 					227059C119F512D4003D0222 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -338,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = NearlyThere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = NearlyThere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,6 +410,7 @@
 				227059CE19F512D5003D0222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		227059CF19F512D5003D0222 /* Build configuration list for PBXNativeTarget "NearlyThereTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +419,7 @@
 				227059D119F512D5003D0222 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
