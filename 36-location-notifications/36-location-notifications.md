@@ -128,7 +128,51 @@ This notification should now fire as expected:
 
 ## Responding to Notifications
 
+As with all local notifications, the application delegate has a method which
+will be called when it fires - `application(_, didReceiveLocalNotification:)`.
+If the notification was triggered by a location notification, then it will have
+a non-`nil` `region` property:
+
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+      println("\(notification)")
+      if notification.region != nil {
+        println("It's a location notification!")
+      }
+    }
+
+This method will be called irrespective of whether your app is currently in the
+foreground - but remember that if your app is in the foreground, then the system
+won't show any UI - that's left up to you.
+
+If the app is in the background then the system will show an alert UI (in
+whatever form the user has configured for your app). If the user decided to tap
+on the event, then your app will be launched with an options dictionary which
+contains the `UIApplicationLaunchOptionsLocationKey` key:
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions
+                     launchOptions: [NSObject: AnyObject]?) -> Bool {
+      // Override point for customization after application launch.
+      if launchOptions?[UIApplicationLaunchOptionsLocationKey] != nil {
+        println("It's a location event")
+      }
+      return true
+    }
+
 ## Conclusion
+
+This functionality has been available in iOS since background location
+monitoring was possible, but the process to wire it all together was a but
+arduous. This new local notification functionality greatly improves the
+approach for geo-fencing like use cases.
+
+The source code for today's app is available on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+Take a look and fix any problems in a pull-request - it'd be much appreciated.
+Let me know on twitter - [@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+
+sam
+
 
 
 
