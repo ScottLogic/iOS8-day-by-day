@@ -89,6 +89,42 @@ to your app. And you will not be informed of this.
 
 ## Creating Notifications
 
+Location notifications are exactly the same as temporal notifications - i.e.
+they are local notifications. Therefore they are created as instances of
+`UILocalNotification`:
+
+    let notification = UILocalNotification()
+    notification.alertBody = "You're nearly there!"
+
+To specify that a notification is a location notification you need to provide a
+`CLRegion` object to the `region` property. `CLRegion` has two concrete
+subclasses - `CLCircularRegion` and `CLBeaconRegion`. This means that you can
+specify an alert region based both on absolute location on the planet, or
+relative to a given iBeacon.
+
+The following specifies a circular region with a radius of 50m around the
+coordinate of the pin drop annotation:
+
+    notification.region = CLCircularRegion(center: annotation!.coordinate, radius: 50,
+                                           identifier: "Destination")
+    notification.regionTriggersOnce = true
+
+The `regionTriggersOnce` property allows you specify whether a notification
+should expire once it has triggered once. The alternative is for the
+notification to fire every time the user crosses the boundary into the region.
+
+Once you've created the notification you need to schedule it, using the
+`scheduleLocalNotification()` method on `UIApplication`:
+
+    UIApplication.sharedApplication().scheduleLocalNotification(notification)
+
+You remove notifications with the `cancelLocalNotification(_)` and
+`cancelAllLocalNotifications()` methods on `UIApplication`.
+
+This notification should now fire as expected:
+
+![Notification](assets/notification2.png)
+![Notification](assets/notification.png)
 
 ## Responding to Notifications
 
