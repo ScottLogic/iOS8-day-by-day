@@ -13,6 +13,9 @@
 		2283351D19F663B800F396C5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2283351C19F663B800F396C5 /* Images.xcassets */; };
 		2283352019F663B800F396C5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2283351E19F663B800F396C5 /* LaunchScreen.xib */; };
 		2283352C19F663B800F396C5 /* WordTilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283352B19F663B800F396C5 /* WordTilesTests.swift */; };
+		2283353619F674AE00F396C5 /* WordTileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283353519F674AE00F396C5 /* WordTileCollectionViewCell.swift */; };
+		2283353819F688DE00F396C5 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2283353719F688DE00F396C5 /* words.txt */; };
+		2283353A19F6893000F396C5 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283353919F6893000F396C5 /* WordList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		2283352519F663B800F396C5 /* WordTilesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordTilesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2283352A19F663B800F396C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2283352B19F663B800F396C5 /* WordTilesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTilesTests.swift; sourceTree = "<group>"; };
+		2283353519F674AE00F396C5 /* WordTileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTileCollectionViewCell.swift; sourceTree = "<group>"; };
+		2283353719F688DE00F396C5 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		2283353919F6893000F396C5 /* WordList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +85,13 @@
 			children = (
 				2283351519F663B800F396C5 /* AppDelegate.swift */,
 				2283351719F663B800F396C5 /* ViewController.swift */,
+				2283353519F674AE00F396C5 /* WordTileCollectionViewCell.swift */,
 				2283351919F663B800F396C5 /* Main.storyboard */,
 				2283351C19F663B800F396C5 /* Images.xcassets */,
 				2283351E19F663B800F396C5 /* LaunchScreen.xib */,
 				2283351319F663B800F396C5 /* Supporting Files */,
+				2283353719F688DE00F396C5 /* words.txt */,
+				2283353919F6893000F396C5 /* WordList.swift */,
 			);
 			path = WordTiles;
 			sourceTree = "<group>";
@@ -194,6 +203,7 @@
 			files = (
 				2283351B19F663B800F396C5 /* Main.storyboard in Resources */,
 				2283352019F663B800F396C5 /* LaunchScreen.xib in Resources */,
+				2283353819F688DE00F396C5 /* words.txt in Resources */,
 				2283351D19F663B800F396C5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2283351819F663B800F396C5 /* ViewController.swift in Sources */,
+				2283353A19F6893000F396C5 /* WordList.swift in Sources */,
+				2283353619F674AE00F396C5 /* WordTileCollectionViewCell.swift in Sources */,
 				2283351619F663B800F396C5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +419,7 @@
 				2283353119F663B800F396C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2283353219F663B800F396C5 /* Build configuration list for PBXNativeTarget "WordTilesTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +428,7 @@
 				2283353419F663B800F396C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -16,11 +16,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UICollectionViewController {
 
+  let wordList = WordList()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
+  
+  
+  // MARK:- datasource
+  override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return wordList.words.count
+  }
+  
+  override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WordCell", forIndexPath: indexPath) as WordTileCollectionViewCell
+    cell.word = wordList.words[indexPath.item]
+    return cell
+  }
+  
+  
 }
 
