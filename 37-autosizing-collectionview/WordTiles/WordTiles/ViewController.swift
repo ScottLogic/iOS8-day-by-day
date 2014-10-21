@@ -23,6 +23,9 @@ class ViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    if let cvl = collectionViewLayout as? UICollectionViewFlowLayout {
+      cvl.estimatedItemSize = CGSize(width: 150, height: 75)
+    }
   }
   
   
