@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22E68A7419EFD82900EA3481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A7319EFD82900EA3481 /* AppDelegate.swift */; };
+		22E68A7619EFD82A00EA3481 /* HistoricalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A7519EFD82A00EA3481 /* HistoricalViewController.swift */; };
+		22E68A7819EFD82A00EA3481 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A7719EFD82A00EA3481 /* LiveViewController.swift */; };
+		22E68A7B19EFD82A00EA3481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A7919EFD82A00EA3481 /* Main.storyboard */; };
+		22E68A7D19EFD82A00EA3481 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A7C19EFD82A00EA3481 /* Images.xcassets */; };
+		22E68A8019EFD82A00EA3481 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A7E19EFD82A00EA3481 /* LaunchScreen.xib */; };
+		22E68A8C19EFD82A00EA3481 /* LocoMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A8B19EFD82A00EA3481 /* LocoMotionTests.swift */; };
+		22E68A9619EFF63C00EA3481 /* MotionActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A9519EFF63C00EA3481 /* MotionActivityCell.swift */; };
+		22E68A9919F0048100EA3481 /* ImageAttribution.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22E68A9719F0048100EA3481 /* ImageAttribution.txt */; };
+		22E68A9C19F0178A00EA3481 /* ActivityCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E68A9B19F0178A00EA3481 /* ActivityCollection.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22E68A8619EFD82A00EA3481 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22E68A6619EFD82900EA3481 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22E68A6D19EFD82900EA3481;
+			remoteInfo = LocoMotion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22E68A6E19EFD82900EA3481 /* LocoMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocoMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E68A7219EFD82900EA3481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22E68A7319EFD82900EA3481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22E68A7519EFD82A00EA3481 /* HistoricalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalViewController.swift; sourceTree = "<group>"; };
+		22E68A7719EFD82A00EA3481 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		22E68A7A19EFD82A00EA3481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22E68A7C19EFD82A00EA3481 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22E68A7F19EFD82A00EA3481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		22E68A8519EFD82A00EA3481 /* LocoMotionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocoMotionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E68A8A19EFD82A00EA3481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22E68A8B19EFD82A00EA3481 /* LocoMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocoMotionTests.swift; sourceTree = "<group>"; };
+		22E68A9519EFF63C00EA3481 /* MotionActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionActivityCell.swift; sourceTree = "<group>"; };
+		22E68A9719F0048100EA3481 /* ImageAttribution.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ImageAttribution.txt; sourceTree = "<group>"; };
+		22E68A9B19F0178A00EA3481 /* ActivityCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCollection.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22E68A6B19EFD82900EA3481 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22E68A8219EFD82A00EA3481 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22E68A6519EFD82900EA3481 = {
+			isa = PBXGroup;
+			children = (
+				22E68A7019EFD82900EA3481 /* LocoMotion */,
+				22E68A8819EFD82A00EA3481 /* LocoMotionTests */,
+				22E68A6F19EFD82900EA3481 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22E68A6F19EFD82900EA3481 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22E68A6E19EFD82900EA3481 /* LocoMotion.app */,
+				22E68A8519EFD82A00EA3481 /* LocoMotionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22E68A7019EFD82900EA3481 /* LocoMotion */ = {
+			isa = PBXGroup;
+			children = (
+				22E68A7319EFD82900EA3481 /* AppDelegate.swift */,
+				22E68A7519EFD82A00EA3481 /* HistoricalViewController.swift */,
+				22E68A7719EFD82A00EA3481 /* LiveViewController.swift */,
+				22E68A7919EFD82A00EA3481 /* Main.storyboard */,
+				22E68A7C19EFD82A00EA3481 /* Images.xcassets */,
+				22E68A7E19EFD82A00EA3481 /* LaunchScreen.xib */,
+				22E68A7119EFD82900EA3481 /* Supporting Files */,
+				22E68A9519EFF63C00EA3481 /* MotionActivityCell.swift */,
+				22E68A9719F0048100EA3481 /* ImageAttribution.txt */,
+				22E68A9B19F0178A00EA3481 /* ActivityCollection.swift */,
+			);
+			path = LocoMotion;
+			sourceTree = "<group>";
+		};
+		22E68A7119EFD82900EA3481 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22E68A7219EFD82900EA3481 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22E68A8819EFD82A00EA3481 /* LocoMotionTests */ = {
+			isa = PBXGroup;
+			children = (
+				22E68A8B19EFD82A00EA3481 /* LocoMotionTests.swift */,
+				22E68A8919EFD82A00EA3481 /* Supporting Files */,
+			);
+			path = LocoMotionTests;
+			sourceTree = "<group>";
+		};
+		22E68A8919EFD82A00EA3481 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22E68A8A19EFD82A00EA3481 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22E68A6D19EFD82900EA3481 /* LocoMotion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22E68A8F19EFD82A00EA3481 /* Build configuration list for PBXNativeTarget "LocoMotion" */;
+			buildPhases = (
+				22E68A6A19EFD82900EA3481 /* Sources */,
+				22E68A6B19EFD82900EA3481 /* Frameworks */,
+				22E68A6C19EFD82900EA3481 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocoMotion;
+			productName = LocoMotion;
+			productReference = 22E68A6E19EFD82900EA3481 /* LocoMotion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22E68A8419EFD82A00EA3481 /* LocoMotionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22E68A9219EFD82A00EA3481 /* Build configuration list for PBXNativeTarget "LocoMotionTests" */;
+			buildPhases = (
+				22E68A8119EFD82A00EA3481 /* Sources */,
+				22E68A8219EFD82A00EA3481 /* Frameworks */,
+				22E68A8319EFD82A00EA3481 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22E68A8719EFD82A00EA3481 /* PBXTargetDependency */,
+			);
+			name = LocoMotionTests;
+			productName = LocoMotionTests;
+			productReference = 22E68A8519EFD82A00EA3481 /* LocoMotionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22E68A6619EFD82900EA3481 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ShinobiControls;
+				TargetAttributes = {
+					22E68A6D19EFD82900EA3481 = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = XJ74287KY8;
+					};
+					22E68A8419EFD82A00EA3481 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 22E68A6D19EFD82900EA3481;
+					};
+				};
+			};
+			buildConfigurationList = 22E68A6919EFD82900EA3481 /* Build configuration list for PBXProject "LocoMotion" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22E68A6519EFD82900EA3481;
+			productRefGroup = 22E68A6F19EFD82900EA3481 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22E68A6D19EFD82900EA3481 /* LocoMotion */,
+				22E68A8419EFD82A00EA3481 /* LocoMotionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22E68A6C19EFD82900EA3481 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E68A7B19EFD82A00EA3481 /* Main.storyboard in Resources */,
+				22E68A8019EFD82A00EA3481 /* LaunchScreen.xib in Resources */,
+				22E68A9919F0048100EA3481 /* ImageAttribution.txt in Resources */,
+				22E68A7D19EFD82A00EA3481 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22E68A8319EFD82A00EA3481 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22E68A6A19EFD82900EA3481 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E68A7819EFD82A00EA3481 /* LiveViewController.swift in Sources */,
+				22E68A7419EFD82900EA3481 /* AppDelegate.swift in Sources */,
+				22E68A9619EFF63C00EA3481 /* MotionActivityCell.swift in Sources */,
+				22E68A9C19F0178A00EA3481 /* ActivityCollection.swift in Sources */,
+				22E68A7619EFD82A00EA3481 /* HistoricalViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22E68A8119EFD82A00EA3481 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E68A8C19EFD82A00EA3481 /* LocoMotionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22E68A8719EFD82A00EA3481 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22E68A6D19EFD82900EA3481 /* LocoMotion */;
+			targetProxy = 22E68A8619EFD82A00EA3481 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22E68A7919EFD82A00EA3481 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22E68A7A19EFD82A00EA3481 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22E68A7E19EFD82A00EA3481 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22E68A7F19EFD82A00EA3481 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22E68A8D19EFD82A00EA3481 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22E68A8E19EFD82A00EA3481 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22E68A9019EFD82A00EA3481 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = LocoMotion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		22E68A9119EFD82A00EA3481 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = LocoMotion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		22E68A9319EFD82A00EA3481 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LocoMotionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocoMotion.app/LocoMotion";
+			};
+			name = Debug;
+		};
+		22E68A9419EFD82A00EA3481 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LocoMotionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocoMotion.app/LocoMotion";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22E68A6919EFD82900EA3481 /* Build configuration list for PBXProject "LocoMotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22E68A8D19EFD82A00EA3481 /* Debug */,
+				22E68A8E19EFD82A00EA3481 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22E68A8F19EFD82A00EA3481 /* Build configuration list for PBXNativeTarget "LocoMotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22E68A9019EFD82A00EA3481 /* Debug */,
+				22E68A9119EFD82A00EA3481 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22E68A9219EFD82A00EA3481 /* Build configuration list for PBXNativeTarget "LocoMotionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22E68A9319EFD82A00EA3481 /* Debug */,
+				22E68A9419EFD82A00EA3481 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22E68A6619EFD82900EA3481 /* Project object */;
+}
