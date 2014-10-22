@@ -77,6 +77,23 @@ and change its appearance to match this:
 
 ## Autosizing via Interface Builder
 
+It seems a shame to have to drop to code to set the estimated size - all other
+sizing properties associated with a flow layout can be configured within 
+Interface Builder:
+
+![Sizing in IB](assets/sizes.png)
+
+However, you'll notice that there is nowhere obvious to configure the
+`estimatedItemSize` property. Hopefully in future updates to Xcode this issue 
+will be addressed, but until that point, it is is still possible to set the
+value via the __User Defined Runtime Attributes__ panel inside the
+__Identity Inspector__ for the `UICollectionViewFlowLayout`.
+
+![Setting Estimated Size](assets/set_size_in_ib.png)
+
+This panel allows you to set properties on objects via key-value coding - which
+is essentially what the specialized panels in IB do anyway.
+
 
 ## Mechanics of Autosizing
 
