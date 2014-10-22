@@ -97,6 +97,42 @@ is essentially what the specialized panels in IB do anyway.
 
 ## Mechanics of Autosizing
 
+In order to allow a cell (or indeed any reusable item in a collection view) to
+determine its own size, a new method has been added to `UICollectionReusableView` -
+in the form of `preferredLayoutAttributesFittingAttributes(_:)`. This method
+gives a cell the opportunity to return the layout attributes it would like to be
+displayed with, given the ones the layout has provided.
+
+The default implementation of this in `UICollectionViewCell` just changes the
+size property to match the size determined via autolayout. In the flow layout,
+the result from this method is only used if the `estimatedItemSize` property is
+non-zero, but you could use it in whatever way you would like in your own custom
+layouts.
+
+Importantly, the default implementation does all the auto-layout magic for you.
+If you wish to alter other attributes you can do that, but you don't have to get
+involved with any of the autolayout unless you want to.
+
 
 ## Conclusion
+
+This new feature has a fairly small API - just two new items across the whole of
+the collection view classes. In the past achieving the same effect was possible,
+but it was a lot of work, and also pulled the sizing of elements out into a
+different place - effectively duplicating the same functionality.
+
+Since the cells are likely to be fairly simple, and they have to be self-
+contained, the autolayout engine will not add much complexity to the collection
+view layout process - so you can be confident that you won't be crippling your
+app.
+
+The sample app that accompanies today's article is available as part of the iOS8
+day-by-day repo on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+It's pretty simple - I wanted to demo some more advanced uses with a custom
+layout, but didn't get around to it. You should fork the repo and add a cool
+thing that demos this. I might even send you some stickers/pens/t-shirt type
+stuff... Let me know on [@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+sam
 

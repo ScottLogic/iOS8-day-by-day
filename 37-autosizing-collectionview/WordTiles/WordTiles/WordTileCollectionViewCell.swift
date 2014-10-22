@@ -25,4 +25,9 @@ class WordTileCollectionViewCell: UICollectionViewCell {
       wordLabel.text = word
     }
   }
+  
+  override func preferredLayoutAttributesFittingAttributes(layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes! {
+    let toReturn = super.preferredLayoutAttributesFittingAttributes(layoutAttributes)
+    return toReturn
+  }
 }
