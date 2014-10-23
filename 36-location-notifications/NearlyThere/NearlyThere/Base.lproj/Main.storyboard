@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NearlyThere" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yfl-cP-nWp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3d-wo-meG">
+                                <rect key="frame" x="246" y="20" width="108" height="48"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Drop Pin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LPa-SS-KcL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yfl-cP-nWp" secondAttribute="trailing" id="24y-0L-Hfr"/>
+                            <constraint firstItem="yfl-cP-nWp" firstAttribute="top" secondItem="e3d-wo-meG" secondAttribute="top" constant="-20" id="CzH-uN-owv"/>
+                            <constraint firstItem="yfl-cP-nWp" firstAttribute="centerX" secondItem="e3d-wo-meG" secondAttribute="centerX" id="SM0-S0-mE7"/>
+                            <constraint firstItem="yfl-cP-nWp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e9j-r8-HMw"/>
+                            <constraint firstItem="yfl-cP-nWp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jsY-Jv-Ucb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yfl-cP-nWp" secondAttribute="bottom" id="pd4-en-rwM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="e3d-wo-meG" id="AWo-LV-1JN"/>
+                        <outlet property="mapView" destination="yfl-cP-nWp" id="J33-al-tot"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

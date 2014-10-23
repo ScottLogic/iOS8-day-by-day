@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		227059B319F512D4003D0222 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227059B219F512D4003D0222 /* AppDelegate.swift */; };
+		227059B519F512D4003D0222 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227059B419F512D4003D0222 /* ViewController.swift */; };
+		227059B819F512D4003D0222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227059B619F512D4003D0222 /* Main.storyboard */; };
+		227059BA19F512D4003D0222 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227059B919F512D4003D0222 /* Images.xcassets */; };
+		227059BD19F512D4003D0222 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227059BB19F512D4003D0222 /* LaunchScreen.xib */; };
+		227059C919F512D5003D0222 /* NearlyThereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227059C819F512D5003D0222 /* NearlyThereTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		227059C319F512D4003D0222 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 227059A519F512D3003D0222 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 227059AC19F512D4003D0222;
+			remoteInfo = NearlyThere;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		227059AD19F512D4003D0222 /* NearlyThere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearlyThere.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		227059B119F512D4003D0222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		227059B219F512D4003D0222 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		227059B419F512D4003D0222 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		227059B719F512D4003D0222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		227059B919F512D4003D0222 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		227059BC19F512D4003D0222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		227059C219F512D4003D0222 /* NearlyThereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearlyThereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		227059C719F512D5003D0222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		227059C819F512D5003D0222 /* NearlyThereTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearlyThereTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		227059AA19F512D4003D0222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227059BF19F512D4003D0222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		227059A419F512D3003D0222 = {
+			isa = PBXGroup;
+			children = (
+				227059AF19F512D4003D0222 /* NearlyThere */,
+				227059C519F512D5003D0222 /* NearlyThereTests */,
+				227059AE19F512D4003D0222 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		227059AE19F512D4003D0222 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				227059AD19F512D4003D0222 /* NearlyThere.app */,
+				227059C219F512D4003D0222 /* NearlyThereTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		227059AF19F512D4003D0222 /* NearlyThere */ = {
+			isa = PBXGroup;
+			children = (
+				227059B219F512D4003D0222 /* AppDelegate.swift */,
+				227059B419F512D4003D0222 /* ViewController.swift */,
+				227059B619F512D4003D0222 /* Main.storyboard */,
+				227059B919F512D4003D0222 /* Images.xcassets */,
+				227059BB19F512D4003D0222 /* LaunchScreen.xib */,
+				227059B019F512D4003D0222 /* Supporting Files */,
+			);
+			path = NearlyThere;
+			sourceTree = "<group>";
+		};
+		227059B019F512D4003D0222 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				227059B119F512D4003D0222 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		227059C519F512D5003D0222 /* NearlyThereTests */ = {
+			isa = PBXGroup;
+			children = (
+				227059C819F512D5003D0222 /* NearlyThereTests.swift */,
+				227059C619F512D5003D0222 /* Supporting Files */,
+			);
+			path = NearlyThereTests;
+			sourceTree = "<group>";
+		};
+		227059C619F512D5003D0222 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				227059C719F512D5003D0222 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		227059AC19F512D4003D0222 /* NearlyThere */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 227059CC19F512D5003D0222 /* Build configuration list for PBXNativeTarget "NearlyThere" */;
+			buildPhases = (
+				227059A919F512D4003D0222 /* Sources */,
+				227059AA19F512D4003D0222 /* Frameworks */,
+				227059AB19F512D4003D0222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NearlyThere;
+			productName = NearlyThere;
+			productReference = 227059AD19F512D4003D0222 /* NearlyThere.app */;
+			productType = "com.apple.product-type.application";
+		};
+		227059C119F512D4003D0222 /* NearlyThereTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 227059CF19F512D5003D0222 /* Build configuration list for PBXNativeTarget "NearlyThereTests" */;
+			buildPhases = (
+				227059BE19F512D4003D0222 /* Sources */,
+				227059BF19F512D4003D0222 /* Frameworks */,
+				227059C019F512D4003D0222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				227059C419F512D4003D0222 /* PBXTargetDependency */,
+			);
+			name = NearlyThereTests;
+			productName = NearlyThereTests;
+			productReference = 227059C219F512D4003D0222 /* NearlyThereTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		227059A519F512D3003D0222 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ShinobiControls;
+				TargetAttributes = {
+					227059AC19F512D4003D0222 = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = XJ74287KY8;
+					};
+					227059C119F512D4003D0222 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 227059AC19F512D4003D0222;
+					};
+				};
+			};
+			buildConfigurationList = 227059A819F512D4003D0222 /* Build configuration list for PBXProject "NearlyThere" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 227059A419F512D3003D0222;
+			productRefGroup = 227059AE19F512D4003D0222 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				227059AC19F512D4003D0222 /* NearlyThere */,
+				227059C119F512D4003D0222 /* NearlyThereTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		227059AB19F512D4003D0222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227059B819F512D4003D0222 /* Main.storyboard in Resources */,
+				227059BD19F512D4003D0222 /* LaunchScreen.xib in Resources */,
+				227059BA19F512D4003D0222 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227059C019F512D4003D0222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		227059A919F512D4003D0222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227059B519F512D4003D0222 /* ViewController.swift in Sources */,
+				227059B319F512D4003D0222 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		227059BE19F512D4003D0222 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				227059C919F512D5003D0222 /* NearlyThereTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		227059C419F512D4003D0222 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 227059AC19F512D4003D0222 /* NearlyThere */;
+			targetProxy = 227059C319F512D4003D0222 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		227059B619F512D4003D0222 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				227059B719F512D4003D0222 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		227059BB19F512D4003D0222 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				227059BC19F512D4003D0222 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		227059CA19F512D5003D0222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		227059CB19F512D5003D0222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		227059CD19F512D5003D0222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = NearlyThere/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		227059CE19F512D5003D0222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = NearlyThere/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		227059D019F512D5003D0222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NearlyThereTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearlyThere.app/NearlyThere";
+			};
+			name = Debug;
+		};
+		227059D119F512D5003D0222 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NearlyThereTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearlyThere.app/NearlyThere";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		227059A819F512D4003D0222 /* Build configuration list for PBXProject "NearlyThere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227059CA19F512D5003D0222 /* Debug */,
+				227059CB19F512D5003D0222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		227059CC19F512D5003D0222 /* Build configuration list for PBXNativeTarget "NearlyThere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227059CD19F512D5003D0222 /* Debug */,
+				227059CE19F512D5003D0222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		227059CF19F512D5003D0222 /* Build configuration list for PBXNativeTarget "NearlyThereTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				227059D019F512D5003D0222 /* Debug */,
+				227059D119F512D5003D0222 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 227059A519F512D3003D0222 /* Project object */;
+}
