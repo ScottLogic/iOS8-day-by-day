@@ -17,13 +17,29 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    userActivity = NSUserActivity(activityType: "com.shinobicontrols.MapOff.viewport")
+    userActivity?.becomeCurrent()
+    mapView.delegate = self
+  }
+  
+  
+  override func updateUserActivityState(activity: NSUserActivity) {
+    let regionData = NSData(bytes: &mapView.region, length: sizeof(MKCoordinateRegion))
+    activity.userInfo = ["region" : regionData]
+    println("Updating")
+  }
+  
+  
+  // MARK:- MKMapViewDelegate
+  func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+    userActivity?.needsSave = true
   }
 
 }
