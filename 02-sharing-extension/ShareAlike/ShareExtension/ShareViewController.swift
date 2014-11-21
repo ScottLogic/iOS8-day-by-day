@@ -86,11 +86,11 @@ class ShareViewController: SLComposeServiceViewController {
   
   
   func urlRequestWithImage(image: UIImage?, text: String) -> NSURLRequest? {
-    let url = NSURL.URLWithString(sc_uploadURL)
-    let request = NSMutableURLRequest(URL: url)
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    request.addValue("application/json", forHTTPHeaderField: "Accept")
-    request.HTTPMethod = "POST"
+    let url = NSURL(fileURLWithPath: sc_uploadURL)
+    let request: NSMutableURLRequest?  = (url==nil) ? NSMutableURLRequest(URL: url!) : nil
+    request?.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request?.addValue("application/json", forHTTPHeaderField: "Accept")
+    request?.HTTPMethod = "POST"
     
     var jsonObject = NSMutableDictionary()
     jsonObject["text"] = text
@@ -102,7 +102,7 @@ class ShareViewController: SLComposeServiceViewController {
     var jsonError: NSError?
     let jsonData = NSJSONSerialization.dataWithJSONObject(jsonObject, options: nil, error: &jsonError)
     if (jsonData != nil) {
-      request.HTTPBody = jsonData
+      request?.HTTPBody = jsonData
     } else {
       if let error = jsonError {
         println("JSON Error: \(error.localizedDescription)")
@@ -116,7 +116,7 @@ class ShareViewController: SLComposeServiceViewController {
     var resultDict = NSMutableDictionary()
     resultDict["height"] = image.size.height
     resultDict["width"] = image.size.width
-    resultDict["orientation"] = image.imageOrientation.toRaw()
+    resultDict["orientation"] = image.imageOrientation.rawValue
     resultDict["scale"] = image.scale
     resultDict["description"] = image.description
     return resultDict.copy() as NSDictionary
