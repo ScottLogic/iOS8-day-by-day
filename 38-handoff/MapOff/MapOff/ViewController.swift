@@ -29,13 +29,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
     mapView.delegate = self
   }
   
-  
   override func updateUserActivityState(activity: NSUserActivity) {
     let regionData = NSData(bytes: &mapView.region, length: sizeof(MKCoordinateRegion))
     activity.userInfo = ["region" : regionData]
-    println("Updating")
   }
-  
   
   // MARK:- MKMapViewDelegate
   func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
