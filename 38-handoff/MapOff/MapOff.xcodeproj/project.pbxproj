@@ -407,6 +407,7 @@
 				224D13651A11199C00A53AFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		224D13661A11199C00A53AFB /* Build configuration list for PBXNativeTarget "MapOffTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +416,7 @@
 				224D13681A11199C00A53AFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

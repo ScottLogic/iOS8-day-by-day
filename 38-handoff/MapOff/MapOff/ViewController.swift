@@ -24,8 +24,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    userActivity = NSUserActivity(activityType: "com.shinobicontrols.MapOff.viewport")
-    userActivity?.becomeCurrent()
+    let activityType = "com.shinobicontrols.MapOff.viewport"
+    if userActivity?.activityType != activityType {
+      userActivity?.invalidate()
+      userActivity = NSUserActivity(activityType: activityType)
+    }
+    
+    userActivity?.needsSave = true
     mapView.delegate = self
   }
   

@@ -25,6 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     return true
   }
+  
+  func application(application: UIApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
+    println("Will continue \(userActivityType)")
+    return true
+  }
+  
+  func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]!) -> Void) -> Bool {
+    println("Continuing...")
+    return true
+  }
 
 }
 
