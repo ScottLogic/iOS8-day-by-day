@@ -32,7 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]!) -> Void) -> Bool {
-    println("Continuing...")
+    if let rootVC = window?.rootViewController {
+      restorationHandler([rootVC])
+    }
     return true
   }
 
