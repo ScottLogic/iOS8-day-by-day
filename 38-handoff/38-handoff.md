@@ -26,11 +26,32 @@ As ever, the code for today's app is available on the ShinobiControls github at
 
 ## Handoff Logistics
 
+Handoff is based around user activities. These are objects which encapsulate the
+current state of what the user is doing, or at least enough to recreate the 
+'session' elsewhere. An activity has a type associated with it, which allows the
+operating system to determine whether it has an app which can resume a given
+activity.
+
 Handoff works by first using bluetooth LE to discover devices in the locality
-that are signed in to the same iCloud account. If the current app has handoff
-enabled, and it can find a device that is able to resume the current acti
+that are signed in to the same iCloud account. If the current app is handoff
+enabled, and it can find a device that is able to resume the current activity,
+then the inactive device will show an icon notifying the user that they can
+Handoff from one device to the other.
+
+When the user chooses to continue this activity, the sending device will
+transfer the activity object to the continuing device, allowing it to continue
+the same activity.
+
+As a developer, you can either integrate with Handoff manually, or, if you have
+a document-based app, you can rely on the deep integration with `UIDocument`.
+This article will take a look at the manual approach - for further details on
+integration with `UIDocument`, take a look at the 
+[Handoff programming guide](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html#//apple_ref/doc/uid/TP40014338-CH3-SW1).
+
 
 ## Preparing an App for Handoff
+
+
 
 
 ## Resuming an Activity
