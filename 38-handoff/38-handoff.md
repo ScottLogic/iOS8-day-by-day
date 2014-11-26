@@ -23,6 +23,8 @@ transferred to the receiving device.
 As ever, the code for today's app is available on the ShinobiControls github at
 [github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
 
+![iPad Map](assets/ipad_map.png)
+![iPhone Map](assets/iphone_map.png)
 
 ## Handoff Logistics
 
@@ -117,4 +119,91 @@ their activity on.
 
 ## Resuming an Activity
 
+When the system can see that a a device is advertising the availability of
+Handoff in the local area, it has to decide whether or not it has an app that
+can handle it. Apps can use the `NSUserActivityTypes` key in __Info.plist__ to
+specify which activities it is capable of Handing off. This is an array of
+strings, and should include all the reverse-DNS activity types that you require:
+
+![User Defaults](assets/user_defaults.png)
+
+Note that you can only Handoff between apps which are signed by the same
+developer.
+
+Once you've done this, then when a user chooses to continue an activity, your
+app will be started, and two new methods on your application delegate will be
+called:
+
+    func application(application: UIApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
+      println("Will continue \(userActivityType)")
+      return true
+    }
+    
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]!) -> Void) -> Bool {
+      if let rootVC = window?.rootViewController {
+        restorationHandler([rootVC])
+      }
+      return true
+    }
+
+The first of these, `application(_:, willContinueUserActivityWithType:)`
+notifies you that the activity is going to continue. At this stage, only the
+type of activity is available to you, not the activity itself. This is because
+it might take some time for the activity to be transferred between the two
+devices. At this stage you can prepare your app to continue the specified
+activity - which is especially useful if your app can continue a variety of
+different activities. This could involve loading a specific view controller, or
+navigating to a particular area of your app.
+
+Once the `NSUserActivity` has arrived on the receiving device, the second
+delegate method will be called:
+`application(_:, continueUserActivity:, restorationHandler:)`. At this point you
+can extract the `userInfo` dictionary from the `userActivity` and use the
+supplied information to update the UI appropriately.
+
+The method also supplies a `restorationHandler` closure. This takes an array of 
+`UIResponder` objects, and calls the `restoreActivityState(_)` method on each of
+them. Since __MapOff__ is centered around a single view controller, this is what
+is used there.
+
+Dropping back to the view controller, the implementation of this method is as
+follows:
+
+    override func restoreUserActivityState(activity: NSUserActivity) {
+      if activity.activityType == "com.shinobicontrols.MapOff.viewport" {
+        // Extract the data
+        let regionData = activity.userInfo!["region"] as NSData
+        // Need an empty coordinate region to populate
+        var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
+                                          span: MKCoordinateSpan(latitudeDelta: 0.0, longitudeDelta: 0.0))
+        regionData.getBytes(&region, length: sizeof(MKCoordinateRegion))
+        mapView.setRegion(region, animated: true)
+      }
+    }
+
+This implementation checks that it is responding to the correct activity type,
+before extracting the data from the `userInfo` dictionary. Note once again that
+this process is a little more complex than you might be expecting, since
+`MKCoordinateRegion` doesn't implement `NSCoder`. Once the region has been
+extracted, the map view is updated to show the same region.
+
+Starting with the following view on an iPad:
+
+![iPad Map](assets/ipad_map.png)
+
+Since __MapOff__ doesn't have a nice icon, the generic icon appears on the lock
+screen to signify that Handoff is available. Dragging this up will invoke the
+Handoff:
+
+![Handoff Icon](assets/handoff_icon.png)
+![Dragging Icon](assets/dragging_icon.png)
+
+This starts __MapOff__ on the iPhone, and passes it the user activity. This
+causes the map to display the same range:
+
+![iPhone Map](assets/iphone_map.png)
+
 ## Conclusion
+
+
+
