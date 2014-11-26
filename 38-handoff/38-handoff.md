@@ -51,8 +51,69 @@ integration with `UIDocument`, take a look at the
 
 ## Preparing an App for Handoff
 
+In order to Handoff from an app, it needs to prepare an maintain one or more
+`NSUserActivity` objects. These encapsulate what the user is currently doing,
+allowing it to be resumed on another device. iOS8 introduces some new features
+on `UIResponder` for handling user activities - one of which is a `userActivity`
+property. Since `UIViewController` is a subclass of `UIResponder`, you can use
+the new features to ease the Handoff workflow.
 
+In __MapOff__, the user activity is created and configured in `viewDidLoad()`:
 
+    let activityType = "com.shinobicontrols.MapOff.viewport"
+    
+    override func viewDidLoad() {
+      super.viewDidLoad()
+      if userActivity?.activityType != activityType {
+        userActivity?.invalidate()
+        userActivity = NSUserActivity(activityType: activityType)
+      }
+      userActivity?.needsSave = true
+      ...
+    }
+
+A user activity object has an `activityType` property, which allows the system
+to determine whether there is an app that can continue the activity. This is a
+string, and should be in reverse-DNS form - as shown above.
+
+You'll also notice that you set the `needsSave` property to `true`. Every time
+the user interacts with your app, and you need to update the 'resume
+instructions', you need to repeat this. This property allows the system to
+lazy batch updates rather than with every user interaction. When this property
+is set to `true`, the system will periodically call `updateUserActivityState()`
+on your `UIViewController` subclass. This gives you an opportunity to save the
+state.
+
+In __MapOff__, this method is used to get the currently visible range from the
+map, and save it into the `userInfo` dictionary:
+
+    override func updateUserActivityState(activity: NSUserActivity) {
+      let regionData = NSData(bytes: &mapView.region, length: sizeof(MKCoordinateRegion))
+      activity.userInfo = ["region" : regionData]
+    }
+
+The `userInfo` dictionary can use simple types such as `NSString`, `NSNumber`,
+`NSData`, `NSURL` etc. Since these types don't include the `MKCoordinateRegion`
+struct, it's necessary to pack it into an `NSData` object. Note that you might
+expect to use some kind of archiver, but `MKCoordinateRegion` is a pure Swift
+struct, so doesn't implement the `NSCoding` protocol. Since it is a struct
+value-type (i.e. doesn't contain references to non-value objects) it's possible
+to use `NSData` to copy the bytes. __This won't always be the case__, so be
+careful.
+
+As mentioned before, the `needsSave` property should be set to `true` every time
+the state of the UI updates. In __MapOff__ this occurs every time the user pans
+or zooms the map - i.e. the region changes. Implementing the following delegate
+method has the desired effect:
+
+    // MARK:- MKMapViewDelegate
+    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+      userActivity?.needsSave = true
+    }
+
+At this point, you've implemented everything you need to for an app to advertise
+that it supports Handoff, but you also need an app that the user can resume
+their activity on.
 
 ## Resuming an Activity
 
