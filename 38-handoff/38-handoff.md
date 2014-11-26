@@ -103,6 +103,12 @@ value-type (i.e. doesn't contain references to non-value objects) it's possible
 to use `NSData` to copy the bytes. __This won't always be the case__, so be
 careful.
 
+If you've got lots of data to transfer then the `userInfo` dictionary isn't the
+place to do it - in fact Apple recommends that the the user activity object
+should be kept below 3kb. However, user activities provide functionality for
+setting up and consuming streams between the devices - at which point you can
+send whatever you wish.
+
 As mentioned before, the `needsSave` property should be set to `true` every time
 the state of the UI updates. In __MapOff__ this occurs every time the user pans
 or zooms the map - i.e. the region changes. Implementing the following delegate
@@ -205,5 +211,27 @@ causes the map to display the same range:
 
 ## Conclusion
 
+Handoff is extremely powerful, and this article only just scratches the surface.
+In addition to being able to Handoff between different the same app on different
+iOS devices, you can also Handoff between OSX apps and iOS apps. You can even
+Handoff between native apps and webpages - in both directions! This means that
+you could visit a website on your Mac, and then Handoff to an iOS app on your
+iPhone - I really can't wait for more websites to start implementing this kind
+of functionality.
 
+Handoff is one of the coolest things to be introduced in iOS8. It feels to me
+like a window into the future of personal computing, and goes some way to
+solving a common problem. It's a very "Apple" problem and solution: "Why should
+it matter which of my devices I'm using?". That's a technology problem, and this
+is a good step towards a solution. I'll be really interested to see how
+different apps use this, and whether the integration within the OS is good
+enough to drive significant adoption and changes in my behavior.
+
+The code for today's sample project, __MapOff__ is available in the iOS8
+Day-by-Day repo on github at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+
+Take a look and then come up with some really cool ideas for me to use :)
+
+sam
 
