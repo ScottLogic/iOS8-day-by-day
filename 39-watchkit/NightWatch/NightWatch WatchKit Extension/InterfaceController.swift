@@ -1,9 +1,17 @@
 //
-//  InterfaceController.swift
-//  NightWatch WatchKit Extension
+// Copyright 2014 Scott Logic
 //
-//  Created by Sam Davies on 09/12/2014.
-//  Copyright (c) 2014 ShinobiControls. All rights reserved.
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 //
 
 import WatchKit
@@ -11,25 +19,25 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
-    override init(context: AnyObject?) {
-        // Initialize variables here.
-        super.init(context: context)
-        
-        // Configure interface objects here.
-        NSLog("%@ init", self)
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-        NSLog("%@ will activate", self)
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        NSLog("%@ did deactivate", self)
-        super.didDeactivate()
-    }
-
+  
+  override init(context: AnyObject?) {
+    // Initialize variables here.
+    super.init(context: context)
+    
+    // Configure interface objects here.
+    NSLog("%@ init", self)
+  }
+  
+  override func willActivate() {
+    // This method is called when watch view controller is about to be visible to user
+    super.willActivate()
+    NSLog("%@ will activate", self)
+  }
+  
+  override func didDeactivate() {
+    // This method is called when watch view controller is no longer visible
+    NSLog("%@ did deactivate", self)
+    super.didDeactivate()
+  }
+  
 }
