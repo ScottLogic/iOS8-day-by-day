@@ -50,7 +50,6 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
   
   deinit {
     stopFiltering()
-    dispatch_release(sessionQueue)
   }
   
   func startFiltering() {
