@@ -20,10 +20,7 @@ import Foundation
 
 class GlanceController: WKInterfaceController {
   
-  override init(context: AnyObject?) {
-    // Initialize variables here.
-    super.init(context: context)
-    
+  override func awakeWithContext(context: AnyObject!) {
     // Configure interface objects here.
     NSLog("%@ init", self)
   }
