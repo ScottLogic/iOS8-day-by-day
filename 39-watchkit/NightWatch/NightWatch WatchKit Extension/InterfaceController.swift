@@ -24,8 +24,11 @@ class InterfaceController: WKInterfaceController {
   var quotes = [Quote]()
   var currentQuote: Int = 0
   let quoteGenerator = NightWatchQuotes()
+  var timer: NSTimer?
+  let quoteCycleTime: NSTimeInterval = 30
   
   @IBOutlet weak var quoteLabel: WKInterfaceLabel!
+  @IBOutlet weak var quoteChangeTimer: WKInterfaceTimer!
   
   override func awakeWithContext(context: AnyObject!) {
     if quotes.count != 5 {
@@ -37,13 +40,31 @@ class InterfaceController: WKInterfaceController {
   override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
-    NSLog("%@ will activate", self)
+    
+    timer?.invalidate()
+    timer = NSTimer.scheduledTimerWithTimeInterval(quoteCycleTime, target: self, selector: "fireTimer:", userInfo: nil, repeats: true)
+    quoteChangeTimer.setDate(NSDate(timeIntervalSinceNow: quoteCycleTime))
+    quoteChangeTimer.start()
   }
   
   override func didDeactivate() {
     // This method is called when watch view controller is no longer visible
-    NSLog("%@ did deactivate", self)
+    timer?.invalidate()
     super.didDeactivate()
+  }
+  
+  
+  @IBAction func handleSkipButtonPressed() {
+    timer?.fire()
+    timer?.invalidate()
+    timer = NSTimer.scheduledTimerWithTimeInterval(quoteCycleTime, target: self, selector: "fireTimer:", userInfo: nil, repeats: true)
+  }
+  
+  @objc func fireTimer(t: NSTimer) {
+    currentQuote = (currentQuote + 1) % quotes.count
+    quoteLabel.setText(quotes[currentQuote])
+    quoteChangeTimer.setDate(NSDate(timeIntervalSinceNow: quoteCycleTime))
+    quoteChangeTimer.start()
   }
   
 }

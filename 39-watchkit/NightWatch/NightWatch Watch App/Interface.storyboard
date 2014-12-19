@@ -10,13 +10,28 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="NightWatch_Watch_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" hasDetent="YES" id="aEK-yg-hTP">
+                        <group width="1" alignment="left" id="jGd-sz-Fzp">
                             <items>
-                                <label alignment="left" text="QUOTE" numberOfLines="0" id="GI8-tc-Btn"/>
+                                <timer alignment="left" verticalAlignment="center" id="piR-pV-uMj">
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                                <button alignment="right" title="Skip" id="j3l-O8-tXz">
+                                    <connections>
+                                        <action selector="handleSkipButtonPressed" destination="AgC-eL-Hgc" id="opx-aw-jp8"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="aEK-yg-hTP">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="QUOTE" textAlignment="center" numberOfLines="0" id="GI8-tc-Btn">
+                                    <fontDescription key="font" type="italicSystem" pointSize="14"/>
+                                </label>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="quoteChangeTimer" destination="piR-pV-uMj" id="7vL-Sh-cLS"/>
                         <outlet property="quoteLabel" destination="GI8-tc-Btn" id="eTM-Ae-Kin"/>
                     </connections>
                 </controller>
