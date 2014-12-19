@@ -43,10 +43,26 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="NightWatch_Watch_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <imageView width="40" height="1" alignment="left" image="nightwatch" contentMode="scaleAspectFit" id="vxI-sa-xyZ"/>
+                                <label alignment="right" text="Night Watch" textAlignment="right" numberOfLines="0" id="gex-Y7-OqE">
+                                    <variation key="device=watch42mm" text="Night Watch Quote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <label width="1" alignment="left" text="QUOTE" textAlignment="center" numberOfLines="0" id="fcW-n3-vRa">
+                                    <fontDescription key="font" type="italicSystem" pointSize="15"/>
+                                </label>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="quoteLabel" destination="fcW-n3-vRa" id="shc-Xp-avB"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>

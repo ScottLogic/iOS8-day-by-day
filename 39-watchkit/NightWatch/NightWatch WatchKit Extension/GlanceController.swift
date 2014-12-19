@@ -16,25 +16,26 @@
 
 import WatchKit
 import Foundation
-
+import NightWatchData
 
 class GlanceController: WKInterfaceController {
   
+  @IBOutlet weak var quoteLabel: WKInterfaceLabel!
+  let quoteGenerator = NightWatchQuotes()
+  
   override func awakeWithContext(context: AnyObject!) {
     // Configure interface objects here.
-    NSLog("%@ init", self)
+    quoteLabel.setText(quoteGenerator.randomQuote())
   }
   
   override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
-    NSLog("%@ will activate", self)
   }
   
   override func didDeactivate() {
     // This method is called when watch view controller is no longer visible
     NSLog("%@ did deactivate", self)
-    super.didDeactivate()
   }
   
 }
