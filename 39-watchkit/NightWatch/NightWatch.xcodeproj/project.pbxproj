@@ -22,8 +22,14 @@
 		22008CB11A38007C009FEA5A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22008CB01A38007C009FEA5A /* Interface.storyboard */; };
 		22008CB31A38007C009FEA5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22008CB21A38007C009FEA5A /* Images.xcassets */; };
 		22008CB61A38007C009FEA5A /* NightWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22008C971A38007C009FEA5A /* NightWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		22008CC01A3804F3009FEA5A /* NightWatchQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22008CBF1A3804F3009FEA5A /* NightWatchQuotes.swift */; };
-		22008CC21A380FF1009FEA5A /* NightWatchQuotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22008CC11A380FF1009FEA5A /* NightWatchQuotes.plist */; };
+		22D4B9FE1A43363800AB3D17 /* NightWatchData.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D4B9FD1A43363800AB3D17 /* NightWatchData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22D4BA041A43363800AB3D17 /* NightWatchData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D4B9F91A43363800AB3D17 /* NightWatchData.framework */; };
+		22D4BA0D1A43363900AB3D17 /* NightWatchDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D4BA0C1A43363900AB3D17 /* NightWatchDataTests.swift */; };
+		22D4BA101A43363900AB3D17 /* NightWatchData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D4B9F91A43363800AB3D17 /* NightWatchData.framework */; };
+		22D4BA111A43363900AB3D17 /* NightWatchData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22D4B9F91A43363800AB3D17 /* NightWatchData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22D4BA1B1A43368500AB3D17 /* NightWatchQuotes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D4BA191A43368500AB3D17 /* NightWatchQuotes.plist */; };
+		22D4BA1C1A43368500AB3D17 /* NightWatchQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D4BA1A1A43368500AB3D17 /* NightWatchQuotes.swift */; };
+		22D4BA1D1A4336BC00AB3D17 /* NightWatchData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D4B9F91A43363800AB3D17 /* NightWatchData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,34 @@
 			remoteGlobalIDString = 22008C961A38007C009FEA5A;
 			remoteInfo = "NightWatch WatchKit Extension";
 		};
+		22050EF51A442A0300014369 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22008C651A37EA4E009FEA5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22D4B9F81A43363800AB3D17;
+			remoteInfo = NightWatchData;
+		};
+		22D4BA051A43363800AB3D17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22008C651A37EA4E009FEA5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22D4B9F81A43363800AB3D17;
+			remoteInfo = NightWatchData;
+		};
+		22D4BA071A43363900AB3D17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22008C651A37EA4E009FEA5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22008C6C1A37EA4E009FEA5A;
+			remoteInfo = NightWatch;
+		};
+		22D4BA0E1A43363900AB3D17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22008C651A37EA4E009FEA5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22D4B9F81A43363800AB3D17;
+			remoteInfo = NightWatchData;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +94,17 @@
 				22008CB61A38007C009FEA5A /* NightWatch WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D4BA171A43363900AB3D17 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				22D4BA111A43363900AB3D17 /* NightWatchData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -87,8 +132,14 @@
 		22008CAF1A38007C009FEA5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22008CB01A38007C009FEA5A /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		22008CB21A38007C009FEA5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		22008CBF1A3804F3009FEA5A /* NightWatchQuotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightWatchQuotes.swift; sourceTree = "<group>"; };
-		22008CC11A380FF1009FEA5A /* NightWatchQuotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NightWatchQuotes.plist; sourceTree = "<group>"; };
+		22D4B9F91A43363800AB3D17 /* NightWatchData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NightWatchData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D4B9FC1A43363800AB3D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22D4B9FD1A43363800AB3D17 /* NightWatchData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NightWatchData.h; sourceTree = "<group>"; };
+		22D4BA031A43363800AB3D17 /* NightWatchDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightWatchDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D4BA0B1A43363900AB3D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22D4BA0C1A43363900AB3D17 /* NightWatchDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightWatchDataTests.swift; sourceTree = "<group>"; };
+		22D4BA191A43368500AB3D17 /* NightWatchQuotes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NightWatchQuotes.plist; sourceTree = "<group>"; };
+		22D4BA1A1A43368500AB3D17 /* NightWatchQuotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NightWatchQuotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D4BA101A43363900AB3D17 /* NightWatchData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +162,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D4BA1D1A4336BC00AB3D17 /* NightWatchData.framework in Frameworks */,
 				22008C9A1A38007C009FEA5A /* WatchKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D4B9F51A43363800AB3D17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D4BA001A43363800AB3D17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D4BA041A43363800AB3D17 /* NightWatchData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +192,8 @@
 				22008C851A37EA4E009FEA5A /* NightWatchTests */,
 				22008C9B1A38007C009FEA5A /* NightWatch WatchKit Extension */,
 				22008CAD1A38007C009FEA5A /* NightWatch Watch App */,
+				22D4B9FA1A43363800AB3D17 /* NightWatchData */,
+				22D4BA091A43363900AB3D17 /* NightWatchDataTests */,
 				22008C981A38007C009FEA5A /* Frameworks */,
 				22008C6E1A37EA4E009FEA5A /* Products */,
 			);
@@ -136,6 +206,8 @@
 				22008C821A37EA4E009FEA5A /* NightWatchTests.xctest */,
 				22008C971A38007C009FEA5A /* NightWatch WatchKit Extension.appex */,
 				22008CA91A38007C009FEA5A /* NightWatch Watch App.app */,
+				22D4B9F91A43363800AB3D17 /* NightWatchData.framework */,
+				22D4BA031A43363800AB3D17 /* NightWatchDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,7 +261,6 @@
 		22008C9B1A38007C009FEA5A /* NightWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				22008CBE1A380484009FEA5A /* DataLayer */,
 				22008C9F1A38007C009FEA5A /* InterfaceController.swift */,
 				22008CA11A38007C009FEA5A /* NotificationController.swift */,
 				22008CA31A38007C009FEA5A /* GlanceController.swift */,
@@ -226,16 +297,54 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		22008CBE1A380484009FEA5A /* DataLayer */ = {
+		22D4B9FA1A43363800AB3D17 /* NightWatchData */ = {
 			isa = PBXGroup;
 			children = (
-				22008CBF1A3804F3009FEA5A /* NightWatchQuotes.swift */,
-				22008CC11A380FF1009FEA5A /* NightWatchQuotes.plist */,
+				22D4BA191A43368500AB3D17 /* NightWatchQuotes.plist */,
+				22D4BA1A1A43368500AB3D17 /* NightWatchQuotes.swift */,
+				22D4B9FD1A43363800AB3D17 /* NightWatchData.h */,
+				22D4B9FB1A43363800AB3D17 /* Supporting Files */,
 			);
-			name = DataLayer;
+			path = NightWatchData;
+			sourceTree = "<group>";
+		};
+		22D4B9FB1A43363800AB3D17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22D4B9FC1A43363800AB3D17 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22D4BA091A43363900AB3D17 /* NightWatchDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				22D4BA0C1A43363900AB3D17 /* NightWatchDataTests.swift */,
+				22D4BA0A1A43363900AB3D17 /* Supporting Files */,
+			);
+			path = NightWatchDataTests;
+			sourceTree = "<group>";
+		};
+		22D4BA0A1A43363900AB3D17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22D4BA0B1A43363900AB3D17 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		22D4B9F61A43363800AB3D17 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D4B9FE1A43363800AB3D17 /* NightWatchData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		22008C6C1A37EA4E009FEA5A /* NightWatch */ = {
@@ -246,11 +355,13 @@
 				22008C6A1A37EA4E009FEA5A /* Frameworks */,
 				22008C6B1A37EA4E009FEA5A /* Resources */,
 				22008CBD1A38007C009FEA5A /* Embed App Extensions */,
+				22D4BA171A43363900AB3D17 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				22008CB51A38007C009FEA5A /* PBXTargetDependency */,
+				22D4BA0F1A43363900AB3D17 /* PBXTargetDependency */,
 			);
 			name = NightWatch;
 			productName = NightWatch;
@@ -286,6 +397,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22050EF61A442A0300014369 /* PBXTargetDependency */,
 				22008CAC1A38007C009FEA5A /* PBXTargetDependency */,
 			);
 			name = "NightWatch WatchKit Extension";
@@ -308,6 +420,43 @@
 			productReference = 22008CA91A38007C009FEA5A /* NightWatch Watch App.app */;
 			productType = "com.apple.product-type.application.watchapp";
 		};
+		22D4B9F81A43363800AB3D17 /* NightWatchData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22D4BA161A43363900AB3D17 /* Build configuration list for PBXNativeTarget "NightWatchData" */;
+			buildPhases = (
+				22D4B9F41A43363800AB3D17 /* Sources */,
+				22D4B9F51A43363800AB3D17 /* Frameworks */,
+				22D4B9F61A43363800AB3D17 /* Headers */,
+				22D4B9F71A43363800AB3D17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NightWatchData;
+			productName = NightWatchData;
+			productReference = 22D4B9F91A43363800AB3D17 /* NightWatchData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		22D4BA021A43363800AB3D17 /* NightWatchDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22D4BA181A43363900AB3D17 /* Build configuration list for PBXNativeTarget "NightWatchDataTests" */;
+			buildPhases = (
+				22D4B9FF1A43363800AB3D17 /* Sources */,
+				22D4BA001A43363800AB3D17 /* Frameworks */,
+				22D4BA011A43363800AB3D17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22D4BA061A43363800AB3D17 /* PBXTargetDependency */,
+				22D4BA081A43363900AB3D17 /* PBXTargetDependency */,
+			);
+			name = NightWatchDataTests;
+			productName = NightWatchDataTests;
+			productReference = 22D4BA031A43363800AB3D17 /* NightWatchDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -319,6 +468,7 @@
 				TargetAttributes = {
 					22008C6C1A37EA4E009FEA5A = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = XJ74287KY8;
 					};
 					22008C811A37EA4E009FEA5A = {
 						CreatedOnToolsVersion = 6.2;
@@ -329,6 +479,14 @@
 					};
 					22008CA81A38007C009FEA5A = {
 						CreatedOnToolsVersion = 6.2;
+					};
+					22D4B9F81A43363800AB3D17 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = XJ74287KY8;
+					};
+					22D4BA021A43363800AB3D17 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 22008C6C1A37EA4E009FEA5A;
 					};
 				};
 			};
@@ -349,6 +507,8 @@
 				22008C811A37EA4E009FEA5A /* NightWatchTests */,
 				22008C961A38007C009FEA5A /* NightWatch WatchKit Extension */,
 				22008CA81A38007C009FEA5A /* NightWatch Watch App */,
+				22D4B9F81A43363800AB3D17 /* NightWatchData */,
+				22D4BA021A43363800AB3D17 /* NightWatchDataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -375,7 +535,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22008CC21A380FF1009FEA5A /* NightWatchQuotes.plist in Resources */,
 				22008CAA1A38007C009FEA5A /* NightWatch Watch App.app in Resources */,
 				22008CA61A38007C009FEA5A /* Images.xcassets in Resources */,
 			);
@@ -387,6 +546,21 @@
 			files = (
 				22008CB11A38007C009FEA5A /* Interface.storyboard in Resources */,
 				22008CB31A38007C009FEA5A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D4B9F71A43363800AB3D17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D4BA1B1A43368500AB3D17 /* NightWatchQuotes.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D4BA011A43363800AB3D17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +591,22 @@
 				22008CA21A38007C009FEA5A /* NotificationController.swift in Sources */,
 				22008CA01A38007C009FEA5A /* InterfaceController.swift in Sources */,
 				22008CA41A38007C009FEA5A /* GlanceController.swift in Sources */,
-				22008CC01A3804F3009FEA5A /* NightWatchQuotes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D4B9F41A43363800AB3D17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D4BA1C1A43368500AB3D17 /* NightWatchQuotes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22D4B9FF1A43363800AB3D17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D4BA0D1A43363900AB3D17 /* NightWatchDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +627,26 @@
 			isa = PBXTargetDependency;
 			target = 22008C961A38007C009FEA5A /* NightWatch WatchKit Extension */;
 			targetProxy = 22008CB41A38007C009FEA5A /* PBXContainerItemProxy */;
+		};
+		22050EF61A442A0300014369 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22D4B9F81A43363800AB3D17 /* NightWatchData */;
+			targetProxy = 22050EF51A442A0300014369 /* PBXContainerItemProxy */;
+		};
+		22D4BA061A43363800AB3D17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22D4B9F81A43363800AB3D17 /* NightWatchData */;
+			targetProxy = 22D4BA051A43363800AB3D17 /* PBXContainerItemProxy */;
+		};
+		22D4BA081A43363900AB3D17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22008C6C1A37EA4E009FEA5A /* NightWatch */;
+			targetProxy = 22D4BA071A43363900AB3D17 /* PBXContainerItemProxy */;
+		};
+		22D4BA0F1A43363900AB3D17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22D4B9F81A43363800AB3D17 /* NightWatchData */;
+			targetProxy = 22D4BA0E1A43363900AB3D17 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -542,6 +751,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NightWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -553,6 +764,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = NightWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -650,6 +863,82 @@
 			};
 			name = Release;
 		};
+		22D4BA121A43363900AB3D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NightWatchData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		22D4BA131A43363900AB3D17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NightWatchData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		22D4BA141A43363900AB3D17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NightWatchDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightWatch.app/NightWatch";
+			};
+			name = Debug;
+		};
+		22D4BA151A43363900AB3D17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NightWatchDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightWatch.app/NightWatch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -669,6 +958,7 @@
 				22008C8E1A37EA4E009FEA5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22008C8F1A37EA4E009FEA5A /* Build configuration list for PBXNativeTarget "NightWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -677,6 +967,7 @@
 				22008C911A37EA4E009FEA5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22008CB71A38007C009FEA5A /* Build configuration list for PBXNativeTarget "NightWatch Watch App" */ = {
 			isa = XCConfigurationList;
@@ -685,6 +976,7 @@
 				22008CB91A38007C009FEA5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22008CBA1A38007C009FEA5A /* Build configuration list for PBXNativeTarget "NightWatch WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -693,6 +985,25 @@
 				22008CBC1A38007C009FEA5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22D4BA161A43363900AB3D17 /* Build configuration list for PBXNativeTarget "NightWatchData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22D4BA121A43363900AB3D17 /* Debug */,
+				22D4BA131A43363900AB3D17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22D4BA181A43363900AB3D17 /* Build configuration list for PBXNativeTarget "NightWatchDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22D4BA141A43363900AB3D17 /* Debug */,
+				22D4BA151A43363900AB3D17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -16,18 +16,20 @@
 
 import Foundation
 
-typealias Quote = String
+public typealias Quote = String
 
-class NightWatchQuotes {
+public class NightWatchQuotes {
   
   private var quotes = [Quote]()
   
-  init(array: [String]) {
+  public init(array: [String]) {
     quotes = array
   }
   
-  convenience init(plistName: String) {
-    let path = NSBundle.mainBundle().pathForResource(plistName, ofType: "plist")
+  public convenience init(plistName: String) {
+    let bundle = NSBundle(identifier: "com.shinobicontrols.NightWatchData")
+    
+    let path = bundle!.pathForResource("NightWatchQuotes", ofType: "plist")
     if let array = NSArray(contentsOfFile: path!) as? [String] {
       self.init(array: array)
     } else {
@@ -35,18 +37,18 @@ class NightWatchQuotes {
     }
   }
   
-  convenience init() {
+  public convenience init() {
     self.init(plistName: "NightWatchQuotes")
   }
   
-  func randomQuote() -> Quote {
+  public func randomQuote() -> Quote {
     let rnd = Int(arc4random_uniform(UInt32(quotes.count)))
     return quotes[rnd]
   }
   
-  func randomQuotes(number: Int) -> [Quote] {
+  public func randomQuotes(number: Int) -> [Quote] {
     var quoteList = [Quote]()
-    while quotes.count < number {
+    while quoteList.count < number {
       quoteList += [randomQuote()]
     }
     return quoteList

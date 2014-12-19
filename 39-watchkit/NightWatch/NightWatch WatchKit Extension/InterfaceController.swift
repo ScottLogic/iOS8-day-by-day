@@ -16,13 +16,22 @@
 
 import WatchKit
 import Foundation
+import NightWatchData
 
 
 class InterfaceController: WKInterfaceController {
   
+  var quotes = [Quote]()
+  var currentQuote: Int = 0
+  let quoteGenerator = NightWatchQuotes()
+  
+  @IBOutlet weak var quoteLabel: WKInterfaceLabel!
+  
   override func awakeWithContext(context: AnyObject!) {
-    // Configure interface objects here.
-    NSLog("%@ awakeWithContext", self)
+    if quotes.count != 5 {
+      quotes = quoteGenerator.randomQuotes(5)
+    }
+    quoteLabel.setText(quotes[currentQuote])
   }
   
   override func willActivate() {
