@@ -1,7 +1,7 @@
 {
     "aps": {
-        "alert": "Test message content",
-        "title": "Optional title",
+        "alert": "You want to be human? Then act like a human.",
+        "title": "New Quote!",
         "category": "myCategory"
     },
     

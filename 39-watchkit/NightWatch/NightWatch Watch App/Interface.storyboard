@@ -72,7 +72,8 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                        <label width="1" alignment="left" text="New Quote!" textAlignment="center" numberOfLines="0" id="XkS-y5-khE"/>
+                        <imageView width="1" alignment="left" image="nightwatch" contentMode="scaleAspectFit" id="tRE-mA-0MQ"/>
                     </items>
                     <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
                     <connections>
