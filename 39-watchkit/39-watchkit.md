@@ -30,6 +30,65 @@ I started this project.) The source code for the app is available on github at
 
 ## What can (and can't) I do on a watch?
 
+Apple has made it very clear that the Apple Watch SDK in iOS 8.2 is the first
+implementation, and that we can expect changes in coming iOS releases. This
+might go some way to explaining what you might initially think is a fairly
+restrictive API:
+
+#### 1. You cannot write code to run on the watch
+
+When you add a watch target to an existing project, it creates both a watch app,
+and an extension. The watch app itself cannot contain code - it only contains
+image assets and a storyboard. This is what will be pushed to the watch. The
+extension runs on an iPhone and interacts with the layout that you created in
+the aforementioned storyboard.
+
+This actually closely simulates the impression that you're running code on the
+watch, but it's important to be aware of the effect that this "remote display"
+will have on the functionality and experience you wish to implement.
+
+#### 2. There are three "tasks" you can customize on a watch
+
+In addition to creating a full watch-app, you can also create glances and
+notifications. Notifications are exactly the same as existing notifications on
+iOS - with the added ability to customize their appearance. A notification
+appears full-screen and has different visualizations depending on the battery
+level and the user's response. Users can interact with notifications in the same
+way that they can with the new notification interactions introduced to iOS 8.
+
+A glance is an entirely new concept to the watch. The user will be able to
+swipe through a collection of glances, and as such they cannot interact with
+them. They're designed to show you the most important info in a short amount of
+time, i.e. a glance.
+
+The app itself is a lot more heavyweight - allowing the user to fully interact
+with the UI components. Don't be fooled into thinking it's just a little phone
+app though - there are restrictions on what is achievable, along with the
+completely different user interaction.
+
+#### 3. The API is heavily focused around energy efficiency for the watch
+
+Something that might seem strange to you when you start working with outlets in
+storyboards, is that you cannot read properties from any of them - they are
+write only. This is because the code is running on the iPhone, with the UI
+update instructions being sent over bluetooth to the watch. This is an expensive
+operation (in terms of power), so all unnecessary communications are
+eliminated.
+
+You should also note that setting properties on UI controls is not an
+instantaneous procedure. Instead, the operations are batched up and pushed to
+the watch in one go.
+
+#### 4. You cannot get access to any of the watch's sensors
+
+This is a little disappointing, since there are going to be some great ideas for
+apps using these new sensors. I think that this is a side effect of the lack of
+native apps on the watch in the initial release, and that some kind of
+interaction with the sensors will arrive in due course. This means that your
+watch apps aren't able to do anything that your iPhone apps couldn't do. In
+fact, they're very much meant to augment your iPhone app, for quick access to
+relevant summary info.
+
 ## Getting Started
 
 ### Watch App
