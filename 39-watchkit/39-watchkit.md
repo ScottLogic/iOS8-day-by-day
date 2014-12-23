@@ -427,3 +427,36 @@ that there are alternatives to copy-paste right from the beginning.
 
 
 ## Conclusion
+
+The Apple Watch looks to be a really exciting new addition to Apple's hardware
+range. I'm really interested to see how well it gets adopted. How many people
+who don't currently wear a watch will suddenly need one?
+
+This first release of WatchKit seems to be really well thought out. You don't
+get all the functionality you're used to from UIKit and wider iOS, but there's a
+lot there to get started with. You can create really quite powerful apps without
+a huge amount of difficulty. That being said, I'm looking forward to seeing how
+this SDK evolves. It'll be great to have access to the new sensors, and to see
+what level of access we, as developers, are allowed by Apple to the rest of the
+device. It's great to see that the entire API design has held power efficiency,
+and hence user experience, at the highest importance.
+
+As ever, the code for today's post is available on the ShinobiControls github,
+at
+[github.com/ShinobiControls/iOS8-day-by-day](https://github.com/ShinobiControls/iOS8-day-by-day).
+I'd very much value your thoughts, opinions and feedback - hit me up on twitter
+at [@iwantmyrealname](https://twitter.com/iwantmyrealname).
+
+I'm expecting this to be the last entry in the iOS8 Day-by-Day blog series. I
+hope you've found them useful, and look forward to the compilation book that
+will be released early next year!
+
+cheers
+
+sam
+x
+
+
+
+
+
