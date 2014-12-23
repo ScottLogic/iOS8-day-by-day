@@ -252,6 +252,64 @@ able to buy an Apple Watch.
 
 ### Glance
 
+When you created the watch target, you had the option of creating a glance. If
+you chose to, then inside the watch storyboard, you'll be able to see a layout
+for the glance:
+
+![Glance Storyboard](assets/glance_storyboard.png)
+
+You can use pretty much the same techniques for designing your glance layout as
+you did for the full app - with one exception. Users cannot interact with a
+glance - tapping a glance will open the associated watch app.
+
+A glace interface has its counterpart class in the WatchKit extension, in the
+same way that the watch app does. It is again a subclass of
+`WKInterfaceController`, and therefore has the same lifecycle.
+
+The simple example in the accompanying project just shows a random quote from
+the NightWatch film:
+
+    class GlanceController: WKInterfaceController {   
+      @IBOutlet weak var quoteLabel: WKInterfaceLabel!
+      let quoteGenerator = NightWatchQuotes()
+      
+      override func awakeWithContext(context: AnyObject!) {
+        quoteLabel.setText(quoteGenerator.randomQuote())
+      }
+    }
+
+You should use the `awakeWithContext(_:)` method to prepare and interface
+objects, and the `willActivate()` method to do more time-critical operations
+such as starting timers.
+
+#### Running a Glance
+
+Since the 'external display' approach of simulating an Apple Watch doesn't give
+you a full simulator to play with, it's not immediately obvious how you can run
+your glance. In fact, your watch target creates three different executables -
+one for the app itself, one for the glance and one for the notification. The
+scheme it creates defaults to using the watch app. To test the glance, you need
+to create a new scheme which will run the glance executable.
+
+Use the scheme selector to edit the current watch app scheme:
+
+![Scheme Selector](assets/scheme_selector.png)
+
+From this panel you can duplicate the watch app scheme, and call it something
+like __Glance - WatchApp__. Then, using the __Run__ tab, you can change the 
+__Executable__ to __Glance - NightWatch Watch App.app__:
+
+![Select Executable](assets/select_executable.png)
+
+This creates a new scheme, which you can select and run:
+
+![Run Glance](assets/run_glance.png)
+
+The resultant app now runs in the external display window, as expected:
+
+![Glance](assets/glance.png)
+
+
 ### Notifications 
 
 
