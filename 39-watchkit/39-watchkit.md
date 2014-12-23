@@ -91,7 +91,43 @@ relevant summary info.
 
 ## Getting Started
 
+Watch apps can't exist on their own - they are packaged up as part of an iPhone
+app. This reinforces the notion that Apple Watch apps are designed to supplement
+the functionality provided by an iPhone app, and are not meant to be standalone.
+
+As such, creating a watch app requires that you have an existing iPhone app, to
+which you can add a target:
+
+![Add Target](assets/add_target.png)
+
+There is a new section called __Apple Watch__, from which you can select __Watch
+App__:
+
+![Add Watch App](assets/add_watch_app.png)
+
+The options screen allows you to specify whether you want a glance and
+notification to be created alongside the app itself:
+
+![Watch Creation](assets/watch_creation.png)
+
+This will create two new targets - one for the watch app, and one for the
+extension:
+
+![Extension and App](assets/extension_and_app.png)
+
+As mentioned before, the app itself runs on the phone, and doesn't currently
+allow any custom code. It contains static assets - e.g. images and a storyboard
+for the layout. The watch extension runs on the paired iPhone, and references
+the storyboard that exists on the watch:
+
+![Project Layout](assets/watch_project_layout.png)
+
+In the rest of this section you'll learn about building a watch app, glances and
+notifications.
+
 ### Watch App
+
+
 
 ### Glance
 
