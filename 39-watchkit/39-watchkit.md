@@ -127,11 +127,134 @@ notifications.
 
 ### Watch App
 
+The watch app itself is made up of two parts - the UI is created entirely in a
+storyboard which exists on the watch itself, and the code that controls this
+interface runs as an extension on the iPhone. This means that the code that is
+used to power a watch app is subject to the same restrictions that extensions
+are - e.g. it can't run any background tasks.
 
+The storyboard in the watch app contains scenes for the three different
+interfaces:
+
+![Storyboard Overview](assets/storyboard_overview.png)
+
+You can see that the scenes are sized appropriately for the watch. Since the
+watch is so small, and low-powered, the layout doesn't use auto layout, but
+instead relies on a system of groups and simple metrics. Size classes are also
+not supported, but you can use similar techniques in IB to provide slightly
+different layouts for the two watch sizes (38mm and 42mm):
+
+![Screen Size Switcher](assets/screen_size_switcher.png)
+![Screen Size Customisation](assets/create_screen_size_customisation.png)
+![Screen Size Label Text](assets/screen_size_label_text.png)
+
+As you look through the object library lots of it will look familiar from
+traditional iOS apps. The appearance of the standard controls has been
+configured to work well on a watch, and there is actually only a subset of the
+controls you might expect. Some of the important differences are as follows:
+
+- The only possibility for creating animations is through an animated image -
+which can be a collection of frames named correctly.
+- A table doesn't have a datasource, but instead works by adding cells
+individually.
+- Since updating UI is expensive, there are specialized label subclasses for
+displaying a day and a timer. These autoupdate on the watch, and don't require
+interaction with the watch app extension.
+- Maps are not interactive, but are rendered on the phone and then pushed as an
+image to the watch.
+- A group has no visual appearance, but instead acts as a container for other
+display elements. It arranges them in a line, either vertically or horizontally.
+This is a very powerful control which allows you to construct a whole host of
+different layouts.
+
+Watch apps can have one of two forms of navigation - either page based or
+hierarchy based. You cannot mix between these, and they are formed through
+collections of `WKInterfaceController` objects, corresponding to the interface
+controllers in the storyboard.
+
+#### Watch extension code
+
+A layout isn't useful on its own - it needs to be able to dynamically update to
+show different information. Since the watch app cannot run any code, this
+responsibility is left to the watch kit extension.
+
+If you take a look inside __InterfaceController.swift__, you'll see that 
+`InterfaceController` is a subclass of `WKInterfaceController`. This is roughly
+equivalent to `UIViewController` in iOS, with the remote display magic built in.
+
+A `WKInterfaceController` has four methods that form the core of its lifecycle:
+- `init()` Standard for all objects. You can create data objects and things
+here.
+- `awakeWithContext(_:)` You can use the context object whenever you are
+instantiating a new interface controller, to provide it with data or navigation
+info. There is no restriction on the type of context you send. Should prepare
+the interface controls.
+- `willActivate()` Called just before the interface appears on screen - this is
+roughly equivalent to `viewWillAppear()` in `UIViewController`
+- `willDeactivate()` Called as the interface is disappearing. You can use it to
+tidy up.
+
+Interfacing with the layout in the watch app story board is achieved in the same
+way that it is in an iPhone app - via IBOutlets and IBActions. You can drag from
+IB into your `WKInterfaceController` as expected to create outlets and actions:
+
+    @IBOutlet weak var quoteLabel: WKInterfaceLabel!
+    @IBOutlet weak var quoteChangeTimer: WKInterfaceTimer!
+
+    @IBAction func handleSkipButtonPressed() {
+      ...
+    }
+
+Notice here the types of `@IBOutlet` properties - `WKInterfaceLabel` instead of
+`UILabel`, and `WKInterfaceTimer`. These new types represent the difference in
+functionality between iPhone and Apple Watch - where communicating with the
+user interface is an expensive operation. These `WKInterface*` types are read
+only - i.e. although you can set values, you cannot read them back. For example,
+setting the text on a label looks like this:
+
+    quoteLabel.setText(quotes[currentQuote])
+
+`WKInterfaceTimer` is a specialized interface object that will count up or down
+to or from a specified `NSDate`. Since this is also read only, you can interact
+with it as follows:
+
+    quoteChangeTimer.setDate(NSDate(timeIntervalSinceNow: quoteCycleTime))
+    quoteChangeTimer.start()
+
+Check the documentation for further details on these and other interface object
+controls that are available as part of the Apple Watch SDK.
+
+Some of the controls allow user interaction - such as buttons or switches. These
+can be wired up to IBActions, in the way you'd expect. Note that you won't
+receive a reference to the button in question - which therefore means you will
+probably have to have a different method for each of the button actions.
+
+#### Running A Watch App
+
+You can run the watch app in a simulator by selecting the correct scheme from
+the selection menu:
+
+![Scheme Selector](assets/run_watch_app.png)
+
+This will start the specified iOS simulator, and it should show your app in a
+secondary display window representing the watch:
+
+![Watch Window](assets/watch_window.png)
+
+If it doesn't, or to switch between different watch sizes, you can use the
+__External Displays__ list in the __Hardware__ menu:
+
+![Hardware menu](assets/hardware_menu.png)
+
+You can interact with this external display as you'd expect to be able to - so
+you can put your new watch app through its paces even though you are not yet
+able to buy an Apple Watch.
 
 ### Glance
 
 ### Notifications 
 
+
+## Code sharing
 
 ## Conclusion
