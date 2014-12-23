@@ -312,6 +312,89 @@ The resultant app now runs in the external display window, as expected:
 
 ### Notifications 
 
+Out of everything possible use of a watch, you'd imagine that notifications
+would be quite significant. It makes perfect sense to grab a quick look at your
+wrist to check whether you need to deal with a new notification, rather than
+digging around in your pocket for your phone.
+
+You'll also be aware that iOS has a pretty comprehensive notifications system -
+involving both remote and local notifications. It won't come as a surprise that
+notifications on the Apple Watch 'plug-in' to the same system.
+
+If you selected to create a notification when you added the watch target, then
+you'll be able to see the notification layout in the storyboard:
+
+![Notification Storyboard](assets/notification_storyboard.png)
+
+This looks slightly different to the interface controllers you've seen for the
+app and the glance - in that it appears to contain a segue. A notification can
+appear in three different forms - the short notification just shows the app icon
+and the title of the notification. If the user makes an appropriate gesture,
+then the short notification will be replaced with a longer version, containing
+more info. There are two forms of this long notification - static and dynamic.
+
+The static version allows you to provide a static layout, which will have the
+title of the notification inserted into a label. You have a lot more control
+over the dynamic version - giving you access to the same level of control as you
+had with the glance. You can specify that the system should only use the static
+version, or you can provide a dynamic version. Note that the system might decide
+to use the static version even if there is a dynamic version available if it is
+low on power.
+
+The dynamic version of the notification has a class backing it in the WatchKit
+extension - a subclass of `WKUserNotificationInterfaceController`. This provides
+some notification-specific methods in addition to the lifecycle methods from
+`WKInterfaceController` - in the form of
+`didReceiveLocalNotification(_:, withCompletionHandler:)` and 
+`didReceiveRemoteNotification(_:, withCompletionHandler:)`. These can be used to
+prepare the content for the dynamic layout.
+
+#### Testing Notifications
+
+In the same way as you did for the glance target, you'll need to create a new
+scheme to associate with the notification executable. Notice this time that you
+can select a payload JSON file:
+
+![Selecting Payload Notification](assets/selecting_notification_payload.png)
+
+This is a file that the template created, and can be found inside __Supporting
+Files__:
+
+![Payload Notification](assets/notification_payload.png)
+
+This is just a JSON file which allows you to simulate what notification would
+have been received to drive the notification's appearance:
+
+    {
+        "aps": {
+            "alert": "You want to be human? Then act like a human.",
+            "title": "New Quote!",
+            "category": "myCategory"
+        },
+        
+        "WatchKit Simulator Actions": [
+            {
+                "title": "First Button",
+                "identifier": "firstButtonAction"
+            }
+        ],
+        
+        "customKey": "Use this file to define a testing payload for your notifications."
+    }
+
+You can provide the title and category as expected, and also provide the actions
+that will be turned into buttons at the bottom of the notification.
+
+Once you've set this up, you can run the notification scheme to see how your
+notification executable behaves:
+
+![Notification](assets/notification1.png)
+![Notification](assets/notification2.png)
+
+See the alert text appearing on the correct label and the introduction of an
+alert action button as specified in the notification payload file. The dismiss
+button is always provided by the system.
+
 
 ## Code sharing
 
