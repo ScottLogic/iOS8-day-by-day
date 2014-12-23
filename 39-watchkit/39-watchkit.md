@@ -395,7 +395,35 @@ See the alert text appearing on the correct label and the introduction of an
 alert action button as specified in the notification payload file. The dismiss
 button is always provided by the system.
 
-
 ## Code sharing
+
+Your watch app has to be part of an iPhone app, and representing the same kind
+of functionality. This is likely to mean that you'll have code that you'd like
+to use both in the phone app and in the WatchKit extension. There are a few
+options for tackling this problem:
+
+- __Copy/Paste__ Yeah, we know it's the root of all evil, but you might find it
+easier to start with this approach and then refactor your code to something
+nicer later on.
+- __Framework__ iOS8 introduced the ability to create dynamic frameworks - i.e.
+places where shared code and functionality can reside, and be accessed from
+other frameworks (i.e. apps and extensions) from within the same application
+bundle. This is actually the approach taken in __NightWatch__. The
+__NightWatchData__ framework provides a __NightWatchQuotes__ class that can then
+be used from both the WatchKit extension and the iPhone app.
+- __Host in iPhone app__ It's possible for the WatchKit extension to request
+that the iPhone app is opened, and then for the iPhone app to reply with some
+kind of data. This has multiple uses - one of them is for an action on the watch
+to trigger something on the phone, or also for the WatchKit extension to request
+that the iPhone app perform some kind of task. This might seem a little strange
+at first, but remember that there are restrictions on what an extension is
+allowed to do. There are no such restrictions on the container app, and
+therefore you could load it up in the background and use this inaccessible
+functionality. One example of this could be performing a background network
+request.
+
+These techniques are likely to evolve as the SDK does, but it's good to know
+that there are alternatives to copy-paste right from the beginning.
+
 
 ## Conclusion
