@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14C81f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="NightWatch_Watch_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="jGd-sz-Fzp">
+                            <items>
+                                <timer alignment="left" verticalAlignment="center" id="piR-pV-uMj">
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                                <button alignment="right" title="Skip" id="j3l-O8-tXz">
+                                    <connections>
+                                        <action selector="handleSkipButtonPressed" destination="AgC-eL-Hgc" id="opx-aw-jp8"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="aEK-yg-hTP">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="QUOTE" textAlignment="center" numberOfLines="0" id="GI8-tc-Btn">
+                                    <fontDescription key="font" type="italicSystem" pointSize="14"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="quoteChangeTimer" destination="piR-pV-uMj" id="7vL-Sh-cLS"/>
+                        <outlet property="quoteLabel" destination="GI8-tc-Btn" id="eTM-Ae-Kin"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="NightWatch_Watch_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <imageView width="40" height="1" alignment="left" image="nightwatch" contentMode="scaleAspectFit" id="vxI-sa-xyZ"/>
+                                <label alignment="right" text="Night Watch" textAlignment="right" numberOfLines="0" id="gex-Y7-OqE">
+                                    <variation key="device=watch42mm" text="Night Watch Quote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <label width="1" alignment="left" text="QUOTE" textAlignment="center" numberOfLines="0" id="fcW-n3-vRa">
+                                    <fontDescription key="font" type="italicSystem" pointSize="15"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="quoteLabel" destination="fcW-n3-vRa" id="shc-Xp-avB"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="519" y="347"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label width="1" alignment="left" text="New Quote!" textAlignment="center" numberOfLines="0" id="XkS-y5-khE"/>
+                        <imageView width="1" alignment="left" image="nightwatch" contentMode="scaleAspectFit" id="tRE-mA-0MQ"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="669.40384615384619"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="NightWatch_Watch_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="669"/>
+        </scene>
+    </scenes>
+</document>
