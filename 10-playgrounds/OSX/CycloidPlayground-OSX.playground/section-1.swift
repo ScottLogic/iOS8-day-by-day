@@ -37,8 +37,8 @@ for circleProp in 1...100 {
 
 
 class Cycloid: NSObject {
-  var radius: Double
-  var numberOfRotations: Double
+  private let radius: Double
+  private let numberOfRotations: Double
   
   init(radius: Double, numberOfRotations: Double = 2.5) {
     self.radius = radius
@@ -80,9 +80,9 @@ let c = Cycloid(radius: 50, numberOfRotations: 3)
 
 
 class AnimatingCycloidView: NSView {
-  var cycloid: Cycloid
-  var wheelLayer = CAShapeLayer()
-  var cycloidLayer = CAShapeLayer()
+  private let cycloid: Cycloid
+  private var wheelLayer = CAShapeLayer()
+  private var cycloidLayer = CAShapeLayer()
   
   override init(frame: CGRect) {
     let radius: Double = Double(frame.height) / 2.0
@@ -96,7 +96,7 @@ class AnimatingCycloidView: NSView {
     prepareView()
   }
 
-  required init(coder: NSCoder) {
+  required init?(coder: NSCoder) {
     cycloid = Cycloid(radius: 10, numberOfRotations: 10)
     super.init(coder: coder)
   }
