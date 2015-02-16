@@ -1,6 +1,6 @@
 // Playground - noun: a place where people can play
 
-import Cocoa
+import CocoaTouch
 
 class Person {
   var name: String
