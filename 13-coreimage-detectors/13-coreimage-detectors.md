@@ -57,7 +57,7 @@ associated with this detector. The following method created a `CIDetector` to be
 used for detecting rectangles:
 
     func prepareRectangleDetector() -> CIDetector {
-      let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh, CIDetectorAspectRatio: 1.0]
+      let options: [String: AnyObject] = [CIDetectorAccuracy: CIDetectorAccuracyHigh, CIDetectorAspectRatio: 1.0]
       return CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: options)
     }
 
@@ -84,7 +84,7 @@ rectangle in a supplied `CIImage`:
       if let detector = detector {
         // Get the detections
         let features = detector.featuresInImage(image)
-        for feature in features as [CIRectangleFeature] {
+        for feature in features as! [CIRectangleFeature] {
           resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
                                                       bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
         }
@@ -174,7 +174,7 @@ provided image, but also return the decoded string:
       var decode = ""
       if let detector = detector {
         let features = detector.featuresInImage(image)
-        for feature in features as [CIQRCodeFeature] {
+        for feature in features as! [CIQRCodeFeature] {
           resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
             bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
           decode = feature.messageString
