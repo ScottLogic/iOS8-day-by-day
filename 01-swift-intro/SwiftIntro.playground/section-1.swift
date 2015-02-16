@@ -20,7 +20,7 @@ let struct2 = MyStruct(t: 12, u: "World")
 //struct2 = MyStruct(t: 10, u: "Defeat") // Error: struct2 is an immutable ref
 
 class MyClass {
-  let t = 12
+  let t: Int
   var u: String
   
   init(t: Int, u: String) {
@@ -65,12 +65,12 @@ func someFunc(parameter: AnyObject!) {
 }
 
 func someOtherFunc(parameter: AnyObject!) {
-  let castedParameter = parameter as NSString
+  let castedParameter = parameter as! NSString
   // Do something
 }
 
 func someArrayFunc(parameter: [AnyObject]!) {
-  let newArray = parameter as [NSString]
+  let newArray = parameter as! [NSString]
   // Do something
 }
 
