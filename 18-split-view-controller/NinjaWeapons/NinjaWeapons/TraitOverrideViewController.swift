@@ -34,30 +34,28 @@ class TraitOverrideViewController: UIViewController, UISplitViewControllerDelega
     if size.width > 320 {
       overrideTraitCollection = UITraitCollection(horizontalSizeClass: .Regular)
     }
-    for vc in self.childViewControllers as [UIViewController] {
+    for vc in self.childViewControllers as! [UIViewController] {
       setOverrideTraitCollection(overrideTraitCollection, forChildViewController: vc)
     }
   }
   
   private func configureSplitVC() {
     // Set up split view delegate
-    let splitVC = self.childViewControllers[0] as UISplitViewController
+    let splitVC = self.childViewControllers[0] as! UISplitViewController
     splitVC.delegate = self
     splitVC.preferredPrimaryColumnWidthFraction = 0.3
-    let navVC = splitVC.childViewControllers.last as UINavigationController
+    let navVC = splitVC.childViewControllers.last as! UINavigationController
     navVC.topViewController.navigationItem.leftBarButtonItem = splitVC.displayModeButtonItem()
   }
   
   
   // MARK: - Split view
-  func splitViewController(splitViewController: UISplitViewController!, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
-    if let secondaryAsNavController = secondaryViewController as? UINavigationController {
-      if let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController {
-        if topAsDetailController.weapon == nil {
-          // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
+    if let secondaryAsNavController = secondaryViewController as? UINavigationController,
+       let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController
+       where topAsDetailController.weapon == nil {
+        // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
           return true
-        }
-      }
     }
     return false
   }
