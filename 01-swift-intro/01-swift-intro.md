@@ -80,6 +80,9 @@ returning `self`, but there is no `return` statement in the Swift equivalent.
 This means that there is actually no way in which you can return a `nil` object,
 which is a pattern commonly used to indicate an initialization failure in objC.
 
+> __NOTE:__ This has indeed changed, and Swift 1.1 introduced failable
+> initializers. Refer to the Swift book for more information.
+
 This is apparently likely to change in an upcoming release of the language, but
 for now the only workaround is to use class methods which return optional types:
 
@@ -115,7 +118,7 @@ If it is a reference type, such as a class then it will be mutable.
 To see this in action, consider the following `struct`:
 
     struct MyStruct {
-      let t = 12
+      let t: Int
       var u: String
     }
 
@@ -143,7 +146,7 @@ because a struct is a __value type__.
 The behavior is subtly different with a class:
 
     class MyClass {
-      let t = 12
+      let t: Int
       var u: String
 
       init(t: Int, u: String) {
@@ -172,7 +175,7 @@ Here you are unable to mutate the reference itself, but you __can__ still mutate
 any properties defined with `var` within the class. This is because a class is
 a __reference type__.
 
-This behaviour is fairly easy to understand, and is well-explained in the
+This behavior is fairly easy to understand, and is well-explained in the
 language reference books. There is potential for confusion when looking at
 Swift collection types though.
 
@@ -247,7 +250,7 @@ following pattern a lot:
 If you know that you've definitely been passed a string, you don't necessarily
 need to guard around the cast:
 
-    let castedParameter = parameter as NSString
+    let castedParameter = parameter as! NSString
 
 A top-tip is to realize that casting arrays is really easy too. All arrays that
 you'll receive from a Cocoa framework will be of the type `[AnyObject]`, since
@@ -257,7 +260,7 @@ an entire array in both the conditional and unconditional ways expressed above,
 with the following syntax:
 
     func someArrayFunc(parameter: [AnyObject]!) {
-      let newArray = parameter as [String]
+      let newArray = parameter as! [String]
       // Do something with your strings :)
     }
 
@@ -275,6 +278,9 @@ specified protocol, which you could do as follows:
     if let class1AsMyProtocol = class1 as? MyProtocol {
       // We're in
     }
+
+> __NOTE:__ Swift 1.2 allows checking conformance of Swift-only protocols, so
+> the following is no longer accurate.
 
 However, this will have an error, because in order to check conformance of a
 protocol that protocol must be an objective-C protocol - and annotated with
