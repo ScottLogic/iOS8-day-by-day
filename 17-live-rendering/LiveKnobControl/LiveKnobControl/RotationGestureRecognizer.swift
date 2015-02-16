@@ -27,12 +27,12 @@ class RotationGestureRecognizer : UIPanGestureRecognizer {
     self.minimumNumberOfTouches = 1;
   }
 
-  override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent!) {
     super.touchesBegan(touches, withEvent: event)
     updateTouchAngleWithTouches(touches)
   }
 
-  override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
+  override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent!) {
     super.touchesMoved(touches, withEvent: event)
     updateTouchAngleWithTouches(touches)
   }
