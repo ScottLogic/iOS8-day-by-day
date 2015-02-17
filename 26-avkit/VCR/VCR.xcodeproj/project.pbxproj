@@ -63,10 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22C5136A19BD859B004B3936 = {
+		22BB51F31A93945B00B05BA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				22D0929D19BDAD5000E7BD6C /* AVKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22C5136A19BD859B004B3936 = {
+			isa = PBXGroup;
+			children = (
+				22BB51F31A93945B00B05BA2 /* Frameworks */,
 				22C5137519BD859B004B3936 /* VCR */,
 				22C5138819BD859B004B3936 /* VCRTests */,
 				22C5137419BD859B004B3936 /* Products */,
