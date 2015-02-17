@@ -141,18 +141,17 @@ to the active color or not. It creates an alpha value of `0.0` or `1.0`
 calculated `alpha` value.
 
 To use this kernel, it must be wrapped in a custom `CIFilter` subclass. 
-`CIFilter` has an `outputImage() -> CIImage?` method which must be overridden,
+`CIFilter` has an `outputImage : CIImage!` property which must be overridden,
 and will be called when the processing chain requires the filter to be executed.
 
-The following is the implementation of `outputImage()` for `ChromaKeyFilter`:
+The following is the implementation of `outputImage` for `ChromaKeyFilter`:
 
-    func outputImage() -> CIImage? {
-      if let inputImage = inputImage {
-        let dod = inputImage.extent()
-        if let kernel = kernel {
-          var args = [inputImage as AnyObject, activeColor as AnyObject, threshold as AnyObject]
+    override var outputImage : CIImage! {
+      if let inputImage = inputImage,
+         let kernel = kernel {
+          let dod = inputImage.extent()
+          let args = [inputImage as AnyObject, activeColor as AnyObject, threshold as AnyObject]
           return kernel.applyWithExtent(dod, arguments: args)
-        }
       }
       return nil
     }
@@ -258,17 +257,16 @@ this instance, a given output rect will require a rectangle in the input image
 which is centered at the same point, but is expanded by one pixel in every
 direction. The following method on `SobelFilter` demonstrates how this works:
 
-    func outputImage() -> CIImage? {
-      if let inputImage = inputImage {
-        let dod = inputImage.extent()
-        if let kernel = kernel {
+    override var outputImage : CIImage! {
+      if let inputImage = inputImage,
+         let kernel = kernel {
+          let dod = inputImage.extent()
           let args = [inputImage as AnyObject]
           let dod = inputImage.extent().rectByInsetting(dx: -1, dy: -1)
           return kernel.applyWithExtent(dod, roiCallback: {
             (index, rect) in
             return rect.rectByInsetting(dx: -1, dy: -1)
             }, arguments: args)
-        }
       }
       return nil
     }
