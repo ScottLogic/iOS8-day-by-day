@@ -188,7 +188,7 @@ ensure that you register them with the system, by updating your registration
 code as follows:
 
     let requestedTypes = UIUserNotificationType.Alert | .Sound
-    let categories = NSSet(object: timerFiredNotificationCategory())
+    let categories = Set(arrayLiteral: timerFiredNotificationCategory())
     let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: categories)
     UIApplication.sharedApplication().registerUserNotificationSettings(settingsRequest)
 
