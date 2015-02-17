@@ -30,7 +30,7 @@ class ViewController: UIViewController {
   }
   
   @IBAction func handleTakeMeButtonPressed(sender: AnyObject) {
-    UIApplication.sharedApplication().openURL(NSURL.URLWithString(UIApplicationOpenSettingsURLString))
+    UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
   }
   
   
