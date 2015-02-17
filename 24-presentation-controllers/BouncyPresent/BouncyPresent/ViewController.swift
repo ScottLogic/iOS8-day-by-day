@@ -22,13 +22,13 @@ class ViewController: UIViewController {
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
     if segue.identifier == "bouncySegue" {
-      let overlayVC = segue.destinationViewController as UIViewController
+      let overlayVC = segue.destinationViewController as! UIViewController
       prepareOverlayVC(overlayVC)
     }
   }
   
   @IBAction func handleBouncyPresentPressed(sender: AnyObject) {
-    let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("overlayViewController") as UIViewController
+    let overlayVC = storyboard?.instantiateViewControllerWithIdentifier("overlayViewController") as! UIViewController
     prepareOverlayVC(overlayVC)
     presentViewController(overlayVC, animated: true, completion: nil)
   }
