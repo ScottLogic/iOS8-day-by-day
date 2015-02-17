@@ -39,7 +39,7 @@ class SobelViewController: UIViewController {
   
   private func filteredImage() -> UIImage {
     let outputImage = filter.outputImage
-    return UIImage(CIImage: outputImage)
+    return UIImage(CIImage: outputImage)!
   }
   
   private func setupFilter() {

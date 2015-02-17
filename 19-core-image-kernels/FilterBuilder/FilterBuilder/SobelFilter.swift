@@ -33,17 +33,15 @@ class SobelFilter: CIFilter {
   }
   
   // MARK: - API
-  func outputImage() -> CIImage? {
-    if let inputImage = inputImage {
-      let dod = inputImage.extent()
-      if let kernel = kernel {
+  override var outputImage : CIImage! {
+    if let inputImage = inputImage,
+       let kernel = kernel {
         let args = [inputImage as AnyObject]
         let dod = inputImage.extent().rectByInsetting(dx: -1, dy: -1)
         return kernel.applyWithExtent(dod, roiCallback: {
           (index, rect) in
           return rect.rectByInsetting(dx: -1, dy: -1)
           }, arguments: args)
-      }
     }
     return nil
   }

@@ -19,7 +19,7 @@ import UIKit
 class ChromaKeyViewController: UIViewController {
   
   // MARK: - Properties
-  let filter = ChromaKeyFilter()
+  private let filter = ChromaKeyFilter()
   
   // MARK: - IBOutlets
   @IBOutlet weak var outputImageView: UIImageView!
@@ -48,7 +48,7 @@ class ChromaKeyViewController: UIViewController {
   
   private func filteredImage() -> UIImage {
     let outputImage = filter.outputImage
-    return UIImage(CIImage: outputImage)
+    return UIImage(CIImage: outputImage)!
   }
   
   private func setupFilter() {
