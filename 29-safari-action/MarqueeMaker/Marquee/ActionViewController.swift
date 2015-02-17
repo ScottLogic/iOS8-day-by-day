@@ -30,12 +30,12 @@ class ActionViewController: UIViewController, UITableViewDataSource, UITableView
     tagList = createTagList()
     
     for item: AnyObject in self.extensionContext!.inputItems {
-      let inputItem = item as NSExtensionItem
+      let inputItem = item as! NSExtensionItem
       for provider: AnyObject in inputItem.attachments! {
-        let itemProvider = provider as NSItemProvider
-        if itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as NSString) {
+        let itemProvider = provider as! NSItemProvider
+        if itemProvider.hasItemConformingToTypeIdentifier(kUTTypePropertyList as! String) {
           // You _HAVE_ to call loadItemForTypeIdentifier in order to get the JS injected
-          itemProvider.loadItemForTypeIdentifier(kUTTypePropertyList as NSString, options: nil, completionHandler: {
+          itemProvider.loadItemForTypeIdentifier(kUTTypePropertyList as! String, options: nil, completionHandler: {
             (list, error) in
             if let results = list as? NSDictionary {
               NSOperationQueue.mainQueue().addOperationWithBlock {
@@ -58,7 +58,7 @@ class ActionViewController: UIViewController, UITableViewDataSource, UITableView
     // Parcel them up in an NSExtensionItem
     let extensionItem = NSExtensionItem()
     let jsDict = [ NSExtensionJavaScriptFinalizeArgumentKey : [ "marqueeTagNames" : marqueeTagNames ]]
-    extensionItem.attachments = [ NSItemProvider(item: jsDict, typeIdentifier: kUTTypePropertyList as NSString)]
+    extensionItem.attachments = [ NSItemProvider(item: jsDict, typeIdentifier: kUTTypePropertyList as? String)]
     
     // Send them back to the javascript processor
     self.extensionContext!.completeRequestReturningItems([extensionItem], completionHandler: nil)
@@ -80,7 +80,7 @@ class ActionViewController: UIViewController, UITableViewDataSource, UITableView
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("tagTypeCell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("tagTypeCell", forIndexPath: indexPath) as! UITableViewCell
     let tag = tagList[indexPath.row]
     cell.textLabel?.text = "\(tag)"
     cell.accessoryType = tag.status ? .Checkmark : .None
