@@ -79,7 +79,7 @@ class MotionActivityCell: UITableViewCell {
       pedometerString += "\(data.numberOfSteps) steps | "
     }
     if CMPedometer.isDistanceAvailable() {
-      pedometerString += "\(lengthFormatter!.stringFromMeters(data.distance)) | "
+      pedometerString += "\(lengthFormatter!.stringFromMeters(data.distance as! Double)) | "
     }
     if CMPedometer.isFloorCountingAvailable() {
       pedometerString += "\(data.floorsAscended) floors"

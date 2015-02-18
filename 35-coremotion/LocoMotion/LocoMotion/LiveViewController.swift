@@ -49,7 +49,7 @@ class LiveViewController: UIViewController {
         println("There was an error obtaining altimeter data: \(error)")
       } else {
         dispatch_async(dispatch_get_main_queue()) {
-          self.altChange += data.relativeAltitude
+          self.altChange += data.relativeAltitude as! Double
           self.altitudeLabel.text = "\(self.lengthFormatter.stringFromMeters(self.altChange))"
         }
       }
@@ -64,7 +64,7 @@ class LiveViewController: UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
           self.floorsLabel.text = "\(data.floorsAscended)"
           self.stepsLabel.text = "\(data.numberOfSteps)"
-          self.distanceLabel.text = "\(self.lengthFormatter.stringFromMeters(data.distance))"
+          self.distanceLabel.text = "\(self.lengthFormatter.stringFromMeters(data.distance as! Double))"
         }
       }
     }
