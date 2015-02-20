@@ -92,17 +92,17 @@ which has easily available content for sharing. In the sample project, the
 __ShareAlike__ host app has an image and a share button which will trigger a
 standard UI share sheet:
         @IBAction func handleShareSampleTapped(sender: AnyObject) {
-          shareContent(sharingText: "Highland Cow", sharingImage: sharingContentImageView.image)
+          shareContent(text: "Highland Cow", image: sharingContentImageView.image)
         }
 
         // Utility methods
-        func shareContent(#sharingText: String?, sharingImage: UIImage?) {
+        func shareContent(#text: String?, image: UIImage?) {
           var itemsToShare = [AnyObject]()
 
-          if let text = sharingText {
+          if let text = text {
             itemsToShare.append(text)
           }
-          if let image = sharingImage {
+          if let image = image {
             itemsToShare.append(image)
           }
 
@@ -168,7 +168,7 @@ perform a simple character limit:
 
     override func isContentValid() -> Bool {
       if let currentMessage = contentText {
-        let currentMessageLength = countElements(currentMessage)
+        let currentMessageLength = count(currentMessage)
         charactersRemaining = sc_maxCharactersAllowed - currentMessageLength
 
         if Int(charactersRemaining) < 0 {
@@ -179,7 +179,7 @@ perform a simple character limit:
     }
 
 The `contentText` property is a `String` which contains the current content of
-the compose view. Here you're finding it's length using `countElements()` (note
+the compose view. Here you're finding it's length using `count()` (note
 that you can't ask a `String` for its length. This approach is always `O(N)`).
 `charactersRemaining` is a numeric property, which is represented on the UI.
 You then determine whether you have reached the limit or not, and enable/disable
@@ -225,7 +225,7 @@ Each of these attachments represents an item of media - such as an image, a
 video, a file or a link.
 
     func imageFromExtensionItem(extensionItem: NSExtensionItem, callback: (image: UIImage?)->Void) {
-      for attachment in extensionItem.attachments as [NSItemProvider] {
+      for attachment in extensionItem.attachments as! [NSItemProvider] {
         ...
       }
     }
@@ -237,7 +237,7 @@ result via a callback closure.
 In order to determine whether an attachment contains a media of a particular
 type, you need to use the `hasItemConformingToTypeIdentifier()` method.
 
-    if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage as NSString)) {
+    if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage as String)) {
       ...
     }
 
@@ -264,8 +264,8 @@ a closure to which the result will be delivered:
 
     // Marshal on to a background thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-      attachment.loadItemForTypeIdentifier(kUTTypeImage as NSString, options: nil) {
-          (imageProvider, error) -> Void in
+      attachment.loadItemForTypeIdentifier(kUTTypeImage as String, options: nil) {
+          (imageProvider, error) in
           ...
       }
     }
@@ -277,8 +277,8 @@ type `NSSecureCoding`. You can then cast this to `NSData`, and create an image
 from this:
 
     var image: UIImage? = nil
-    if let e = error {
-      println("Item loading error: \(e.localizedDescription)")
+    if let error = error {
+      println("Item loading error: \(error.localizedDescription)")
     }
     image = imageProvider as? UIImage
     dispatch_async(dispatch_get_main_queue()) {
@@ -296,7 +296,7 @@ into view. There is a perfect method to for this:
 
     override func presentationAnimationDidFinish() {
       // Only interested in the first item
-      let extensionItem = extensionContext?.inputItems[0] as NSExtensionItem
+      let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
       // Extract an image (if one exists)
       imageFromExtensionItem(extensionItem) {
         image in
@@ -420,13 +420,13 @@ it could be adapted to do so. Instead, it extracts some details about the image
 using the following method:
 
     func extractDetailsFromImage(image: UIImage) -> NSDictionary {
-      var resultDict = NSMutableDictionary()
+      var resultDict = [String : AnyObject]()
       resultDict["height"] = image.size.height
       resultDict["width"] = image.size.width
       resultDict["orientation"] = image.imageOrientation.toRaw()
       resultDict["scale"] = image.scale
       resultDict["description"] = image.description
-      return resultDict.copy() as NSDictionary
+      return resultDict
     }
 
 Finally, you can ask the session to create a task associated with the request you've
