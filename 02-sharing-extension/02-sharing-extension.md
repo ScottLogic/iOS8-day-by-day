@@ -22,7 +22,7 @@ functionality. There are 6 extensions applicable to iOS:
 - Custom keyboards
 
 We'll cover some of these in later editions of iOS8 Day-by-Day, but today's article
-is focussed on sharing extensions.
+is focused on sharing extensions.
 
 Sharing extensions give you, the developer of an app, to show an icon on the
 common share-sheet, and then to handle the sharing of the content the user has
@@ -52,9 +52,9 @@ started.
 The major part of a sharing extension is its visual appearance, and as such
 you're provided with a subclass of `SLComposeServiceViewController` and a
 storyboard. The default appearance of `SLComposeServiceViewController` gives you
-a lot of sensible behaviour (including a character count, image display, text
+a lot of sensible behavior (including a character count, image display, text
 entry, post and cancel buttons) and fits in with the iOS UI. In this example
-we're going to stick with this default behaviour.
+we're going to stick with this default behavior.
 
 In addition to the standard `UIViewController` methods, `SLComposeServiceViewController`
 has some methods and properties associated with the lifecycle of a share-sheet
@@ -152,7 +152,7 @@ two images does not:
 ## Validating user input
 
 Now that you've got an understanding of how to create extensions and control them,
-let's take a look at implementing some custom behaviour. First up is how you can
+let's take a look at implementing some custom behavior. First up is how you can
 validate input provided by the user. One of the most common things you might want
 to do is to limit the number of characters in text string that the user enters,
 and `SLComposeServiceViewController` has create support for this.
@@ -207,7 +207,7 @@ and you'll be done. Well, that's not quite true.
 
 There are a couple of complications with this. First of all, it's not trivial to
 extract the content (i.e. image) you've been asked to share, and secondly, an
-extension doesn't get provided any writeable disc access. This might seem a little
+extension doesn't get provided any writable disc access. This might seem a little
 strange - why would an extension _need_ disc access? Well, it's all to do with
 the background network process - at the point it is called, it will cache the
 data on disc and then start the upload in the background. In order that this
@@ -354,7 +354,7 @@ Setting up an `NSURLSession` is pretty standard:
 The important part to note of the above code segment is the line which sets the
 `sharedContainerIdentifier` on the session configuration. This specifies the
 name of the container that `NSURLSession` can use as a cache (since extensions
-don't have their own writeable disc access). This container needs to be set up
+don't have their own writable disc access). This container needs to be set up
 as part of the host application (i.e. _ShareAlike_ in this demo), and can be done
 through Xcode:
 
@@ -447,7 +447,7 @@ you can expect to see results like this:
 Sharing extensions are just one of the extensions available to developers in iOS8,
 and represents Apple opening up the operating system in a way they've been
 asked to do for a while. Interestingly, it's done in a way that has prioritized
-security and privacy, arguably at a small cost of customisability.
+security and privacy, arguably at a small cost of customizability.
 
 Building sharing extensions is far from trivial, and along the route there are
 many things that can trip you up. However, if it's applicable to you and your app
