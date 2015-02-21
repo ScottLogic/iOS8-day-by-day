@@ -106,7 +106,9 @@ the filter:
 
     private func updateOutputImage() {
       filter.threshold = thresholdSlider.value
-      glRenderer?.renderImage(filter.outputImage)
+      if let outputImage = filter.outputImage {
+        glRenderer?.renderImage(outputImage)
+      }
     }
 
 This method uses a custom `GLRenderer` class to display the image in a `GLKView`
@@ -226,7 +228,7 @@ The following shows the implementation in __ChromaKey__:
         let fullSizeImage = CIImage(contentsOfURL: self.input?.fullSizeImageURL)
         UIGraphicsBeginImageContext(fullSizeImage.extent().size);
         self.filter.inputImage = fullSizeImage
-        UIImage(CIImage: self.filter.outputImage.drawInRect(fullSizeImage.extent())
+        UIImage(CIImage: self.filter.outputImage!)!.drawInRect(fullSizeImage.extent())
         let outputImage = UIGraphicsGetImageFromCurrentImageContext()
         let jpegData = UIImageJPEGRepresentation(outputImage, 1.0)
         UIGraphicsEndImageContext()
@@ -314,8 +316,9 @@ to extract the filter settings from the provided `NSData` blob:
     func importFilterParameters(data: NSData?) {
       if let data = data {
         if let dataDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String : AnyObject] {
-          activeColor = dataDict["color"] as? CIColor ?? activeColor
-          threshold   = dataDict["threshold"] as? NSNumber ?? threshold
+          activeColor = (dataDict["color"] as? CIColor) ?? activeColor
+          threshold   = (dataDict["threshold"] as? Float) ?? threshold
+
         }
       }
     }
