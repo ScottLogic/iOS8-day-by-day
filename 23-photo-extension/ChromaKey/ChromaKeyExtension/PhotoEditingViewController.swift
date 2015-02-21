@@ -80,7 +80,7 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
       let fullSizeImage = CIImage(contentsOfURL: self.input?.fullSizeImageURL)
       UIGraphicsBeginImageContext(fullSizeImage.extent().size);
       self.filter.inputImage = fullSizeImage
-      UIImage(CIImage: self.filter.outputImage).drawInRect(fullSizeImage.extent())
+      UIImage(CIImage: self.filter.outputImage!)!.drawInRect(fullSizeImage.extent())
       let outputImage = UIGraphicsGetImageFromCurrentImageContext()
       let jpegData = UIImageJPEGRepresentation(outputImage, 1.0)
       UIGraphicsEndImageContext()
@@ -109,7 +109,9 @@ class PhotoEditingViewController: UIViewController, PHContentEditingController {
   // MARK: - Utility methods
   private func updateOutputImage() {
     filter.threshold = thresholdSlider.value
-    glRenderer?.renderImage(filter.outputImage)
+    if let outputImage = filter.outputImage {
+      glRenderer?.renderImage(outputImage)
+    }
   }
 
 }
