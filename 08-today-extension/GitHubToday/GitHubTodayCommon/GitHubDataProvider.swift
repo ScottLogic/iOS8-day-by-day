@@ -39,7 +39,7 @@ import Foundation
   // NSCoding
   public required init(coder aDecoder: NSCoder) {
     self.id = aDecoder.decodeIntegerForKey("id")
-    self.eventType = GitHubEventType(rawValue: aDecoder.decodeObjectForKey("eventType") as String)!
+    self.eventType = GitHubEventType(rawValue: aDecoder.decodeObjectForKey("eventType") as! String)!
     self.repoName = aDecoder.decodeObjectForKey("repoName") as? String
     self.time = aDecoder.decodeObjectForKey("time") as? NSDate
   }
@@ -51,18 +51,17 @@ import Foundation
     aCoder.encodeObject(time!, forKey: "time")
   }
   
-  public convenience init(json: JSONValue) {
+  public convenience init(json: JSON) {
     let data = GitHubEvent.extractDataFromJson(json)
     self.init(id: data.id, eventType: data.eventType, repoName: data.repoName, time: data.time)
   }
   
   
-  public class func extractDataFromJson(jsonEvent: JSONValue) -> (id: Int, eventType: GitHubEventType, repoName: String?, time: NSDate?) {
-    let id = jsonEvent["id"].integer!
-    var repoName: String? = nil
-    if let repo = jsonEvent["repo"].object {
-      repoName = repo["name"]?.string
-    }
+  public class func extractDataFromJson(jsonEvent: JSON) -> (id: Int, eventType: GitHubEventType, repoName: String?, time: NSDate?) {
+    let id = jsonEvent["id"].string!.toInt()!
+    
+    var repoName = jsonEvent["repo"]["name"].string
+    
     var eventType: GitHubEventType = .Other
     if let eventString = jsonEvent["type"].string {
       switch eventString {
@@ -157,14 +156,15 @@ public class GitHubDataProvider {
         println("Error: \(error.localizedDescription)")
         return
       }
-      let events = self.convertJSONToEvents(JSONValue(data))
+      let json = JSON(data: data, options: .allZeros, error: nil)
+      let events = self.convertJSONToEvents(json)
       callback(events)
 
       })
     task.resume()
   }
   
-  private func convertJSONToEvents(data: JSONValue) -> [GitHubEvent] {
+  private func convertJSONToEvents(data: JSON) -> [GitHubEvent] {
     let json = data.array
     var ghEvents = [GitHubEvent]()
     if let events = json {

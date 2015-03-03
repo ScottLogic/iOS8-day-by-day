@@ -24,7 +24,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   @IBOutlet weak var repoNameLabel: UILabel!
   
   let dataProvider = GitHubDataProvider()
-  let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday"))
+  let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday")!)
   var currentEvent: GitHubEvent? {
   didSet {
     dispatch_async(dispatch_get_main_queue()) {
@@ -80,7 +80,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
   
   @IBAction func handleMoreButtonTapped(sender: AnyObject) {
     let url = NSURL(scheme: "githubtoday", host: nil, path: "/\(currentEvent?.id)")
-    extensionContext?.openURL(url, completionHandler: nil)
+    extensionContext?.openURL(url!, completionHandler: nil)
   }
   
 }
