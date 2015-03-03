@@ -66,14 +66,14 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
     if segue.identifier == "showDetail" {
       if let indexPath = self.tableView.indexPathForSelectedRow() {
         let note = noteCollection[indexPath.row]
-        let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
+        let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
         controller.noteManager = noteManager
         controller.noteID = note.id
         controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
         controller.navigationItem.leftItemsSupplementBackButton = true
       }
     } else if segue.identifier == "addNote" {
-      let newNoteVC = segue.destinationViewController as NoteEditViewController
+      let newNoteVC = segue.destinationViewController as! NoteEditViewController
       newNoteVC.noteEditingDelegate = self
     }
   }
@@ -89,7 +89,7 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
     
     let note = noteCollection[indexPath.row]
     cell.textLabel?.text = note.title
