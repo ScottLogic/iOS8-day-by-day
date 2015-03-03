@@ -39,14 +39,14 @@ import Foundation
   // NSCoding
   public required init(coder aDecoder: NSCoder) {
     self.id = aDecoder.decodeIntegerForKey("id")
-    self.eventType = GitHubEventType.fromRaw(aDecoder.decodeObjectForKey("eventType") as String)!
+    self.eventType = GitHubEventType(rawValue: aDecoder.decodeObjectForKey("eventType") as String)!
     self.repoName = aDecoder.decodeObjectForKey("repoName") as? String
     self.time = aDecoder.decodeObjectForKey("time") as? NSDate
   }
   
   public func encodeWithCoder(aCoder: NSCoder) {
     aCoder.encodeInteger(id, forKey: "id")
-    aCoder.encodeObject(eventType.toRaw(), forKey: "eventType")
+    aCoder.encodeObject(eventType.rawValue, forKey: "eventType")
     aCoder.encodeObject(repoName!, forKey: "repoName")
     aCoder.encodeObject(time!, forKey: "time")
   }
@@ -98,7 +98,7 @@ import Foundation
   
   // Printable
   override public var description: String {
-    return "[\(id)] \(time) : \(eventType.toRaw()) \(repoName)"
+    return "[\(id)] \(time) : \(eventType.rawValue)) \(repoName)"
   }
 }
 
@@ -151,7 +151,7 @@ public class GitHubDataProvider {
   
   public func getEvents(user: String, callback: ([GitHubEvent])->()) {
     let url = NSURL(string: "https://api.github.com/users/\(user)/events")
-    let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {
+    let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {
       (data, response, error) in
       if (error != nil) {
         println("Error: \(error.localizedDescription)")
