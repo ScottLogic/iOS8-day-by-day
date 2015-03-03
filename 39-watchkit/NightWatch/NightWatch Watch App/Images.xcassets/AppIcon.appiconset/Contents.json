@@ -1,18 +1,16 @@
 {
   "images" : [
     {
-      "size" : "14.5x14.5",
+      "size" : "24x24",
       "idiom" : "watch",
       "scale" : "2x",
-      "filename" : "NightWatchLogo_14.5@2x.png",
       "role" : "notificationCenter",
       "subtype" : "38mm"
     },
     {
-      "size" : "18x18",
+      "size" : "27.5x27.5",
       "idiom" : "watch",
       "scale" : "2x",
-      "filename" : "NightWatchLogo_18@2x.png",
       "role" : "notificationCenter",
       "subtype" : "42mm"
     },
@@ -24,7 +22,7 @@
       "scale" : "2x"
     },
     {
-      "size" : "29.3x29.3",
+      "size" : "29x29",
       "idiom" : "watch",
       "filename" : "NightWatchLogo_29@3x.png",
       "role" : "companionSettings",
@@ -33,18 +31,9 @@
     {
       "size" : "40x40",
       "idiom" : "watch",
-      "scale" : "2x",
       "filename" : "NightWatchLogo_40@2x.png",
       "role" : "appLauncher",
-      "subtype" : "38mm"
-    },
-    {
-      "size" : "44x44",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "filename" : "NightWatchLogo_44@2x.png",
-      "role" : "appLauncher",
-      "subtype" : "42mm"
+      "scale" : "2x"
     },
     {
       "size" : "86x86",
