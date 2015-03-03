@@ -42,7 +42,7 @@ class TabBarViewController: UITabBarController {
       self.healthStore = HKHealthStore()
     }
     
-    for vc in viewControllers as [UIViewController] {
+    for vc in viewControllers as! [UIViewController] {
       if let healthStoreUser = vc as? HealthStoreUser {
         healthStoreUser.healthStore = self.healthStore
       }
@@ -60,8 +60,8 @@ class TabBarViewController: UITabBarController {
       HKCharacteristicType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierDateOfBirth)
     ]
     
-    self.healthStore?.requestAuthorizationToShareTypes(NSSet(array: dataTypesToWrite),
-      readTypes: NSSet(array: dataTypesToRead), completion: {
+    self.healthStore?.requestAuthorizationToShareTypes(Set<NSObject>(arrayLiteral: dataTypesToWrite),
+      readTypes: Set<NSObject>(arrayLiteral: dataTypesToRead), completion: {
       (success, error) in
         if success {
           println("User completed authorisation request.")
