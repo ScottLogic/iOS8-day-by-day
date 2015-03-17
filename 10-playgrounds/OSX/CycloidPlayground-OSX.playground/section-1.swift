@@ -96,7 +96,7 @@ class AnimatingCycloidView: NSView {
     prepareView()
   }
 
-  required init(coder: NSCoder) {
+  required init?(coder: NSCoder) {
     cycloid = Cycloid(radius: 10, numberOfRotations: 10)
     super.init(coder: coder)
   }
