@@ -6,7 +6,7 @@ import Cocoa
   MUTABILITY
 ******************/
 struct MyStruct {
-  let t = 12
+  let t: Int
   var u: String
 }
 
