@@ -17,7 +17,6 @@
 		2215A23019E2DF940048F2FD /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A22F19E2DF940048F2FD /* NoteManager.swift */; };
 		2215A23519E422AF0048F2FD /* NoteEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215A23419E422AF0048F2FD /* NoteEditViewController.swift */; };
 		2240F8CA19E3232E00E979C0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240F8C919E3232E00E979C0 /* Note.swift */; };
-		2280074019EB11F2009D2C78 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2280073F19EB11F2009D2C78 /* CloudKit.framework */; };
 		2280074219EB24B6009D2C78 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280074119EB24B6009D2C78 /* LoadingOverlay.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 		2215A23419E422AF0048F2FD /* NoteEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEditViewController.swift; sourceTree = "<group>"; };
 		2240F8C919E3232E00E979C0 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		2280073E19EB11EF009D2C78 /* CloudNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CloudNotes.entitlements; sourceTree = "<group>"; };
-		2280073F19EB11F2009D2C78 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2280074119EB24B6009D2C78 /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2280074019EB11F2009D2C78 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +70,6 @@
 		2215A1FE19E2B4F80048F2FD = {
 			isa = PBXGroup;
 			children = (
-				2280073F19EB11F2009D2C78 /* CloudKit.framework */,
 				2215A20919E2B4F80048F2FD /* CloudNotes */,
 				2215A22119E2B4F80048F2FD /* CloudNotesTests */,
 				2215A20819E2B4F80048F2FD /* Products */,
