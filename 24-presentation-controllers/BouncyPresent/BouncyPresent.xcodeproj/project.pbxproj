@@ -17,6 +17,7 @@
 		22CF1CC319AFB90A002D4F59 /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CC219AFB90A002D4F59 /* OverlayPresentationController.swift */; };
 		22CF1CC519AFB93A002D4F59 /* OverlayTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CC419AFB93A002D4F59 /* OverlayTransitioningDelegate.swift */; };
 		22CF1CC719AFC148002D4F59 /* BouncyViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1CC619AFC148002D4F59 /* BouncyViewControllerAnimator.swift */; };
+		22EDB8551AD68946008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8531AD68946008515E4 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		22CF1CC219AFB90A002D4F59 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
 		22CF1CC419AFB93A002D4F59 /* OverlayTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTransitioningDelegate.swift; sourceTree = "<group>"; };
 		22CF1CC619AFC148002D4F59 /* BouncyViewControllerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncyViewControllerAnimator.swift; sourceTree = "<group>"; };
+		22EDB8541AD68946008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				22CF1CA319AFB208002D4F59 /* Main.storyboard */,
 				22CF1CA619AFB208002D4F59 /* Images.xcassets */,
 				22CF1C9D19AFB208002D4F59 /* Supporting Files */,
+				22EDB8531AD68946008515E4 /* Launch Screen.xib */,
 			);
 			path = BouncyPresent;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				22CF1CA519AFB208002D4F59 /* Main.storyboard in Resources */,
 				22CF1CA719AFB208002D4F59 /* Images.xcassets in Resources */,
+				22EDB8551AD68946008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +278,14 @@
 				22CF1CA419AFB208002D4F59 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22EDB8531AD68946008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8541AD68946008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -362,7 +374,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BouncyPresent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -373,7 +384,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BouncyPresent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -433,6 +443,7 @@
 				22CF1CB819AFB208002D4F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22CF1CB919AFB208002D4F59 /* Build configuration list for PBXNativeTarget "BouncyPresentTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +452,7 @@
 				22CF1CBB19AFB208002D4F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

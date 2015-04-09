@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EDB83A1AD686AA008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8381AD686AA008515E4 /* Launch Screen.xib */; };
 		F4786B72198A5BE400F76983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4786B71198A5BE400F76983 /* AppDelegate.swift */; };
 		F4786B74198A5BE400F76983 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4786B73198A5BE400F76983 /* ViewController.swift */; };
 		F4786B77198A5BE400F76983 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4786B75198A5BE400F76983 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22EDB8391AD686AA008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		F4786B6C198A5BE400F76983 /* DeprecateToRotate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeprecateToRotate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4786B70198A5BE400F76983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4786B71198A5BE400F76983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				F4786B75198A5BE400F76983 /* Main.storyboard */,
 				F4786B78198A5BE400F76983 /* Images.xcassets */,
 				F4786B6F198A5BE400F76983 /* Supporting Files */,
+				22EDB8381AD686AA008515E4 /* Launch Screen.xib */,
 			);
 			path = DeprecateToRotate;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				F4786B77198A5BE400F76983 /* Main.storyboard in Resources */,
 				F4786B79198A5BE400F76983 /* Images.xcassets in Resources */,
+				22EDB83A1AD686AA008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +236,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22EDB8381AD686AA008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8391AD686AA008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		F4786B75198A5BE400F76983 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -326,7 +338,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DeprecateToRotate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,7 +348,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DeprecateToRotate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -397,6 +407,7 @@
 				F4786B8A198A5BE500F76983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4786B8B198A5BE500F76983 /* Build configuration list for PBXNativeTarget "DeprecateToRotateTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +416,7 @@
 				F4786B8D198A5BE500F76983 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

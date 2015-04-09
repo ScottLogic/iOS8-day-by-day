@@ -17,22 +17,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
   
   @IBOutlet weak var sharingContentImageView: UIImageView!
   
   @IBAction func handleShareSampleTapped(sender: AnyObject) {
-    shareContent(sharingText: "Highland Cow", sharingImage: sharingContentImageView.image)
+    shareContent(text: "Highland Cow", image: sharingContentImageView.image)
   }
   
   // Utility methods
-  func shareContent(#sharingText: String?, sharingImage: UIImage?) {
+  func shareContent(#text: String?, image: UIImage?) {
     var itemsToShare = [AnyObject]()
     
-    if let text = sharingText {
+    if let text = text {
       itemsToShare.append(text)
     }
-    if let image = sharingImage {
+    if let image = image {
       itemsToShare.append(image)
     }
     

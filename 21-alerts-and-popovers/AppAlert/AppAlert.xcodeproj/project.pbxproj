@@ -13,6 +13,7 @@
 		22197EA219ABFCD900C99CF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22197EA119ABFCD900C99CF7 /* Images.xcassets */; };
 		22197EAE19ABFCD900C99CF7 /* AppAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22197EAD19ABFCD900C99CF7 /* AppAlertTests.swift */; };
 		22197EB819ACC34300C99CF7 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22197EB719ACC34300C99CF7 /* PopoverViewController.swift */; };
+		22EDB84C1AD688B0008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB84A1AD688B0008515E4 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		22197EAC19ABFCD900C99CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22197EAD19ABFCD900C99CF7 /* AppAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlertTests.swift; sourceTree = "<group>"; };
 		22197EB719ACC34300C99CF7 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		22EDB84B1AD688B0008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				22197EA119ABFCD900C99CF7 /* Images.xcassets */,
 				22197E9819ABFCD900C99CF7 /* Supporting Files */,
 				22197EB719ACC34300C99CF7 /* PopoverViewController.swift */,
+				22EDB84A1AD688B0008515E4 /* Launch Screen.xib */,
 			);
 			path = AppAlert;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				22197EA019ABFCD900C99CF7 /* Main.storyboard in Resources */,
 				22197EA219ABFCD900C99CF7 /* Images.xcassets in Resources */,
+				22EDB84C1AD688B0008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +246,14 @@
 				22197E9F19ABFCD900C99CF7 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22EDB84A1AD688B0008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB84B1AD688B0008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -330,7 +342,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AppAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,7 +352,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AppAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

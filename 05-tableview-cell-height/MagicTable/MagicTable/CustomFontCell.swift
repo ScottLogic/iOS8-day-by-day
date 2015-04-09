@@ -20,5 +20,4 @@ class CustomFontCell: UITableViewCell {
 
   @IBOutlet var customFontLabel: UILabel?
 
-
 }

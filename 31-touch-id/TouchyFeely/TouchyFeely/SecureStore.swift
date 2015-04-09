@@ -51,11 +51,11 @@ class KeyChainStore: SecureStore {
       let accessControl = SecAccessControlCreateWithFlags(kCFAllocatorDefault, kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly, .UserPresence, nil)
       
       let keyChainQuery = [
-        kSecClass             : kSecClassGenericPassword,
-        kSecAttrService       : serviceIdentifier,
-        kSecAttrAccount       : accountName,
-        kSecValueData         : data,
-        kSecAttrAccessControl : accessControl.takeUnretainedValue()
+        kSecClass as! String             : kSecClassGenericPassword,
+        kSecAttrService as! String       : serviceIdentifier,
+        kSecAttrAccount as! String       : accountName,
+        kSecValueData as! String         : data,
+        kSecAttrAccessControl as! String : accessControl.takeUnretainedValue()
       ]
       
       SecItemAdd(keyChainQuery, nil)
@@ -64,12 +64,12 @@ class KeyChainStore: SecureStore {
   
   private func load() -> String? {
     let keyChainQuery = [
-      kSecClass              : kSecClassGenericPassword,
-      kSecAttrService        : serviceIdentifier,
-      kSecAttrAccount        : accountName,
-      kSecReturnData         : true,
-      kSecMatchLimit         : kSecMatchLimitOne,
-      kSecUseOperationPrompt : "Authenticate to retrieve your secret!"
+      kSecClass as! String              : kSecClassGenericPassword,
+      kSecAttrService as! String        : serviceIdentifier,
+      kSecAttrAccount as! String        : accountName,
+      kSecReturnData as! String         : true,
+      kSecMatchLimit as! String         : kSecMatchLimitOne,
+      kSecUseOperationPrompt as! String : "Authenticate to retrieve your secret!"
     ]
     
     var extractedData: Unmanaged<AnyObject>? = nil
@@ -82,7 +82,7 @@ class KeyChainStore: SecureStore {
     if let opaque = opaque {
       let retrievedData = Unmanaged<NSData>.fromOpaque(opaque).takeUnretainedValue()
       // Convert the data retrieved from the keychain into a string
-      contentsOfKeychain = NSString(data: retrievedData, encoding: NSUTF8StringEncoding)
+      contentsOfKeychain = NSString(data: retrievedData, encoding: NSUTF8StringEncoding) as? String
     } else {
       println("Nothing was retrieved from the keychain. Status code \(status)")
     }
@@ -93,9 +93,9 @@ class KeyChainStore: SecureStore {
   private func delete() {
     // Instantiate a new default keychain query
     let keyChainQuery = [
-      kSecClass       : kSecClassGenericPassword,
-      kSecAttrService : serviceIdentifier,
-      kSecAttrAccount : accountName
+      kSecClass as! String       : kSecClassGenericPassword,
+      kSecAttrService as! String : serviceIdentifier,
+      kSecAttrAccount as! String : accountName
     ]
     
     SecItemDelete(keyChainQuery)

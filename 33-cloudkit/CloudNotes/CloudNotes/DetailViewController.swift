@@ -81,7 +81,7 @@ class DetailViewController: UIViewController, NoteEditingDelegate {
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "editNote" {
-      let editVC = segue.destinationViewController as NoteEditViewController
+      let editVC = segue.destinationViewController as! NoteEditViewController
       editVC.noteEditingDelegate = self
       editVC.note = note
     }

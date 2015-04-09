@@ -19,6 +19,7 @@
 		22CF1D0319AFD5AB002D4F59 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */; };
 		22CF1D0619AFD5AB002D4F59 /* ChromaKeyExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22CF1CF719AFD5AB002D4F59 /* ChromaKeyExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		22CF1D3719B01229002D4F59 /* ChromaKeyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */; };
+		22EDB8521AD6890C008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8501AD6890C008515E4 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		22CF1D0019AFD5AB002D4F59 /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
 		22CF1D0219AFD5AB002D4F59 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		22CF1D3619B01229002D4F59 /* ChromaKeyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaKeyFilter.swift; sourceTree = "<group>"; };
+		22EDB8511AD6890C008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				22CF1CDA19AFD292002D4F59 /* Main.storyboard */,
 				22CF1CDD19AFD292002D4F59 /* Images.xcassets */,
 				22CF1CD419AFD292002D4F59 /* Supporting Files */,
+				22EDB8501AD6890C008515E4 /* Launch Screen.xib */,
 			);
 			path = ChromaKey;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			files = (
 				22CF1CDC19AFD292002D4F59 /* Main.storyboard in Resources */,
 				22CF1CDE19AFD292002D4F59 /* Images.xcassets in Resources */,
+				22EDB8521AD6890C008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +389,14 @@
 				22CF1CDB19AFD292002D4F59 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22EDB8501AD6890C008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8511AD6890C008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -473,7 +485,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ChromaKey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,7 +495,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ChromaKey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

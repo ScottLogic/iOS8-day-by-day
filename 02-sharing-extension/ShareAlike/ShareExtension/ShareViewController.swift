@@ -17,7 +17,6 @@
 import UIKit
 import Social
 import MobileCoreServices
-import CoreGraphics
 
 
 class ShareViewController: SLComposeServiceViewController {
@@ -34,7 +33,7 @@ class ShareViewController: SLComposeServiceViewController {
   override func isContentValid() -> Bool {
     // Do validation of contentText and/or NSExtensionContext attachments here
     if let currentMessage = contentText {
-      let currentMessageLength = countElements(currentMessage)
+      let currentMessageLength = count(currentMessage)
       charactersRemaining = sc_maxCharactersAllowed - currentMessageLength
       
       if Int(charactersRemaining) < 0 {
@@ -47,11 +46,11 @@ class ShareViewController: SLComposeServiceViewController {
   
   override func presentationAnimationDidFinish() {
     // Only interested in the first item
-    let extensionItem = extensionContext?.inputItems[0] as NSExtensionItem
+    let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
     // Extract an image (if one exists)
     imageFromExtensionItem(extensionItem) {
       image in
-      if image != nil {
+      if let image = image {
         dispatch_async(dispatch_get_main_queue()) {
           self.attachedImage = image
         }
@@ -81,11 +80,13 @@ class ShareViewController: SLComposeServiceViewController {
   
   override func configurationItems() -> [AnyObject]! {
     // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
-    return NSArray()
+    return [AnyObject]()
   }
   
   
-  func urlRequestWithImage(image: UIImage?, text: String) -> NSURLRequest? {
+  // MARK:- Utility functions
+  
+  private func urlRequestWithImage(image: UIImage?, text: String) -> NSURLRequest? {
     let url = NSURL(fileURLWithPath: sc_uploadURL)
     let request: NSMutableURLRequest?  = (url==nil) ? NSMutableURLRequest(URL: url!) : nil
     request?.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -112,27 +113,27 @@ class ShareViewController: SLComposeServiceViewController {
     return request
   }
   
-  func extractDetailsFromImage(image: UIImage) -> NSDictionary {
-    var resultDict = NSMutableDictionary()
+  private func extractDetailsFromImage(image: UIImage) -> NSDictionary {
+    var resultDict = [String : AnyObject]()
     resultDict["height"] = image.size.height
     resultDict["width"] = image.size.width
     resultDict["orientation"] = image.imageOrientation.rawValue
     resultDict["scale"] = image.scale
     resultDict["description"] = image.description
-    return resultDict.copy() as NSDictionary
+    return resultDict
   }
   
-  func imageFromExtensionItem(extensionItem: NSExtensionItem, callback: (image: UIImage?)->Void) {
+  private func imageFromExtensionItem(extensionItem: NSExtensionItem, callback: (image: UIImage?) -> Void) {
     
-    for attachment in extensionItem.attachments as [NSItemProvider] {
-      if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage as NSString)) {
+    for attachment in extensionItem.attachments as! [NSItemProvider] {
+      if(attachment.hasItemConformingToTypeIdentifier(kUTTypeImage as String)) {
         // Marshal on to a background thread
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, UInt(0))) {
-          attachment.loadItemForTypeIdentifier(kUTTypeImage as NSString, options: nil) {
-            (imageProvider, error) -> Void in
+          attachment.loadItemForTypeIdentifier(kUTTypeImage as String, options: nil) {
+            (imageProvider, error) in
             var image: UIImage? = nil
-            if let e = error {
-              println("Item loading error: \(e.localizedDescription)")
+            if let error = error {
+              println("Item loading error: \(error.localizedDescription)")
             }
             image = imageProvider as? UIImage
             dispatch_async(dispatch_get_main_queue()) {

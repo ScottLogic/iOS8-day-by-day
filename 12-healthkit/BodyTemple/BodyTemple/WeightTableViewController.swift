@@ -48,7 +48,7 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("WeightCell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("WeightCell", forIndexPath: indexPath) as! UITableViewCell
     // Configure the cell...
     let sample = weightSamples[indexPath.row]
     let weight = sample.quantity.doubleValueForUnit(HKUnit(fromString: "kg"))
@@ -95,7 +95,7 @@ class WeightTableViewController: UITableViewController, WeightEntryDelegate, Hea
       }
       
       dispatch_async(dispatch_get_main_queue()) {
-        self.weightSamples = results as [HKQuantitySample]
+        self.weightSamples = results as! [HKQuantitySample]
         self.tableView.reloadData()
       }
       

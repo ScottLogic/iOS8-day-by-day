@@ -18,9 +18,9 @@ import Foundation
 import UIKit
 
 public struct Horse {
-  public var horseView: UIView
-  var startConstraint: NSLayoutConstraint
-  var finishConstraint: NSLayoutConstraint?
+  public let horseView: UIView
+  private let startConstraint: NSLayoutConstraint
+  private let finishConstraint: NSLayoutConstraint?
   
   init(horseView: UIView, startConstraint: NSLayoutConstraint, finishLineOffset:CGFloat) {
     self.horseView = horseView
@@ -32,7 +32,7 @@ public struct Horse {
 
 public class TwoHorseRaceController {
   
-  var horses: [Horse]
+  let horses: [Horse]
   
   init(horses: [Horse]) {
     self.horses = horses
@@ -58,8 +58,8 @@ public class TwoHorseRaceController {
           self.updateConstraintsToEndOfRace(horse)
           horse.horseView.layoutIfNeeded()
         }, completion: { _ in
-          if let callback = horseCrossedLineCallback? {
-            callback(horse)
+          if let horseCrossedLineCallback = horseCrossedLineCallback {
+            horseCrossedLineCallback(horse)
           }
         })
     }

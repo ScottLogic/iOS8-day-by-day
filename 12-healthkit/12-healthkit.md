@@ -156,8 +156,8 @@ from. The following method demonstrates requesting access to the data store:
         HKCharacteristicType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierDateOfBirth)
       ]
       
-      self.healthStore?.requestAuthorizationToShareTypes(NSSet(array: dataTypesToWrite),
-        readTypes: NSSet(array: dataTypesToRead), completion: {
+      self.healthStore?.requestAuthorizationToShareTypes(Set<NSObject>(arrayLiteral: dataTypesToWrite),
+        readTypes: Set<NSObject>(arrayLiteral: dataTypesToRead), completion: {
         (success, error) in
           if success {
             println("User completed authorisation request.")
@@ -282,7 +282,7 @@ demonstrates how to get a list of body mass samples for the last 2 months:
             println("There was an error running the query: \(error)")
           }
           dispatch_async(dispatch_get_main_queue()) {
-            self.weightSamples = results as [HKQuantitySample]
+            self.weightSamples = results as! [HKQuantitySample]
             self.tableView.reloadData()
           }
         })

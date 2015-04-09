@@ -18,7 +18,6 @@ import UIKit
 
 public class ViewController: UIViewController {
   
-  
   @IBOutlet public weak var horse1: UIImageView!
   @IBOutlet public weak var horse2: UIImageView!
   @IBOutlet weak var horse1StartConstraint: NSLayoutConstraint!

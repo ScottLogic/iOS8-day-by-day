@@ -19,17 +19,6 @@ import UIKit
 class ViewController: UIViewController, TransformControlsDelegate {
     
   @IBOutlet weak var imageView: UIImageView!
-                            
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
-  
-  // <TransformControlsDelegate>
-  func transformDidChange(transform: CGAffineTransform, sender: AnyObject) {
-    // Update the transform applied to the image view
-    imageView.transform = transform
-  }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
     if segue.identifier == "showTransformController" {
@@ -38,6 +27,12 @@ class ViewController: UIViewController, TransformControlsDelegate {
         transformController.currentTransform = imageView.transform
       }
     }
+  }
+  
+  // MARK:- TransformControlsDelegate Methods
+  func transformDidChange(transform: CGAffineTransform, sender: AnyObject) {
+    // Update the transform applied to the image view
+    imageView.transform = transform
   }
 
 }

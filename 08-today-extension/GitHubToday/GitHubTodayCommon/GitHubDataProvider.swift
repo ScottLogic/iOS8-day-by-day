@@ -39,30 +39,29 @@ import Foundation
   // NSCoding
   public required init(coder aDecoder: NSCoder) {
     self.id = aDecoder.decodeIntegerForKey("id")
-    self.eventType = GitHubEventType.fromRaw(aDecoder.decodeObjectForKey("eventType") as String)!
+    self.eventType = GitHubEventType(rawValue: aDecoder.decodeObjectForKey("eventType") as! String)!
     self.repoName = aDecoder.decodeObjectForKey("repoName") as? String
     self.time = aDecoder.decodeObjectForKey("time") as? NSDate
   }
   
   public func encodeWithCoder(aCoder: NSCoder) {
     aCoder.encodeInteger(id, forKey: "id")
-    aCoder.encodeObject(eventType.toRaw(), forKey: "eventType")
+    aCoder.encodeObject(eventType.rawValue, forKey: "eventType")
     aCoder.encodeObject(repoName!, forKey: "repoName")
     aCoder.encodeObject(time!, forKey: "time")
   }
   
-  public convenience init(json: JSONValue) {
+  public convenience init(json: JSON) {
     let data = GitHubEvent.extractDataFromJson(json)
     self.init(id: data.id, eventType: data.eventType, repoName: data.repoName, time: data.time)
   }
   
   
-  public class func extractDataFromJson(jsonEvent: JSONValue) -> (id: Int, eventType: GitHubEventType, repoName: String?, time: NSDate?) {
-    let id = jsonEvent["id"].integer!
-    var repoName: String? = nil
-    if let repo = jsonEvent["repo"].object {
-      repoName = repo["name"]?.string
-    }
+  public class func extractDataFromJson(jsonEvent: JSON) -> (id: Int, eventType: GitHubEventType, repoName: String?, time: NSDate?) {
+    let id = jsonEvent["id"].string!.toInt()!
+    
+    var repoName = jsonEvent["repo"]["name"].string
+    
     var eventType: GitHubEventType = .Other
     if let eventString = jsonEvent["type"].string {
       switch eventString {
@@ -98,7 +97,7 @@ import Foundation
   
   // Printable
   override public var description: String {
-    return "[\(id)] \(time) : \(eventType.toRaw()) \(repoName)"
+    return "[\(id)] \(time) : \(eventType.rawValue)) \(repoName)"
   }
 }
 
@@ -151,20 +150,21 @@ public class GitHubDataProvider {
   
   public func getEvents(user: String, callback: ([GitHubEvent])->()) {
     let url = NSURL(string: "https://api.github.com/users/\(user)/events")
-    let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {
+    let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: {
       (data, response, error) in
       if (error != nil) {
         println("Error: \(error.localizedDescription)")
         return
       }
-      let events = self.convertJSONToEvents(JSONValue(data))
+      let json = JSON(data: data, options: .allZeros, error: nil)
+      let events = self.convertJSONToEvents(json)
       callback(events)
 
       })
     task.resume()
   }
   
-  private func convertJSONToEvents(data: JSONValue) -> [GitHubEvent] {
+  private func convertJSONToEvents(data: JSON) -> [GitHubEvent] {
     let json = data.array
     var ghEvents = [GitHubEvent]()
     if let events = json {

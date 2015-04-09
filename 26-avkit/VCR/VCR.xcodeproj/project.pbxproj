@@ -13,8 +13,8 @@
 		22C5138019BD859B004B3936 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C5137F19BD859B004B3936 /* Images.xcassets */; };
 		22C5138C19BD859B004B3936 /* VCRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5138B19BD859B004B3936 /* VCRTests.swift */; };
 		22C5139619BD9962004B3936 /* VideoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5139519BD9962004B3936 /* VideoListTableViewController.swift */; };
-		22D0929E19BDAD5000E7BD6C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D0929D19BDAD5000E7BD6C /* AVKit.framework */; };
 		22D092A019BDC57200E7BD6C /* countdown_new.mov in Resources */ = {isa = PBXBuildFile; fileRef = 22D0929F19BDC57200E7BD6C /* countdown_new.mov */; };
+		22EDB85A1AD68997008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8581AD68997008515E4 /* Launch Screen.xib */; };
 		22FE859F19BD9C46006705AF /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +39,8 @@
 		22C5138A19BD859B004B3936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C5138B19BD859B004B3936 /* VCRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRTests.swift; sourceTree = "<group>"; };
 		22C5139519BD9962004B3936 /* VideoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListTableViewController.swift; sourceTree = "<group>"; };
-		22D0929D19BDAD5000E7BD6C /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		22D0929F19BDC57200E7BD6C /* countdown_new.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = countdown_new.mov; sourceTree = "<group>"; };
+		22EDB8591AD68997008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22D0929E19BDAD5000E7BD6C /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +65,6 @@
 		22C5136A19BD859B004B3936 = {
 			isa = PBXGroup;
 			children = (
-				22D0929D19BDAD5000E7BD6C /* AVKit.framework */,
 				22C5137519BD859B004B3936 /* VCR */,
 				22C5138819BD859B004B3936 /* VCRTests */,
 				22C5137419BD859B004B3936 /* Products */,
@@ -93,6 +91,7 @@
 				22C5139519BD9962004B3936 /* VideoListTableViewController.swift */,
 				22FE859E19BD9C46006705AF /* VideoTableViewCell.swift */,
 				224B47A019BDA5A600E4A124 /* VideoDetailViewController.swift */,
+				22EDB8581AD68997008515E4 /* Launch Screen.xib */,
 			);
 			path = VCR;
 			sourceTree = "<group>";
@@ -203,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C5137E19BD859B004B3936 /* Main.storyboard in Resources */,
+				22EDB85A1AD68997008515E4 /* Launch Screen.xib in Resources */,
 				22D092A019BDC57200E7BD6C /* countdown_new.mov in Resources */,
 				22C5138019BD859B004B3936 /* Images.xcassets in Resources */,
 			);
@@ -254,6 +254,14 @@
 				22C5137D19BD859B004B3936 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22EDB8581AD68997008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8591AD68997008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -342,7 +350,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = VCR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,7 +360,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = VCR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

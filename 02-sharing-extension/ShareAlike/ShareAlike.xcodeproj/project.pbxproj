@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EDB8191AD68075008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8171AD68075008515E4 /* Launch Screen.xib */; };
 		F402B6E3194B2B0B00E02488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F402B6E2194B2B0B00E02488 /* AppDelegate.swift */; };
 		F402B6E5194B2B0B00E02488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F402B6E4194B2B0B00E02488 /* ViewController.swift */; };
 		F402B6E8194B2B0B00E02488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F402B6E6194B2B0B00E02488 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		22B5A363196BF29800731EAA /* ShareAlike.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ShareAlike.entitlements; sourceTree = "<group>"; };
 		22B5A364196BF31B00731EAA /* com.shinobicontrols.ShareAlike.ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = com.shinobicontrols.ShareAlike.ShareExtension.entitlements; sourceTree = "<group>"; };
+		22EDB8181AD68075008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		F402B6DD194B2B0B00E02488 /* ShareAlike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareAlike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F402B6E1194B2B0B00E02488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F402B6E2194B2B0B00E02488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				F402B6E6194B2B0B00E02488 /* Main.storyboard */,
 				F402B6E9194B2B0C00E02488 /* Images.xcassets */,
 				F402B6E0194B2B0B00E02488 /* Supporting Files */,
+				22EDB8171AD68075008515E4 /* Launch Screen.xib */,
 			);
 			path = ShareAlike;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			files = (
 				F402B6E8194B2B0B00E02488 /* Main.storyboard in Resources */,
 				F402B6EA194B2B0C00E02488 /* Images.xcassets in Resources */,
+				22EDB8191AD68075008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +367,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22EDB8171AD68075008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8181AD68075008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		F402B6E6194B2B0B00E02488 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -455,7 +467,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = ShareAlike/ShareAlike.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -470,7 +481,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = ShareAlike/ShareAlike.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

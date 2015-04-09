@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EDB8221AD680CA008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8201AD680CA008515E4 /* Launch Screen.xib */; };
 		F45C69A4195B030E00615E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69A3195B030E00615E3A /* AppDelegate.swift */; };
 		F45C69A9195B030E00615E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45C69A7195B030E00615E3A /* Main.storyboard */; };
 		F45C69AB195B030E00615E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45C69AA195B030E00615E3A /* Images.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22EDB8211AD680CA008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		F45C699E195B030E00615E3A /* MagicTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C69A2195B030E00615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C69A3195B030E00615E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				F45C69A1195B030E00615E3A /* Supporting Files */,
 				F45C69C0195B108C00615E3A /* TableViewController.swift */,
 				F45C69C2195B1C5A00615E3A /* CustomFontCell.swift */,
+				22EDB8201AD680CA008515E4 /* Launch Screen.xib */,
 			);
 			path = MagicTable;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				F45C69A9195B030E00615E3A /* Main.storyboard in Resources */,
 				F45C69AB195B030E00615E3A /* Images.xcassets in Resources */,
+				22EDB8221AD680CA008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +240,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22EDB8201AD680CA008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8211AD680CA008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		F45C69A7195B030E00615E3A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -330,7 +342,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MagicTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,7 +352,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MagicTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,6 +413,7 @@
 				F45C69BC195B030E00615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F45C69BD195B030E00615E3A /* Build configuration list for PBXNativeTarget "MagicTableTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +422,7 @@
 				F45C69BF195B030E00615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

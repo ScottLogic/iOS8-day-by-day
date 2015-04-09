@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EDB8251AD68117008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8231AD68117008515E4 /* Launch Screen.xib */; };
 		F44ADEE51961A29D00628E4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44ADEE41961A29D00628E4C /* AppDelegate.swift */; };
 		F44ADEE71961A29D00628E4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44ADEE61961A29D00628E4C /* ViewController.swift */; };
 		F44ADEEA1961A29D00628E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44ADEE81961A29D00628E4C /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22EDB8241AD68117008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		F44ADEDF1961A29D00628E4C /* AdaptiveArmoury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdaptiveArmoury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44ADEE31961A29D00628E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F44ADEE41961A29D00628E4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				F44ADEE81961A29D00628E4C /* Main.storyboard */,
 				F44ADEEB1961A29D00628E4C /* Images.xcassets */,
 				F44ADEE21961A29D00628E4C /* Supporting Files */,
+				22EDB8231AD68117008515E4 /* Launch Screen.xib */,
 			);
 			path = AdaptiveArmoury;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				F44ADEEA1961A29D00628E4C /* Main.storyboard in Resources */,
 				F44ADEEC1961A29D00628E4C /* Images.xcassets in Resources */,
+				22EDB8251AD68117008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +236,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22EDB8231AD68117008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8241AD68117008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		F44ADEE81961A29D00628E4C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -326,7 +338,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AdaptiveArmoury/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,7 +348,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AdaptiveArmoury/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,6 +409,7 @@
 				F44ADEFD1961A29D00628E4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F44ADEFE1961A29D00628E4C /* Build configuration list for PBXNativeTarget "AdaptiveArmouryTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +418,7 @@
 				F44ADF001961A29D00628E4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

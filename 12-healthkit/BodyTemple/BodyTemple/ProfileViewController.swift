@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, HealthStoreUser {
     // Calculate the age
     let now = NSDate()
     
-    let age = NSCalendar.currentCalendar().components(.YearCalendarUnit, fromDate: dob!, toDate: now, options: .WrapComponents)
+    let age = NSCalendar.currentCalendar().components(.CalendarUnitYear, fromDate: dob!, toDate: now, options: .WrapComponents)
     
     self.ageLabel.text = "\(age.year)"
   }

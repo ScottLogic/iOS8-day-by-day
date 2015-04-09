@@ -17,6 +17,7 @@
 		22D50D2D199A6A17006754E6 /* WeaponCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22D50D2C199A6A17006754E6 /* WeaponCollection.plist */; };
 		22D50D2F199B61A2006754E6 /* ImageAttributions in Resources */ = {isa = PBXBuildFile; fileRef = 22D50D2E199B61A2006754E6 /* ImageAttributions */; };
 		22D50D60199B8A21006754E6 /* TraitOverrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D50D5F199B8A21006754E6 /* TraitOverrideViewController.swift */; };
+		22EDB8431AD68832008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8411AD68832008515E4 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		22D50D2C199A6A17006754E6 /* WeaponCollection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeaponCollection.plist; sourceTree = "<group>"; };
 		22D50D2E199B61A2006754E6 /* ImageAttributions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ImageAttributions; sourceTree = "<group>"; };
 		22D50D5F199B8A21006754E6 /* TraitOverrideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraitOverrideViewController.swift; sourceTree = "<group>"; };
+		22EDB8421AD68832008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				22D50D13199A6350006754E6 /* Images.xcassets */,
 				22D50D08199A6350006754E6 /* Supporting Files */,
 				22D50D2E199B61A2006754E6 /* ImageAttributions */,
+				22EDB8411AD68832008515E4 /* Launch Screen.xib */,
 			);
 			path = NinjaWeapons;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				22D50D12199A6350006754E6 /* Main.storyboard in Resources */,
 				22D50D14199A6350006754E6 /* Images.xcassets in Resources */,
 				22D50D2D199A6A17006754E6 /* WeaponCollection.plist in Resources */,
+				22EDB8431AD68832008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +270,14 @@
 				22D50D11199A6350006754E6 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22EDB8411AD68832008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8421AD68832008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -354,7 +366,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = NinjaWeapons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,7 +376,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = NinjaWeapons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

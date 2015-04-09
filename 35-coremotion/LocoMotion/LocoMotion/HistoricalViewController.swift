@@ -52,7 +52,7 @@ class HistoricalViewController: UITableViewController {
         if error != nil {
           println("There was an error retrieving the motion results: \(error)")
         }
-        self.activityCollection = ActivityCollection(activities: activities as [CMMotionActivity])
+        self.activityCollection = ActivityCollection(activities: activities as! [CMMotionActivity])
       }
     }
   }
@@ -67,7 +67,7 @@ class HistoricalViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MotionActivityCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MotionActivityCell
     cell.dateFormatter = dateFormatter
     cell.lengthFormatter = lengthFormatter
     cell.pedometer = pedometer

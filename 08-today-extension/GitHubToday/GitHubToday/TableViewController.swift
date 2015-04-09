@@ -20,7 +20,7 @@ import GitHubTodayCommon
 class TableViewController: UITableViewController {
 
   let dataProvider = GitHubDataProvider()
-  let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday"))
+  let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday")!)
   var events: [GitHubEvent] = [GitHubEvent]() {
   didSet {
     // Must call reload on the main thread
@@ -65,7 +65,7 @@ class TableViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as UITableViewCell
+    return tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! UITableViewCell
   }
   
   override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

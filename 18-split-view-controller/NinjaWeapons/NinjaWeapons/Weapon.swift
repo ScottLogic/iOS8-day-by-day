@@ -24,7 +24,7 @@ struct Weapon {
   let imageName: String
   
   var image: UIImage {
-    return UIImage(named: imageName)
+    return UIImage(named: imageName)!
   }
   
   init(dictionary: [String:String]) {
@@ -52,7 +52,7 @@ class WeaponProvider {
     let path = NSBundle.mainBundle().pathForResource(plistName, ofType: "plist")
     let rawArray = NSArray(contentsOfFile: path!)
     var weaponCollection = [Weapon]()
-    for rawWeapon in rawArray as [[String:String]] {
+    for rawWeapon in rawArray as! [[String:String]] {
       weaponCollection.append(Weapon(dictionary: rawWeapon))
     }
     return weaponCollection

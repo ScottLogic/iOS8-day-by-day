@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EDB8311AD68608008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB82F1AD68608008515E4 /* Launch Screen.xib */; };
 		F4ACDCFD198904F5005DF147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACDCFC198904F5005DF147 /* AppDelegate.swift */; };
 		F4ACDCFF198904F5005DF147 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ACDCFE198904F5005DF147 /* ViewController.swift */; };
 		F4ACDD02198904F5005DF147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4ACDD00198904F5005DF147 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22EDB8301AD68608008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		F4ACDCF7198904F5005DF147 /* LiveDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4ACDCFB198904F5005DF147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4ACDCFC198904F5005DF147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				F4ACDD03198904F5005DF147 /* Images.xcassets */,
 				F4ACDCFA198904F5005DF147 /* Supporting Files */,
 				F4ACDD191989472A005DF147 /* CoreImageVideoFilter.swift */,
+				22EDB82F1AD68608008515E4 /* Launch Screen.xib */,
 			);
 			path = LiveDetection;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				F4ACDD02198904F5005DF147 /* Main.storyboard in Resources */,
 				F4ACDD04198904F5005DF147 /* Images.xcassets in Resources */,
+				22EDB8311AD68608008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +240,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22EDB82F1AD68608008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8301AD68608008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		F4ACDD00198904F5005DF147 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -330,7 +342,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = LiveDetection/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -342,7 +353,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = LiveDetection/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,6 +413,7 @@
 				F4ACDD15198904F6005DF147 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4ACDD16198904F6005DF147 /* Build configuration list for PBXNativeTarget "LiveDetectionTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +422,7 @@
 				F4ACDD18198904F6005DF147 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

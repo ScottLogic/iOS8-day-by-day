@@ -35,13 +35,12 @@ class ChromaKeyFilter: CIFilter {
   }
   
   // MARK: - API
-  func outputImage() -> CIImage? {
-    if let inputImage = inputImage {
-      let dod = inputImage.extent()
-      if let kernel = kernel {
-        var args = [inputImage as AnyObject, activeColor as AnyObject, threshold as AnyObject]
+  override var outputImage : CIImage! {
+    if let inputImage = inputImage,
+       let kernel = kernel {
+        let dod = inputImage.extent()
+        let args = [inputImage as AnyObject, activeColor as AnyObject, threshold as AnyObject]
         return kernel.applyWithExtent(dod, arguments: args)
-      }
     }
     return nil
   }

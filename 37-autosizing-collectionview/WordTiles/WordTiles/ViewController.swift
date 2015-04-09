@@ -39,7 +39,7 @@ class ViewController: UICollectionViewController {
   }
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WordCell", forIndexPath: indexPath) as WordTileCollectionViewCell
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WordCell", forIndexPath: indexPath) as! WordTileCollectionViewCell
     cell.word = wordList.words[indexPath.item]
     return cell
   }

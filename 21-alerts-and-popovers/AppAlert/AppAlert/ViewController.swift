@@ -17,15 +17,9 @@
 import UIKit
 
 class ViewController: UIViewController, UIPopoverPresentationControllerDelegate {
-                            
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
-  
-  
+
   @IBAction func handlePopoverPressed(sender: UIView) {
-    let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
+    let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("codePopover") as! UIViewController
     popoverVC.modalPresentationStyle = .Popover
     if let popoverController = popoverVC.popoverPresentationController {
       popoverController.sourceView = sender
@@ -72,11 +66,11 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
   
   
   // MARK: - UIPopoverPresentationControllerDelegate
-  func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+  func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
     return .FullScreen
   }
   
-  func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+  func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
     return UINavigationController(rootViewController: controller.presentedViewController)
   }
 }

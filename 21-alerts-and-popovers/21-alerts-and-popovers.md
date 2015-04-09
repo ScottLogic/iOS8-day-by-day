@@ -36,7 +36,7 @@ the presentation of a view controller in a popover style. You don't create one
 of these directly, but instead one is created for you by UIKit when the 
 `modalPresentationStyle` property on `UIViewController` is set to `.Popover`.
 
-    let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("codePopover") as UIViewController
+    let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("codePopover") as! UIViewController
     popoverVC.modalPresentationStyle = .Popover
 
 You can then get hold of the popover presentation controller from the
@@ -76,7 +76,7 @@ the difference being that fullscreen will remove the presenting view controller'
 view, whereas over-fullscreen won't. You can set it with the following delegate
 method:
 
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
       return .FullScreen
     }
 
@@ -90,8 +90,8 @@ The other delegate method allows you to return a completely custom view
 controller for the adaptive display. For example, the following will put the
 popover view controller inside a navigation controller:
 
-    func presentationController(controller: UIPresentationController!, 
-              viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+    func presentationController(controller: UIPresentationController, 
+              viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
       return UINavigationController(rootViewController: controller.presentedViewController)
     }
 

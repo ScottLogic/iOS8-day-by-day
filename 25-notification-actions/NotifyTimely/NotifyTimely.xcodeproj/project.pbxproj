@@ -15,6 +15,7 @@
 		22C5136519B9C811004B3936 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5136419B9C811004B3936 /* PaddedLabel.swift */; };
 		22C5136719B9CB7E004B3936 /* ConfigureTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5136619B9CB7E004B3936 /* ConfigureTimerViewController.swift */; };
 		22C5136919BA0CCD004B3936 /* TimerNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C5136819BA0CCD004B3936 /* TimerNotifications.swift */; };
+		22EDB8571AD68970008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8561AD68970008515E4 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		22C5136419B9C811004B3936 /* PaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		22C5136619B9CB7E004B3936 /* ConfigureTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureTimerViewController.swift; sourceTree = "<group>"; };
 		22C5136819BA0CCD004B3936 /* TimerNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerNotifications.swift; sourceTree = "<group>"; };
+		22EDB8561AD68970008515E4 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				22C5136419B9C811004B3936 /* PaddedLabel.swift */,
 				22C5136619B9CB7E004B3936 /* ConfigureTimerViewController.swift */,
 				22C5136819BA0CCD004B3936 /* TimerNotifications.swift */,
+				22EDB8561AD68970008515E4 /* Launch Screen.xib */,
 			);
 			path = NotifyTimely;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				22C5134D19B9BE7F004B3936 /* Main.storyboard in Resources */,
 				22C5134F19B9BE7F004B3936 /* Images.xcassets in Resources */,
+				22EDB8571AD68970008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +342,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = NotifyTimely/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,7 +352,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = NotifyTimely/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -409,6 +411,7 @@
 				22C5136019B9BE7F004B3936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22C5136119B9BE7F004B3936 /* Build configuration list for PBXNativeTarget "NotifyTimelyTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				22C5136319B9BE7F004B3936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

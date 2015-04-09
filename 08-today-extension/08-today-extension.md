@@ -182,7 +182,7 @@ initializer:
 Once you have created a cache in the widget's view controller then you can
 use it to populate the view in `viewDidLoad()`:
 
-    let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday"))
+    let mostRecentEventCache = GitHubEventCache(userDefaults: NSUserDefaults(suiteName: "group.GitHubToday")!)
     var currentEvent: GitHubEvent? {
     didSet {
       dispatch_async(dispatch_get_main_queue()) {
@@ -252,13 +252,11 @@ You can define a URL scheme in the __Info__ section of the app's target:
 As is standard when defining a URL scheme for an app, you also need to implement
 the appropriate method in you app delegate:
 
-    func application(application: UIApplication!, openURL url: NSURL!, sourceApplication: String!, annotation: AnyObject!) -> Bool {
-      if let navCtlr = window?.rootViewController as? UINavigationController {
-        if let tableCtlr = navCtlr.topViewController as? TableViewController {
-          if let eventId = url.lastPathComponent.toInt() {
-            tableCtlr.scrollToAndHighlightEvent(eventId)
-          }
-        }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+      if let navCtlr = window?.rootViewController as? UINavigationController,
+         let tableCtlr = navCtlr.topViewController as? TableViewController,
+         let eventId = url.lastPathComponent!.toInt() {
+          tableCtlr.scrollToAndHighlightEvent(eventId)
       }
       return true
     }
@@ -271,7 +269,7 @@ the `extensionContext` to link from the widget to the relevant row in the app:
 
     @IBAction func handleMoreButtonTapped(sender: AnyObject) {
       let url = NSURL(scheme: "githubtoday", host: nil, path: "/\(currentEvent?.id)")
-      extensionContext?.openURL(url, completionHandler: nil)
+      extensionContext?.openURL(url!, completionHandler: nil)
     }
 
 ![](assets/today_extension.png)

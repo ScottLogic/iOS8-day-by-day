@@ -90,7 +90,9 @@ In __MapOff__, this method is used to get the currently visible range from the
 map, and save it into the `userInfo` dictionary:
 
     override func updateUserActivityState(activity: NSUserActivity) {
-      let regionData = NSData(bytes: &mapView.region, length: sizeof(MKCoordinateRegion))
+      let regionData = withUnsafePointer(&mapView.region) {
+        NSData(bytes: $0, length: sizeof(MKCoordinateRegion))
+      }
       activity.userInfo = ["region" : regionData]
     }
 
@@ -178,7 +180,7 @@ follows:
     override func restoreUserActivityState(activity: NSUserActivity) {
       if activity.activityType == "com.shinobicontrols.MapOff.viewport" {
         // Extract the data
-        let regionData = activity.userInfo!["region"] as NSData
+        let regionData = activity.userInfo!["region"] as! NSData
         // Need an empty coordinate region to populate
         var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
                                           span: MKCoordinateSpan(latitudeDelta: 0.0, longitudeDelta: 0.0))

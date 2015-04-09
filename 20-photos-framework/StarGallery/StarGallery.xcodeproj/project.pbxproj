@@ -14,6 +14,7 @@
 		226F36A919A53B1500317C2F /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F36A819A53B1500317C2F /* PhotosCollectionViewController.swift */; };
 		226F36AB19A542EC00317C2F /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F36AA19A542EC00317C2F /* PhotosCollectionViewCell.swift */; };
 		22732A7419A60283006036BD /* ImageCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22732A7319A60283006036BD /* ImageCacheController.swift */; };
+		22EDB8491AD6888E008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8471AD6888E008515E4 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		226F36A819A53B1500317C2F /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		226F36AA19A542EC00317C2F /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		22732A7319A60283006036BD /* ImageCacheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheController.swift; sourceTree = "<group>"; };
+		22EDB8481AD6888E008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				226F36A819A53B1500317C2F /* PhotosCollectionViewController.swift */,
 				226F36AA19A542EC00317C2F /* PhotosCollectionViewCell.swift */,
 				22732A7319A60283006036BD /* ImageCacheController.swift */,
+				22EDB8471AD6888E008515E4 /* Launch Screen.xib */,
 			);
 			path = StarGallery;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			files = (
 				226F369119A5329A00317C2F /* Main.storyboard in Resources */,
 				226F369319A5329A00317C2F /* Images.xcassets in Resources */,
+				22EDB8491AD6888E008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +250,14 @@
 				226F369019A5329A00317C2F /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22EDB8471AD6888E008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB8481AD6888E008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -334,7 +346,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = StarGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -345,7 +356,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = StarGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

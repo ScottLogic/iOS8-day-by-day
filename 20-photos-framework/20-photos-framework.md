@@ -213,9 +213,9 @@ request displayed in the collection view:
       dispatch_async(dispatch_get_main_queue()) {
         // Loop through the visible cell indices
         let indexPaths = self.collectionView?.indexPathsForVisibleItems()
-        for indexPath in indexPaths as [NSIndexPath]{
+        for indexPath in indexPaths as! [NSIndexPath]{
           if changeDetails.changedIndexes.containsIndex(indexPath.item) {
-            let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as PhotosCollectionViewCell
+            let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! PhotosCollectionViewCell
             cell.imageAsset = changeDetails.fetchResultAfterChanges[indexPath.item] as? PHAsset
           }
         }

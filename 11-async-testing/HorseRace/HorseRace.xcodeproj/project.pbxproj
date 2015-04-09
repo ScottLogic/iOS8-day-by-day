@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EDB82B1AD684FD008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8291AD684FD008515E4 /* Launch Screen.xib */; };
 		F45C6A2D195DB60E00615E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C6A2C195DB60E00615E3A /* AppDelegate.swift */; };
 		F45C6A2F195DB60E00615E3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C6A2E195DB60E00615E3A /* ViewController.swift */; };
 		F45C6A32195DB60E00615E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A30195DB60E00615E3A /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22EDB82A1AD684FD008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		F45C6A27195DB60E00615E3A /* HorseRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorseRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C6A2B195DB60E00615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C6A2C195DB60E00615E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				F45C6A33195DB60E00615E3A /* Images.xcassets */,
 				F45C6A2A195DB60E00615E3A /* Supporting Files */,
 				F45C6A49195DC2C800615E3A /* HorseRaceController.swift */,
+				22EDB8291AD684FD008515E4 /* Launch Screen.xib */,
 			);
 			path = HorseRace;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				F45C6A32195DB60E00615E3A /* Main.storyboard in Resources */,
 				F45C6A34195DB60E00615E3A /* Images.xcassets in Resources */,
+				22EDB82B1AD684FD008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +240,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22EDB8291AD684FD008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB82A1AD684FD008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		F45C6A30195DB60E00615E3A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -330,7 +342,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HorseRace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,7 +352,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HorseRace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,6 +413,7 @@
 				F45C6A45195DB60E00615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F45C6A46195DB60E00615E3A /* Build configuration list for PBXNativeTarget "HorseRaceTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +422,7 @@
 				F45C6A48195DB60E00615E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

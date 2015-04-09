@@ -78,7 +78,7 @@ class CloudKitNoteManager: NoteManager {
     }
     updateOperation.modifyRecordsCompletionBlock = { saved, _, error in
       if error != nil {
-        if error.code == CKErrorCode.PartialFailure.toRaw() {
+        if error.code == CKErrorCode.PartialFailure.rawValue {
           println("There was a problem completing the operation. The following records had problems: \(error.userInfo?[CKPartialErrorsByItemIDKey])")
         }
         callback?(success: false)
@@ -98,7 +98,7 @@ class CloudKitNoteManager: NoteManager {
     }
     deleteOperation.modifyRecordsCompletionBlock = { _, deleted, error in
       if error != nil {
-        if error.code == CKErrorCode.PartialFailure.toRaw() {
+        if error.code == CKErrorCode.PartialFailure.rawValue {
           println("There was a problem completing the operation. The following records had problems: \(error.userInfo?[CKPartialErrorsByItemIDKey])")
         }
         callback?(success: false)

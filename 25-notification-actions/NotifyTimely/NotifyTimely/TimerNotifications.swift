@@ -122,7 +122,7 @@ class TimerNotificationManager: Printable {
   
   private func registerForNotifications() {
     let requestedTypes = UIUserNotificationType.Alert | .Sound
-    let categories = NSSet(object: timerFiredNotificationCategory())
+    let categories = Set(arrayLiteral: timerFiredNotificationCategory())
     let settingsRequest = UIUserNotificationSettings(forTypes: requestedTypes, categories: categories)
     UIApplication.sharedApplication().registerUserNotificationSettings(settingsRequest)
   }
