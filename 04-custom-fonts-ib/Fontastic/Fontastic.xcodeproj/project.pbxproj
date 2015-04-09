@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EDB81F1AD680AD008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB81D1AD680AD008515E4 /* Launch Screen.xib */; };
 		F45C69FD195D964F00615E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69FC195D964F00615E3A /* AppDelegate.swift */; };
 		F45C69FF195D964F00615E3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C69FE195D964F00615E3A /* ViewController.swift */; };
 		F45C6A02195D965000615E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45C6A00195D965000615E3A /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22EDB81E1AD680AD008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		F45C69F7195D964F00615E3A /* Fontastic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fontastic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45C69FB195D964F00615E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F45C69FC195D964F00615E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				F45C6A00195D965000615E3A /* Main.storyboard */,
 				F45C6A03195D965000615E3A /* Images.xcassets */,
 				F45C69FA195D964F00615E3A /* Supporting Files */,
+				22EDB81D1AD680AD008515E4 /* Launch Screen.xib */,
 			);
 			path = Fontastic;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				F45C6A02195D965000615E3A /* Main.storyboard in Resources */,
 				F45C6A04195D965000615E3A /* Images.xcassets in Resources */,
 				F4C41C45196ADC9900D6BD66 /* PermanentMarker.ttf in Resources */,
+				22EDB81F1AD680AD008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +252,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22EDB81D1AD680AD008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB81E1AD680AD008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		F45C6A00195D965000615E3A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
