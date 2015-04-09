@@ -13,6 +13,7 @@
 		22BF779419AE3B4700CB2254 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22BF779319AE3B4700CB2254 /* Images.xcassets */; };
 		22BF77A019AE3B4700CB2254 /* SetMeUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF779F19AE3B4700CB2254 /* SetMeUpTests.swift */; };
 		22BF77AC19AE408200CB2254 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22BF77AB19AE408200CB2254 /* Settings.bundle */; };
+		22EDB84F1AD688D9008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB84D1AD688D9008515E4 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		22BF779E19AE3B4700CB2254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22BF779F19AE3B4700CB2254 /* SetMeUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMeUpTests.swift; sourceTree = "<group>"; };
 		22BF77AB19AE408200CB2254 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		22EDB84E1AD688D9008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				22BF779319AE3B4700CB2254 /* Images.xcassets */,
 				22BF778A19AE3B4700CB2254 /* Supporting Files */,
 				22BF77AB19AE408200CB2254 /* Settings.bundle */,
+				22EDB84D1AD688D9008515E4 /* Launch Screen.xib */,
 			);
 			path = SetMeUp;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22BF779219AE3B4700CB2254 /* Main.storyboard in Resources */,
+				22EDB84F1AD688D9008515E4 /* Launch Screen.xib in Resources */,
 				22BF77AC19AE408200CB2254 /* Settings.bundle in Resources */,
 				22BF779419AE3B4700CB2254 /* Images.xcassets in Resources */,
 			);
@@ -242,6 +246,14 @@
 				22BF779119AE3B4700CB2254 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22EDB84D1AD688D9008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB84E1AD688D9008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -330,7 +342,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SetMeUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,7 +352,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SetMeUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -401,6 +411,7 @@
 				22BF77A519AE3B4700CB2254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22BF77A619AE3B4700CB2254 /* Build configuration list for PBXNativeTarget "SetMeUpTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +420,7 @@
 				22BF77A819AE3B4700CB2254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

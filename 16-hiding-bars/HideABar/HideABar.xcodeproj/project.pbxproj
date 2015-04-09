@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22EDB83D1AD687C2008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB83B1AD687C2008515E4 /* Launch Screen.xib */; };
 		F401AB9D198A917300E18F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401AB9C198A917300E18F23 /* AppDelegate.swift */; };
 		F401AB9F198A917300E18F23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401AB9E198A917300E18F23 /* ViewController.swift */; };
 		F401ABA2198A917300E18F23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F401ABA0198A917300E18F23 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22EDB83C1AD687C2008515E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Launch Screen.xib"; sourceTree = "<group>"; };
 		F401AB97198A917300E18F23 /* HideABar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HideABar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F401AB9B198A917300E18F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F401AB9C198A917300E18F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				F401ABA0198A917300E18F23 /* Main.storyboard */,
 				F401ABA3198A917300E18F23 /* Images.xcassets */,
 				F401AB9A198A917300E18F23 /* Supporting Files */,
+				22EDB83B1AD687C2008515E4 /* Launch Screen.xib */,
 			);
 			path = HideABar;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				F401ABA2198A917300E18F23 /* Main.storyboard in Resources */,
 				F401ABA4198A917300E18F23 /* Images.xcassets in Resources */,
+				22EDB83D1AD687C2008515E4 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +236,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		22EDB83B1AD687C2008515E4 /* Launch Screen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22EDB83C1AD687C2008515E4 /* Base */,
+			);
+			name = "Launch Screen.xib";
+			sourceTree = "<group>";
+		};
 		F401ABA0198A917300E18F23 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -326,7 +338,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HideABar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,7 +348,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HideABar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -397,6 +407,7 @@
 				F401ABB5198A917300E18F23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F401ABB6198A917300E18F23 /* Build configuration list for PBXNativeTarget "HideABarTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +416,7 @@
 				F401ABB8198A917300E18F23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
