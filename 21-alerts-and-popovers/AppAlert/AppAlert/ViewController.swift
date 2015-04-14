@@ -21,13 +21,15 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
   @IBAction func handlePopoverPressed(sender: UIView) {
     let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("codePopover") as! UIViewController
     popoverVC.modalPresentationStyle = .Popover
+    // Present it before configuring it
+    presentViewController(popoverVC, animated: true, completion: nil)
+    // Now the popoverPresentationController has been created
     if let popoverController = popoverVC.popoverPresentationController {
       popoverController.sourceView = sender
       popoverController.sourceRect = sender.bounds
       popoverController.permittedArrowDirections = .Any
       popoverController.delegate = self
     }
-    presentViewController(popoverVC, animated: true, completion: nil)
   }
   
   @IBAction func handleAlertPressed(sender: AnyObject) {
