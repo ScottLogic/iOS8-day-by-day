@@ -47,10 +47,9 @@ class ImageCacheController {
     self.cachedIndices.enumerateIndexesUsingBlock {
       index, _ in
       if !updatedCache.containsIndex(index) {
-        let asset: AnyObject! = self.images[index]
+        let asset: PHAsset! = self.images[index] as! PHAsset
         self.imageCache.stopCachingImagesForAssets([asset], targetSize: self.targetSize, contentMode: self.contentMode, options: nil)
-        println("Stopping caching image \(index)")
-        
+        print("Stopping caching image \(index)")
       }
     }
     
@@ -58,9 +57,9 @@ class ImageCacheController {
     updatedCache.enumerateIndexesUsingBlock {
       index, _ in
       if !self.cachedIndices.containsIndex(index) {
-        let asset: AnyObject! = self.images[index]
+        let asset: PHAsset! = self.images[index] as! PHAsset
         self.imageCache.startCachingImagesForAssets([asset], targetSize: self.targetSize, contentMode: self.contentMode, options: nil)
-        println("Starting caching image \(index)")
+        print("Starting caching image \(index)")
       }
     }
     cachedIndices = NSIndexSet(indexSet: updatedCache)

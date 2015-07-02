@@ -35,7 +35,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
   
   @IBAction func handleStarButtonPressed(sender: AnyObject) {
     PHPhotoLibrary.sharedPhotoLibrary().performChanges({
-      let changeRequest = PHAssetChangeRequest(forAsset: self.imageAsset)
+      let changeRequest = PHAssetChangeRequest(forAsset: self.imageAsset!)
       changeRequest.favorite = !self.imageAsset!.favorite
     }, completionHandler: nil)
   } 

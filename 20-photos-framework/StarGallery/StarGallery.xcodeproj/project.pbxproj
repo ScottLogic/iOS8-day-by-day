@@ -10,22 +10,11 @@
 		226F368C19A5329A00317C2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F368B19A5329A00317C2F /* AppDelegate.swift */; };
 		226F369119A5329A00317C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F368F19A5329A00317C2F /* Main.storyboard */; };
 		226F369319A5329A00317C2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F369219A5329A00317C2F /* Images.xcassets */; };
-		226F369F19A5329A00317C2F /* StarGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F369E19A5329A00317C2F /* StarGalleryTests.swift */; };
 		226F36A919A53B1500317C2F /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F36A819A53B1500317C2F /* PhotosCollectionViewController.swift */; };
 		226F36AB19A542EC00317C2F /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F36AA19A542EC00317C2F /* PhotosCollectionViewCell.swift */; };
 		22732A7419A60283006036BD /* ImageCacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22732A7319A60283006036BD /* ImageCacheController.swift */; };
 		22EDB8491AD6888E008515E4 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EDB8471AD6888E008515E4 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		226F369919A5329A00317C2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 226F367E19A5329A00317C2F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 226F368519A5329A00317C2F;
-			remoteInfo = StarGallery;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		226F368619A5329A00317C2F /* StarGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,9 +22,6 @@
 		226F368B19A5329A00317C2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		226F369019A5329A00317C2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		226F369219A5329A00317C2F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		226F369819A5329A00317C2F /* StarGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		226F369D19A5329A00317C2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		226F369E19A5329A00317C2F /* StarGalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarGalleryTests.swift; sourceTree = "<group>"; };
 		226F36A819A53B1500317C2F /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		226F36AA19A542EC00317C2F /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		22732A7319A60283006036BD /* ImageCacheController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheController.swift; sourceTree = "<group>"; };
@@ -50,13 +36,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		226F369519A5329A00317C2F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -64,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				226F368819A5329A00317C2F /* StarGallery */,
-				226F369B19A5329A00317C2F /* StarGalleryTests */,
 				226F368719A5329A00317C2F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				226F368619A5329A00317C2F /* StarGallery.app */,
-				226F369819A5329A00317C2F /* StarGalleryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,23 +78,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		226F369B19A5329A00317C2F /* StarGalleryTests */ = {
-			isa = PBXGroup;
-			children = (
-				226F369E19A5329A00317C2F /* StarGalleryTests.swift */,
-				226F369C19A5329A00317C2F /* Supporting Files */,
-			);
-			path = StarGalleryTests;
-			sourceTree = "<group>";
-		};
-		226F369C19A5329A00317C2F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				226F369D19A5329A00317C2F /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,39 +98,18 @@
 			productReference = 226F368619A5329A00317C2F /* StarGallery.app */;
 			productType = "com.apple.product-type.application";
 		};
-		226F369719A5329A00317C2F /* StarGalleryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 226F36A519A5329A00317C2F /* Build configuration list for PBXNativeTarget "StarGalleryTests" */;
-			buildPhases = (
-				226F369419A5329A00317C2F /* Sources */,
-				226F369519A5329A00317C2F /* Frameworks */,
-				226F369619A5329A00317C2F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				226F369A19A5329A00317C2F /* PBXTargetDependency */,
-			);
-			name = StarGalleryTests;
-			productName = StarGalleryTests;
-			productReference = 226F369819A5329A00317C2F /* StarGalleryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		226F367E19A5329A00317C2F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = ShinobiControls;
 				TargetAttributes = {
 					226F368519A5329A00317C2F = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					226F369719A5329A00317C2F = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 226F368519A5329A00317C2F;
 					};
 				};
 			};
@@ -188,7 +127,6 @@
 			projectRoot = "";
 			targets = (
 				226F368519A5329A00317C2F /* StarGallery */,
-				226F369719A5329A00317C2F /* StarGalleryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,13 +139,6 @@
 				226F369119A5329A00317C2F /* Main.storyboard in Resources */,
 				226F369319A5329A00317C2F /* Images.xcassets in Resources */,
 				22EDB8491AD6888E008515E4 /* Launch Screen.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		226F369619A5329A00317C2F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,23 +156,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		226F369419A5329A00317C2F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				226F369F19A5329A00317C2F /* StarGalleryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		226F369A19A5329A00317C2F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 226F368519A5329A00317C2F /* StarGallery */;
-			targetProxy = 226F369919A5329A00317C2F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		226F368F19A5329A00317C2F /* Main.storyboard */ = {
@@ -362,40 +277,6 @@
 			};
 			name = Release;
 		};
-		226F36A619A5329A00317C2F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = StarGalleryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarGallery.app/StarGallery";
-			};
-			name = Debug;
-		};
-		226F36A719A5329A00317C2F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = StarGalleryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarGallery.app/StarGallery";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,15 +294,6 @@
 			buildConfigurations = (
 				226F36A319A5329A00317C2F /* Debug */,
 				226F36A419A5329A00317C2F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		226F36A519A5329A00317C2F /* Build configuration list for PBXNativeTarget "StarGalleryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				226F36A619A5329A00317C2F /* Debug */,
-				226F36A719A5329A00317C2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
