@@ -67,7 +67,7 @@ class NoteEditViewController: UIViewController, CLLocationManagerDelegate {
   @IBAction func handleDoneButtonPressed(sender: AnyObject) {
     var newValuesNote: Note = note ?? PrototypeNote()
 
-    newValuesNote.title = titleTextField.text
+    newValuesNote.title = titleTextField.text!
     newValuesNote.content = contentTextView.text
     newValuesNote.location = newValuesNote.location ?? locationPlaceholder
     
@@ -76,9 +76,9 @@ class NoteEditViewController: UIViewController, CLLocationManagerDelegate {
   }
   
   // MARK:- CLLocationManagerDelegate
-  func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     if locationPlaceholder == nil {
-      if let location = locations.first as? CLLocation {
+      if let location = locations.first {
         // Only want to save the location if it is accurate enough
         if location.horizontalAccuracy < 300 {
           locationPlaceholder = location

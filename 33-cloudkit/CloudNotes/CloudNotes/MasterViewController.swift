@@ -64,7 +64,7 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showDetail" {
-      if let indexPath = self.tableView.indexPathForSelectedRow() {
+      if let indexPath = self.tableView.indexPathForSelectedRow {
         let note = noteCollection[indexPath.row]
         let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
         controller.noteManager = noteManager
@@ -89,7 +89,7 @@ class MasterViewController: UITableViewController, NoteEditingDelegate {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
     
     let note = noteCollection[indexPath.row]
     cell.textLabel?.text = note.title

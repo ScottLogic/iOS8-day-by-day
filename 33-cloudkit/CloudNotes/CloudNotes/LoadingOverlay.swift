@@ -19,7 +19,7 @@ import UIKit
 class LoadingOverlay: UIView {
 
   let loadingLabel = UILabel()
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     commonInit()
   }
@@ -33,7 +33,7 @@ class LoadingOverlay: UIView {
   private func commonInit() {
     loadingLabel.text = "Loading..."
     self.addSubview(loadingLabel)
-    loadingLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+    loadingLabel.translatesAutoresizingMaskIntoConstraints = false
     loadingLabel.textAlignment = .Center
     loadingLabel.font = UIFont(name: "HelveticaNeue-Thin", size: 42.0)
     let vCons = NSLayoutConstraint(item: loadingLabel, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1.0, constant: 0)
