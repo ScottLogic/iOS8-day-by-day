@@ -85,10 +85,10 @@ class CloudKitNote: Note {
   }
   
   var createdAt: NSDate {
-    return record.creationDate
+    return record.creationDate!
   }
   
   var lastModifiedAt: NSDate {
-    return record.modificationDate
+    return record.modificationDate!
   }
 }
