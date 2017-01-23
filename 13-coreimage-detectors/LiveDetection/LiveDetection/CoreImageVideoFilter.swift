@@ -29,20 +29,20 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
   var renderContext: CIContext!
   
   var avSession: AVCaptureSession?
-  var sessionQueue: dispatch_queue_t!
+  var sessionQueue: DispatchQueue!
   
   var detector: CIDetector?
   
   init(superview: UIView, applyFilterCallback: ((CIImage) -> CIImage?)?) {
     self.applyFilter = applyFilterCallback
-    videoDisplayView = GLKView(frame: superview.bounds, context: EAGLContext(API: .OpenGLES2))
-    videoDisplayView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+    videoDisplayView = GLKView(frame: superview.bounds, context: EAGLContext(api: .openGLES2))
+    videoDisplayView.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_2))
     videoDisplayView.frame = superview.bounds
     superview.addSubview(videoDisplayView)
-    superview.sendSubviewToBack(videoDisplayView)
+    superview.sendSubview(toBack: videoDisplayView)
     
-    renderContext = CIContext(EAGLContext: videoDisplayView.context)
-    sessionQueue = dispatch_queue_create("AVSessionQueue", DISPATCH_QUEUE_SERIAL)
+    renderContext = CIContext(eaglContext: videoDisplayView.context)
+    sessionQueue = DispatchQueue(label: "AVSessionQueue", attributes: [])
     
     videoDisplayView.bindDrawable()
     videoDisplayViewBounds = CGRect(x: 0, y: 0, width: videoDisplayView.drawableWidth, height: videoDisplayView.drawableHeight)
@@ -55,7 +55,11 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
   func startFiltering() {
     // Create a session if we don't already have one
     if avSession == nil {
-      avSession = createAVSession()
+        do {
+            avSession = try createAVSession()
+        } catch {
+            print(error)
+        }
     }
     
     // And kick it off
@@ -67,11 +71,10 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     avSession?.stopRunning()
   }
   
-  func createAVSession() -> AVCaptureSession {
+  func createAVSession() throws -> AVCaptureSession {
     // Input from video camera
-    let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-    var error: NSError?
-    let input = AVCaptureDeviceInput(device: device, error: &error)
+    let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+    let input = try AVCaptureDeviceInput(device: device)
     
     // Start out with low quality
     let session = AVCaptureSession()
@@ -80,7 +83,7 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     // Output
     let videoOutput = AVCaptureVideoDataOutput()
     
-    videoOutput.videoSettings = [ kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_32BGRA]
+    videoOutput.videoSettings = [ kCVPixelBufferPixelFormatTypeKey as AnyHashable: kCVPixelFormatType_32BGRA]
     videoOutput.alwaysDiscardsLateVideoFrames = true
     videoOutput.setSampleBufferDelegate(self, queue: sessionQueue)
     
@@ -94,15 +97,15 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
 
   
   //MARK: <AVCaptureVideoDataOutputSampleBufferDelegate
-  func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+  func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
     
     // Need to shimmy this through type-hell
     let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
     // Force the type change - pass through opaque buffer
-    let opaqueBuffer = Unmanaged<CVImageBuffer>.passUnretained(imageBuffer).toOpaque()
+    let opaqueBuffer = Unmanaged<CVImageBuffer>.passUnretained(imageBuffer!).toOpaque()
     let pixelBuffer = Unmanaged<CVPixelBuffer>.fromOpaque(opaqueBuffer).takeUnretainedValue()
     
-    let sourceImage = CIImage(CVPixelBuffer: pixelBuffer, options: nil)
+    let sourceImage = CIImage(cvPixelBuffer: pixelBuffer, options: nil)
     
     // Do some detection on the image
     let detectionResult = applyFilter?(sourceImage)
@@ -112,7 +115,7 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     }
     
     // Do some clipping
-    var drawFrame = outputImage.extent()
+    var drawFrame = outputImage.extent
     let imageAR = drawFrame.width / drawFrame.height
     let viewAR = videoDisplayViewBounds.width / videoDisplayViewBounds.height
     if imageAR > viewAR {
@@ -124,8 +127,8 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     }
     
     videoDisplayView.bindDrawable()
-    if videoDisplayView.context != EAGLContext.currentContext() {
-      EAGLContext.setCurrentContext(videoDisplayView.context)
+    if videoDisplayView.context != EAGLContext.current() {
+      EAGLContext.setCurrent(videoDisplayView.context)
     }
     
     // clear eagl view to grey
@@ -136,7 +139,7 @@ class CoreImageVideoFilter: NSObject, AVCaptureVideoDataOutputSampleBufferDelega
     glEnable(0x0BE2);
     glBlendFunc(1, 0x0303);
     
-    renderContext.drawImage(outputImage, inRect: videoDisplayViewBounds, fromRect: drawFrame)
+    renderContext.draw(outputImage, in: videoDisplayViewBounds, from: drawFrame)
     
     videoDisplayView.display()
     

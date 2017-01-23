@@ -35,10 +35,10 @@ class ViewController: UIViewController {
     handleDetectorSelectionChange(detectorModeSelector)
   }
   
-  @IBAction func handleDetectorSelectionChange(sender: UISegmentedControl) {
+  @IBAction func handleDetectorSelectionChange(_ sender: UISegmentedControl) {
     if let videoFilter = videoFilter {
       videoFilter.stopFiltering()
-      self.qrDecodeLabel.hidden = true
+      self.qrDecodeLabel.isHidden = true
       
       switch sender.selectedSegmentIndex {
       case 0:
@@ -48,12 +48,12 @@ class ViewController: UIViewController {
           return self.performRectangleDetection(image)
         }
       case 1:
-        self.qrDecodeLabel.hidden = false
+        self.qrDecodeLabel.isHidden = false
         detector = prepareQRCodeDetector()
         videoFilter.applyFilter = {
           image in
           let found = self.performQRCodeDetection(image)
-          dispatch_async(dispatch_get_main_queue()) {
+          DispatchQueue.main.async {
             if found.decode != "" {
               self.qrDecodeLabel.text = found.decode
             }
@@ -70,11 +70,11 @@ class ViewController: UIViewController {
   
   
   //MARK: Utility methods
-  func performRectangleDetection(image: CIImage) -> CIImage? {
+  func performRectangleDetection(_ image: CIImage) -> CIImage? {
     var resultImage: CIImage?
     if let detector = detector {
       // Get the detections
-      let features = detector.featuresInImage(image)
+      let features = detector.features(in: image)
       for feature in features as! [CIRectangleFeature] {
         resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
                                                     bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
@@ -83,43 +83,43 @@ class ViewController: UIViewController {
     return resultImage
   }
   
-  func performQRCodeDetection(image: CIImage) -> (outImage: CIImage?, decode: String) {
+  func performQRCodeDetection(_ image: CIImage) -> (outImage: CIImage?, decode: String) {
     var resultImage: CIImage?
     var decode = ""
     if let detector = detector {
-      let features = detector.featuresInImage(image)
+      let features = detector.features(in: image)
       for feature in features as! [CIQRCodeFeature] {
         resultImage = drawHighlightOverlayForPoints(image, topLeft: feature.topLeft, topRight: feature.topRight,
           bottomLeft: feature.bottomLeft, bottomRight: feature.bottomRight)
-        decode = feature.messageString
+        decode = feature.messageString!
       }
     }
     return (resultImage, decode)
   }
   
   func prepareRectangleDetector() -> CIDetector {
-    let options: [String: AnyObject] = [CIDetectorAccuracy: CIDetectorAccuracyHigh, CIDetectorAspectRatio: 1.0]
-    return CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: options)
+    let options: [String: Any] = [CIDetectorAccuracy: CIDetectorAccuracyHigh, CIDetectorAspectRatio: 1.0]
+    return CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: options)!
   }
   
   func prepareQRCodeDetector() -> CIDetector {
     let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
-    return CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: options)
+    return CIDetector(ofType: CIDetectorTypeQRCode, context: nil, options: options)!
   }
   
-  func drawHighlightOverlayForPoints(image: CIImage, topLeft: CGPoint, topRight: CGPoint,
+  func drawHighlightOverlayForPoints(_ image: CIImage, topLeft: CGPoint, topRight: CGPoint,
                                      bottomLeft: CGPoint, bottomRight: CGPoint) -> CIImage {
     var overlay = CIImage(color: CIColor(red: 1.0, green: 0, blue: 0, alpha: 0.5))
-    overlay = overlay.imageByCroppingToRect(image.extent())
-    overlay = overlay.imageByApplyingFilter("CIPerspectiveTransformWithExtent",
+    overlay = overlay.cropping(to: image.extent)
+    overlay = overlay.applyingFilter("CIPerspectiveTransformWithExtent",
       withInputParameters: [
-        "inputExtent": CIVector(CGRect: image.extent()),
-        "inputTopLeft": CIVector(CGPoint: topLeft),
-        "inputTopRight": CIVector(CGPoint: topRight),
-        "inputBottomLeft": CIVector(CGPoint: bottomLeft),
-        "inputBottomRight": CIVector(CGPoint: bottomRight)
+        "inputExtent": CIVector(cgRect: image.extent),
+        "inputTopLeft": CIVector(cgPoint: topLeft),
+        "inputTopRight": CIVector(cgPoint: topRight),
+        "inputBottomLeft": CIVector(cgPoint: bottomLeft),
+        "inputBottomRight": CIVector(cgPoint: bottomRight)
       ])
-    return overlay.imageByCompositingOverImage(image)
+    return overlay.compositingOverImage(image)
   }
 }
 
